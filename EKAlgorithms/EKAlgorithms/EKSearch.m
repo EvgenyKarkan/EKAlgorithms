@@ -10,4 +10,20 @@
 
 @implementation EKSearch
 
++ (NSInteger)linearSearchForObject:(id)object inArray:(NSArray *)arrayToSearch
+{
+	NSInteger indexOfFoundedObject = 0;
+	
+	for (NSUInteger i = 0; i < [arrayToSearch count]; i++) {
+		if (object == [arrayToSearch objectAtIndex:i]) {
+			indexOfFoundedObject = i;
+		}
+		if (i == [arrayToSearch count]) {
+			indexOfFoundedObject = -1;
+		}
+	}
+	
+	return indexOfFoundedObject;
+}
+
 @end

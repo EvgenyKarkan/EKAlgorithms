@@ -10,4 +10,6 @@
 
 @interface EKSearch : NSObject
 
++ (NSInteger)linearSearchForObject:(id)object inArray:(NSArray *)arrayToSearch;
+
 @end

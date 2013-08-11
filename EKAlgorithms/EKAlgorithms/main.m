@@ -7,16 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EKSearch.h"
+#import "EKSort.h"
 
-int main(int argc, const char * argv[])
+int main(int argc, const char *argv[])
 {
-
 	@autoreleasepool {
-	    
-	    // insert code here...
-	    NSLog(@"Hello, World!");
-	    
+		
+			//Linear search
+		NSLog(@"Linear search result: %li", (long)[EKSearch linearSearchForObject:@42 inArray:@[@45, @26, @125, @42]]);
+		
+			//Bubble sort
+		NSLog(@"Bubble sorted result: %@", [EKSort bubbleSortedArrayWithUnsortedArray:[NSMutableArray arrayWithObjects:@4.5, @17.4, @12, @27, @6, @1, @0.5, nil]]);
+		
 	}
-    return 0;
+	return 0;
 }
 

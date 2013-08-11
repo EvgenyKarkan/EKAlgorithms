@@ -10,4 +10,6 @@
 
 @interface EKSort : NSObject
 
++ (NSMutableArray *)bubbleSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray;
+
 @end
