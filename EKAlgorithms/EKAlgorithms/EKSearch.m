@@ -36,17 +36,19 @@
 	
 	while (firstIndex < uptoIndex) {
 		NSUInteger mid = (firstIndex + uptoIndex) / 2;
-		if ([object integerValue] < [[sortedArray objectAtIndex:mid] integerValue]) {
-			uptoIndex = mid;
-		}
-		else if ([object integerValue] > [[sortedArray objectAtIndex:mid] integerValue]) {
-			firstIndex = mid + 1;
-		}
-		else {
-			return indexOfFoundedObject = mid;
+		if ([object isKindOfClass:[NSNumber class]]) {
+			if ([object integerValue] < [[sortedArray objectAtIndex:mid] integerValue]) {
+				uptoIndex = mid;
+			}
+			else if ([object integerValue] > [[sortedArray objectAtIndex:mid] integerValue]) {
+				firstIndex = mid + 1;
+			}
+			else {
+				return indexOfFoundedObject = mid;
+			}
 		}
 	}
-
+	
 	return indexOfFoundedObject = -1;
 }
 
