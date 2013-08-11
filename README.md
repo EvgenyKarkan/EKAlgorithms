@@ -5,8 +5,9 @@ EKAlgorithms is a  library in which some well known CS algorithms will be implem
 
 Search
 ------ 
-1.Linear search 
+1. Linear search 
+2. Binary search
 
 Sort
 ----
-1.Bubble sort
+1. Bubble sort
