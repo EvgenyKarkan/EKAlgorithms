@@ -20,6 +20,8 @@ int main(int argc, const char *argv[])
 			//Bubble sort
 		NSLog(@"Bubble sorted result: %@", [EKSort bubbleSortedArrayWithUnsortedArray:[NSMutableArray arrayWithObjects:@4.5, @17.4, @12, @27, @6, @1, @0.5, nil]]);
 		
+			//Binary search
+		NSLog(@"Binary search result: %li", (long)[EKSearch binarySearchForObject:@42 inSortedArray:[NSArray arrayWithObjects:@6, @9, @12, @13, @14, @29, @42, nil]]);
 	}
 	return 0;
 }

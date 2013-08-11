@@ -27,4 +27,27 @@
 	return indexOfFoundedObject;
 }
 
++ (NSInteger)binarySearchForObject:(id)object inSortedArray:(NSArray *)sortedArray
+{
+	NSUInteger firstIndex = 0;
+	NSUInteger uptoIndex = [sortedArray count];
+	
+	NSUInteger indexOfFoundedObject = 0;
+	
+	while (firstIndex < uptoIndex) {
+		NSUInteger mid = (firstIndex + uptoIndex) / 2;
+		if ([object integerValue] < [[sortedArray objectAtIndex:mid] integerValue]) {
+			uptoIndex = mid;
+		}
+		else if ([object integerValue] > [[sortedArray objectAtIndex:mid] integerValue]) {
+			firstIndex = mid + 1;
+		}
+		else {
+			return indexOfFoundedObject = mid;
+		}
+	}
+
+	return indexOfFoundedObject = -1;
+}
+
 @end
