@@ -12,15 +12,16 @@
 
 + (NSInteger)linearSearchForObject:(id)object inArray:(NSArray *)arrayToSearch
 {
-	NSInteger indexOfFoundedObject = 0;
+	NSInteger i, indexOfFoundedObject = 0;
 	
-	for (NSUInteger i = 0; i < [arrayToSearch count]; i++) {
+	for (i = 0; i < [arrayToSearch count]; i++) {
 		if (object == [arrayToSearch objectAtIndex:i]) {
 			indexOfFoundedObject = i;
+			break;
 		}
-		if (i == [arrayToSearch count]) {
-			indexOfFoundedObject = -1;
-		}
+	}
+	if (i == [arrayToSearch count]) {
+		indexOfFoundedObject = -1;
 	}
 	
 	return indexOfFoundedObject;
