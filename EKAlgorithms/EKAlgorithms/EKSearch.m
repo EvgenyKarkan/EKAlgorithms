@@ -10,7 +10,7 @@
 
 @implementation EKSearch
 
-+ (NSInteger)linearSearchForObject:(id)object inArray:(NSArray *)arrayToSearch
++ (NSInteger)indexOfObjectViaLinearSearchForObject:(id)object inArray:(NSArray *)arrayToSearch
 {
 	NSInteger i, indexOfFoundedObject = 0;
 	
@@ -27,7 +27,7 @@
 	return indexOfFoundedObject;
 }
 
-+ (NSInteger)binarySearchForObject:(id)object inSortedArray:(NSArray *)sortedArray
++ (NSInteger)inedxOfObjectViaBinarySearchForObject:(id)object inSortedArray:(NSArray *)sortedArray
 {
 	NSUInteger firstIndex = 0;
 	NSUInteger uptoIndex = [sortedArray count];

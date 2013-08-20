@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE8CE66817C3FC6200CCF03B /* EKArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8CE66717C3FC6200CCF03B /* EKArray.m */; };
 		DEADAD7317B7A6A80031DEB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEADAD7217B7A6A80031DEB9 /* Foundation.framework */; };
 		DEADAD7617B7A6A80031DEB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEADAD7517B7A6A80031DEB9 /* main.m */; };
 		DEADAD7A17B7A6A80031DEB9 /* EKAlgorithms.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEADAD7917B7A6A80031DEB9 /* EKAlgorithms.1 */; };
@@ -28,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DE8CE66617C3FC6200CCF03B /* EKArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKArray.h; sourceTree = "<group>"; };
+		DE8CE66717C3FC6200CCF03B /* EKArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKArray.m; sourceTree = "<group>"; };
 		DEADAD6F17B7A6A80031DEB9 /* EKAlgorithms */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EKAlgorithms; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEADAD7217B7A6A80031DEB9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DEADAD7517B7A6A80031DEB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 				DEADAD8117B7A7490031DEB9 /* EKSearch.m */,
 				DEADAD8317B7A75E0031DEB9 /* EKSort.h */,
 				DEADAD8417B7A75E0031DEB9 /* EKSort.m */,
+				DE8CE66617C3FC6200CCF03B /* EKArray.h */,
+				DE8CE66717C3FC6200CCF03B /* EKArray.m */,
 				DEADAD7517B7A6A80031DEB9 /* main.m */,
 				DEADAD7917B7A6A80031DEB9 /* EKAlgorithms.1 */,
 				DEADAD7717B7A6A80031DEB9 /* Supporting Files */,
@@ -152,6 +157,7 @@
 				DEADAD7617B7A6A80031DEB9 /* main.m in Sources */,
 				DEADAD8217B7A7490031DEB9 /* EKSearch.m in Sources */,
 				DEADAD8517B7A75E0031DEB9 /* EKSort.m in Sources */,
+				DE8CE66817C3FC6200CCF03B /* EKArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +260,7 @@
 				DEADAD7F17B7A6A80031DEB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
