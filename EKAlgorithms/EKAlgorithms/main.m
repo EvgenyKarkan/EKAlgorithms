@@ -2,7 +2,7 @@
 //  main.m
 //  EKAlgorithms
 //
-//  Created by Каркан Евгений on 11.08.13.
+//  Created by Evgeny Karkan on 11.08.13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
@@ -28,14 +28,12 @@ int main(int argc, const char *argv[])
 		}
 		
 			//Max element of array
-		NSLog(@"Max element of created array %@ is equals to %@ and stored at index %li",[array debugDescription],
+		NSLog(@"Max element of created array %@ is equals to %@ and stored at index %li", [array debugDescription],
 			  [array objectAtIndex:(long)[EKArray indexOfMaximumElementInArray:array]],
 			  (long)[EKArray indexOfMaximumElementInArray:array]);
-
+		
 			//Bubble sort
 		NSLog(@"Bubble sorted array is: %@", [EKSort bubbleSortedArrayWithUnsortedArray:array]);
-		
-		
 	}
 	return 0;
 }

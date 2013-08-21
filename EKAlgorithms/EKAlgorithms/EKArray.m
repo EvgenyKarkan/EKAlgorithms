@@ -14,7 +14,7 @@
 {
 	id max = [array objectAtIndex:0];
 	
-	for (int i = 1; i < [array count]; i++) {
+	for (NSUInteger i = 1; i < [array count]; i++) {
 		if ([array objectAtIndex:i] > max) {
 			max = [array objectAtIndex:i];
 		}
