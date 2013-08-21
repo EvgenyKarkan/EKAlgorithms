@@ -36,6 +36,9 @@ int main(int argc, const char *argv[])
 			//Bubble sort
 		NSLog(@"Bubble sorted array is: %@", [EKSort bubbleSortedArrayWithUnsortedArray:array]);
 		
+			//Shell sort
+		NSLog(@" Shell sorted array is %@", [EKSort shellSortedArrayWithUnsortedArray:[NSMutableArray arrayWithArray:@[@2, @45, @8, @1, @27, @16]]]);
+		
 			//Palindrome string
 		NSLog(@"Palindrome? Answer:%@", [EKString isGivenStringPalindrom:@"abcba"] ? @"YES" : @"NO");
 	}

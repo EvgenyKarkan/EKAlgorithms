@@ -24,11 +24,29 @@
 		}
 	}
 	
-	NSMutableArray *sortedArray = unsortedArray;
-	
-	return sortedArray;
+	return unsortedArray;
 }
 
++ (NSMutableArray *)shellSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray
+{
+	id temp = nil;
+	
+	for (NSInteger i = [unsortedArray count] / 2; i > 0; i = i / 2) {
+		for (NSInteger j = i; j < [unsortedArray count]; j++) {
+			for (NSInteger k = j - i; k >= 0; k = k - i) {
+				if ([unsortedArray objectAtIndex:k + 1] >= [unsortedArray objectAtIndex:k]) {
+					break;
+				}
+				else {
+					temp = [unsortedArray objectAtIndex:k];
+					[unsortedArray replaceObjectAtIndex:k withObject:[unsortedArray objectAtIndex:k + i]];
+					[unsortedArray replaceObjectAtIndex:k + i withObject:temp];
+				}
+			}
+		}
+	}
+	
+	return unsortedArray;
+}
 
 @end
-
