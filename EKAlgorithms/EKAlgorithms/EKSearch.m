@@ -31,7 +31,6 @@
 {
 	NSUInteger firstIndex = 0;
 	NSUInteger uptoIndex = [sortedArray count];
-	
 	NSUInteger indexOfFoundedObject = 0;
 	
 	while (firstIndex < uptoIndex) {
