@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE3ABA0417C52F7900494BC3 /* EKString.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3ABA0317C52F7900494BC3 /* EKString.m */; };
 		DE8CE66817C3FC6200CCF03B /* EKArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8CE66717C3FC6200CCF03B /* EKArray.m */; };
 		DEADAD7317B7A6A80031DEB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEADAD7217B7A6A80031DEB9 /* Foundation.framework */; };
 		DEADAD7617B7A6A80031DEB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEADAD7517B7A6A80031DEB9 /* main.m */; };
@@ -29,6 +30,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DE3ABA0217C52F7900494BC3 /* EKString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EKString.h; path = ../EKString.h; sourceTree = "<group>"; };
+		DE3ABA0317C52F7900494BC3 /* EKString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EKString.m; path = ../EKString.m; sourceTree = "<group>"; };
 		DE8CE66617C3FC6200CCF03B /* EKArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKArray.h; sourceTree = "<group>"; };
 		DE8CE66717C3FC6200CCF03B /* EKArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKArray.m; sourceTree = "<group>"; };
 		DEADAD6F17B7A6A80031DEB9 /* EKAlgorithms */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EKAlgorithms; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,12 +85,14 @@
 		DEADAD7417B7A6A80031DEB9 /* EKAlgorithms */ = {
 			isa = PBXGroup;
 			children = (
+				DE8CE66617C3FC6200CCF03B /* EKArray.h */,
+				DE8CE66717C3FC6200CCF03B /* EKArray.m */,
 				DEADAD8017B7A7490031DEB9 /* EKSearch.h */,
 				DEADAD8117B7A7490031DEB9 /* EKSearch.m */,
 				DEADAD8317B7A75E0031DEB9 /* EKSort.h */,
 				DEADAD8417B7A75E0031DEB9 /* EKSort.m */,
-				DE8CE66617C3FC6200CCF03B /* EKArray.h */,
-				DE8CE66717C3FC6200CCF03B /* EKArray.m */,
+				DE3ABA0217C52F7900494BC3 /* EKString.h */,
+				DE3ABA0317C52F7900494BC3 /* EKString.m */,
 				DEADAD7517B7A6A80031DEB9 /* main.m */,
 				DEADAD7917B7A6A80031DEB9 /* EKAlgorithms.1 */,
 				DEADAD7717B7A6A80031DEB9 /* Supporting Files */,
@@ -158,6 +163,7 @@
 				DEADAD8217B7A7490031DEB9 /* EKSearch.m in Sources */,
 				DEADAD8517B7A75E0031DEB9 /* EKSort.m in Sources */,
 				DE8CE66817C3FC6200CCF03B /* EKArray.m in Sources */,
+				DE3ABA0417C52F7900494BC3 /* EKString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@
 #import "EKSearch.h"
 #import "EKSort.h"
 #import "EKArray.h"
+#import "EKString.h"
 
 int main(int argc, const char *argv[])
 {
@@ -34,6 +35,9 @@ int main(int argc, const char *argv[])
 		
 			//Bubble sort
 		NSLog(@"Bubble sorted array is: %@", [EKSort bubbleSortedArrayWithUnsortedArray:array]);
+		
+			//Palindrome string
+		NSLog(@"Palindrome? Answer:%@", [EKString isGivenStringPalindrom:@"abcba"] ? @"YES" : @"NO");
 	}
 	return 0;
 }
