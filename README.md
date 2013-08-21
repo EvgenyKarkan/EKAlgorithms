@@ -16,6 +16,7 @@ Search
 Sort
 ----
 1. Bubble sort.
+2. Shell sort.
 
 String
 ------
