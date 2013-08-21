@@ -10,9 +10,13 @@ Array
 
 Search
 ------ 
-1. Linear search 
-2. Binary search
+1. Linear search.
+2. Binary search.
 
 Sort
 ----
-1. Bubble sort
+1. Bubble sort.
+
+String
+------
+1. Palindrome or not.
