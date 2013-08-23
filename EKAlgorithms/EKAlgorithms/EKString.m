@@ -8,22 +8,24 @@
 
 #import "EKString.h"
 
-@implementation EKString
+@implementation EKString;
+
+#pragma mark - Is string palindrome
 
 + (BOOL)isGivenStringPalindrom:(NSString *)string
 {
 	BOOL result = NO;
-	
+	NSString *nonWhitespacedBufferString = [[string stringByReplacingOccurrencesOfString:@" " withString:@""] lowercaseString];
 	NSMutableString *reverseString = [[NSMutableString alloc] initWithCapacity:[string length]];
 	
-	for (NSInteger i = [string length] - 1; i >= 0; i--) {
-	#pragma clang diagnostic push
-	#pragma clang diagnostic ignored "-Wformat-security"
-		[reverseString appendFormat:[NSString stringWithFormat:@"%c", [string characterAtIndex:i]]];
-	#pragma clang diagnostic pop
+	for (NSInteger i = [nonWhitespacedBufferString length] - 1; i >= 0; i--) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wformat-security"
+		[reverseString appendFormat:[NSString stringWithFormat:@"%c", [nonWhitespacedBufferString characterAtIndex:i]]];
+#pragma clang diagnostic pop
 	}
 	
-	if ([reverseString isEqualToString:string]) {
+	if ([reverseString isEqualToString:nonWhitespacedBufferString]) {
 		result = YES;
 	}
 	else {

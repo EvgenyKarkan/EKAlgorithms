@@ -8,7 +8,10 @@
 
 #import "EKSort.h"
 
-@implementation EKSort
+
+@implementation EKSort;
+
+#pragma mark - Bubble sort
 
 + (NSMutableArray *)bubbleSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray
 {
@@ -26,6 +29,8 @@
 	
 	return unsortedArray;
 }
+
+#pragma mark - Shell sort
 
 + (NSMutableArray *)shellSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray
 {
@@ -45,6 +50,15 @@
 			}
 		}
 	}
+	
+	return unsortedArray;
+}
+
+#pragma mark - Merge sort
+
++ (NSMutableArray *)mergeSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray
+{
+	
 	
 	return unsortedArray;
 }

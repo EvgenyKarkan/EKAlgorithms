@@ -8,7 +8,9 @@
 
 #import "EKArray.h"
 
-@implementation EKArray
+@implementation EKArray;
+
+#pragma mark - Max element in array
 
 + (NSUInteger)indexOfMaximumElementInArray:(NSArray *)array
 {

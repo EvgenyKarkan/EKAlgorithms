@@ -15,7 +15,7 @@
 int main(int argc, const char *argv[])
 {
 	@autoreleasepool {
-		
+		 
 			//Linear search
 		NSLog(@"Linear search result: %li", (long)[EKSearch indexOfObjectViaLinearSearchForObject:@42 inArray:@[@6, @9, @12, @13, @14, @29, @42]]);
 		
@@ -40,7 +40,7 @@ int main(int argc, const char *argv[])
 		NSLog(@" Shell sorted array is %@", [EKSort shellSortedArrayWithUnsortedArray:[NSMutableArray arrayWithArray:@[@2, @45, @8, @1, @27, @16]]]);
 		
 			//Palindrome string
-		NSLog(@"Palindrome? Answer:%@", [EKString isGivenStringPalindrom:@"abcba"] ? @"YES" : @"NO");
+		NSLog(@"Palindrome? Answer:%@", [EKString isGivenStringPalindrom:@"Was it a car or a cat I saw"] ? @"YES" : @"NO");
 	}
 	return 0;
 }

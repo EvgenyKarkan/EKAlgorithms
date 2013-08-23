@@ -8,7 +8,9 @@
 
 #import "EKSearch.h"
 
-@implementation EKSearch
+@implementation EKSearch;
+
+#pragma mark - Linear search
 
 + (NSInteger)indexOfObjectViaLinearSearchForObject:(id)object inArray:(NSArray *)arrayToSearch
 {
@@ -26,6 +28,8 @@
 	
 	return indexOfFoundedObject;
 }
+
+#pragma mark - Binary search
 
 + (NSInteger)inedxOfObjectViaBinarySearchForObject:(id)object inSortedArray:(NSArray *)sortedArray
 {
