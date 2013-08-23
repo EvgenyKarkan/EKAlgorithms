@@ -39,7 +39,7 @@
 	for (NSInteger i = [unsortedArray count] / 2; i > 0; i = i / 2) {
 		for (NSInteger j = i; j < [unsortedArray count]; j++) {
 			for (NSInteger k = j - i; k >= 0; k = k - i) {
-				if ([unsortedArray objectAtIndex:k + 1] >= [unsortedArray objectAtIndex:k]) {
+				if ([[unsortedArray objectAtIndex:k + 1] floatValue] >= [[unsortedArray objectAtIndex:k] floatValue]) {
 					break;
 				}
 				else {
@@ -54,13 +54,64 @@
 	return unsortedArray;
 }
 
-#pragma mark - Merge sort
+#pragma mark - Merge sort stuff
 
 + (NSMutableArray *)mergeSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray
 {
-	
+	[self partitionArray:unsortedArray withMinimalIndex:0 withMaximumIndex:(NSInteger)[unsortedArray count] - 1];
 	
 	return unsortedArray;
+}
+
++ (void)partitionArray:(NSMutableArray *)arrayToPartition withMinimalIndex:(NSInteger)min withMaximumIndex:(NSInteger)max
+{
+	NSInteger mid;
+	
+	if (min < max) {
+		mid = (min + max) / 2;
+		[self partitionArray:arrayToPartition withMinimalIndex:min withMaximumIndex:mid];
+		[self partitionArray:arrayToPartition withMinimalIndex:mid + 1 withMaximumIndex:max];
+		[self mergeArray:arrayToPartition withMinimalIndex:min withMediumIndex:mid withMaximalIndex:max];
+	}
+}
+
++ (void)mergeArray:(NSMutableArray *)arrayToMerge withMinimalIndex:(NSInteger)min withMediumIndex:(NSInteger)mid withMaximalIndex:(NSInteger)max
+{
+	NSMutableArray *temporaryArray = [NSMutableArray array];
+	
+	for (NSInteger a = 0; a < [arrayToMerge count]; a++) {
+		[temporaryArray addObject:[NSNull null]];
+	}
+	
+	NSInteger i = 0, j, k, m;
+	j = min;
+	m = mid + 1;
+	
+	for (i = min; j <= mid && m <= max; i++) {
+		if ([[arrayToMerge objectAtIndex:j] floatValue] <= [[arrayToMerge objectAtIndex:m] floatValue]) {
+			[temporaryArray replaceObjectAtIndex:i withObject:[arrayToMerge objectAtIndex:j]];
+			j++;
+		}
+		else {
+			[temporaryArray replaceObjectAtIndex:i withObject:[arrayToMerge objectAtIndex:m]];
+			m++;
+		}
+	}
+	if (j > mid) {
+		for (k = m; k <= max; k++) {
+			[temporaryArray replaceObjectAtIndex:i withObject:[arrayToMerge objectAtIndex:k]];
+			i++;
+		}
+	}
+	else {
+		for (k = j; k <= mid; k++) {
+			[temporaryArray replaceObjectAtIndex:i withObject:[arrayToMerge objectAtIndex:k]];
+			i++;
+		}
+	}
+	for (k = min; k <= max; k++) {
+		[arrayToMerge replaceObjectAtIndex:k withObject:[temporaryArray objectAtIndex:k]];
+	}
 }
 
 @end

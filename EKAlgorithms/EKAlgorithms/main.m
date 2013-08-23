@@ -37,11 +37,15 @@ int main(int argc, const char *argv[])
 		NSLog(@"Bubble sorted array is: %@", [EKSort bubbleSortedArrayWithUnsortedArray:array]);
 		
 			//Shell sort
-		NSLog(@" Shell sorted array is %@", [EKSort shellSortedArrayWithUnsortedArray:[NSMutableArray arrayWithArray:@[@2, @45, @8, @1, @27, @16]]]);
+		NSLog(@"Shell sorted array is %@", [EKSort shellSortedArrayWithUnsortedArray:[NSMutableArray arrayWithArray:@[@2, @45, @8, @1, @27, @16, @5.3, @-53.7]]]);
+		
+			//Merge sort
+		NSLog(@"Merge sorted array %@", [EKSort mergeSortedArrayWithUnsortedArray:[NSMutableArray arrayWithArray:@[@21, @45, @87, @10, @273, @616, @0.2, @-0.52]]]);
 		
 			//Palindrome string
 		NSLog(@"Palindrome? Answer:%@", [EKString isGivenStringPalindrome:@"Was it a car or a cat I saw"] ? @"YES" : @"NO");
 	}
 	return 0;
 }
+
 
