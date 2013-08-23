@@ -12,11 +12,11 @@
 
 #pragma mark - Is string palindrome
 
-+ (BOOL)isGivenStringPalindrom:(NSString *)string
++ (BOOL)isGivenStringPalindrome:(NSString *)string
 {
 	BOOL result = NO;
 	NSString *nonWhitespacedBufferString = [[string stringByReplacingOccurrencesOfString:@" " withString:@""] lowercaseString];
-	NSMutableString *reverseString = [[NSMutableString alloc] initWithCapacity:[string length]];
+	NSMutableString *reverseString = [[NSMutableString alloc] initWithCapacity:[nonWhitespacedBufferString length]];
 	
 	for (NSInteger i = [nonWhitespacedBufferString length] - 1; i >= 0; i--) {
 #pragma clang diagnostic push

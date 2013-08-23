@@ -10,6 +10,6 @@
 
 @interface EKString : NSObject
 
-+ (BOOL)isGivenStringPalindrom:(NSString *)string;
++ (BOOL)isGivenStringPalindrome:(NSString *)string;
 
 @end

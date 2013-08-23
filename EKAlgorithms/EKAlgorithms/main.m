@@ -40,7 +40,7 @@ int main(int argc, const char *argv[])
 		NSLog(@" Shell sorted array is %@", [EKSort shellSortedArrayWithUnsortedArray:[NSMutableArray arrayWithArray:@[@2, @45, @8, @1, @27, @16]]]);
 		
 			//Palindrome string
-		NSLog(@"Palindrome? Answer:%@", [EKString isGivenStringPalindrom:@"Was it a car or a cat I saw"] ? @"YES" : @"NO");
+		NSLog(@"Palindrome? Answer:%@", [EKString isGivenStringPalindrome:@"Was it a car or a cat I saw"] ? @"YES" : @"NO");
 	}
 	return 0;
 }
