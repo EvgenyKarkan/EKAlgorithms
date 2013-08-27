@@ -79,7 +79,7 @@
 {
 	NSMutableArray *temporaryArray = [NSMutableArray array];
 	
-	for (NSInteger a = 0; a < [arrayToMerge count]; a++) {
+	for (NSInteger i = 0; i < [arrayToMerge count]; i++) {
 		[temporaryArray addObject:[NSNull null]];
 	}
 	
