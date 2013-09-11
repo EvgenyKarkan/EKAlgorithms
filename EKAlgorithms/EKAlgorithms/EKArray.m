@@ -26,6 +26,20 @@
 	return [array indexOfObject:max];
 }
 
+#pragma mark - Longest string in array
+
++ (NSString *)longestStringInArray:(NSMutableArray *)array
+{
+	NSString *returnValue = nil;
+	
+	for (NSString *str in array) {
+		if (returnValue == nil || [str length] > [returnValue length]) {
+			returnValue = str;
+		}
+	}
+	return returnValue;
+}
+
 @end
 
 

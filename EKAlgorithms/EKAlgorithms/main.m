@@ -44,6 +44,9 @@ int main(int argc, const char *argv[])
 		
 			//Palindrome string
 		NSLog(@"Palindrome? Answer:%@", [EKString isGivenStringPalindrome:@"Was it a car or a cat I saw"] ? @"YES" : @"NO");
+		
+			//Longest string from array
+		NSLog(@"The longest string is %@", [EKArray longestStringInArray:[@[@"Kiev", @"Moscow", @"Tokyo", @"Saint-Petersburg", @"SanFrancisco"] mutableCopy]]);
 	}
 	return 0;
 }
