@@ -40,6 +40,20 @@
 	return returnValue;
 }
 
+#pragma mark - Longest string in array
+
++ (NSString *)shortestStringInArray:(NSMutableArray *)array
+{
+	NSString *returnValue = nil;
+	
+	for (NSString *str in array) {
+		if (returnValue == nil || [str length] < [returnValue length]) {
+			returnValue = str;
+		}
+	}
+	return returnValue;
+}
+
 @end
 
 
