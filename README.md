@@ -6,7 +6,8 @@ I will be posting new algorithms, stay in touch.
 
 Array
 ----- 
-1. Index of maximum element in array.
+1. Index of maximum element in array. 
+2. Find longest string in array of strings.
 
 Search
 ------ 
