@@ -11,9 +11,7 @@
 @interface EKArray : NSObject
 
 + (NSUInteger)indexOfMaximumElementInArray:(NSArray *)array;
-
 + (NSString *)longestStringInArray:(NSMutableArray *)array;
-
 + (NSString *)shortestStringInArray:(NSMutableArray *)array;
 
 @end
