@@ -11,4 +11,5 @@
 @interface EKString : NSObject
 
 + (BOOL)isGivenStringPalindrome:(NSString *)string;
+
 @end

@@ -114,4 +114,43 @@
 	}
 }
 
+#pragma mark - Quick sort
+
++ (NSMutableArray *)quickSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray withLeftId:(NSInteger)left withRightId:(NSInteger)right
+{
+	NSInteger i, j;
+	id x, y;
+	
+	i = left;
+	j = right;
+	x = unsortedArray[(left + right) / 2];
+	
+	do {
+		while (([unsortedArray[i] floatValue] < [x floatValue]) && (i < right)) {
+			i++;
+		}
+		while (([x floatValue] < [unsortedArray[j] floatValue]) && (j > left)) {
+			j--;
+		}
+		
+		if (i <= j) {
+			y = unsortedArray[i];
+			[unsortedArray replaceObjectAtIndex:i withObject:unsortedArray[j]];
+			unsortedArray[j] = y;
+			i++;
+			j--;
+		}
+	}
+	while (i <= j);
+	
+	if (left < j) {
+		[self quickSortedArrayWithUnsortedArray:unsortedArray withLeftId:left withRightId:j];
+	}
+	if (i < right) {
+		[self quickSortedArrayWithUnsortedArray:unsortedArray withLeftId:i withRightId:right];
+	}
+	
+	return unsortedArray;
+}
+
 @end

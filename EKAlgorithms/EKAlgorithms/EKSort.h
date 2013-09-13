@@ -11,8 +11,13 @@
 @interface EKSort : NSObject
 
 + (NSMutableArray *)bubbleSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray;
+
 + (NSMutableArray *)shellSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray;
+
 + (NSMutableArray *)mergeSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray;
 
++ (NSMutableArray *)quickSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray
+										   withLeftId:(NSInteger)left
+										  withRightId:(NSInteger)right;
 
 @end
