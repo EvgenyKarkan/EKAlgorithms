@@ -1,7 +1,7 @@
 EKAlgorithms
 ============
 
-EKAlgorithms is a gradually increasing library in which some well known CS algorithms will be implemented in Objective-C language.  
+EKAlgorithms is a gradually increasing library in which some well known CS algorithms & others will be implemented in Objective-C language.  
 I will be posting new algorithms, stay in touch.
 
 Array
@@ -20,7 +20,8 @@ Sort
 1. Bubble sort.
 2. Shell sort.
 3. Merge sort.  
-4. Quick sort.
+4. Quick sort.  
+5. Insertion sort.
 
 String
 ------
