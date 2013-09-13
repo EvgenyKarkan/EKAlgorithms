@@ -19,7 +19,8 @@ Sort
 ----
 1. Bubble sort.
 2. Shell sort.
-3. Merge sort.
+3. Merge sort.  
+4. Quick sort.
 
 String
 ------
