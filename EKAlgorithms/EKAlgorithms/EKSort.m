@@ -116,7 +116,7 @@
 
 #pragma mark - Quick sort
 
-+ (NSMutableArray *)quickSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray withLeftId:(NSInteger)left withRightId:(NSInteger)right
++ (NSMutableArray *)quickSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray withLeftIdx:(NSInteger)left withRightIdx:(NSInteger)right
 {
 	NSInteger i, j;
 	id x, y;
@@ -144,10 +144,10 @@
 	while (i <= j);
 	
 	if (left < j) {
-		[self quickSortedArrayWithUnsortedArray:unsortedArray withLeftId:left withRightId:j];
+		[self quickSortedArrayWithUnsortedArray:unsortedArray withLeftIdx:left withRightIdx:j];
 	}
 	if (i < right) {
-		[self quickSortedArrayWithUnsortedArray:unsortedArray withLeftId:i withRightId:right];
+		[self quickSortedArrayWithUnsortedArray:unsortedArray withLeftIdx:i withRightIdx:right];
 	}
 	
 	return unsortedArray;
