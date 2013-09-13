@@ -153,4 +153,22 @@
 	return unsortedArray;
 }
 
+#pragma mark - Insertion sort
+
++ (NSMutableArray *)insertionSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray
+{
+	NSInteger a, b;
+	id temp;
+	
+	for (a = 1; a < (NSInteger)[unsortedArray count]; ++a) {
+		temp = unsortedArray[a];
+		for (b = a - 1; (b >= 0) && ([temp floatValue] < [unsortedArray[b] floatValue]); b--) {
+			[unsortedArray replaceObjectAtIndex:b + 1 withObject:unsortedArray[b]];
+		}
+		unsortedArray[b + 1] = temp;
+	}
+	
+	return unsortedArray;
+}
+
 @end

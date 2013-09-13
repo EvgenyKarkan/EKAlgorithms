@@ -20,4 +20,7 @@
 										   withLeftId:(NSInteger)left
 										  withRightId:(NSInteger)right;
 
++ (NSMutableArray *)insertionSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray;
+
+
 @end
