@@ -11,6 +11,7 @@
 #import "EKSort.h"
 #import "EKArray.h"
 #import "EKString.h"
+#import "EKNumbers.h"
 
 int main(int argc, const char *argv[])
 {
@@ -58,6 +59,9 @@ int main(int argc, const char *argv[])
 		
 			//Shortest string from array
 		NSLog(@"The shortest string is %@", [EKArray shortestStringInArray:[@[@"DRY", @"KISS", @"YAGNI", @"SOLID", @"GRASP"] mutableCopy]]);
+        
+            //Sieve of Eratosf
+        NSLog(@"Primes from sieve %@", [[EKNumbers primeNumbersFromSieveEratosthenesWithMaxNumber:100] description]);
 	}
 	return 0;
 }

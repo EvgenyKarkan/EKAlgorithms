@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DE3ABA0717C5491000494BC3 /* EKString.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3ABA0617C5491000494BC3 /* EKString.m */; };
 		DE8CE66817C3FC6200CCF03B /* EKArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8CE66717C3FC6200CCF03B /* EKArray.m */; };
+		DEAC6277180F053A00794318 /* EKNumbers.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAC6276180F053A00794318 /* EKNumbers.m */; };
 		DEADAD7317B7A6A80031DEB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEADAD7217B7A6A80031DEB9 /* Foundation.framework */; };
 		DEADAD7617B7A6A80031DEB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEADAD7517B7A6A80031DEB9 /* main.m */; };
 		DEADAD7A17B7A6A80031DEB9 /* EKAlgorithms.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEADAD7917B7A6A80031DEB9 /* EKAlgorithms.1 */; };
@@ -34,6 +35,8 @@
 		DE3ABA0617C5491000494BC3 /* EKString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKString.m; sourceTree = "<group>"; };
 		DE8CE66617C3FC6200CCF03B /* EKArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKArray.h; sourceTree = "<group>"; };
 		DE8CE66717C3FC6200CCF03B /* EKArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKArray.m; sourceTree = "<group>"; };
+		DEAC6275180F053A00794318 /* EKNumbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKNumbers.h; sourceTree = "<group>"; };
+		DEAC6276180F053A00794318 /* EKNumbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKNumbers.m; sourceTree = "<group>"; };
 		DEADAD6F17B7A6A80031DEB9 /* EKAlgorithms */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EKAlgorithms; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEADAD7217B7A6A80031DEB9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DEADAD7517B7A6A80031DEB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 				DEADAD8417B7A75E0031DEB9 /* EKSort.m */,
 				DE3ABA0517C5491000494BC3 /* EKString.h */,
 				DE3ABA0617C5491000494BC3 /* EKString.m */,
+				DEAC6275180F053A00794318 /* EKNumbers.h */,
+				DEAC6276180F053A00794318 /* EKNumbers.m */,
 				DEADAD7517B7A6A80031DEB9 /* main.m */,
 				DEADAD7917B7A6A80031DEB9 /* EKAlgorithms.1 */,
 				DEADAD7717B7A6A80031DEB9 /* Supporting Files */,
@@ -159,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEAC6277180F053A00794318 /* EKNumbers.m in Sources */,
 				DEADAD7617B7A6A80031DEB9 /* main.m in Sources */,
 				DEADAD8217B7A7490031DEB9 /* EKSearch.m in Sources */,
 				DEADAD8517B7A75E0031DEB9 /* EKSort.m in Sources */,
