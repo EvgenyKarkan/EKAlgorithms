@@ -26,3 +26,7 @@ Sort
 String
 ------
 1. Palindrome or not.
+
+Numbers
+-------
+1. Sieve of Eratosthenes.
