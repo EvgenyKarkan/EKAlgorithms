@@ -21,13 +21,13 @@
 	resultArray[1] = [NSNumber numberWithInteger:0];
     
 	for (NSUInteger s = 2; s < maxNumber; s++) {
-		if (resultArray[s] != 0) {
+		if (resultArray[s] != [NSNumber numberWithInteger:0]) {
 			for (NSUInteger j = s * 2; j < maxNumber; j += s) {
 				resultArray[j] = [NSNumber numberWithInteger:0];
 			}
 		}
 	}
-	[resultArray removeObjectIdenticalTo:[NSNumber numberWithInteger:0]];
+    [resultArray removeObjectIdenticalTo:[NSNumber numberWithInteger:0]];
     
 	return [resultArray copy];
 }

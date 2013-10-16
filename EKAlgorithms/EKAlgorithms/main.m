@@ -61,7 +61,7 @@ int main(int argc, const char *argv[])
 		NSLog(@"The shortest string is %@", [EKArray shortestStringInArray:[@[@"DRY", @"KISS", @"YAGNI", @"SOLID", @"GRASP"] mutableCopy]]);
         
             //Sieve of Eratosf
-        NSLog(@"Primes from sieve %@", [[EKNumbers primeNumbersFromSieveEratosthenesWithMaxNumber:100] description]);
+        NSLog(@"Primes from sieve %@", [[EKNumbers primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);
 	}
 	return 0;
 }
