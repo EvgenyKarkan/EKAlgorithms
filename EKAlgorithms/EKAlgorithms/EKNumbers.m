@@ -33,15 +33,27 @@
 	return [resultArray copy];
 }
 
-+ (int)greatestCommonDivisor:(int)firstNumber secondNumber:(int)secondNumber
++ (NSUInteger)greatestCommonDivisor:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber
 {
-	int c;
+	NSUInteger c;
+    
 	while (firstNumber != 0) {
 		c = firstNumber;
 		firstNumber =  secondNumber % firstNumber;
 		secondNumber = c;
 	}
 	return secondNumber;
+}
+
++ (NSUInteger)factorialForNumber:(NSUInteger)number
+{
+	NSUInteger factorial = 1;
+    
+	for (NSUInteger i = 1; i <= number; i++) {
+		factorial = factorial * i;
+	}
+    
+	return factorial;
 }
 
 @end
