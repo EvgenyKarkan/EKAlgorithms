@@ -64,7 +64,10 @@ int main(int argc, const char *argv[])
         NSLog(@"Primes from sieve %@", [[EKNumbers primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);
         
             //GCD
-        NSLog(@"GCD of two numbers is %lu", (unsigned long)[EKNumbers greatestCommonDivisor:42 secondNumber:84]);
+        NSLog(@"Greatest common divisor of two numbers is %lu", (unsigned long)[EKNumbers greatestCommonDivisor:42 secondNumber:84]);
+        
+            //LCM
+        NSLog(@"Least common multiple of two numbers is %lu", [EKNumbers leastCommonMultiple:16 secondNumber:20]);
         
             //Factorial
         NSLog(@"Factorial is %llu", (unsigned long long)[EKNumbers factorialForNumber:3]);

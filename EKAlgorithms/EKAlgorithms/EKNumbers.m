@@ -45,6 +45,11 @@
 	return secondNumber;
 }
 
++ (NSUInteger)leastCommonMultiple:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber
+{
+    return firstNumber * secondNumber  / [self greatestCommonDivisor:firstNumber secondNumber:secondNumber];
+}
+
 + (NSUInteger)factorialForNumber:(NSUInteger)number
 {
 	NSUInteger factorial = 1;
