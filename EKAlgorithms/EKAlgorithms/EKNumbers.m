@@ -56,4 +56,19 @@
 	return factorial;
 }
 
++ (NSMutableArray *)fibonacciNumbersUpToNumber:(NSUInteger)number
+{
+    NSMutableArray *resultArray = [@[] mutableCopy];
+    
+    resultArray[0] = [NSNumber numberWithInteger:0];
+    resultArray[1] = [NSNumber numberWithInteger:1];
+    
+    for (NSUInteger i = 2; i < number; i++) {
+        NSNumber *foo = [NSNumber numberWithInteger:[resultArray[i - 2] integerValue]  + [resultArray[i - 1] integerValue]];
+        resultArray[i] = foo;
+    }
+    
+    return [resultArray copy];
+}
+
 @end

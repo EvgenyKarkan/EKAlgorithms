@@ -13,5 +13,6 @@
 + (NSArray *)primeNumbersFromSieveEratosthenesWithMaxNumber:(NSUInteger)maxNumber;
 + (NSUInteger)greatestCommonDivisor:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber;
 + (NSUInteger)factorialForNumber:(NSUInteger)number;
++ (NSMutableArray *)fibonacciNumbersUpToNumber:(NSUInteger)number;
 
 @end

@@ -66,8 +66,11 @@ int main(int argc, const char *argv[])
             //GCD
         NSLog(@"GCD of two numbers is %lu", (unsigned long)[EKNumbers greatestCommonDivisor:42 secondNumber:84]);
         
-            //factorial
+            //Factorial
         NSLog(@"Factorial is %llu", (unsigned long long)[EKNumbers factorialForNumber:3]);
+        
+            //Fibonacci numbers
+        NSLog(@"Fibonacci series is %@", [EKNumbers fibonacciNumbersUpToNumber:15]);
 	}
 	return 0;
 }
