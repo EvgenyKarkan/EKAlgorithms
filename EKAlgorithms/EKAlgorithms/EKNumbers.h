@@ -11,5 +11,6 @@
 @interface EKNumbers : NSObject
 
 + (NSArray *)primeNumbersFromSieveEratosthenesWithMaxNumber:(NSUInteger)maxNumber;
++ (int)greatestCommonDivisor:(int)firstNumber secondNumber:(int)secondNumber;
 
 @end

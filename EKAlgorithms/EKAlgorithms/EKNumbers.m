@@ -8,6 +8,7 @@
 
 #import "EKNumbers.h"
 
+
 @implementation EKNumbers
 
 + (NSArray *)primeNumbersFromSieveEratosthenesWithMaxNumber:(NSUInteger)maxNumber
@@ -27,9 +28,20 @@
 			}
 		}
 	}
-    [resultArray removeObjectIdenticalTo:[NSNumber numberWithInteger:0]];
+	[resultArray removeObjectIdenticalTo:[NSNumber numberWithInteger:0]];
     
 	return [resultArray copy];
+}
+
++ (int)greatestCommonDivisor:(int)firstNumber secondNumber:(int)secondNumber
+{
+	int c;
+	while (firstNumber != 0) {
+		c = firstNumber;
+		firstNumber =  secondNumber % firstNumber;
+		secondNumber = c;
+	}
+	return secondNumber;
 }
 
 @end

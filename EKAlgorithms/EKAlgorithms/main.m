@@ -62,6 +62,9 @@ int main(int argc, const char *argv[])
         
             //Sieve of Eratosf
         NSLog(@"Primes from sieve %@", [[EKNumbers primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);
+        
+            //GCD
+        NSLog(@"GCD of two numbers is %i", [EKNumbers greatestCommonDivisor:42 secondNumber:84]);
 	}
 	return 0;
 }
