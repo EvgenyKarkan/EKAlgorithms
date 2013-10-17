@@ -47,7 +47,7 @@
 
 + (NSUInteger)leastCommonMultiple:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber
 {
-    return firstNumber * secondNumber  / [self greatestCommonDivisor:firstNumber secondNumber:secondNumber];
+	return firstNumber * secondNumber  / [self greatestCommonDivisor:firstNumber secondNumber:secondNumber];
 }
 
 + (NSUInteger)factorialForNumber:(NSUInteger)number
@@ -63,17 +63,17 @@
 
 + (NSMutableArray *)fibonacciNumbersUpToNumber:(NSUInteger)number
 {
-    NSMutableArray *resultArray = [@[] mutableCopy];
+	NSMutableArray *resultArray = [@[] mutableCopy];
     
-    resultArray[0] = [NSNumber numberWithInteger:0];
-    resultArray[1] = [NSNumber numberWithInteger:1];
+	resultArray[0] = [NSNumber numberWithInteger:0];
+	resultArray[1] = [NSNumber numberWithInteger:1];
     
-    for (NSUInteger i = 2; i < number; i++) {
-        NSNumber *foo = [NSNumber numberWithInteger:[resultArray[i - 2] integerValue]  + [resultArray[i - 1] integerValue]];
-        resultArray[i] = foo;
-    }
+	for (NSUInteger i = 2; i < number; i++) {
+		NSNumber *foo = [NSNumber numberWithInteger:[resultArray[i - 2] integerValue] + [resultArray[i - 1] integerValue]];
+		resultArray[i] = foo;
+	}
     
-    return resultArray;
+	return resultArray;
 }
 
 @end
