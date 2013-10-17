@@ -27,6 +27,7 @@ String
 ------
 1. Palindrome or not.
 
-Numbers
+Number
 -------
 1. Sieve of Eratosthenes.
+2. Great common divisor.
