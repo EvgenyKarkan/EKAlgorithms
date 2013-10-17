@@ -31,3 +31,4 @@ Number
 -------
 1. Sieve of Eratosthenes.
 2. Great common divisor.
+3. Factorial.
