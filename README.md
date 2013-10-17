@@ -31,5 +31,6 @@ Number
 -------
 1. Sieve of Eratosthenes.
 2. Great common divisor.
-3. Factorial.
-4. Fibonacci numbers.
+3. Least common multiple.
+4. Factorial.
+5. Fibonacci numbers.
