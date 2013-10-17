@@ -68,7 +68,7 @@
         resultArray[i] = foo;
     }
     
-    return [resultArray copy];
+    return resultArray;
 }
 
 @end
