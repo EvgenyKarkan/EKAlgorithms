@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
-#import "EKString.h"
+#import "EKStringStuff.h"
 
-@implementation EKString;
+@implementation EKStringStuff;
 
 #pragma mark - Is string palindrome
 

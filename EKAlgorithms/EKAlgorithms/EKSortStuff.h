@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EKSort : NSObject
+@interface EKSortStuff : NSObject
 
 + (NSMutableArray *)bubbleSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray;
 + (NSMutableArray *)shellSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray;

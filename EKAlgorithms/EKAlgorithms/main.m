@@ -7,21 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EKSearch.h"
-#import "EKSort.h"
-#import "EKArray.h"
-#import "EKString.h"
-#import "EKNumbers.h"
+#import "EKSearchStuff.h"
+#import "EKSortStuff.h"
+#import "EKArrayStuff.h"
+#import "EKStringStuff.h"
+#import "EKNumbersStuff.h"
 
 int main(int argc, const char *argv[])
 {
 	@autoreleasepool {
 		 
 			//Linear search
-		NSLog(@"Linear search result: %li", (long)[EKSearch indexOfObjectViaLinearSearchForObject:@42 inArray:@[@6, @9, @12, @13, @14, @29, @42]]);
+		NSLog(@"Linear search result: %li", (long)[EKSearchStuff indexOfObjectViaLinearSearchForObject:@42 inArray:@[@6, @9, @12, @13, @14, @29, @42]]);
 		
 			//Binary search
-		NSLog(@"Binary search result: %li", (long)[EKSearch inedxOfObjectViaBinarySearchForObject:@42 inSortedArray:@[@6, @9, @12, @13, @14, @29, @42]]);
+		NSLog(@"Binary search result: %li", (long)[EKSearchStuff inedxOfObjectViaBinarySearchForObject:@42 inSortedArray:@[@6, @9, @12, @13, @14, @29, @42]]);
 		
 			//Init array with 5 random elements
 		NSMutableArray *array = [NSMutableArray array];
@@ -31,49 +31,49 @@ int main(int argc, const char *argv[])
 		
 			//Max element of array
 		NSLog(@"Max element of created array %@ is equals to %@ and stored at index %li", [array debugDescription],
-			  [array objectAtIndex:(long)[EKArray indexOfMaximumElementInArray:array]],
-			  (long)[EKArray indexOfMaximumElementInArray:array]);
+			  [array objectAtIndex:(long)[EKArrayStuff indexOfMaximumElementInArray:array]],
+			  (long)[EKArrayStuff indexOfMaximumElementInArray:array]);
 		
 			//Bubble sort
-		NSLog(@"Bubble sorted array is: %@", [EKSort bubbleSortedArrayWithUnsortedArray:array]);
+		NSLog(@"Bubble sorted array is: %@", [EKSortStuff bubbleSortedArrayWithUnsortedArray:array]);
 		
 			//Shell sort
-		NSLog(@"Shell sorted array is %@", [EKSort shellSortedArrayWithUnsortedArray:[NSMutableArray arrayWithArray:@[@2, @45, @8, @1, @27, @16, @5.3, @ - 53.7]]]);
+		NSLog(@"Shell sorted array is %@", [EKSortStuff shellSortedArrayWithUnsortedArray:[NSMutableArray arrayWithArray:@[@2, @45, @8, @1, @27, @16, @5.3, @ - 53.7]]]);
 		
 			//Merge sort
-		NSLog(@"Merge sorted array %@", [EKSort mergeSortedArrayWithUnsortedArray:[NSMutableArray arrayWithArray:@[@21, @45, @87, @10, @273, @616, @0.2, @ - 0.52]]]);
+		NSLog(@"Merge sorted array %@", [EKSortStuff mergeSortedArrayWithUnsortedArray:[NSMutableArray arrayWithArray:@[@21, @45, @87, @10, @273, @616, @0.2, @ - 0.52]]]);
 		
 			//Quick sort numbers
-		NSLog(@"Quick sorted array %@", [EKSort quickSortedArrayWithUnsortedArray:[NSMutableArray arrayWithArray:@[@2.1, @405, @817, @10, @2732, @616, @0.2, @ - 0.52]]
+		NSLog(@"Quick sorted array %@", [EKSortStuff quickSortedArrayWithUnsortedArray:[NSMutableArray arrayWithArray:@[@2.1, @405, @817, @10, @2732, @616, @0.2, @ - 0.52]]
 																	   withLeftIdx:0
 																	  withRightIdx:[[NSMutableArray arrayWithArray:@[@21, @45, @87, @10, @273, @616, @0.2, @ - 0.52]] count] - 1]);
 		
 			//Insertion sort
-		NSLog(@"Insertion sorted array %@", [EKSort insertionSortedArrayWithUnsortedArray:[@[@-23.0154, @46, @0.021, @42, @5, @NO, @YES] mutableCopy]]);
+		NSLog(@"Insertion sorted array %@", [EKSortStuff insertionSortedArrayWithUnsortedArray:[@[@-23.0154, @46, @0.021, @42, @5, @NO, @YES] mutableCopy]]);
 		
 			//Palindrome string
-		NSLog(@"Palindrome? Answer:%@", [EKString isGivenStringPalindrome:@"Was it a car or a cat I saw"] ? @"YES" : @"NO");
+		NSLog(@"Palindrome? Answer:%@", [EKStringStuff isGivenStringPalindrome:@"Was it a car or a cat I saw"] ? @"YES" : @"NO");
 		
 			//Longest string from array
-		NSLog(@"The longest string is %@", [EKArray longestStringInArray:[@[@"Kiev", @"Moscow", @"Tokyo", @"Saint-Petersburg", @"SanFrancisco"] mutableCopy]]);
+		NSLog(@"The longest string is %@", [EKArrayStuff longestStringInArray:[@[@"Kiev", @"Moscow", @"Tokyo", @"Saint-Petersburg", @"SanFrancisco"] mutableCopy]]);
 		
 			//Shortest string from array
-		NSLog(@"The shortest string is %@", [EKArray shortestStringInArray:[@[@"DRY", @"KISS", @"YAGNI", @"SOLID", @"GRASP"] mutableCopy]]);
+		NSLog(@"The shortest string is %@", [EKArrayStuff shortestStringInArray:[@[@"DRY", @"KISS", @"YAGNI", @"SOLID", @"GRASP"] mutableCopy]]);
         
             //Sieve of Eratosf
-        NSLog(@"Primes from sieve %@", [[EKNumbers primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);
+        NSLog(@"Primes from sieve %@", [[EKNumbersStuff primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);
         
             //GCD
-        NSLog(@"Greatest common divisor of two numbers is %lu", (unsigned long)[EKNumbers greatestCommonDivisor:42 secondNumber:84]);
+        NSLog(@"Greatest common divisor of two numbers is %lu", (unsigned long)[EKNumbersStuff greatestCommonDivisorWithFirstNumber:42 secondNumber:84]);
         
             //LCM
-        NSLog(@"Least common multiple of two numbers is %lu", [EKNumbers leastCommonMultiple:16 secondNumber:20]);
+        NSLog(@"Least common multiple of two numbers is %lu", [EKNumbersStuff leastCommonMultipleWithFirstNumber:16 secondNumber:20]);
         
             //Factorial
-        NSLog(@"Factorial is %llu", (unsigned long long)[EKNumbers factorialForNumber:3]);
+        NSLog(@"Factorial is %llu", (unsigned long long)[EKNumbersStuff factorialForNumber:3]);
         
             //Fibonacci numbers
-        NSLog(@"Fibonacci series is %@", [EKNumbers fibonacciNumbersUpToNumber:15]);
+        NSLog(@"Fibonacci series is %@", [EKNumbersStuff fibonacciNumbersUpToNumber:15]);
 	}
 	return 0;
 }

@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
-#import "EKNumbers.h"
+#import "EKNumbersStuff.h"
 
 
-@implementation EKNumbers
+@implementation EKNumbersStuff
 
 + (NSArray *)primeNumbersFromSieveEratosthenesWithMaxNumber:(NSUInteger)maxNumber
 {
@@ -33,7 +33,7 @@
 	return [resultArray copy];
 }
 
-+ (NSUInteger)greatestCommonDivisor:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber
++ (NSUInteger)greatestCommonDivisorWithFirstNumber:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber
 {
 	NSUInteger c;
     
@@ -42,12 +42,13 @@
 		firstNumber =  secondNumber % firstNumber;
 		secondNumber = c;
 	}
+    
 	return secondNumber;
 }
 
-+ (NSUInteger)leastCommonMultiple:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber
++ (NSUInteger)leastCommonMultipleWithFirstNumber:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber
 {
-	return firstNumber * secondNumber  / [self greatestCommonDivisor:firstNumber secondNumber:secondNumber];
+	return firstNumber * secondNumber  / [self greatestCommonDivisorWithFirstNumber:firstNumber secondNumber:secondNumber];
 }
 
 + (NSUInteger)factorialForNumber:(NSUInteger)number

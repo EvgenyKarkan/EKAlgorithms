@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
-#import "EKArray.h"
+#import "EKArrayStuff.h"
 
 
-@implementation EKArray;
+@implementation EKArrayStuff;
 
 #pragma mark - Max element in array
 
@@ -37,6 +37,7 @@
 			returnValue = str;
 		}
 	}
+    
 	return returnValue;
 }
 
@@ -51,6 +52,7 @@
 			returnValue = str;
 		}
 	}
+    
 	return returnValue;
 }
 

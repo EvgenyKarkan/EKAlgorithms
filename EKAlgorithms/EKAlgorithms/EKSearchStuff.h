@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EKSearch : NSObject
+@interface EKSearchStuff : NSObject
 
 + (NSInteger)indexOfObjectViaLinearSearchForObject:(id)object inArray:(NSArray *)arrayToSearch;
 + (NSInteger)inedxOfObjectViaBinarySearchForObject:(id)object inSortedArray:(NSArray *)sortedArray;

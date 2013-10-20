@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EKNumbers : NSObject
+@interface EKNumbersStuff : NSObject
 
 + (NSArray *)primeNumbersFromSieveEratosthenesWithMaxNumber:(NSUInteger)maxNumber;
-+ (NSUInteger)greatestCommonDivisor:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber;
-+ (NSUInteger)leastCommonMultiple:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber;
++ (NSUInteger)greatestCommonDivisorWithFirstNumber:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber;
++ (NSUInteger)leastCommonMultipleWithFirstNumber:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber;
 + (NSUInteger)factorialForNumber:(NSUInteger)number;
 + (NSMutableArray *)fibonacciNumbersUpToNumber:(NSUInteger)number;
 

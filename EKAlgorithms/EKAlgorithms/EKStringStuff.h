@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EKString : NSObject
+@interface EKStringStuff : NSObject
 
 + (BOOL)isGivenStringPalindrome:(NSString *)string;
 

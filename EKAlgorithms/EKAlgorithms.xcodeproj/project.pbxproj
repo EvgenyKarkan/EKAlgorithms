@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE3ABA0717C5491000494BC3 /* EKString.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3ABA0617C5491000494BC3 /* EKString.m */; };
-		DE8CE66817C3FC6200CCF03B /* EKArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8CE66717C3FC6200CCF03B /* EKArray.m */; };
-		DEAC6277180F053A00794318 /* EKNumbers.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAC6276180F053A00794318 /* EKNumbers.m */; };
+		DE3ABA0717C5491000494BC3 /* EKStringStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3ABA0617C5491000494BC3 /* EKStringStuff.m */; };
+		DE8CE66817C3FC6200CCF03B /* EKArrayStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8CE66717C3FC6200CCF03B /* EKArrayStuff.m */; };
+		DEAC6277180F053A00794318 /* EKNumbersStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAC6276180F053A00794318 /* EKNumbersStuff.m */; };
 		DEADAD7317B7A6A80031DEB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEADAD7217B7A6A80031DEB9 /* Foundation.framework */; };
 		DEADAD7617B7A6A80031DEB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEADAD7517B7A6A80031DEB9 /* main.m */; };
 		DEADAD7A17B7A6A80031DEB9 /* EKAlgorithms.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEADAD7917B7A6A80031DEB9 /* EKAlgorithms.1 */; };
-		DEADAD8217B7A7490031DEB9 /* EKSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DEADAD8117B7A7490031DEB9 /* EKSearch.m */; };
-		DEADAD8517B7A75E0031DEB9 /* EKSort.m in Sources */ = {isa = PBXBuildFile; fileRef = DEADAD8417B7A75E0031DEB9 /* EKSort.m */; };
+		DEADAD8217B7A7490031DEB9 /* EKSearchStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DEADAD8117B7A7490031DEB9 /* EKSearchStuff.m */; };
+		DEADAD8517B7A75E0031DEB9 /* EKSortStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DEADAD8417B7A75E0031DEB9 /* EKSortStuff.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,21 +31,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DE3ABA0517C5491000494BC3 /* EKString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKString.h; sourceTree = "<group>"; };
-		DE3ABA0617C5491000494BC3 /* EKString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKString.m; sourceTree = "<group>"; };
-		DE8CE66617C3FC6200CCF03B /* EKArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKArray.h; sourceTree = "<group>"; };
-		DE8CE66717C3FC6200CCF03B /* EKArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKArray.m; sourceTree = "<group>"; };
-		DEAC6275180F053A00794318 /* EKNumbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKNumbers.h; sourceTree = "<group>"; };
-		DEAC6276180F053A00794318 /* EKNumbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKNumbers.m; sourceTree = "<group>"; };
+		DE3ABA0517C5491000494BC3 /* EKStringStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKStringStuff.h; sourceTree = "<group>"; };
+		DE3ABA0617C5491000494BC3 /* EKStringStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKStringStuff.m; sourceTree = "<group>"; };
+		DE8CE66617C3FC6200CCF03B /* EKArrayStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKArrayStuff.h; sourceTree = "<group>"; };
+		DE8CE66717C3FC6200CCF03B /* EKArrayStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKArrayStuff.m; sourceTree = "<group>"; };
+		DEAC6275180F053A00794318 /* EKNumbersStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKNumbersStuff.h; sourceTree = "<group>"; };
+		DEAC6276180F053A00794318 /* EKNumbersStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKNumbersStuff.m; sourceTree = "<group>"; };
 		DEADAD6F17B7A6A80031DEB9 /* EKAlgorithms */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EKAlgorithms; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEADAD7217B7A6A80031DEB9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DEADAD7517B7A6A80031DEB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DEADAD7817B7A6A80031DEB9 /* EKAlgorithms-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EKAlgorithms-Prefix.pch"; sourceTree = "<group>"; };
 		DEADAD7917B7A6A80031DEB9 /* EKAlgorithms.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = EKAlgorithms.1; sourceTree = "<group>"; };
-		DEADAD8017B7A7490031DEB9 /* EKSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKSearch.h; sourceTree = "<group>"; };
-		DEADAD8117B7A7490031DEB9 /* EKSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKSearch.m; sourceTree = "<group>"; };
-		DEADAD8317B7A75E0031DEB9 /* EKSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKSort.h; sourceTree = "<group>"; };
-		DEADAD8417B7A75E0031DEB9 /* EKSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKSort.m; sourceTree = "<group>"; };
+		DEADAD8017B7A7490031DEB9 /* EKSearchStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKSearchStuff.h; sourceTree = "<group>"; };
+		DEADAD8117B7A7490031DEB9 /* EKSearchStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKSearchStuff.m; sourceTree = "<group>"; };
+		DEADAD8317B7A75E0031DEB9 /* EKSortStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKSortStuff.h; sourceTree = "<group>"; };
+		DEADAD8417B7A75E0031DEB9 /* EKSortStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKSortStuff.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,16 +88,16 @@
 		DEADAD7417B7A6A80031DEB9 /* EKAlgorithms */ = {
 			isa = PBXGroup;
 			children = (
-				DE8CE66617C3FC6200CCF03B /* EKArray.h */,
-				DE8CE66717C3FC6200CCF03B /* EKArray.m */,
-				DEADAD8017B7A7490031DEB9 /* EKSearch.h */,
-				DEADAD8117B7A7490031DEB9 /* EKSearch.m */,
-				DEADAD8317B7A75E0031DEB9 /* EKSort.h */,
-				DEADAD8417B7A75E0031DEB9 /* EKSort.m */,
-				DE3ABA0517C5491000494BC3 /* EKString.h */,
-				DE3ABA0617C5491000494BC3 /* EKString.m */,
-				DEAC6275180F053A00794318 /* EKNumbers.h */,
-				DEAC6276180F053A00794318 /* EKNumbers.m */,
+				DE8CE66617C3FC6200CCF03B /* EKArrayStuff.h */,
+				DE8CE66717C3FC6200CCF03B /* EKArrayStuff.m */,
+				DEADAD8017B7A7490031DEB9 /* EKSearchStuff.h */,
+				DEADAD8117B7A7490031DEB9 /* EKSearchStuff.m */,
+				DEADAD8317B7A75E0031DEB9 /* EKSortStuff.h */,
+				DEADAD8417B7A75E0031DEB9 /* EKSortStuff.m */,
+				DE3ABA0517C5491000494BC3 /* EKStringStuff.h */,
+				DE3ABA0617C5491000494BC3 /* EKStringStuff.m */,
+				DEAC6275180F053A00794318 /* EKNumbersStuff.h */,
+				DEAC6276180F053A00794318 /* EKNumbersStuff.m */,
 				DEADAD7517B7A6A80031DEB9 /* main.m */,
 				DEADAD7917B7A6A80031DEB9 /* EKAlgorithms.1 */,
 				DEADAD7717B7A6A80031DEB9 /* Supporting Files */,
@@ -164,12 +164,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEAC6277180F053A00794318 /* EKNumbers.m in Sources */,
+				DEAC6277180F053A00794318 /* EKNumbersStuff.m in Sources */,
 				DEADAD7617B7A6A80031DEB9 /* main.m in Sources */,
-				DEADAD8217B7A7490031DEB9 /* EKSearch.m in Sources */,
-				DEADAD8517B7A75E0031DEB9 /* EKSort.m in Sources */,
-				DE8CE66817C3FC6200CCF03B /* EKArray.m in Sources */,
-				DE3ABA0717C5491000494BC3 /* EKString.m in Sources */,
+				DEADAD8217B7A7490031DEB9 /* EKSearchStuff.m in Sources */,
+				DEADAD8517B7A75E0031DEB9 /* EKSortStuff.m in Sources */,
+				DE8CE66817C3FC6200CCF03B /* EKArrayStuff.m in Sources */,
+				DE3ABA0717C5491000494BC3 /* EKStringStuff.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
-#import "EKSort.h"
+#import "EKSortStuff.h"
 
 
-@implementation EKSort;
+@implementation EKSortStuff;
 
 #pragma mark - Bubble sort
 

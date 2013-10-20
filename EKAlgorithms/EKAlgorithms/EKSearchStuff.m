@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
-#import "EKSearch.h"
+#import "EKSearchStuff.h"
 
 
-@implementation EKSearch;
+@implementation EKSearchStuff;
 
 #pragma mark - Linear search
 

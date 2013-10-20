@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EKArray : NSObject
+@interface EKArrayStuff : NSObject
 
 + (NSUInteger)indexOfMaximumElementInArray:(NSArray *)array;
 + (NSString *)longestStringInArray:(NSMutableArray *)array;
