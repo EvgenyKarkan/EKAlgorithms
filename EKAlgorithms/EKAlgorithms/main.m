@@ -85,6 +85,7 @@ int main(int argc, const char *argv[])
         NSLog(@"All objects from stack %@", [stack allObjectsFromStack]);
         [stack popLastObject];
         NSLog(@"All objects from stack after POP %@", [stack allObjectsFromStack]);
+        NSLog(@"PEEK %@", [stack peek]);
         
             //Queue
         EKQueue *queue = [[EKQueue alloc] init];
@@ -94,7 +95,7 @@ int main(int argc, const char *argv[])
         NSLog(@"All objects from queue %@", [queue allObjectsFromQueue]);
         [queue removeFirstObject];
         NSLog(@"All objects from queue after REMOVE %@", [queue allObjectsFromQueue]);
-
+        NSLog(@"PEEK %@", [queue peek]);
 	}
 	return 0;
 }

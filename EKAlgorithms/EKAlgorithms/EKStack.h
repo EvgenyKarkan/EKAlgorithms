@@ -13,7 +13,7 @@
 - (id)initWithSize:(NSUInteger)size;
 
 - (id)popLastObject;
-- (void)push:(id)element;
+- (void)push:(id)object;
 - (id)peek;
 - (NSInteger)sizeOfStack;
 - (BOOL)isEmpty;

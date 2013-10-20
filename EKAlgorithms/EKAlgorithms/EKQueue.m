@@ -32,7 +32,12 @@
 
 - (void)insertObject:(id)object
 {
-	[self.queueArray addObject:object];
+	if (object != nil) {
+		[self.queueArray addObject:object];
+	}
+	else {
+		NSAssert(object != nil, @"You cannot push nil object to stack");
+	}
 }
 
 - (id)removeFirstObject
@@ -75,6 +80,5 @@
     
 	return [buffer copy];
 }
-
 
 @end

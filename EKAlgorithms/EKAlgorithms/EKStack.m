@@ -56,24 +56,28 @@
 	return object;
 }
 
-- (void)push:(id)element
+- (void)push:(id)object
 {
 	if ([self isFull] && self.maxStackSize) {
 		NSLog(@"Stack is full");
 		return;
 	}
     
-	if (element != nil) {
-		[self.stackArray addObject:element];
+	if (object != nil) {
+		[self.stackArray addObject:object];
 	}
 	else {
-		NSAssert(element != nil, @"You cannot push nil object to stack");
+		NSAssert(object != nil, @"You cannot push nil object to stack");
 	}
 }
 
 - (id)peek
 {
-	return [self.stackArray lastObject];
+    if ([self.stackArray count] > 0) {
+        return [self.stackArray lastObject];
+    }
+    
+	return nil;
 }
 
 - (NSInteger)sizeOfStack
