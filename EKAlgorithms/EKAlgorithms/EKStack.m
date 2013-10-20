@@ -48,7 +48,7 @@
 
 #pragma mark - Public API
 
-- (id)pop
+- (id)popLastObject
 {
 	id object = [self peek];
 	[self.stackArray removeLastObject];
@@ -68,16 +68,6 @@
 	}
 	else {
 		NSAssert(element != nil, @"You cannot push nil object to stack");
-	}
-}
-
-- (void)pushElementsFromArray:(NSArray *)array
-{
-	if (array != nil) {
-		[self.stackArray addObjectsFromArray:array];
-	}
-	else {
-		NSAssert(array != nil, @"Array should no be nil");
 	}
 }
 

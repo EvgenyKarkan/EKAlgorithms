@@ -14,8 +14,8 @@
 + (NSMutableArray *)shellSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray;
 + (NSMutableArray *)mergeSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray;
 + (NSMutableArray *)quickSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray
-										   withLeftIdx:(NSInteger)left
-										  withRightIdx:(NSInteger)right;
+                                        withLeftIndex:(NSInteger)left
+                                       withRightIndex:(NSInteger)right;
 + (NSMutableArray *)insertionSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray;
 
 

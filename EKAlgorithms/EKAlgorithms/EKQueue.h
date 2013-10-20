@@ -1,5 +1,5 @@
 //
-//  EKStack.h
+//  EKQueue.h
 //  EKAlgorithms
 //
 //  Created by Evgeny Karkan on 20.10.13.
@@ -8,17 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EKStack : NSObject
+@interface EKQueue : NSObject
 
-- (id)initWithSize:(NSUInteger)size;
-
-- (id)popLastObject;
-- (void)push:(id)element;
+- (void)insertObject:(id)object;
+- (id)removeFirstObject;
 - (id)peek;
-- (NSInteger)sizeOfStack;
 - (BOOL)isEmpty;
-- (BOOL)isFull;
 - (void)clear;
-- (NSArray *)allObjectsFromStack;
+- (NSArray *)allObjectsFromQueue;
 
 @end

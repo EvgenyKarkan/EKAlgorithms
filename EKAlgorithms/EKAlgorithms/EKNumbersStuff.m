@@ -9,7 +9,9 @@
 #import "EKNumbersStuff.h"
 
 
-@implementation EKNumbersStuff
+@implementation EKNumbersStuff;
+
+#pragma mark - Sieve of Eratosthenes
 
 + (NSArray *)primeNumbersFromSieveEratosthenesWithMaxNumber:(NSUInteger)maxNumber
 {
@@ -33,6 +35,8 @@
 	return [resultArray copy];
 }
 
+#pragma mark - GCD
+
 + (NSUInteger)greatestCommonDivisorWithFirstNumber:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber
 {
 	NSUInteger c;
@@ -46,10 +50,14 @@
 	return secondNumber;
 }
 
+#pragma mark - LCM
+
 + (NSUInteger)leastCommonMultipleWithFirstNumber:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber
 {
 	return firstNumber * secondNumber  / [self greatestCommonDivisorWithFirstNumber:firstNumber secondNumber:secondNumber];
 }
+
+#pragma mark - Factorial
 
 + (NSUInteger)factorialForNumber:(NSUInteger)number
 {
@@ -61,6 +69,8 @@
     
 	return factorial;
 }
+
+#pragma mark - Fibonacci
 
 + (NSMutableArray *)fibonacciNumbersUpToNumber:(NSUInteger)number
 {

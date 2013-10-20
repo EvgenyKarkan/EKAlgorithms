@@ -13,6 +13,7 @@
 #import "EKStringStuff.h"
 #import "EKNumbersStuff.h"
 #import "EKStack.h"
+#import "EKQueue.h"
 
 int main(int argc, const char *argv[])
 {
@@ -46,8 +47,8 @@ int main(int argc, const char *argv[])
 		
 			//Quick sort numbers
 		NSLog(@"Quick sorted array %@", [EKSortStuff quickSortedArrayWithUnsortedArray:[NSMutableArray arrayWithArray:@[@2.1, @405, @817, @10, @2732, @616, @0.2, @ - 0.52]]
-																	   withLeftIdx:0
-																	  withRightIdx:[[NSMutableArray arrayWithArray:@[@21, @45, @87, @10, @273, @616, @0.2, @ - 0.52]] count] - 1]);
+																	   withLeftIndex:0
+																	  withRightIndex:[[NSMutableArray arrayWithArray:@[@21, @45, @87, @10, @273, @616, @0.2, @ - 0.52]] count] - 1]);
 		
 			//Insertion sort
 		NSLog(@"Insertion sorted array %@", [EKSortStuff insertionSortedArrayWithUnsortedArray:[@[@-23.0154, @46, @0.021, @42, @5, @NO, @YES] mutableCopy]]);
@@ -81,8 +82,19 @@ int main(int argc, const char *argv[])
         [stack push:@"Hello"];
         [stack push:@"World"];
         [stack push:@"Programming is fun!"];
-        NSLog(@"All from stack %@", [[stack allObjectsFromStack] debugDescription]);
+        NSLog(@"All objects from stack %@", [stack allObjectsFromStack]);
+        [stack popLastObject];
+        NSLog(@"All objects from stack after POP %@", [stack allObjectsFromStack]);
         
+            //Queue
+        EKQueue *queue = [[EKQueue alloc] init];
+        [queue insertObject:@"Foo"];
+        [queue insertObject:@"Bar"];
+        [queue insertObject:@"HakunaMatata"];
+        NSLog(@"All objects from queue %@", [queue allObjectsFromQueue]);
+        [queue removeFirstObject];
+        NSLog(@"All objects from queue after REMOVE %@", [queue allObjectsFromQueue]);
+
 	}
 	return 0;
 }

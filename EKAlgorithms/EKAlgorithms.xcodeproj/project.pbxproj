@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE37B0A71813DD02001EB432 /* EKStack.m in Sources */ = {isa = PBXBuildFile; fileRef = DE37B0A61813DD02001EB432 /* EKStack.m */; };
+		DE37B0AA18142523001EB432 /* EKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DE37B0A918142523001EB432 /* EKQueue.m */; };
 		DE3ABA0717C5491000494BC3 /* EKStringStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3ABA0617C5491000494BC3 /* EKStringStuff.m */; };
 		DE8CE66817C3FC6200CCF03B /* EKArrayStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8CE66717C3FC6200CCF03B /* EKArrayStuff.m */; };
 		DEAC6277180F053A00794318 /* EKNumbersStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAC6276180F053A00794318 /* EKNumbersStuff.m */; };
@@ -34,6 +35,8 @@
 /* Begin PBXFileReference section */
 		DE37B0A51813DD02001EB432 /* EKStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKStack.h; sourceTree = "<group>"; };
 		DE37B0A61813DD02001EB432 /* EKStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKStack.m; sourceTree = "<group>"; };
+		DE37B0A818142523001EB432 /* EKQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKQueue.h; sourceTree = "<group>"; };
+		DE37B0A918142523001EB432 /* EKQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKQueue.m; sourceTree = "<group>"; };
 		DE3ABA0517C5491000494BC3 /* EKStringStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKStringStuff.h; sourceTree = "<group>"; };
 		DE3ABA0617C5491000494BC3 /* EKStringStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKStringStuff.m; sourceTree = "<group>"; };
 		DE8CE66617C3FC6200CCF03B /* EKArrayStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKArrayStuff.h; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 				DEAC6276180F053A00794318 /* EKNumbersStuff.m */,
 				DE37B0A51813DD02001EB432 /* EKStack.h */,
 				DE37B0A61813DD02001EB432 /* EKStack.m */,
+				DE37B0A818142523001EB432 /* EKQueue.h */,
+				DE37B0A918142523001EB432 /* EKQueue.m */,
 				DEADAD7517B7A6A80031DEB9 /* main.m */,
 				DEADAD7917B7A6A80031DEB9 /* EKAlgorithms.1 */,
 				DEADAD7717B7A6A80031DEB9 /* Supporting Files */,
@@ -170,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEAC6277180F053A00794318 /* EKNumbersStuff.m in Sources */,
+				DE37B0AA18142523001EB432 /* EKQueue.m in Sources */,
 				DEADAD7617B7A6A80031DEB9 /* main.m in Sources */,
 				DEADAD8217B7A7490031DEB9 /* EKSearchStuff.m in Sources */,
 				DEADAD8517B7A75E0031DEB9 /* EKSortStuff.m in Sources */,
