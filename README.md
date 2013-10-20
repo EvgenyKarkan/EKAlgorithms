@@ -37,5 +37,5 @@ Number
 
 Data structures
 ---------------
-1. Stack.
-2. Queue.
+1. Stack (LIFO).
+2. Queue (FIFO).
