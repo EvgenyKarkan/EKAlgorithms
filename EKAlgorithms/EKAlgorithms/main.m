@@ -12,6 +12,7 @@
 #import "EKArrayStuff.h"
 #import "EKStringStuff.h"
 #import "EKNumbersStuff.h"
+#import "EKStack.h"
 
 int main(int argc, const char *argv[])
 {
@@ -74,6 +75,14 @@ int main(int argc, const char *argv[])
         
             //Fibonacci numbers
         NSLog(@"Fibonacci series is %@", [EKNumbersStuff fibonacciNumbersUpToNumber:15]);
+        
+            //Stack
+        EKStack *stack = [[EKStack alloc] initWithSize:3];
+        [stack push:@"Hello"];
+        [stack push:@"World"];
+        [stack push:@"Programming is fun!"];
+        NSLog(@"All from stack %@", [[stack allObjectsFromStack] debugDescription]);
+        
 	}
 	return 0;
 }
