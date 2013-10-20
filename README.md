@@ -38,3 +38,4 @@ Number
 Data structures
 ---------------
 1. Stack.
+2. Queue.
