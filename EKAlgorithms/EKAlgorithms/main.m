@@ -14,6 +14,7 @@
 #import "EKNumbersStuff.h"
 #import "EKStack.h"
 #import "EKQueue.h"
+#import "EKDeque.h"
 
 int main(int argc, const char *argv[])
 {
@@ -77,7 +78,7 @@ int main(int argc, const char *argv[])
             //Fibonacci numbers
         NSLog(@"Fibonacci series is %@", [EKNumbersStuff fibonacciNumbersUpToNumber:15]);
         
-            //Stack
+			//Stack
         EKStack *stack = [[EKStack alloc] initWithSize:3];
         [stack push:@"Hello"];
         [stack push:@"World"];
@@ -87,7 +88,7 @@ int main(int argc, const char *argv[])
         NSLog(@"All objects from stack after POP %@", [stack allObjectsFromStack]);
         NSLog(@"PEEK %@", [stack peek]);
         
-            //Queue
+			//Queue
         EKQueue *queue = [[EKQueue alloc] init];
         [queue insertObject:@"Foo"];
         [queue insertObject:@"Bar"];
@@ -95,7 +96,21 @@ int main(int argc, const char *argv[])
         NSLog(@"All objects from queue %@", [queue allObjectsFromQueue]);
         [queue removeFirstObject];
         NSLog(@"All objects from queue after REMOVE %@", [queue allObjectsFromQueue]);
-        NSLog(@"PEEK %@", [queue peek]);
+        NSLog(@"PEEK object %@", [queue peek]);
+        
+			//Deque
+        EKDeque *deque = [[EKDeque alloc] init];
+        [deque insertObjectToFront:@"Foo"];
+        [deque insertObjectToFront:@"Bar"];
+        NSLog(@"All objects from deque %@", [deque allObjectsFromDeque]);
+        [deque insertObjectToBack:@"Hi"];
+        NSLog(@"All objects from deque %@", [deque allObjectsFromDeque]);
+        NSLog(@"PEEK first object %@", [deque peekFirstObject]);
+        [deque removeFirstObject];
+        NSLog(@"All objects from deque %@", [deque allObjectsFromDeque]);
+        NSLog(@"PEEK last object %@", [deque peekLastObject]);
+        [deque removeLastObject];
+        NSLog(@"All objects from deque %@", [deque allObjectsFromDeque]);
 	}
 	return 0;
 }
