@@ -34,3 +34,7 @@ Number
 3. Least common multiple.
 4. Factorial.
 5. Fibonacci numbers.
+
+Data structures
+---------------
+1. Stack.
