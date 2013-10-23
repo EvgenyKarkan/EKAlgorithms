@@ -36,6 +36,7 @@ Number
 4. Factorial.
 5. Fibonacci numbers.
 6. Sum of digits.
+7. Binary to decimal convertion.
 
 Data structures
 ---------------
