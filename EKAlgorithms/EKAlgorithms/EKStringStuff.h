@@ -11,5 +11,6 @@
 @interface EKStringStuff : NSObject
 
 + (BOOL)isGivenStringPalindrome:(NSString *)string;
++ (NSString *)reversedStringWithString:(NSString *)stringToReverse;
 
 @end

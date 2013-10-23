@@ -31,8 +31,19 @@
 	else {
 		result = NO;
 	}
-	
+    
 	return result;
+}
+
++ (NSString *)reversedStringWithString:(NSString *)stringToReverse
+{
+	NSMutableString *result = [[NSMutableString alloc] init];
+    
+	for (NSUInteger i = [stringToReverse length] - 1; i < [stringToReverse length]; i--) {
+		[result appendString:[NSString stringWithFormat:@"%C", [stringToReverse characterAtIndex:i]]];
+	}
+    
+	return [result copy];
 }
 
 @end
