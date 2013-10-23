@@ -47,9 +47,9 @@
 {
 	NSString *returnValue = nil;
 	
-	for (NSString *str in array) {
-		if (returnValue == nil || [str length] < [returnValue length]) {
-			returnValue = str;
+	for (NSString *string in array) {
+		if (returnValue == nil || [string length] < [returnValue length]) {
+			returnValue = string;
 		}
 	}
     

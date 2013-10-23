@@ -15,5 +15,6 @@
 + (NSUInteger)leastCommonMultipleWithFirstNumber:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber;
 + (NSUInteger)factorialForNumber:(NSUInteger)number;
 + (NSMutableArray *)fibonacciNumbersUpToNumber:(NSUInteger)number;
++ (NSUInteger)sumOfDigitsOfNumber:(NSUInteger)number;
 
 @end

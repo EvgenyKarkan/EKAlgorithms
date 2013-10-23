@@ -57,7 +57,7 @@ int main(int argc, const char *argv[])
 		NSLog(@"Palindrome? Answer:%@", [EKStringStuff isGivenStringPalindrome:@"Was it a car or a cat I saw"] ? @"YES" : @"NO");
         
             //Reverse
-        NSLog(@"Reverse %@", [EKStringStuff reversedStringWithString:@"Hello World, are you read it?"]);
+        NSLog(@"Reverse is: %@", [EKStringStuff reversedStringWithString:@"Lorem ipsum dolor"]);
         
             //Longest string from array
 		NSLog(@"The longest string is %@", [EKArrayStuff longestStringInArray:[@[@"Kiev", @"Moscow", @"Tokyo", @"Saint-Petersburg", @"SanFrancisco"] mutableCopy]]);
@@ -79,6 +79,9 @@ int main(int argc, const char *argv[])
         
             //Fibonacci numbers
 		NSLog(@"Fibonacci series is %@", [EKNumbersStuff fibonacciNumbersUpToNumber:15]);
+        
+            //Find sum of digits
+        NSLog(@"Sum of digits is: %lu", (unsigned long)[EKNumbersStuff sumOfDigitsOfNumber:1234]);
         
             //Stack
 		EKStack *stack = [[EKStack alloc] initWithSize:3];
