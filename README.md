@@ -26,6 +26,7 @@ Sort
 String
 ------
 1. Palindrome or not.
+2. Reverse of string.
 
 Number
 -------
