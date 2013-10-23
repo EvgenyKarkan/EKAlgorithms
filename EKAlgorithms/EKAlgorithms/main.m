@@ -83,6 +83,9 @@ int main(int argc, const char *argv[])
             //Find sum of digits
         NSLog(@"Sum of digits is: %lu", (unsigned long)[EKNumbersStuff sumOfDigitsOfNumber:1234]);
         
+            //Binary to decimal convertion
+        NSLog(@"Decimal is: %lu", (unsigned long)[EKNumbersStuff decimalNumberFromBinaryNumber:1101]);
+        
             //Stack
 		EKStack *stack = [[EKStack alloc] initWithSize:3];
 		[stack push:@"Hello"];

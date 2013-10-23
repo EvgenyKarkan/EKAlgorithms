@@ -101,4 +101,18 @@
 	return sum;
 }
 
++ (NSUInteger)decimalNumberFromBinaryNumber:(NSUInteger)binary
+{
+	NSUInteger decimalNumber = 0, j = 1, remainder;
+    
+	while (binary != 0) {
+		remainder = binary % 10;
+		decimalNumber = decimalNumber + remainder * j;
+		j = j * 2;
+		binary = binary / 10;
+	}
+    
+	return decimalNumber;
+}
+
 @end

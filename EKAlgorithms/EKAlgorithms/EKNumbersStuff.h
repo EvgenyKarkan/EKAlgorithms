@@ -16,5 +16,6 @@
 + (NSUInteger)factorialForNumber:(NSUInteger)number;
 + (NSMutableArray *)fibonacciNumbersUpToNumber:(NSUInteger)number;
 + (NSUInteger)sumOfDigitsOfNumber:(NSUInteger)number;
++ (NSUInteger)decimalNumberFromBinaryNumber:(NSUInteger)binary;
 
 @end
