@@ -35,6 +35,7 @@ Number
 3. Least common multiple.
 4. Factorial.
 5. Fibonacci numbers.
+6. Sum of digits.
 
 Data structures
 ---------------
