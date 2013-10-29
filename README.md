@@ -31,8 +31,8 @@ String
 Number
 -------
 1. Sieve of Eratosthenes.
-2. Great common divisor.
-3. Least common multiple.
+2. Great common divisor (GCD).
+3. Least common multiple (LCM).
 4. Factorial.
 5. Fibonacci numbers.
 6. Sum of digits.
