@@ -12,5 +12,6 @@
 
 + (BOOL)isGivenStringPalindrome:(NSString *)string;
 + (NSString *)reversedStringWithString:(NSString *)stringToReverse;
++ (NSUInteger)numberOfWordsInString:(NSString *)string;
 
 @end

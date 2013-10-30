@@ -59,6 +59,9 @@ int main(int argc, const char *argv[])
             //Reverse
         NSLog(@"Reverse is: %@", [EKStringStuff reversedStringWithString:@"Lorem ipsum dolor"]);
         
+            //Count words
+        NSLog(@"Words # %lu", (unsigned long)[EKStringStuff numberOfWordsInString:@"fgf fgfdgfdg dfgfdgfd dfgfdgfd dfg"]);
+        
             //Longest string from array
 		NSLog(@"The longest string is %@", [EKArrayStuff longestStringInArray:[@[@"Kiev", @"Moscow", @"Tokyo", @"Saint-Petersburg", @"SanFrancisco"] mutableCopy]]);
         

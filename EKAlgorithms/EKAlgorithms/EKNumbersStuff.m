@@ -101,6 +101,8 @@
 	return sum;
 }
 
+#pragma mark - Binary to decimal
+
 + (NSUInteger)decimalNumberFromBinaryNumber:(NSUInteger)binary
 {
 	NSUInteger decimalNumber = 0, j = 1, remainder;

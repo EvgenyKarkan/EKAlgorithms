@@ -35,6 +35,8 @@
 	return result;
 }
 
+#pragma mark - String reverse
+
 + (NSString *)reversedStringWithString:(NSString *)stringToReverse
 {
 	NSMutableString *result = [[NSMutableString alloc] init];
@@ -43,9 +45,33 @@
 		[result appendString:[NSString stringWithFormat:@"%C", [stringToReverse characterAtIndex:i]]];
 	}
     
+    NSLog(@"Class %@", [NSString superclass]);
+    
 	return [result copy];
 }
 
-@end
+#pragma mark - Words in string count
 
++ (NSUInteger)numberOfWordsInString:(NSString *)string
+{
+	const char *str = [string UTF8String];
+	BOOL state = NO;
+	NSUInteger wordCounter = 0;
+    
+	while (*str) {
+		if (*str == ' ' || *str == '\n' || *str == '\t') {
+			state = NO;
+		}
+		else if (state == NO) {
+			state = YES;
+			++wordCounter;
+		}
+        
+		++str;
+	}
+    
+	return wordCounter;
+}
+
+@end
 
