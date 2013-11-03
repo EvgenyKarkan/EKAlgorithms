@@ -86,7 +86,7 @@
 + (void)allPermutationsOfCString:(char *)string withFirstCharacterPosition:(int)i lastCharacterPosition:(int)n
 {
 	if (i == n) {
-		NSLog(@"%s\n", string);
+		NSLog(@"Permutation - %s\n", string);
 	}
 	else {
 		for (NSUInteger j = i; j <= n; j++) {
