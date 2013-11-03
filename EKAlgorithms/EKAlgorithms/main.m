@@ -64,8 +64,7 @@ int main(int argc, const char *argv[])
         
             //Permutations
         char a[] = "ABC";
-        permute(a, 0, 2);
-            //NSLog(@"<#   #> %@", permute(a, 0, 2));
+        [EKStringStuff allPermutationsOfCString:a withFirstCharacterPosition:0 lastCharacterPosition:2];
         
             //Longest string from array
 		NSLog(@"The longest string is %@", [EKArrayStuff longestStringInArray:[@[@"Kiev", @"Moscow", @"Tokyo", @"Saint-Petersburg", @"SanFrancisco"] mutableCopy]]);

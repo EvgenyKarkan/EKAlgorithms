@@ -13,5 +13,6 @@
 + (BOOL)isGivenStringPalindrome:(NSString *)string;
 + (NSString *)reversedStringWithString:(NSString *)stringToReverse;
 + (NSUInteger)numberOfWordsInString:(NSString *)string;
-void permute(char *a, int i, int n);
++ (void)allPermutationsOfCString:(char *)string withFirstCharacterPosition:(int)i lastCharacterPosition:(int)n;
+
 @end

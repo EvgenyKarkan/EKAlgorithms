@@ -75,31 +75,24 @@
 
 #pragma mark - Permutations of string
 
-/* Function to swap values at two pointers */
-void swap (char *x, char *y)
++ (void)swapValuesOfPointer:(char *)xPointer toPointer:(char *)yPointer
 {
-    char temp;
-    temp = *x;
-    *x = *y;
-    *y = temp;
+	char temp;
+	temp = *xPointer;
+	*xPointer = *yPointer;
+	*yPointer = temp;
 }
 
-/* Function to print permutations of string
- This function takes three parameters:
- 1. String
- 2. Starting index of the string
- 3. Ending index of the string. */
-void permute(char *a, int i, int n)
++ (void)allPermutationsOfCString:(char *)string withFirstCharacterPosition:(int)i lastCharacterPosition:(int)n
 {
-	int j;
 	if (i == n) {
-		printf("%s\n", a);
+		NSLog(@"%s\n", string);
 	}
 	else {
-		for (j = i; j <= n; j++) {
-			swap((a + i), (a + j));
-			permute(a, i + 1, n);
-			swap((a + i), (a + j)); //backtrack
+		for (NSUInteger j = i; j <= n; j++) {
+			[self swapValuesOfPointer:(string + i) toPointer:(string + j)];
+			[self allPermutationsOfCString:string withFirstCharacterPosition:i + 1 lastCharacterPosition:n];
+			[self swapValuesOfPointer:(string + i) toPointer:(string + j)];
 		}
 	}
 }
