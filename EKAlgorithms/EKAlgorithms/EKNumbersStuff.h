@@ -18,4 +18,4 @@
 + (NSUInteger)sumOfDigitsOfNumber:(NSUInteger)number;
 + (NSUInteger)decimalNumberFromBinaryNumber:(NSUInteger)binary;
 
-    //@end
+@end
