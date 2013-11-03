@@ -73,7 +73,7 @@
 	return wordCounter;
 }
 
-#pragma mark - Permutations 
+#pragma mark - Permutations of string
 
 /* Function to swap values at two pointers */
 void swap (char *x, char *y)
