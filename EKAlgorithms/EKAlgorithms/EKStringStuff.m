@@ -45,8 +45,6 @@
 		[result appendString:[NSString stringWithFormat:@"%C", [stringToReverse characterAtIndex:i]]];
 	}
     
-    NSLog(@"Class %@", [NSString superclass]);
-    
 	return [result copy];
 }
 
