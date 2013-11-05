@@ -29,6 +29,8 @@ String
 2. Reverse of string.
 3. Words count.
 4. Permutations of string. 
+5. Occurrences of each character (a - z).
+6. Count needles in a haystack.
 
 Number
 -------
