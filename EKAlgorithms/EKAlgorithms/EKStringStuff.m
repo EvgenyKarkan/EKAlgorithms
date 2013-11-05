@@ -95,5 +95,45 @@
 	}
 }
 
+#pragma mark - Occurrences of each character
+
++ (void)countEachCharacterOccurenceInString:(NSString *)givenString
+{
+	const char *string = [[givenString lowercaseString] UTF8String];
+	int c = 0, count[26] = { 0 };
+    
+	while (string[c] != '\0') {
+		if (string[c] >= 'a' && string[c] <= 'z') {
+			count[string[c] - 'a']++;
+		}
+		c++;
+	}
+    
+	for (c = 0; c < 26; c++) {
+		if (count[c] != 0) {
+			NSLog(@"%c occurs %d times in the entered string\n", c + 'a', count[c]);
+		}
+	}
+        //TBD - modify to handle uppercase and special characters
+}
+
+#pragma mark - Count needles in a haystack
+
++ (NSUInteger)numberOfNeedles:(NSString *)needle inHaystack:(NSString *)haystack
+{
+	NSUInteger count = 0, length = [haystack length];
+	NSRange range = NSMakeRange(0, length);
+    
+	while (range.location != NSNotFound) {
+		range = [haystack rangeOfString:needle options:0 range:range];
+		if (range.location != NSNotFound) {
+			range = NSMakeRange(range.location + range.length, length - (range.location + range.length));
+			count++;
+		}
+	}
+    
+	return count;
+}
+
 @end
 

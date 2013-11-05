@@ -66,6 +66,12 @@ int main(int argc, const char *argv[])
         char a[] = "ABC";
         [EKStringStuff allPermutationsOfCString:a withFirstCharacterPosition:0 lastCharacterPosition:2];
         
+            //Count each letter occurence in string
+        [EKStringStuff countEachCharacterOccurenceInString:@"Hello World"];
+        
+            //Needles in haystack
+        NSLog(@"Needle %lu", (unsigned long)[EKStringStuff numberOfNeedles:@"foo" inHaystack:@"Foo is a bar with foo bar foo"]);
+        
             //Longest string from array
 		NSLog(@"The longest string is %@", [EKArrayStuff longestStringInArray:[@[@"Kiev", @"Moscow", @"Tokyo", @"Saint-Petersburg", @"SanFrancisco"] mutableCopy]]);
         
