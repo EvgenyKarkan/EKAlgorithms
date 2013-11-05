@@ -24,13 +24,8 @@
 		[reverseString appendFormat:[NSString stringWithFormat:@"%c", [nonWhitespacedBufferString characterAtIndex:i]]];
 #pragma clang diagnostic pop
 	}
-	
-	if ([reverseString isEqualToString:nonWhitespacedBufferString]) {
-		result = YES;
-	}
-	else {
-		result = NO;
-	}
+	   
+    result = [reverseString isEqualToString:nonWhitespacedBufferString] ? YES : NO;
     
 	return result;
 }
