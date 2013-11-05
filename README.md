@@ -28,6 +28,7 @@ String
 1. Palindrome or not.
 2. Reverse of string.
 3. Words count.
+4. Permutations of string. 
 
 Number
 -------
