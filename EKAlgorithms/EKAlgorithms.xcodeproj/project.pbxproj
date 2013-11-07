@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE37B0A71813DD02001EB432 /* EKStack.m in Sources */ = {isa = PBXBuildFile; fileRef = DE37B0A61813DD02001EB432 /* EKStack.m */; };
-		DE37B0AA18142523001EB432 /* EKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DE37B0A918142523001EB432 /* EKQueue.m */; };
-		DE37B0AD18143B90001EB432 /* EKDeque.m in Sources */ = {isa = PBXBuildFile; fileRef = DE37B0AC18143B90001EB432 /* EKDeque.m */; };
 		DE3ABA0717C5491000494BC3 /* EKStringStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3ABA0617C5491000494BC3 /* EKStringStuff.m */; };
 		DE8CE66817C3FC6200CCF03B /* EKArrayStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8CE66717C3FC6200CCF03B /* EKArrayStuff.m */; };
 		DEAC6277180F053A00794318 /* EKNumbersStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAC6276180F053A00794318 /* EKNumbersStuff.m */; };
@@ -18,6 +15,9 @@
 		DEADAD7A17B7A6A80031DEB9 /* EKAlgorithms.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEADAD7917B7A6A80031DEB9 /* EKAlgorithms.1 */; };
 		DEADAD8217B7A7490031DEB9 /* EKSearchStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DEADAD8117B7A7490031DEB9 /* EKSearchStuff.m */; };
 		DEADAD8517B7A75E0031DEB9 /* EKSortStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DEADAD8417B7A75E0031DEB9 /* EKSortStuff.m */; };
+		DEC568A7182C258600AA90E1 /* EKDeque.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC568A2182C258600AA90E1 /* EKDeque.m */; };
+		DEC568A8182C258600AA90E1 /* EKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC568A4182C258600AA90E1 /* EKQueue.m */; };
+		DEC568A9182C258600AA90E1 /* EKStack.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC568A6182C258600AA90E1 /* EKStack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,12 +34,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DE37B0A51813DD02001EB432 /* EKStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKStack.h; sourceTree = "<group>"; };
-		DE37B0A61813DD02001EB432 /* EKStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKStack.m; sourceTree = "<group>"; };
-		DE37B0A818142523001EB432 /* EKQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKQueue.h; sourceTree = "<group>"; };
-		DE37B0A918142523001EB432 /* EKQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKQueue.m; sourceTree = "<group>"; };
-		DE37B0AB18143B90001EB432 /* EKDeque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKDeque.h; sourceTree = "<group>"; };
-		DE37B0AC18143B90001EB432 /* EKDeque.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKDeque.m; sourceTree = "<group>"; };
 		DE3ABA0517C5491000494BC3 /* EKStringStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKStringStuff.h; sourceTree = "<group>"; };
 		DE3ABA0617C5491000494BC3 /* EKStringStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKStringStuff.m; sourceTree = "<group>"; };
 		DE8CE66617C3FC6200CCF03B /* EKArrayStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKArrayStuff.h; sourceTree = "<group>"; };
@@ -55,6 +49,12 @@
 		DEADAD8117B7A7490031DEB9 /* EKSearchStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKSearchStuff.m; sourceTree = "<group>"; };
 		DEADAD8317B7A75E0031DEB9 /* EKSortStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKSortStuff.h; sourceTree = "<group>"; };
 		DEADAD8417B7A75E0031DEB9 /* EKSortStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKSortStuff.m; sourceTree = "<group>"; };
+		DEC568A1182C258600AA90E1 /* EKDeque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKDeque.h; sourceTree = "<group>"; };
+		DEC568A2182C258600AA90E1 /* EKDeque.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKDeque.m; sourceTree = "<group>"; };
+		DEC568A3182C258600AA90E1 /* EKQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKQueue.h; sourceTree = "<group>"; };
+		DEC568A4182C258600AA90E1 /* EKQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKQueue.m; sourceTree = "<group>"; };
+		DEC568A5182C258600AA90E1 /* EKStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKStack.h; sourceTree = "<group>"; };
+		DEC568A6182C258600AA90E1 /* EKStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +107,7 @@
 				DE3ABA0617C5491000494BC3 /* EKStringStuff.m */,
 				DEAC6275180F053A00794318 /* EKNumbersStuff.h */,
 				DEAC6276180F053A00794318 /* EKNumbersStuff.m */,
-				DE37B0A51813DD02001EB432 /* EKStack.h */,
-				DE37B0A61813DD02001EB432 /* EKStack.m */,
-				DE37B0A818142523001EB432 /* EKQueue.h */,
-				DE37B0A918142523001EB432 /* EKQueue.m */,
-				DE37B0AB18143B90001EB432 /* EKDeque.h */,
-				DE37B0AC18143B90001EB432 /* EKDeque.m */,
+				DEC568A0182C258600AA90E1 /* Data Structures */,
 				DEADAD7517B7A6A80031DEB9 /* main.m */,
 				DEADAD7917B7A6A80031DEB9 /* EKAlgorithms.1 */,
 				DEADAD7717B7A6A80031DEB9 /* Supporting Files */,
@@ -126,6 +121,19 @@
 				DEADAD7817B7A6A80031DEB9 /* EKAlgorithms-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DEC568A0182C258600AA90E1 /* Data Structures */ = {
+			isa = PBXGroup;
+			children = (
+				DEC568A1182C258600AA90E1 /* EKDeque.h */,
+				DEC568A2182C258600AA90E1 /* EKDeque.m */,
+				DEC568A3182C258600AA90E1 /* EKQueue.h */,
+				DEC568A4182C258600AA90E1 /* EKQueue.m */,
+				DEC568A5182C258600AA90E1 /* EKStack.h */,
+				DEC568A6182C258600AA90E1 /* EKStack.m */,
+			);
+			path = "Data Structures";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,14 +188,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEAC6277180F053A00794318 /* EKNumbersStuff.m in Sources */,
-				DE37B0AD18143B90001EB432 /* EKDeque.m in Sources */,
-				DE37B0AA18142523001EB432 /* EKQueue.m in Sources */,
+				DEC568A9182C258600AA90E1 /* EKStack.m in Sources */,
+				DEC568A8182C258600AA90E1 /* EKQueue.m in Sources */,
+				DEC568A7182C258600AA90E1 /* EKDeque.m in Sources */,
 				DEADAD7617B7A6A80031DEB9 /* main.m in Sources */,
 				DEADAD8217B7A7490031DEB9 /* EKSearchStuff.m in Sources */,
 				DEADAD8517B7A75E0031DEB9 /* EKSortStuff.m in Sources */,
 				DE8CE66817C3FC6200CCF03B /* EKArrayStuff.m in Sources */,
 				DE3ABA0717C5491000494BC3 /* EKStringStuff.m in Sources */,
-				DE37B0A71813DD02001EB432 /* EKStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

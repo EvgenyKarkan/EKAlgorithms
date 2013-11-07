@@ -132,6 +132,7 @@ int main(int argc, const char *argv[])
 		NSLog(@"PEEK last object %@", [deque peekLastObject]);
 		[deque removeLastObject];
 		NSLog(@"All objects from deque %@", [deque allObjectsFromDeque]);
+        
 	}
 	return 0;
 }
