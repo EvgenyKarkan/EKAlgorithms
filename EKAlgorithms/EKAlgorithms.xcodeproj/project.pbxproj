@@ -126,6 +126,8 @@
 		DEC568A0182C258600AA90E1 /* Data Structures */ = {
 			isa = PBXGroup;
 			children = (
+				DEC568AA182C261000AA90E1 /* BinarySearchTree */,
+				DEC568AB182C261000AA90E1 /* LinkedList */,
 				DEC568A1182C258600AA90E1 /* EKDeque.h */,
 				DEC568A2182C258600AA90E1 /* EKDeque.m */,
 				DEC568A3182C258600AA90E1 /* EKQueue.h */,
@@ -134,6 +136,20 @@
 				DEC568A6182C258600AA90E1 /* EKStack.m */,
 			);
 			path = "Data Structures";
+			sourceTree = "<group>";
+		};
+		DEC568AA182C261000AA90E1 /* BinarySearchTree */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BinarySearchTree;
+			sourceTree = "<group>";
+		};
+		DEC568AB182C261000AA90E1 /* LinkedList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LinkedList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
