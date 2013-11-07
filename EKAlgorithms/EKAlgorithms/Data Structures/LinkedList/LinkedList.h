@@ -20,6 +20,7 @@
 
 - (void)addToFront:(NSObject *)value;
 - (void)addToBack:(NSObject *)value;
+
 - (void)insertObjectAtIndex:(NSUInteger)index;
 
 - (NSObject *)first;
