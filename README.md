@@ -10,6 +10,7 @@ Array
 2. Find longest string in array of strings. 
 3. Find shortest string in array of strings.
 4. Array reverse.
+5. Intersection of two arrays.
 
 Search
 ------ 
