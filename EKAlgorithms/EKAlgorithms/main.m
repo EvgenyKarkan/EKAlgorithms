@@ -84,6 +84,9 @@ int main(int argc, const char *argv[])
             //Intersection of two arrays
         NSLog(@"Intersection is %@", [EKArrayStuff intersectionOfArray:@[@"one", @"two", @"three"] withArray:@[@"two", @"three", @"four"]]);
         
+            //Union of two arrays
+        NSLog(@"Union is %@", [EKArrayStuff unionWithoutDuplicatesOfArray:@[@"Honda", @"Toyota", @1] withArray:@[@"Toyota", @"Alfa Romeo"]]);
+        
         
             //Sieve of Eratosf
 		NSLog(@"Primes from sieve %@", [[EKNumbersStuff primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);

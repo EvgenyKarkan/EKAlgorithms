@@ -79,5 +79,18 @@
     return [intersection allObjects];
 }
 
+#pragma mark - Union of two arrays
+
++ (NSArray *)unionWithoutDuplicatesOfArray:(NSArray *)firstArray withArray:(NSArray *)secondArray
+{
+	NSSet *firstSet = [NSSet setWithArray:firstArray];
+	NSSet *secondSet = [NSSet setWithArray:secondArray];
+    
+	NSMutableSet *resultSet = [NSMutableSet setWithSet:firstSet];
+	[resultSet unionSet:secondSet];
+    
+	return [resultSet allObjects];
+}
+
 @end
 
