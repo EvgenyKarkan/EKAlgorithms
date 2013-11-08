@@ -9,6 +9,7 @@ Array
 1. Index of maximum element in array. 
 2. Find longest string in array of strings. 
 3. Find shortest string in array of strings.
+4. Array reverse.
 
 Search
 ------ 
@@ -26,7 +27,7 @@ Sort
 String
 ------
 1. Palindrome or not.
-2. Reverse of string.
+2. String reverse.
 3. Words count.
 4. Permutations of string. 
 5. Occurrences of each character (a - z).
