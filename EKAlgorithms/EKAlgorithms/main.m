@@ -78,6 +78,9 @@ int main(int argc, const char *argv[])
             //Shortest string from array
 		NSLog(@"The shortest string is %@", [EKArrayStuff shortestStringInArray:[@[@"DRY", @"KISS", @"YAGNI", @"SOLID", @"GRASP"] mutableCopy]]);
         
+            //Reverse of array
+        NSLog(@"Reversed array is %@", [EKArrayStuff reversedArrayWithArray:@[@"one", @"two", @"three", @"four", @"five"]]);
+        
             //Sieve of Eratosf
 		NSLog(@"Primes from sieve %@", [[EKNumbersStuff primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);
         

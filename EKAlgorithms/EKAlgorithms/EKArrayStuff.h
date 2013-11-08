@@ -13,5 +13,6 @@
 + (NSUInteger)indexOfMaximumElementInArray:(NSArray *)array;
 + (NSString *)longestStringInArray:(NSMutableArray *)array;
 + (NSString *)shortestStringInArray:(NSMutableArray *)array;
++ (NSArray *)reversedArrayWithArray:(NSArray *)arrayToReverse;
 
 @end

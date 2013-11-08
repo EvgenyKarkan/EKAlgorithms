@@ -92,17 +92,6 @@
 	return self.current.value;
 }
 
-- (NSObject *)objectAtIndex:(NSUInteger)index
-{
-	Node *currentNode = self.head;
-    
-	for (NSUInteger i = 1; i < index; i++) {
-		currentNode = currentNode.next;
-	}
-    
-	return currentNode.value;
-}
-
 - (NSUInteger)count
 {
 	if (!self.head) {
@@ -118,5 +107,17 @@
 	}
 	return i;
 }
+
+- (NSObject *)objectAtIndex:(NSUInteger)index
+{
+	Node *currentNode = self.head;
+    
+	for (NSUInteger i = 1; i < index; i++) {
+		currentNode = currentNode.next;
+	}
+    
+	return currentNode.value;
+}
+
 
 @end
