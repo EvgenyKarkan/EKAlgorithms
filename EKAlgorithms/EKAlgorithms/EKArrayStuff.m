@@ -56,7 +56,7 @@
 	return returnValue;
 }
 
-#pragma mark - Reverse of array
+#pragma mark - Array reverse
 
 + (NSArray *)reversedArrayWithArray:(NSArray *)arrayToReverse
 {
