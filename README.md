@@ -47,3 +47,4 @@ Data structures
 1. Stack (LIFO).
 2. Queue (FIFO).
 3. Deque.
+4. Linked list.
