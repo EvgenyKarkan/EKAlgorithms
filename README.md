@@ -11,6 +11,7 @@ Array
 3. Find shortest string in array of strings.
 4. Array reverse.
 5. Intersection of two arrays.
+6. Union of two arrays (with remove duplicates).
 
 Search
 ------ 
