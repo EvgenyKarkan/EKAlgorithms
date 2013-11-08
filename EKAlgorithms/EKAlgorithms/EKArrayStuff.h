@@ -14,5 +14,6 @@
 + (NSString *)longestStringInArray:(NSMutableArray *)array;
 + (NSString *)shortestStringInArray:(NSMutableArray *)array;
 + (NSArray *)reversedArrayWithArray:(NSArray *)arrayToReverse;
++ (NSArray *)intersectionOfArray:(NSArray *)firstArray withArray:(NSArray *)secondArray;
 
 @end

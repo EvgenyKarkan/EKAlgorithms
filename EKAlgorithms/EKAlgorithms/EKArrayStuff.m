@@ -32,16 +32,16 @@
 {
 	NSString *returnValue = nil;
 	
-	for (NSString *str in array) {
-		if (returnValue == nil || [str length] > [returnValue length]) {
-			returnValue = str;
+	for (NSString *string in array) {
+		if (returnValue == nil || [string length] > [returnValue length]) {
+			returnValue = string;
 		}
 	}
     
 	return returnValue;
 }
 
-#pragma mark - Longest string in array
+#pragma mark - Shortest string in array
 
 + (NSString *)shortestStringInArray:(NSMutableArray *)array
 {
@@ -67,6 +67,16 @@
 	}
     
 	return [reversedArray copy];
+}
+
+#pragma mark - Intersection of two arrays
+
++ (NSArray *)intersectionOfArray:(NSArray *)firstArray withArray:(NSArray *)secondArray
+{
+    NSMutableSet *intersection = [NSMutableSet setWithArray:firstArray];
+    [intersection intersectSet:[NSSet setWithArray:secondArray]];
+ 
+    return [intersection allObjects];
 }
 
 @end

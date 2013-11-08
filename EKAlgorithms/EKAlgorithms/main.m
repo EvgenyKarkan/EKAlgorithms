@@ -81,6 +81,10 @@ int main(int argc, const char *argv[])
             //Reverse of array
         NSLog(@"Reversed array is %@", [EKArrayStuff reversedArrayWithArray:@[@"one", @"two", @"three", @"four", @"five"]]);
         
+            //Intersection of two arrays
+        NSLog(@"Intersection is %@", [EKArrayStuff intersectionOfArray:@[@"one", @"two", @"three"] withArray:@[@"two", @"three", @"four"]]);
+        
+        
             //Sieve of Eratosf
 		NSLog(@"Primes from sieve %@", [[EKNumbersStuff primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);
         
