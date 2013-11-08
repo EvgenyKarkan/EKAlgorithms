@@ -14,6 +14,7 @@
 - (instancetype)initWithHead:(NSObject *)value
 {
 	self = [super init];
+    
 	if (self) {
 		self.head = [[Node alloc] initWithObject:value];
 	}
