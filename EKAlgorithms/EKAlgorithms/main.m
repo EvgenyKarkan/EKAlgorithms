@@ -85,7 +85,7 @@ int main(int argc, const char *argv[])
         NSLog(@"Intersection is %@", [EKArrayStuff intersectionOfArray:@[@"one", @"two", @"three"] withArray:@[@"two", @"three", @"four"]]);
         
             //Union of two arrays
-        NSLog(@"Union is %@", [EKArrayStuff unionWithoutDuplicatesOfArray:@[@"Honda", @"Toyota", @1] withArray:@[@"Toyota", @"Alfa Romeo"]]);
+        NSLog(@"Union is %@", [EKArrayStuff unionWithoutDuplicatesOfArray:@[@"Honda", @"Toyota"] withArray:@[@"Toyota", @"Alfa Romeo"]]);
         
         
             //Sieve of Eratosf
@@ -107,7 +107,10 @@ int main(int argc, const char *argv[])
         NSLog(@"Sum of digits is: %lu", (unsigned long)[EKNumbersStuff sumOfDigitsOfNumber:1234]);
         
             //Binary to decimal convertion
-        NSLog(@"Decimal is: %lu", (unsigned long)[EKNumbersStuff decimalNumberFromBinaryNumber:1101]);
+        NSLog(@"Decimal is: %lu", (unsigned long)[EKNumbersStuff decimalNumberFromBinary:1101]);
+        
+            //Decimal to binary
+        NSLog(@"Binary is %lu", (unsigned long)[EKNumbersStuff binaryNumberFromDecimal:3]);
         
             //Stack
 		EKStack *stack = [[EKStack alloc] initWithSize:3];

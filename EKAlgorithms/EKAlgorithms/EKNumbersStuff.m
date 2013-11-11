@@ -103,7 +103,7 @@
 
 #pragma mark - Binary to decimal
 
-+ (NSUInteger)decimalNumberFromBinaryNumber:(NSUInteger)binary
++ (NSUInteger)decimalNumberFromBinary:(NSUInteger)binary
 {
 	NSUInteger decimalNumber = 0, j = 1, remainder;
     
@@ -115,6 +115,28 @@
 	}
     
 	return decimalNumber;
+}
+
+#pragma mark - Decimal to binary
+
++ (NSUInteger)binaryNumberFromDecimal:(NSUInteger)decimal
+{
+	NSUInteger quotient;
+	int binaryNumber[100], i = 1;
+	quotient = decimal;
+    
+	while (quotient != 0) {
+		binaryNumber[i++] = quotient % 2;
+		quotient = quotient / 2;
+	}
+    
+	NSMutableString *result = [[NSMutableString alloc] init];
+    
+	for (NSUInteger j = i - 1; j > 0; j--) {
+		[result appendString:[NSString stringWithFormat:@"%d", binaryNumber[j]]];
+	}
+    
+	return [result integerValue];
 }
 
 @end
