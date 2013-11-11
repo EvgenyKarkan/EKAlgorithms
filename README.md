@@ -43,7 +43,8 @@ Number
 4. Factorial.
 5. Fibonacci numbers.
 6. Sum of digits.
-7. Binary to decimal convertion.
+7. Binary to decimal conversion.
+8. Decimal to binary conversion.
 
 Data structures
 ---------------
