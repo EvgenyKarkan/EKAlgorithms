@@ -33,7 +33,6 @@
 		NSLog(@"No any vertex in graph");
 	}
     
-        //EKVertex *firstVertex = self.vertices[0];
 	self.firstVertex.label = @"Start vertex";
 	self.firstVertex.wasVisited = YES;
 	[self displayVisitedVertex:self.firstVertex];
@@ -58,6 +57,11 @@
 			[stack popLastObject];
 		}
 	}
+}
+
+- (void)breadthFirstSearch
+{
+    
 }
 
 - (void)displayVisitedVertex:(EKVertex *)visitedVertex

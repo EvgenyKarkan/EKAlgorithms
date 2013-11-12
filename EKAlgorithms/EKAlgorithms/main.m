@@ -156,6 +156,7 @@ int main(int argc, const char *argv[])
             //DFS
             //Init vertices
         EKVertex *aV = [[EKVertex alloc] init]; //this is a start vertex
+        aV.label = @"A vertex";
         
         EKVertex *bV = [[EKVertex alloc] init];
         bV.label = @"B vertex";
