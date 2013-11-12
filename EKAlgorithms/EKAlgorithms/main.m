@@ -15,6 +15,8 @@
 #import "EKStack.h"
 #import "EKQueue.h"
 #import "EKDeque.h"
+#import "EKVertex.h"
+#import "EKGraph.h"
 
 int main(int argc, const char *argv[])
 {
@@ -148,6 +150,44 @@ int main(int argc, const char *argv[])
 		NSLog(@"PEEK last object %@", [deque peekLastObject]);
 		[deque removeLastObject];
 		NSLog(@"All objects from deque %@", [deque allObjectsFromDeque]);
+        
+            //Graph stuff
+        
+            //DFS
+            //Init vertices
+        EKVertex *aV = [[EKVertex alloc] init]; //this is a start vertex
+        
+        EKVertex *bV = [[EKVertex alloc] init];
+        bV.label = @"B vertex";
+        
+        EKVertex *cV = [[EKVertex alloc] init];
+        cV.label = @"C vertex";
+        
+        EKVertex *dV = [[EKVertex alloc] init];
+        dV.label = @"D vertex";
+        
+        EKVertex *eV = [[EKVertex alloc] init];
+        eV.label = @"E vertex";
+        
+        EKVertex *fV = [[EKVertex alloc] init];
+        fV.label = @"F vertex";
+        
+        EKVertex *gV = [[EKVertex alloc] init];
+        gV.label = @"G vertex";
+        
+            //Set adjacent vertices
+		aV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:bV, eV, fV, nil];
+        bV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:aV, cV, nil];
+        cV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:bV, dV, nil];
+        dV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:cV, nil];
+        eV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:aV, nil];
+        fV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:aV, gV, nil];
+        gV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:fV, nil];
+        
+            //Init graph (see EKGraphPicture.png)
+        EKGraph *graph = [[EKGraph alloc] initWithStartVertex:aV];
+        graph.vertices = [@[aV,bV,cV,dV,eV,fV,gV] mutableCopy];
+        [graph depthFirstSearch];
         
 	}
 	return 0;

@@ -44,6 +44,7 @@
 		DE46B4CA1832748F00353AC8 /* EKVertex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKVertex.m; sourceTree = "<group>"; };
 		DE46B4CC183274A200353AC8 /* EKGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKGraph.h; sourceTree = "<group>"; };
 		DE46B4CD183274A200353AC8 /* EKGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKGraph.m; sourceTree = "<group>"; };
+		DE46B4CF1832A29A00353AC8 /* EKGraphPicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EKGraphPicture.png; sourceTree = "<group>"; };
 		DE8CE66617C3FC6200CCF03B /* EKArrayStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKArrayStuff.h; sourceTree = "<group>"; };
 		DE8CE66717C3FC6200CCF03B /* EKArrayStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKArrayStuff.m; sourceTree = "<group>"; };
 		DEAC6275180F053A00794318 /* EKNumbersStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKNumbersStuff.h; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 		DE46B4C8183272AD00353AC8 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
+				DE46B4CF1832A29A00353AC8 /* EKGraphPicture.png */,
 				DE46B4C91832748F00353AC8 /* EKVertex.h */,
 				DE46B4CA1832748F00353AC8 /* EKVertex.m */,
 				DE46B4CC183274A200353AC8 /* EKGraph.h */,

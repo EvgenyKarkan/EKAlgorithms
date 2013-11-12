@@ -10,4 +10,10 @@
 
 @interface EKGraph : NSObject
 
+@property (nonatomic, strong) NSMutableArray *vertices;
+
+- (instancetype)initWithStartVertex:(id)startVertex;
+
+- (void)depthFirstSearch;
+
 @end
