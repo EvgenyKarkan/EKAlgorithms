@@ -52,3 +52,6 @@ Data structures
 2. Queue (FIFO).
 3. Deque.
 4. Linked list.
+5. Graph 
+    - DFS (depth-first search);
+    - BFS (breadth-first search).
