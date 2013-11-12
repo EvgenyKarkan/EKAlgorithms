@@ -45,6 +45,7 @@ Number
 6. Sum of digits.
 7. Binary to decimal conversion.
 8. Decimal to binary conversion.
+9. Fast exponentiation.
 
 Data structures
 ---------------
@@ -52,3 +53,6 @@ Data structures
 2. Queue (FIFO).
 3. Deque.
 4. Linked list.
+5. Graph 
+    - DFS (depth-first search);
+    - BFS (breadth-first search).
