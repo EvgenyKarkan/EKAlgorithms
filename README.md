@@ -45,6 +45,7 @@ Number
 6. Sum of digits.
 7. Binary to decimal conversion.
 8. Decimal to binary conversion.
+9. Fast exponentiation.
 
 Data structures
 ---------------
