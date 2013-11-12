@@ -139,4 +139,21 @@
 	return [result integerValue];
 }
 
+#pragma mark - Fast exponentiation
+
++ (NSInteger)fastExpForNumber:(NSInteger)number withPower:(NSInteger)power
+{
+	NSInteger result = 1;
+    
+	while (power) {
+		if (power % 2 == 1) {
+			result *= number;
+		}
+		power /= 2;
+		number *= number;
+	}
+    
+	return result;
+}
+
 @end

@@ -112,6 +112,9 @@ int main(int argc, const char *argv[])
             //Decimal to binary
         NSLog(@"Binary is %lu", (unsigned long)[EKNumbersStuff binaryNumberFromDecimal:3]);
         
+            //Fast Exp
+        NSLog(@"Fast exp %ld", (long)[EKNumbersStuff fastExpForNumber:2 withPower:10]);
+        
             //Stack
 		EKStack *stack = [[EKStack alloc] initWithSize:3];
 		[stack push:@"Hello"];

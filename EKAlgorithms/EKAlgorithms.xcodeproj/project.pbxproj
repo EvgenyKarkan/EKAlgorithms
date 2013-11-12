@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DE3ABA0717C5491000494BC3 /* EKStringStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3ABA0617C5491000494BC3 /* EKStringStuff.m */; };
+		DE46B4CB1832748F00353AC8 /* EKVertex.m in Sources */ = {isa = PBXBuildFile; fileRef = DE46B4CA1832748F00353AC8 /* EKVertex.m */; };
+		DE46B4CE183274A200353AC8 /* EKGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = DE46B4CD183274A200353AC8 /* EKGraph.m */; };
 		DE8CE66817C3FC6200CCF03B /* EKArrayStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8CE66717C3FC6200CCF03B /* EKArrayStuff.m */; };
 		DEAC6277180F053A00794318 /* EKNumbersStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DEAC6276180F053A00794318 /* EKNumbersStuff.m */; };
 		DEADAD7317B7A6A80031DEB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEADAD7217B7A6A80031DEB9 /* Foundation.framework */; };
@@ -38,6 +40,10 @@
 /* Begin PBXFileReference section */
 		DE3ABA0517C5491000494BC3 /* EKStringStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKStringStuff.h; sourceTree = "<group>"; };
 		DE3ABA0617C5491000494BC3 /* EKStringStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKStringStuff.m; sourceTree = "<group>"; };
+		DE46B4C91832748F00353AC8 /* EKVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKVertex.h; sourceTree = "<group>"; };
+		DE46B4CA1832748F00353AC8 /* EKVertex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKVertex.m; sourceTree = "<group>"; };
+		DE46B4CC183274A200353AC8 /* EKGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKGraph.h; sourceTree = "<group>"; };
+		DE46B4CD183274A200353AC8 /* EKGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKGraph.m; sourceTree = "<group>"; };
 		DE8CE66617C3FC6200CCF03B /* EKArrayStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKArrayStuff.h; sourceTree = "<group>"; };
 		DE8CE66717C3FC6200CCF03B /* EKArrayStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKArrayStuff.m; sourceTree = "<group>"; };
 		DEAC6275180F053A00794318 /* EKNumbersStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKNumbersStuff.h; sourceTree = "<group>"; };
@@ -75,6 +81,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE46B4C8183272AD00353AC8 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				DE46B4C91832748F00353AC8 /* EKVertex.h */,
+				DE46B4CA1832748F00353AC8 /* EKVertex.m */,
+				DE46B4CC183274A200353AC8 /* EKGraph.h */,
+				DE46B4CD183274A200353AC8 /* EKGraph.m */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
 		DEADAD6617B7A6A80031DEB9 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +149,7 @@
 		DEC568A0182C258600AA90E1 /* Data Structures */ = {
 			isa = PBXGroup;
 			children = (
+				DE46B4C8183272AD00353AC8 /* Graph */,
 				DEC568AA182C261000AA90E1 /* BinarySearchTree */,
 				DEC568AB182C261000AA90E1 /* LinkedList */,
 				DEC568A1182C258600AA90E1 /* EKDeque.h */,
@@ -215,11 +233,13 @@
 			files = (
 				DEAC6277180F053A00794318 /* EKNumbersStuff.m in Sources */,
 				DEC568A9182C258600AA90E1 /* EKStack.m in Sources */,
+				DE46B4CE183274A200353AC8 /* EKGraph.m in Sources */,
 				DEC568A8182C258600AA90E1 /* EKQueue.m in Sources */,
 				DEC568A7182C258600AA90E1 /* EKDeque.m in Sources */,
 				DEADAD7617B7A6A80031DEB9 /* main.m in Sources */,
 				DEC568AE182C265D00AA90E1 /* Node.m in Sources */,
 				DEADAD8217B7A7490031DEB9 /* EKSearchStuff.m in Sources */,
+				DE46B4CB1832748F00353AC8 /* EKVertex.m in Sources */,
 				DEADAD8517B7A75E0031DEB9 /* EKSortStuff.m in Sources */,
 				DE8CE66817C3FC6200CCF03B /* EKArrayStuff.m in Sources */,
 				DEC568B1182C273A00AA90E1 /* LinkedList.m in Sources */,
