@@ -16,7 +16,7 @@
 
 @end
 
-@implementation EKGraph
+@implementation EKGraph;
 
 - (instancetype)initWithStartVertex:(id)startVertex
 {
@@ -61,7 +61,10 @@
 
 - (void)breadthFirstSearch
 {
-    
+    if ([self.vertices count] == 0) {
+		NSLog(@"No any vertex in graph");
+	}
+        //TBD - see issue #9
 }
 
 - (void)displayVisitedVertex:(EKVertex *)visitedVertex

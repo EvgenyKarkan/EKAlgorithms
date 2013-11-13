@@ -36,7 +36,7 @@
 		[self.queueArray addObject:object];
 	}
 	else {
-		NSAssert(object != nil, @"You cannot push nil object to deque");
+		NSAssert(object != nil, @"You can't push nil object to deque");
 	}
 }
 

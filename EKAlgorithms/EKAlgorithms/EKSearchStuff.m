@@ -13,7 +13,7 @@
 
 #pragma mark - Linear search
 
-+ (NSInteger)indexOfObjectViaLinearSearchForObject:(id)object inArray:(NSArray *)arrayToSearch
++ (NSInteger)indexOfObjectViaLinearSearch:(id)object inArray:(NSArray *)arrayToSearch
 {
 	NSInteger i, indexOfFoundedObject = 0;
 	
@@ -32,7 +32,7 @@
 
 #pragma mark - Binary search
 
-+ (NSInteger)inedxOfObjectViaBinarySearchForObject:(id)object inSortedArray:(NSArray *)sortedArray
++ (NSInteger)inedxOfObjectViaBinarySearch:(id)object inSortedArray:(NSArray *)sortedArray
 {
 	NSUInteger firstIndex = 0;
 	NSUInteger uptoIndex = [sortedArray count];

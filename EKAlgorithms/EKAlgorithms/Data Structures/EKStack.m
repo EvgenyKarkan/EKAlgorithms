@@ -67,7 +67,7 @@
 		[self.stackArray addObject:object];
 	}
 	else {
-		NSAssert(object != nil, @"You cannot push nil object to stack");
+		NSAssert(object != nil, @"You can't push nil object to stack");
 	}
 }
 

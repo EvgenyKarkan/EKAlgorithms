@@ -22,10 +22,10 @@ int main(int argc, const char *argv[])
 {
 	@autoreleasepool {
             //Linear search
-		NSLog(@"Linear search result: %li", (long)[EKSearchStuff indexOfObjectViaLinearSearchForObject:@42 inArray:@[@6, @9, @12, @13, @14, @29, @42]]);
+		NSLog(@"Linear search result: %li", (long)[EKSearchStuff indexOfObjectViaLinearSearch:@42 inArray:@[@6, @9, @12, @13, @14, @29, @42]]);
         
             //Binary search
-		NSLog(@"Binary search result: %li", (long)[EKSearchStuff inedxOfObjectViaBinarySearchForObject:@42 inSortedArray:@[@6, @9, @12, @13, @14, @29, @42]]);
+		NSLog(@"Binary search result: %li", (long)[EKSearchStuff inedxOfObjectViaBinarySearch:@42 inSortedArray:@[@6, @9, @12, @13, @14, @29, @42]]);
         
             //Init array with 5 random elements
 		NSMutableArray *array = [NSMutableArray array];
