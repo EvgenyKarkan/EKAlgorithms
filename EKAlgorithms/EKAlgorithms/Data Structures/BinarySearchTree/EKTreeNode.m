@@ -10,4 +10,16 @@
 
 @implementation EKTreeNode
 
+- (void)printDescription
+{
+	NSLog(@"%@", self.object);
+    
+	if (self.leftChild) {
+		[self.leftChild printDescription];
+	}
+    
+	if (self.rightChild) {
+		[self.rightChild printDescription];
+	}
+}
 @end

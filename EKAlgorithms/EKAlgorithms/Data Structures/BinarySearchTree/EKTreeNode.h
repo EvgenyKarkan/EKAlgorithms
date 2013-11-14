@@ -10,4 +10,11 @@
 
 @interface EKTreeNode : NSObject
 
+@property (nonatomic, strong) NSObject *object;
+@property (nonatomic, strong) EKTreeNode *leftChild;
+@property (nonatomic, strong) EKTreeNode *rightChild;
+@property (nonatomic, assign) SEL compareSelector;
+
+- (void)printDescription;
+
 @end
