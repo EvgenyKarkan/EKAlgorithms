@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Node : NSObject
+@interface EKNode : NSObject
 
 @property (nonatomic, strong) NSObject *value;
-@property (nonatomic, strong) Node *previous;
-@property (nonatomic, strong) Node *next;
+@property (nonatomic, strong) EKNode *previous;
+@property (nonatomic, strong) EKNode *next;
 
 - (instancetype)initWithObject:(NSObject *)object;
 

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
-#import "Node.h"
+#import "EKNode.h"
 
-@implementation Node
+@implementation EKNode
 
 - (instancetype)initWithObject:(NSObject *)object
 {

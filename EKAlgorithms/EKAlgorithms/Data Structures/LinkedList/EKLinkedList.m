@@ -6,24 +6,24 @@
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
-#import "LinkedList.h"
-#import "Node.h"
+#import "EKLinkedList.h"
+#import "EKNode.h"
 
-@implementation LinkedList
+@implementation EKLinkedList
 
 - (instancetype)initWithHead:(NSObject *)value
 {
 	self = [super init];
     
 	if (self) {
-		self.head = [[Node alloc] initWithObject:value];
+		self.head = [[EKNode alloc] initWithObject:value];
 	}
 	return self;
 }
 
 - (void)addToFront:(NSObject *)value
 {
-	Node *node = [[Node alloc] initWithObject:value];
+	EKNode *node = [[EKNode alloc] initWithObject:value];
     
 	node.next = self.head;
 	self.head.previous = node;
@@ -32,7 +32,7 @@
 
 - (void)addToBack:(NSObject *)value
 {
-	Node *node = [[Node alloc] initWithObject:value];
+	EKNode *node = [[EKNode alloc] initWithObject:value];
     
 	node.previous = self.tail;
 	self.tail.next = node;
@@ -41,9 +41,9 @@
 
 - (void)insertObject:(NSObject *)object AtIndex:(NSUInteger)index
 {
-	Node *currentNode = self.head;
-	Node *previousNode = nil;
-	Node *nextNode = nil;
+	EKNode *currentNode = self.head;
+	EKNode *previousNode = nil;
+	EKNode *nextNode = nil;
     
 	for (NSUInteger i = 1; i <= index; i++) {
 		currentNode = currentNode.next;
@@ -55,7 +55,7 @@
 		}
 	}
     
-	Node *newNode = [[Node alloc] initWithObject:object];
+	EKNode *newNode = [[EKNode alloc] initWithObject:object];
     
 	if (!previousNode) {
 		self.head = newNode;
@@ -99,7 +99,7 @@
 		return 0;
 	}
     
-	Node *currentNode = self.head;
+	EKNode *currentNode = self.head;
 	NSUInteger i = 1;
     
 	while (currentNode.next) {
@@ -111,7 +111,7 @@
 
 - (NSObject *)objectAtIndex:(NSUInteger)index
 {
-	Node *currentNode = self.head;
+	EKNode *currentNode = self.head;
     
 	for (NSUInteger i = 1; i < index; i++) {
 		currentNode = currentNode.next;

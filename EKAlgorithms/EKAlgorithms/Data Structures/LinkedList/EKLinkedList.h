@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class Node;
+@class EKNode;
 
-@interface LinkedList : NSObject
+@interface EKLinkedList : NSObject
 
-@property (nonatomic, strong) Node *head;
-@property (nonatomic, strong) Node *tail;
-@property (nonatomic, strong) Node *current;
+@property (nonatomic, strong) EKNode *head;
+@property (nonatomic, strong) EKNode *tail;
+@property (nonatomic, strong) EKNode *current;
 
 - (instancetype)initWithHead:(NSObject *)value;
 
