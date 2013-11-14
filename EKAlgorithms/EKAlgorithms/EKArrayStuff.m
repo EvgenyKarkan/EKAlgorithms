@@ -92,5 +92,20 @@
 	return [resultSet allObjects];
 }
 
+#pragma mark - Find duplicates
+
++ (BOOL)findDuplicatesInArray:(NSArray *)givenArray
+{
+	for (NSUInteger i = 0; i < [givenArray count]; i++) {
+		for (NSUInteger j = i + 1; j < [givenArray count]; j++) {
+			if (i != j && [givenArray[i] isEqualTo:givenArray[j]]) {
+				return YES;
+			}
+		}
+	}
+    
+	return NO;
+}
+
 @end
 

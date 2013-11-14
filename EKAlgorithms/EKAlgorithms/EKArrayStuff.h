@@ -16,5 +16,6 @@
 + (NSArray *)reversedArrayWithArray:(NSArray *)arrayToReverse;
 + (NSArray *)intersectionOfArray:(NSArray *)firstArray withArray:(NSArray *)secondArray;
 + (NSArray *)unionWithoutDuplicatesOfArray:(NSArray *)firstArray withArray:(NSArray *)secondArray;
++ (BOOL)findDuplicatesInArray:(NSArray *)givenArray;
 
 @end

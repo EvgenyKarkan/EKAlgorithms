@@ -89,6 +89,8 @@ int main(int argc, const char *argv[])
             //Union of two arrays
         NSLog(@"Union is %@", [EKArrayStuff unionWithoutDuplicatesOfArray:@[@"Honda", @"Toyota"] withArray:@[@"Toyota", @"Alfa Romeo"]]);
         
+            //Find duplicates
+        NSLog(@"Result of finding duplicates is %@", [EKArrayStuff findDuplicatesInArray:@[@"foo", @"bar", @"buzz", @"foo"]] ? @"YES" : @"NO");
         
             //Sieve of Eratosf
 		NSLog(@"Primes from sieve %@", [[EKNumbersStuff primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);
