@@ -74,6 +74,9 @@ int main(int argc, const char *argv[])
             //Needles in haystack
         NSLog(@"Needle %lu", (unsigned long)[EKStringStuff numberOfNeedles:@"foo" inHaystack:@"Foo is a bar with foo bar foo"]);
         
+            //Random string
+        NSLog(@"Random string %@", [EKStringStuff randomStringWithLength:100]);
+        
             //Longest string from array
 		NSLog(@"The longest string is %@", [EKArrayStuff longestStringInArray:[@[@"Kiev", @"Moscow", @"Tokyo", @"Saint-Petersburg", @"SanFrancisco"] mutableCopy]]);
         
@@ -91,6 +94,9 @@ int main(int argc, const char *argv[])
         
             //Find duplicates
         NSLog(@"Result of finding duplicates is %@", [EKArrayStuff findDuplicatesInArray:@[@"foo", @"bar", @"buzz", @"foo"]] ? @"YES" : @"NO");
+        
+            //Random object
+        NSLog(@"Random array %@", [EKArrayStuff randomObjectsWithArraySize:5 maxRandomValue:6 uniqueObjects:YES]);
         
             //Sieve of Eratosf
 		NSLog(@"Primes from sieve %@", [[EKNumbersStuff primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);

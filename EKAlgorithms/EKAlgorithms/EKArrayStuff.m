@@ -107,5 +107,27 @@
 	return NO;
 }
 
+#pragma mark - Array with random NSNumber objects
+
++ (NSArray *)randomObjectsWithArraySize:(NSUInteger)arraySize maxRandomValue:(NSUInteger)maxValue uniqueObjects:(BOOL)unique
+{
+    NSAssert(maxValue >= arraySize, @"Max random value should not be less than array size");
+    
+	NSMutableArray *objects = [@[] mutableCopy];
+	NSUInteger randomObject;
+    
+	while ([objects count] < arraySize) {
+        randomObject = arc4random() % maxValue;
+		if (unique && ![objects containsObject:[NSNumber numberWithUnsignedInteger:randomObject]]) {
+			[objects addObject:[NSNumber numberWithUnsignedInteger:randomObject]];
+		}
+		if (!unique) {
+			[objects addObject:[NSNumber numberWithUnsignedInteger:randomObject]];
+		}
+	}
+    
+	return [objects copy];
+}
+
 @end
 

@@ -17,5 +17,6 @@
 + (NSArray *)intersectionOfArray:(NSArray *)firstArray withArray:(NSArray *)secondArray;
 + (NSArray *)unionWithoutDuplicatesOfArray:(NSArray *)firstArray withArray:(NSArray *)secondArray;
 + (BOOL)findDuplicatesInArray:(NSArray *)givenArray;
++ (NSArray *)randomObjectsWithArraySize:(NSUInteger)arraySize maxRandomValue:(NSUInteger)maxValue uniqueObjects:(BOOL)unique;
 
 @end

@@ -130,5 +130,19 @@
 	return count;
 }
 
+#pragma mark - Random string
+
++ (NSString *)randomStringWithLength:(NSUInteger)lenght
+{
+	static char const possibleChars[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 !@#$%^&*()_-/?;:+=[]|~<>";
+	unichar characters[lenght];
+    
+	for (NSUInteger index = 0; index < lenght; ++index) {
+		characters[index] = possibleChars[arc4random_uniform(sizeof(possibleChars) - 1)];
+	}
+    
+	return [NSString stringWithCharacters:characters length:lenght];
+}
+
 @end
 

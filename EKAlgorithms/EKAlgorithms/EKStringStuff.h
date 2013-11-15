@@ -16,5 +16,6 @@
 + (void)allPermutationsOfCString:(char *)string withFirstCharacterPosition:(int)i lastCharacterPosition:(int)n;
 + (void)countEachCharacterOccurenceInString:(NSString *)givenString;
 + (NSUInteger)numberOfNeedles:(NSString *)needle inHaystack:(NSString *)haystack;
++ (NSString *)randomStringWithLength:(NSUInteger)lenght;
 
 @end
