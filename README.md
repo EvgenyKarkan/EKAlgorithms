@@ -13,6 +13,7 @@ Array
 5. Intersection of two arrays.
 6. Union of two arrays (with remove duplicates).
 7. Find duplicates.
+8. Array with N unique/not unique random objects.
 
 Search
 ------ 
