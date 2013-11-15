@@ -36,6 +36,7 @@ String
 4. Permutations of string. 
 5. Occurrences of each character (a - z).
 6. Count needles in a haystack.
+7. Random string.
 
 Number
 -------
