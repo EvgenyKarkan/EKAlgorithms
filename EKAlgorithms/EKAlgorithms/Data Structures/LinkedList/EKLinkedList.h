@@ -34,4 +34,6 @@
 - (BOOL)removeCurrent;
 - (BOOL)removeObjectAtIndex:(NSUInteger)index;
 
+- (void)printList;
+
 @end

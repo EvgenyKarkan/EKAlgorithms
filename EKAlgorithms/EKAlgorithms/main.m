@@ -17,6 +17,8 @@
 #import "EKDeque.h"
 #import "EKVertex.h"
 #import "EKGraph.h"
+#import "EKLinkedList.h"
+#import "EKNode.h"
 
 int main(int argc, const char *argv[])
 {
@@ -197,6 +199,29 @@ int main(int argc, const char *argv[])
         EKGraph *graph = [[EKGraph alloc] initWithStartVertex:aV];
         graph.vertices = [@[aV,bV,cV,dV,eV,fV,gV] mutableCopy];
         [graph depthFirstSearch];
+        
+        
+            //Linked list stuff
+        
+        EKLinkedList *list = [[EKLinkedList alloc] initWithHead:[NSNumber numberWithInteger:5]];
+        [list addToFront:@7];
+        [list addToFront:@9];
+        [list addToFront:@11];
+        [list addToFront:@13];
+        [list addToFront:@15];
+        
+        NSLog(@"Head is %@", list.head.value);
+         NSLog(@"Nodes in list - %lu", (unsigned long)[list count]);;
+        
+        [list printList];
+        
+        NSLog(@"Foo %@", [list objectAtIndex:3]);
+        [list removeObjectAtIndex:3];
+        
+        NSLog(@"Nodes in list - %lu", (unsigned long)[list count]);;
+        [list printList];
+        
+        
         
 	}
 	return 0;

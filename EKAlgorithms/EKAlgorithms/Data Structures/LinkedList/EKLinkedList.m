@@ -39,7 +39,7 @@
 	self.tail = node;
 }
 
-- (void)insertObject:(NSObject *)object AtIndex:(NSUInteger)index
+- (void)insertObject:(NSObject *)object atIndex:(NSUInteger)index
 {
 	EKNode *currentNode = self.head;
 	EKNode *previousNode = nil;
@@ -114,11 +114,58 @@
 	EKNode *currentNode = self.head;
     
 	for (NSUInteger i = 1; i < index; i++) {
-		currentNode = currentNode.next;
+        currentNode = currentNode.next;
 	}
     
 	return currentNode.value;
 }
 
+- (BOOL)removeCurrent
+{
+        //FIXME: fixme         //need check
+    NSLog(@"<#   #> %@", [self currentValue]);
+    
+    BOOL removed = NO;
+    if (self.current != nil) {
+        self.current.previous.next = self.current.next;
+        removed = YES;
+    }
+    else {
+        removed = NO;
+    }
+    
+    return removed;
+}
+
+- (BOOL)removeObjectAtIndex:(NSUInteger)index
+{
+	if (index < 1 || index > [self count]) {
+        NSLog(@"You are trying to delete head or index out of list count");
+		return NO;
+	}
+    
+	EKNode *current = self.head;
+    
+	for (NSUInteger i = 1; i < index; i++) {
+		if (current.next == nil) {
+			return NO;
+		}
+		current = current.next;
+	}
+    
+	current.next = current.next.next;
+    
+	return YES;
+}
+
+- (void)printList
+{
+	EKNode *node = self.head;
+    
+	while (node != nil) {
+		NSLog(@"Node %@", node.value);
+		node = node.next;
+	}
+}
 
 @end
