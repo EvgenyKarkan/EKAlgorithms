@@ -122,7 +122,7 @@
 
 - (BOOL)removeCurrent
 {
-        //FIXME: fixme         //need check
+        //FIXME: improve code below
     NSLog(@"<#   #> %@", [self currentValue]);
     
     BOOL removed = NO;

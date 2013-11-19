@@ -27,6 +27,8 @@
     return self;
 }
 
+#pragma mark - DFS
+
 - (void)depthFirstSearch
 {
 	if ([self.vertices count] == 0) {
@@ -59,17 +61,19 @@
 	}
 }
 
+- (void)displayVisitedVertex:(EKVertex *)visitedVertex
+{
+    NSLog(@"%@ - was visited", visitedVertex.label);
+}
+
+#pragma mark - BFS
+
 - (void)breadthFirstSearch
 {
     if ([self.vertices count] == 0) {
 		NSLog(@"No any vertex in graph");
 	}
         //TBD - see issue #9
-}
-
-- (void)displayVisitedVertex:(EKVertex *)visitedVertex
-{
-    NSLog(@"%@ - was visited", visitedVertex.label);
 }
 
 @end

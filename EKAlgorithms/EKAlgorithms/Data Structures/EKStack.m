@@ -40,7 +40,7 @@
 			self.maxStackSize = size;
 		}
 		else {
-			NSAssert(size != 0, @"Stack size must be not 0");
+			NSAssert(size != 0, @"Stack size must be > 0");
 		}
 	}
 	return self;

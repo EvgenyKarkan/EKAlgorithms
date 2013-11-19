@@ -11,6 +11,6 @@
 @interface EKSearchStuff : NSObject
 
 + (NSInteger)indexOfObjectViaLinearSearch:(id)object inArray:(NSArray *)arrayToSearch;
-+ (NSInteger)inedxOfObjectViaBinarySearch:(id)object inSortedArray:(NSArray *)sortedArray;
++ (NSInteger)indexOfObjectViaBinarySearch:(id)object inSortedArray:(NSArray *)sortedArray;
 
 @end

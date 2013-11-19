@@ -32,7 +32,7 @@
 
 #pragma mark - Binary search
 
-+ (NSInteger)inedxOfObjectViaBinarySearch:(id)object inSortedArray:(NSArray *)sortedArray
++ (NSInteger)indexOfObjectViaBinarySearch:(id)object inSortedArray:(NSArray *)sortedArray
 {
 	NSUInteger firstIndex = 0;
 	NSUInteger uptoIndex = [sortedArray count];

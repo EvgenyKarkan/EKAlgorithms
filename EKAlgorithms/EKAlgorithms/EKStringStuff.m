@@ -109,7 +109,7 @@
 			NSLog(@"%c occurs %d times in the entered string\n", c + 'a', count[c]);
 		}
 	}
-        //TBD - modify to handle uppercase and special characters
+        //TODO: modify to handle uppercase and special characters
 }
 
 #pragma mark - Count needles in a haystack

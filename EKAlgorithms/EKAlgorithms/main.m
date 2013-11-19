@@ -27,7 +27,7 @@ int main(int argc, const char *argv[])
 		NSLog(@"Linear search result: %li", (long)[EKSearchStuff indexOfObjectViaLinearSearch:@42 inArray:@[@6, @9, @12, @13, @14, @29, @42]]);
         
             //Binary search
-		NSLog(@"Binary search result: %li", (long)[EKSearchStuff inedxOfObjectViaBinarySearch:@42 inSortedArray:@[@6, @9, @12, @13, @14, @29, @42]]);
+		NSLog(@"Binary search result: %li", (long)[EKSearchStuff indexOfObjectViaBinarySearch:@42 inSortedArray:@[@6, @9, @12, @13, @14, @29, @42]]);
         
             //Init array with 5 random elements
 		NSMutableArray *array = [NSMutableArray array];
@@ -203,25 +203,21 @@ int main(int argc, const char *argv[])
         
             //Linked list stuff
         
-        EKLinkedList *list = [[EKLinkedList alloc] initWithHead:[NSNumber numberWithInteger:5]];
-        [list addToFront:@7];
-        [list addToFront:@9];
-        [list addToFront:@11];
-        [list addToFront:@13];
-        [list addToFront:@15];
+		EKLinkedList *list = [[EKLinkedList alloc] initWithHead:@5];
+		[list addToFront:@7];
+		[list addToFront:@9];
+		[list addToFront:@11];
+		[list addToFront:@13];
+		[list addToFront:@15];
         
-        NSLog(@"Head is %@", list.head.value);
-         NSLog(@"Nodes in list - %lu", (unsigned long)[list count]);;
+		NSLog(@"Head is %@", list.head.value);
+		NSLog(@"Nodes in list - %lu", (unsigned long)[list count]);
         
-        [list printList];
+		[list printList];
+		[list removeObjectAtIndex:3];
         
-        NSLog(@"Foo %@", [list objectAtIndex:3]);
-        [list removeObjectAtIndex:3];
-        
-        NSLog(@"Nodes in list - %lu", (unsigned long)[list count]);;
-        [list printList];
-        
-        
+		NSLog(@"Nodes in list after remove - %lu", (unsigned long)[list count]);
+		[list printList];
         
 	}
 	return 0;
