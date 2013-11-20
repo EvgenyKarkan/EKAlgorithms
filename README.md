@@ -27,6 +27,7 @@ Sort
 3. Merge sort.  
 4. Quick sort.  
 5. Insertion sort.
+6. Selection sort.
 
 String
 ------
