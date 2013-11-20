@@ -55,7 +55,10 @@ int main(int argc, const char *argv[])
 		                                                                withRightIndex:[[NSMutableArray arrayWithArray:@[@21, @45, @87, @10, @273, @616, @0.2, @ - 0.52]] count] - 1]);
         
             //Insertion sort
-		NSLog(@"Insertion sorted array %@", [EKSortStuff insertionSortedArrayWithUnsortedArray:[@[@ - 23.0154, @46, @0.021, @42, @5, @NO, @YES] mutableCopy]]);
+		NSLog(@"Insertion sorted array %@", [EKSortStuff insertionSortedArrayWithUnsortedArray:[@[@ -23.0154, @46, @0.021, @42, @5, @NO, @YES] mutableCopy]]);
+        
+            //Selection sort
+		NSLog(@"Selection sorted array  %@", [EKSortStuff selectionSortedArrayWithUnsortedArray:[@[@160, @0.097, @NO, @89, @ -61.001256, @7.5, @YES] mutableCopy]]);
         
             //Palindrome string
 		NSLog(@"Palindrome? Answer:%@", [EKStringStuff isGivenStringPalindrome:@"Was it a car or a cat I saw"] ? @"YES" : @"NO");

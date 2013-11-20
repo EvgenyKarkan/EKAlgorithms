@@ -171,4 +171,23 @@
 	return unsortedArray;
 }
 
+#pragma mark - Selection sort
+
++ (NSMutableArray *)selectionSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray
+{
+	for (NSUInteger i = 0; i < [unsortedArray count] - 1; i++) {
+		NSUInteger min = i;
+		for (NSUInteger j = i + 1; j < [unsortedArray count]; j++) {
+			if ([unsortedArray[j] floatValue]  < [unsortedArray[min] floatValue]) {
+				min = j;
+			}
+		}
+		id tempObject = unsortedArray[i];
+		unsortedArray[i] = unsortedArray[min];
+		unsortedArray[min] = tempObject;
+	}
+    
+	return [unsortedArray copy];
+}
+
 @end

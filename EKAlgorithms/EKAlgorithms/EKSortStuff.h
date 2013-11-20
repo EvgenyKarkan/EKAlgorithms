@@ -17,6 +17,6 @@
                                         withLeftIndex:(NSInteger)left
                                        withRightIndex:(NSInteger)right;
 + (NSMutableArray *)insertionSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray;
-
++ (NSMutableArray *)selectionSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray;
 
 @end
