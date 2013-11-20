@@ -50,6 +50,8 @@ Number
 7. Binary to decimal conversion.
 8. Decimal to binary conversion.
 9. Fast exponentiation.
+10. Number reverse.
+11. Even/odd check.
 
 Data structures
 ---------------
