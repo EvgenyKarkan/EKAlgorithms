@@ -19,5 +19,7 @@
 + (NSUInteger)decimalNumberFromBinary:(NSUInteger)binary;
 + (NSUInteger)binaryNumberFromDecimal:(NSUInteger)decimal;
 + (NSInteger)fastExpForNumber:(NSInteger)number withPower:(NSInteger)power;
++ (NSUInteger)reverseNumberWithNumber:(NSUInteger)numberToReverse;
++ (BOOL)isEvenNumber:(NSUInteger)number;
 
 @end

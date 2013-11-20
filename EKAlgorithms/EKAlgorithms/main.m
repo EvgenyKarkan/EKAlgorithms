@@ -130,6 +130,12 @@ int main(int argc, const char *argv[])
             //Fast Exp
         NSLog(@"Fast exp %ld", (long)[EKNumbersStuff fastExpForNumber:2 withPower:10]);
         
+            //Number reverse
+        NSLog(@"Reversed number is %li", (long)[EKNumbersStuff reverseNumberWithNumber:123456789]);
+        
+            //Even/Odd
+        NSLog(@"Given number even? %@", [EKNumbersStuff isEvenNumber:1234567] ? @"YES" : @"NO");
+        
             //Stack
 		EKStack *stack = [[EKStack alloc] initWithSize:3];
 		[stack push:@"Hello"];

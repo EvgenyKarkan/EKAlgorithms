@@ -156,4 +156,31 @@
 	return result;
 }
 
+#pragma mark - Number reverse
+
++ (NSUInteger)reverseNumberWithNumber:(NSUInteger)numberToReverse
+{
+	NSUInteger rightDigit = 0;
+	NSMutableString *fooString = [@"" mutableCopy];
+    
+	do {
+		rightDigit = numberToReverse % 10;
+		[fooString appendString:[NSString stringWithFormat:@"%li", (long)rightDigit]];
+		numberToReverse = numberToReverse / 10;
+	}
+	while (numberToReverse != 0);
+    
+	return (NSUInteger)[fooString integerValue];
+}
+
+#pragma mark - Even/Odd
+
++ (BOOL)isEvenNumber:(NSUInteger)number
+{
+	NSUInteger remainder = 0;
+	remainder = number % 2;
+    
+	return (remainder == 0) ? YES : NO;
+}
+
 @end
