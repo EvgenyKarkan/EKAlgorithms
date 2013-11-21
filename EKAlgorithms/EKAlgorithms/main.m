@@ -134,7 +134,10 @@ int main(int argc, const char *argv[])
         NSLog(@"Reversed number is %li", (long)[EKNumbersStuff reverseNumberWithNumber:123456789]);
         
             //Even/Odd
-        NSLog(@"Given number even? %@", [EKNumbersStuff isEvenNumber:1234567] ? @"YES" : @"NO");
+        NSLog(@"Given number even? - %@", [EKNumbersStuff isEvenNumber:1234567] ? @"YES" : @"NO");
+        
+            //Leap year check
+        NSLog(@"Is given year leap? - %@", [EKNumbersStuff isLeapGivenYear:2000] ? @"YES" : @"NO");
         
             //Stack
 		EKStack *stack = [[EKStack alloc] initWithSize:3];

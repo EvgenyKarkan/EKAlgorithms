@@ -21,5 +21,6 @@
 + (NSInteger)fastExpForNumber:(NSInteger)number withPower:(NSInteger)power;
 + (NSUInteger)reverseNumberWithNumber:(NSUInteger)numberToReverse;
 + (BOOL)isEvenNumber:(NSUInteger)number;
++ (BOOL)isLeapGivenYear:(NSUInteger)number;
 
 @end
