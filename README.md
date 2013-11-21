@@ -52,6 +52,7 @@ Number
 9. Fast exponentiation.
 10. Number reverse.
 11. Even/odd check.
+12. Leap year check.
 
 Data structures
 ---------------
