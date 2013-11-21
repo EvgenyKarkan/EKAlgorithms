@@ -38,6 +38,7 @@ String
 5. Occurrences of each character (a - z).
 6. Count needles in a haystack.
 7. Random string.
+8. Concatenation of two strings.
 
 Number
 -------
