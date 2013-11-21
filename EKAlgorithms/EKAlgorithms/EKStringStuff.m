@@ -144,5 +144,28 @@
 	return [NSString stringWithCharacters:characters length:lenght];
 }
 
+#pragma mark - Concatenation
+
++ (NSString *)concatenatedStringWithString:(NSString *)givenString secondString:(NSString *)secondString
+{
+	const char *cStringOne = [givenString UTF8String];
+	const char *cStringTwo = [secondString UTF8String];
+	char cResult[256];
+    
+	NSUInteger i = 0, j = 0;
+    
+	for (i = 0; cStringOne[i] != '\0'; ++i) {
+		cResult[i] = cStringOne[i];
+	}
+	for (j = 0; cStringTwo[j] != '\0'; ++j) {
+		cResult[i + j] = cStringTwo[j];
+	}
+	cResult[i + j] = '\0';
+    
+	NSString *objcString = [NSString stringWithFormat:@"%s", cResult];
+    
+	return objcString;
+}
+
 @end
 
