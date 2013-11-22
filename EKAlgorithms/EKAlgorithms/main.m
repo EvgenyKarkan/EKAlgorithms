@@ -83,7 +83,11 @@ int main(int argc, const char *argv[])
         NSLog(@"Random string %@", [EKStringStuff randomStringWithLength:100]);
         
             //Concat
-        NSLog(@"<#   #> %@", [EKStringStuff concatenatedStringWithString:@"Hello" secondString:@"World!"]);
+        NSLog(@"Concat string is --> %@", [EKStringStuff concatenatedStringWithString:@"Hello" secondString:@"World!"]);
+        
+            //First occurance of needle in a haystack
+        NSLog(@"Index is --> %ld", (long)[EKStringStuff indexOfFirstOccurenceOfNeedle:@"em" inHaystack:@"Lorem ipsum dolor sit amet"]);
+        
         
             //Longest string from array
 		NSLog(@"The longest string is %@", [EKArrayStuff longestStringInArray:[@[@"Kiev", @"Moscow", @"Tokyo", @"Saint-Petersburg", @"SanFrancisco"] mutableCopy]]);

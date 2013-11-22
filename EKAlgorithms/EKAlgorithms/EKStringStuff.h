@@ -18,4 +18,6 @@
 + (NSUInteger)numberOfNeedles:(NSString *)needle inHaystack:(NSString *)haystack;
 + (NSString *)randomStringWithLength:(NSUInteger)lenght;
 + (NSString *)concatenatedStringWithString:(NSString *)givenString secondString:(NSString *)secondString;
++ (NSInteger)indexOfFirstOccurenceOfNeedle:(NSString *)needle inHaystack:(NSString *)haystack;
+
 @end
