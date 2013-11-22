@@ -36,7 +36,7 @@ String
 3. Words count.
 4. Permutations of string. 
 5. Occurrences of each character (a - z).
-6. Count needles in a haystack.
+6. Count "needles" in a "haystack".
 7. Random string.
 8. Concatenation of two strings.
 9. Find 1st occurence of "needle" in a "haystack".
