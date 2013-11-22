@@ -22,5 +22,6 @@
 + (NSUInteger)reverseNumberWithNumber:(NSUInteger)numberToReverse;
 + (BOOL)isEvenNumber:(NSUInteger)number;
 + (BOOL)isLeapGivenYear:(NSUInteger)number;
++ (BOOL)isArmstrongNumber:(NSUInteger)givenNumber;
 
 @end

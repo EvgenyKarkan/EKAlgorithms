@@ -142,6 +142,10 @@ int main(int argc, const char *argv[])
             //Leap year check
         NSLog(@"Is given year leap? - %@", [EKNumbersStuff isLeapGivenYear:2000] ? @"YES" : @"NO");
         
+            //Armstrong number check
+        NSLog(@"Is given number Armstrong? --> %@", [EKNumbersStuff isArmstrongNumber:407] ? @"YES" : @"NO");
+        
+    
             //Stack
 		EKStack *stack = [[EKStack alloc] initWithSize:3];
 		[stack push:@"Hello"];

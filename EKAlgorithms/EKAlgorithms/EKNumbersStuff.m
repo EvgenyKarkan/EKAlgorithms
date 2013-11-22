@@ -197,4 +197,20 @@
 	return ((remainder_4 == 0 && remainder_100 != 0) || remainder_400 == 0) ? YES : NO;
 }
 
+#pragma mark - Armstrong number check
+
++ (BOOL)isArmstrongNumber:(NSUInteger)givenNumber
+{
+	NSUInteger s = 0, m = givenNumber, r;
+    
+	do {
+		r = givenNumber % 10;
+		givenNumber = givenNumber / 10;
+		s = s + r * r * r;
+	}
+	while (givenNumber != 0);
+    
+	return (s == m) ? YES : NO;
+}
+
 @end
