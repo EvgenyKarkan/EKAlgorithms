@@ -14,10 +14,10 @@
 + (NSString *)reversedStringWithString:(NSString *)stringToReverse;
 + (NSUInteger)numberOfWordsInString:(NSString *)string;
 + (void)allPermutationsOfCString:(char *)string withFirstCharacterPosition:(int)i lastCharacterPosition:(int)n;
-+ (void)countEachCharacterOccurenceInString:(NSString *)givenString;
++ (void)countEachCharacterOccurrenceInString:(NSString *)givenString;
 + (NSUInteger)numberOfNeedles:(NSString *)needle inHaystack:(NSString *)haystack;
 + (NSString *)randomStringWithLength:(NSUInteger)lenght;
 + (NSString *)concatenatedStringWithString:(NSString *)givenString secondString:(NSString *)secondString;
-+ (NSInteger)indexOfFirstOccurenceOfNeedle:(NSString *)needle inHaystack:(NSString *)haystack;
++ (NSInteger)indexOfFirstOccurrenceOfNeedle:(NSString *)needle inHaystack:(NSString *)haystack;
 
 @end

@@ -92,7 +92,7 @@
 
 #pragma mark - Occurrences of each character
 
-+ (void)countEachCharacterOccurenceInString:(NSString *)givenString
++ (void)countEachCharacterOccurrenceInString:(NSString *)givenString
 {
 	const char *string = [[givenString lowercaseString] UTF8String];
 	int c = 0, count[26] = { 0 };
@@ -167,36 +167,36 @@
 	return objcString;
 }
 
-#pragma mark - First occurence of needle in a haystack
+#pragma mark - First occurrence of needle in a haystack
 
-+ (NSInteger)indexOfFirstOccurenceOfNeedle:(NSString *)needle inHaystack:(NSString *)haystack
++ (NSInteger)indexOfFirstOccurrenceOfNeedle:(NSString *)needle inHaystack:(NSString *)haystack
 {
 	NSAssert(needle != nil || haystack != nil, @"Seems you are trying to pass nil as a parameter");
 	NSAssert(![needle isEqualToString:@""], @"Needle should be valid");
 	NSAssert(![haystack isEqualToString:@""], @"Haystack should be valid");
 	NSAssert([needle length] <= [haystack length], @"Needle should be less or equal in compare with haystack");
     
-	NSInteger indexOfFirstOccurence = -1;
+	NSInteger indexOfFirstOccurrence = -1;
 	NSInteger j = 0;
     
-	for (int i = 0; i < [haystack length]; i++) {
+	for (NSInteger i = 0; i < [haystack length]; i++) {
 		if ([haystack characterAtIndex:i] == [needle characterAtIndex:j]) {
 			if (j == 0) {
-				indexOfFirstOccurence = i;
+				indexOfFirstOccurrence = i;
 			}
 			if (j == [needle length] - 1) {
-				return indexOfFirstOccurence;
+				return indexOfFirstOccurrence;
 			}
 			j++;
 		}
 		else if ([haystack characterAtIndex:i] != [needle characterAtIndex:j] && j > 0) {
 			i--;
 			j = 0;
-			indexOfFirstOccurence = -1;
+			indexOfFirstOccurrence = -1;
 		}
 	}
     
-	return indexOfFirstOccurence;
+	return indexOfFirstOccurrence;
 }
 
 @end

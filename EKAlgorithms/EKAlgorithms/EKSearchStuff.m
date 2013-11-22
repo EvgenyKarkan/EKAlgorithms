@@ -15,7 +15,7 @@
 
 + (NSInteger)indexOfObjectViaLinearSearch:(id)object inArray:(NSArray *)arrayToSearch
 {
-	NSInteger i, indexOfFoundedObject = 0;
+	NSInteger i = 0, indexOfFoundedObject = 0;
 	
 	for (i = 0; i < [arrayToSearch count]; i++) {
 		if (object == [arrayToSearch objectAtIndex:i]) {

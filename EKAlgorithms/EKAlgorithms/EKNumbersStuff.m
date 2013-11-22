@@ -39,7 +39,7 @@
 
 + (NSUInteger)greatestCommonDivisorWithFirstNumber:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber
 {
-	NSUInteger c;
+	NSUInteger c = 0;
     
 	while (firstNumber != 0) {
 		c = firstNumber;
@@ -105,7 +105,7 @@
 
 + (NSUInteger)decimalNumberFromBinary:(NSUInteger)binary
 {
-	NSUInteger decimalNumber = 0, j = 1, remainder;
+	NSUInteger decimalNumber = 0, j = 1, remainder = 0;
     
 	while (binary != 0) {
 		remainder = binary % 10;
@@ -121,7 +121,7 @@
 
 + (NSUInteger)binaryNumberFromDecimal:(NSUInteger)decimal
 {
-	NSUInteger quotient;
+	NSUInteger quotient = 0;
 	int binaryNumber[100], i = 1;
 	quotient = decimal;
     
@@ -201,7 +201,7 @@
 
 + (BOOL)isArmstrongNumber:(NSUInteger)givenNumber
 {
-	NSUInteger s = 0, m = givenNumber, r;
+	NSUInteger s = 0, m = givenNumber, r = 0;
     
 	do {
 		r = givenNumber % 10;

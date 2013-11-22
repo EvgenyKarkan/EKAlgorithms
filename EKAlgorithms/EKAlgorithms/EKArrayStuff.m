@@ -114,7 +114,7 @@
     NSAssert(maxValue >= arraySize, @"Max random value should not be less than array size");
     
 	NSMutableArray *objects = [@[] mutableCopy];
-	NSUInteger randomObject;
+	NSUInteger randomObject = 0;
     
 	while ([objects count] < arraySize) {
         randomObject = arc4random() % maxValue;

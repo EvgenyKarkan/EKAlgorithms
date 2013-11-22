@@ -74,7 +74,7 @@ int main(int argc, const char *argv[])
         [EKStringStuff allPermutationsOfCString:a withFirstCharacterPosition:0 lastCharacterPosition:2];
         
             //Count each letter occurence in string
-        [EKStringStuff countEachCharacterOccurenceInString:@"Hello World"];
+        [EKStringStuff countEachCharacterOccurrenceInString:@"Hello World"];
         
             //Needles in haystack
         NSLog(@"Needle %lu", (unsigned long)[EKStringStuff numberOfNeedles:@"foo" inHaystack:@"Foo is a bar with foo bar foo"]);
@@ -86,7 +86,7 @@ int main(int argc, const char *argv[])
         NSLog(@"Concat string is --> %@", [EKStringStuff concatenatedStringWithString:@"Hello" secondString:@"World!"]);
         
             //First occurance of needle in a haystack
-        NSLog(@"Index is --> %ld", (long)[EKStringStuff indexOfFirstOccurenceOfNeedle:@"em" inHaystack:@"Lorem ipsum dolor sit amet"]);
+        NSLog(@"Index is --> %ld", (long)[EKStringStuff indexOfFirstOccurrenceOfNeedle:@"em" inHaystack:@"Lorem ipsum dolor sit amet"]);
         
         
             //Longest string from array

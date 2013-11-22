@@ -65,7 +65,7 @@
 
 + (void)partitionArray:(NSMutableArray *)arrayToPartition withMinimalIndex:(NSInteger)min withMaximumIndex:(NSInteger)max
 {
-	NSInteger mid;
+	NSInteger mid = 0;
 	
 	if (min < max) {
 		mid = (min + max) / 2;
@@ -83,7 +83,7 @@
 		[temporaryArray addObject:[NSNull null]];
 	}
 	
-	NSInteger i = 0, j, k, m;
+	NSInteger i = 0, j = 0, k = 0, m = 0;
 	j = min;
 	m = mid + 1;
 	
@@ -118,8 +118,8 @@
 
 + (NSMutableArray *)quickSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray withLeftIndex:(NSInteger)left withRightIndex:(NSInteger)right
 {
-	NSInteger i, j;
-	id x, y;
+	NSInteger i = 0, j = 0;
+	id x = nil, y = nil;
 	
 	i = left;
 	j = right;
@@ -157,8 +157,9 @@
 
 + (NSMutableArray *)insertionSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray
 {
-	NSInteger a, b;
-	id temp;
+	NSInteger a = 0, b = 0;
+
+	id temp = nil;
 	
 	for (a = 1; a < (NSInteger)[unsortedArray count]; ++a) {
 		temp = unsortedArray[a];
