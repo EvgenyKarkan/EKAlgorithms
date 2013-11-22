@@ -54,6 +54,7 @@ Number
 10. Number reverse.
 11. Even/odd check.
 12. Leap year check.
+13. Armstrong number check.
 
 Data structures
 ---------------
