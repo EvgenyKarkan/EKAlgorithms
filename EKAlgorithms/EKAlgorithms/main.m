@@ -86,7 +86,10 @@ int main(int argc, const char *argv[])
         NSLog(@"Concat string is --> %@", [EKStringStuff concatenatedStringWithString:@"Hello" secondString:@"World!"]);
         
             //First occurance of needle in a haystack
-        NSLog(@"Index is --> %ld", (long)[EKStringStuff indexOfFirstOccurrenceOfNeedle:@"em" inHaystack:@"Lorem ipsum dolor sit amet"]);
+        NSLog(@"Index is --> %ld", (long)[EKStringStuff indexOfFirstOccurrenceOfNeedle:@"em" inHaystack:@"Lorem ipsum dolor sit amet lorem ipsum"]);
+        
+            //Last occurance of needle in a haystack
+        NSLog(@"Index is --> %ld", (long)[EKStringStuff indexOfLastOccurrenceOfNeedle:@"or" inHaystack:@"Lorem ipsum dolor sit amet lorem ipsum"]);
         
         
             //Longest string from array

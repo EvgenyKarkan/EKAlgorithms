@@ -19,5 +19,6 @@
 + (NSString *)randomStringWithLength:(NSUInteger)lenght;
 + (NSString *)concatenatedStringWithString:(NSString *)givenString secondString:(NSString *)secondString;
 + (NSInteger)indexOfFirstOccurrenceOfNeedle:(NSString *)needle inHaystack:(NSString *)haystack;
++ (NSInteger)indexOfLastOccurrenceOfNeedle:(NSString *)needle inHaystack:(NSString *)haystack;
 
 @end

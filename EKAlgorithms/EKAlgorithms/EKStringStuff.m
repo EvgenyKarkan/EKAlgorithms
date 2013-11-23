@@ -199,5 +199,26 @@
 	return indexOfFirstOccurrence;
 }
 
+#pragma mark - Last occurrence of needle in a haystack
+
++ (NSInteger)indexOfLastOccurrenceOfNeedle:(NSString *)needle inHaystack:(NSString *)haystack
+{
+	NSString *reversedNeedle = [self reversedStringWithString:needle];
+	NSString *reversedHaystack = [self reversedStringWithString:haystack];
+    
+	NSInteger firstOccurrenceInReversedString = [self indexOfFirstOccurrenceOfNeedle:reversedNeedle inHaystack:reversedHaystack];
+    
+	NSInteger result = 0;
+    
+	if (firstOccurrenceInReversedString >= 0) {
+		result = [haystack length] - [needle length] - firstOccurrenceInReversedString;
+	}
+	else {
+		result = -1;
+	}
+    
+	return result;
+}
+
 @end
 
