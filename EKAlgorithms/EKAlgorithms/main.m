@@ -226,9 +226,10 @@ int main(int argc, const char *argv[])
         graph.vertices = [@[aV,bV,cV,dV,eV,fV,gV] mutableCopy];
         [graph depthFirstSearch];
         
+            //BFS
+        [graph breadthFirstSearch];
         
             //Linked list stuff
-        
 		EKLinkedList *list = [[EKLinkedList alloc] initWithHead:@5];
 		[list addToFront:@7];
 		[list addToFront:@9];

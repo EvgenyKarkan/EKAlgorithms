@@ -9,6 +9,7 @@
 #import "EKGraph.h"
 #import "EKVertex.h"
 #import "EKStack.h"
+#import "EKQueue.h"
 
 @interface EKGraph ()
 
@@ -31,9 +32,7 @@
 
 - (void)depthFirstSearch
 {
-	if ([self.vertices count] == 0) {
-		NSLog(@"No any vertex in graph");
-	}
+	NSAssert([self.vertices count] > 0, @"No any vertex in graph");
     
 	self.firstVertex.label = @"Start vertex";
 	self.firstVertex.wasVisited = YES;
@@ -59,6 +58,8 @@
 			[stack popLastObject];
 		}
 	}
+    
+	[self clearVisitHistory];
 }
 
 - (void)displayVisitedVertex:(EKVertex *)visitedVertex
@@ -70,10 +71,36 @@
 
 - (void)breadthFirstSearch
 {
-    if ([self.vertices count] == 0) {
-		NSLog(@"No any vertex in graph");
+	NSAssert([self.vertices count] > 0, @"No any vertex in graph");
+    
+	self.firstVertex.label = @"Start vertex";
+	self.firstVertex.wasVisited = YES;
+	[self displayVisitedVertex:self.firstVertex];
+    
+	EKQueue *queue = [[EKQueue alloc] init];
+	[queue insertObject:self.firstVertex];
+    
+	while (![queue isEmpty]) {
+		EKVertex *foo = [queue removeFirstObject];
+		for (EKVertex *adjacentVertex in foo.adjacentVertices) {
+			if (!adjacentVertex.wasVisited) {
+				[queue insertObject:adjacentVertex];
+				adjacentVertex.wasVisited = YES;
+				[self displayVisitedVertex:adjacentVertex];
+			}
+		}
 	}
-        //TBD - see issue #9
+    
+    [self clearVisitHistory];
+}
+
+#pragma mark - Clear visit history
+
+- (void)clearVisitHistory
+{
+	for (EKVertex *vertex in self.vertices) {
+		vertex.wasVisited = NO;
+	}
 }
 
 @end

@@ -14,8 +14,6 @@
 
 - (instancetype)initWithStartVertex:(id)startVertex;
 - (void)depthFirstSearch;
-
-    //TODO
 - (void)breadthFirstSearch;
 
 @end
