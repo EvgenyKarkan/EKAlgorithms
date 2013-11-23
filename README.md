@@ -75,7 +75,7 @@ All the algorithms are compiled for the self educational purposes only and are n
 But I hope EKAlgorithms can serve you as an excellent starting point for the beginning of an in-depth study of algorithms and their optimization.   
 So pull requests are welcome! If you want to do something, please open an issue first.
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/EvgenyKarkan/ekalgorithms/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/EvgenyKarkan/ekalgorithms/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
