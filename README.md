@@ -40,6 +40,7 @@ String
 7. Random string.
 8. Concatenation of two strings.
 9. Find 1st occurence of "needle" in a "haystack".
+10. Last occurence of "needle" in a "haystack".
 
 Number
 -------
