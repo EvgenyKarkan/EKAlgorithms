@@ -60,6 +60,11 @@ int main(int argc, const char *argv[])
             //Selection sort
 		NSLog(@"Selection sorted array  %@", [EKSortStuff selectionSortedArrayWithUnsortedArray:[@[@160, @0.097, @NO, @89, @ -61.001256, @7.5, @YES] mutableCopy]]);
         
+            //Heap sort
+        NSLog(@"Heap sorted array --> %@", [EKSortStuff heapSortedArrayWithUnsortedArray:[@[@9871523, @0.0987516, @NO, @89, @ -61.001256, @712.5, @YES, @384756] mutableCopy]]);
+        
+        
+        
             //Palindrome string
 		NSLog(@"Palindrome? Answer:%@", [EKStringStuff isGivenStringPalindrome:@"Was it a car or a cat I saw"] ? @"YES" : @"NO");
         

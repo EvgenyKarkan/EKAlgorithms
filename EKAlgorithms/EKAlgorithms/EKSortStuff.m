@@ -191,4 +191,54 @@
 	return [unsortedArray copy];
 }
 
+#pragma mark - Heap sort
+
++ (void)siftDownArray:(NSMutableArray *)array withStart:(NSInteger)startIndex end:(NSInteger)endIndex
+{
+	NSInteger root = startIndex;
+    
+	while ((root * 2 + 1) <= endIndex) {
+		NSInteger child = root * 2 + 1;
+        
+		if (child + 1 <= endIndex && [array[child] integerValue] < [array[child + 1] integerValue]) {
+			child++;
+		}
+        
+		if ([array[root] floatValue] < [array[child] floatValue]) {
+			[array exchangeObjectAtIndex:root withObjectAtIndex:child];
+			root = child;
+		}
+		else {
+			return;
+		}
+	}
+}
+
++ (void)heapifyArray:(NSMutableArray *)array withSize:(NSInteger)size
+{
+	NSInteger start = (size - 2) / 2;
+    
+	while (start >= 0) {
+		[self siftDownArray:array withStart:start end:size - 1];
+		start--;
+	}
+}
+
++ (NSMutableArray *)heapSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray
+{
+	[self heapifyArray:unsortedArray withSize:[unsortedArray count]];
+    
+	NSInteger end = [unsortedArray count] - 1;
+    
+	while (end > 0) {
+		[unsortedArray exchangeObjectAtIndex:end withObjectAtIndex:0];
+		[self siftDownArray:unsortedArray withStart:0 end:end - 1];
+		end--;
+	}
+    
+	NSMutableArray *sortedArray = [unsortedArray copy];
+    
+	return sortedArray;
+}
+
 @end
