@@ -58,7 +58,7 @@ Number
 11. Even/odd check.
 12. Leap year check.
 13. Armstrong number check.
-14. Prime Number Check
+14. Prime number check.
 
 Data structures
 ---------------
