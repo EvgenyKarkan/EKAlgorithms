@@ -23,5 +23,6 @@
 + (BOOL)isEvenNumber:(NSUInteger)number;
 + (BOOL)isLeapGivenYear:(NSUInteger)number;
 + (BOOL)isArmstrongNumber:(NSUInteger)givenNumber;
++ (BOOL)isPrime:(NSUInteger)givenNumber;
 
 @end

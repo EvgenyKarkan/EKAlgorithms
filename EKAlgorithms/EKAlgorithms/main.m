@@ -152,6 +152,9 @@ int main(int argc, const char *argv[])
             //Armstrong number check
         NSLog(@"Is given number Armstrong? --> %@", [EKNumbersStuff isArmstrongNumber:407] ? @"YES" : @"NO");
         
+            //Prime Number Check
+        NSLog(@"Is given number Prime? --> %@", [EKNumbersStuff isPrime:10] ? @"YES" : @"NO");
+        
     
             //Stack
 		EKStack *stack = [[EKStack alloc] initWithSize:3];

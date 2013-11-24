@@ -213,4 +213,16 @@
 	return (s == m) ? YES : NO;
 }
 
+#pragma mark - Prime Number Check
+
++ (BOOL)isPrime:(NSUInteger)givenNumber
+{
+    for (int i = 2; i <= (int) sqrt(givenNumber); i++)
+    {
+        if (givenNumber % i == 0)
+            return false;
+    }
+    
+    return true;
+}
 @end
