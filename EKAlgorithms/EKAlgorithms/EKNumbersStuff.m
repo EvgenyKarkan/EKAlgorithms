@@ -217,6 +217,9 @@
 
 + (BOOL)isPrime:(NSUInteger)givenNumber
 {
+    if (givenNumber == 1)
+        return false;
+    
     for (int i = 2; i <= (int) sqrt(givenNumber); i++)
     {
         if (givenNumber % i == 0)
