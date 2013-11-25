@@ -77,8 +77,15 @@ All the algorithms are compiled for the self educational purposes only and are n
 But I hope EKAlgorithms can serve you as an excellent starting point for the beginning of an in-depth study of algorithms and their optimization.   
 So pull requests are welcome! If you want to do something, please open an issue first.
 
+Please note
+-----------
+We all know that the Foundation framework already includes such things as array reverse API, string concatenation API, binary search, comparison and a lot of other stuff.  
+What can we say? Right...Thank you Apple! :), because using in our projects native algorithmic APIs saves us a lot of time. 
 
+But this ... is ... S P A R T A! ©    
+So lets get our hands dirty and try to implement CS algorithms without or with minimal using of native Foundation APIs. 
 
+Thanks!
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/EvgenyKarkan/ekalgorithms/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
