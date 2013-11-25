@@ -16,14 +16,7 @@
 {
 	BOOL result = NO;
 	NSString *nonWhitespacedBufferString = [[string stringByReplacingOccurrencesOfString:@" " withString:@""] lowercaseString];
-	NSMutableString *reverseString = [[NSMutableString alloc] initWithCapacity:[nonWhitespacedBufferString length]];
-	
-	for (NSInteger i = [nonWhitespacedBufferString length] - 1; i >= 0; i--) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wformat-security"
-		[reverseString appendFormat:[NSString stringWithFormat:@"%c", [nonWhitespacedBufferString characterAtIndex:i]]];
-#pragma clang diagnostic pop
-	}
+	NSString *reverseString = [self reversedStringWithString:nonWhitespacedBufferString];
 	   
     result = [reverseString isEqualToString:nonWhitespacedBufferString] ? YES : NO;
     
@@ -36,7 +29,7 @@
 {
 	NSMutableString *result = [[NSMutableString alloc] init];
     
-	for (NSUInteger i = [stringToReverse length] - 1; i < [stringToReverse length]; i--) {
+	for (NSInteger i = [stringToReverse length] - 1; i >= 0; i--) {
 		[result appendString:[NSString stringWithFormat:@"%C", [stringToReverse characterAtIndex:i]]];
 	}
     
