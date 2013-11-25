@@ -127,6 +127,13 @@ int main(int argc, const char *argv[])
             //LCM
 		NSLog(@"Least common multiple of two numbers is %lu", [EKNumbersStuff leastCommonMultipleWithFirstNumber:16 secondNumber:20]);
         
+            //Swap integer pointers without using a third element
+        
+        NSInteger intValue1 = 12, intValue2 = 21;
+        NSLog(@"Integer values before swap: %ld, %ld", (long)intValue1, (long)intValue2);
+        [EKNumbersStuff swapValueOfIntPointer:&intValue1 withValueOfIntPointer:&intValue2];
+        NSLog(@"Integer values after swap: %ld, %ld", (long)intValue1, (long)intValue2);
+        
             //Factorial
 		NSLog(@"Factorial is %llu", (unsigned long long)[EKNumbersStuff factorialForNumber:3]);
         
