@@ -24,5 +24,6 @@
 + (BOOL)isLeapGivenYear:(NSUInteger)number;
 + (BOOL)isArmstrongNumber:(NSUInteger)givenNumber;
 + (BOOL)isPrime:(NSUInteger)givenNumber;
++ (void)swapValueOfIntPointer:(NSInteger *)xPointer withValueOfIntPointer:(NSInteger *)yPointer;
 
 @end

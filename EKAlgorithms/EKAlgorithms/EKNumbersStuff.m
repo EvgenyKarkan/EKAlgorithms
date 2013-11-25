@@ -228,4 +228,14 @@
     
     return true;
 }
+
+#pragma mark - Smart swap
+
++ (void) swapValueOfIntPointer:(NSInteger *)xPointer withValueOfIntPointer:(NSInteger *)yPointer
+{
+    *xPointer += *yPointer;
+    *yPointer = *xPointer - *yPointer;
+    *xPointer = *xPointer - *yPointer;
+}
+
 @end
