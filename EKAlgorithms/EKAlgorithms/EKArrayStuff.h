@@ -13,7 +13,7 @@
 + (NSUInteger)indexOfMaximumElementInArray:(NSArray *)array;
 + (NSString *)longestStringInArray:(NSMutableArray *)array;
 + (NSString *)shortestStringInArray:(NSMutableArray *)array;
-+ (NSArray *)reversedArrayWithArray:(NSArray *)arrayToReverse;
++ (NSArray *)reversedArrayWithArray:(NSArray *)arrayToReverse usingNativeAPI:(BOOL)useNative;
 + (NSArray *)intersectionOfArray:(NSArray *)firstArray withArray:(NSArray *)secondArray;
 + (NSArray *)unionWithoutDuplicatesOfArray:(NSArray *)firstArray withArray:(NSArray *)secondArray;
 + (BOOL)findDuplicatesInArray:(NSArray *)givenArray;

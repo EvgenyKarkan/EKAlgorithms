@@ -104,7 +104,7 @@ int main(int argc, const char *argv[])
 		NSLog(@"The shortest string is %@", [EKArrayStuff shortestStringInArray:[@[@"DRY", @"KISS", @"YAGNI", @"SOLID", @"GRASP"] mutableCopy]]);
         
             //Reverse of array
-        NSLog(@"Reversed array is %@", [EKArrayStuff reversedArrayWithArray:@[@"one", @"two", @"three", @"four", @"five"]]);
+        NSLog(@"Reversed array is %@", [EKArrayStuff reversedArrayWithArray:@[@"one", @"two", @"three", @"four", @"five"] usingNativeAPI:YES]);
         
             //Intersection of two arrays
         NSLog(@"Intersection is %@", [EKArrayStuff intersectionOfArray:@[@"one", @"two", @"three"] withArray:@[@"two", @"three", @"four"]]);

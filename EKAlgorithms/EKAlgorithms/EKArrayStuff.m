@@ -58,9 +58,21 @@
 
 #pragma mark - Array reverse
 
-+ (NSArray *)reversedArrayWithArray:(NSArray *)arrayToReverse
++ (NSArray *)reversedArrayWithArray:(NSArray *)arrayToReverse usingNativeAPI:(BOOL)useNative
 {
-    return [[arrayToReverse reverseObjectEnumerator] allObjects];
+	NSMutableArray *reversedArray = [@[] mutableCopy];
+    
+	if (useNative) {
+		reversedArray = [[[arrayToReverse reverseObjectEnumerator] allObjects] copy];
+	}
+	else {
+		for (NSUInteger i = [arrayToReverse count] - 1; i <= [arrayToReverse count]; i--) {
+			[reversedArray addObject:arrayToReverse[i]];
+		}
+		reversedArray = [reversedArray copy];
+	}
+    
+	return reversedArray;
 }
 
 #pragma mark - Intersection of two arrays
