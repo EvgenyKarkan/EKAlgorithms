@@ -60,13 +60,7 @@
 
 + (NSArray *)reversedArrayWithArray:(NSArray *)arrayToReverse
 {
-	NSMutableArray *reversedArray = [@[] mutableCopy];
-    
-	for (NSUInteger i = [arrayToReverse count] - 1; i <= [arrayToReverse count]; i--) {
-		[reversedArray addObject:arrayToReverse[i]];
-	}
-    
-	return [reversedArray copy];
+    return [[arrayToReverse reverseObjectEnumerator] allObjects];
 }
 
 #pragma mark - Intersection of two arrays
