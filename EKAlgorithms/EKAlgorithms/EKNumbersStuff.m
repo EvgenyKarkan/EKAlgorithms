@@ -187,7 +187,7 @@
 
 + (BOOL)isLeapGivenYear:(NSUInteger)givenYear
 {
-	NSAssert(givenYear > 0 && givenYear <= 9999, @"Plz enter another year from 0001 - 100000 range");
+	NSAssert(givenYear > 0 && givenYear <= 9999, @"Plz enter another year from 0001 - 10000 range");
     
 	NSUInteger remainder_4, remainder_100, remainder_400;
 	remainder_4 = givenYear % 4;
