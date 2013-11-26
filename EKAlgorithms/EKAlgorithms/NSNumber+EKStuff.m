@@ -190,12 +190,8 @@
 
 - (BOOL)isLeapGivenYear
 {
-<<<<<<< HEAD:EKAlgorithms/EKAlgorithms/EKNumbersStuff.m
-	NSAssert(givenYear > 0 && givenYear <= 9999, @"Plz enter another year from 0001 - 10000 range");
-=======
 	NSInteger givenYear = [self intValue];
 	NSAssert(givenYear > 0 && givenYear <= 9999, @"Plz enter another year from 0001 - 100000 range");
->>>>>>> cfef2010ab6273ad69a493f8375cfe94b8272386:EKAlgorithms/EKAlgorithms/NSNumber+EKStuff.m
     
 	NSUInteger remainder_4 = 0, remainder_100 = 0, remainder_400 = 0;
 	remainder_4 = givenYear % 4;
@@ -226,15 +222,9 @@
 
 - (BOOL)isPrime
 {
-<<<<<<< HEAD:EKAlgorithms/EKAlgorithms/EKNumbersStuff.m
-	if (givenNumber == 1) {
-		return NO;
-	}
-=======
 	NSUInteger givenNumber = [self unsignedIntegerValue];
     if (givenNumber == 1)
         return false;
->>>>>>> cfef2010ab6273ad69a493f8375cfe94b8272386:EKAlgorithms/EKAlgorithms/NSNumber+EKStuff.m
     
 	for (int i = 2; i <= (int)sqrt(givenNumber); i++) {
 		if (givenNumber % i == 0) {
