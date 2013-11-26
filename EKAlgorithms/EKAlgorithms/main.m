@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NSArray+EKStuff.h"
-#import "EKNumbersStuff.h"
+#import "NSNumber+EKStuff.h"
 #import "NSString+EKStuff.h"
 #import "EKStack.h"
 #import "EKQueue.h"
@@ -118,53 +118,53 @@ int main(int argc, const char *argv[])
         NSLog(@"Random array %@", [NSArray randomObjectsWithArraySize:5 maxRandomValue:6 uniqueObjects:YES]);
         
             //Sieve of Eratosf
-		NSLog(@"Primes from sieve %@", [[EKNumbersStuff primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);
+		NSLog(@"Primes from sieve %@", [[NSNumber primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);
         
             //GCD
-		NSLog(@"Greatest common divisor of two numbers is %lu", (unsigned long)[EKNumbersStuff greatestCommonDivisorWithFirstNumber:42 secondNumber:84]);
+		NSLog(@"Greatest common divisor of two numbers is %lu", (unsigned long)[@42 greatestCommonDivisorWithNumber:84]);
         
             //LCM
-		NSLog(@"Least common multiple of two numbers is %lu", [EKNumbersStuff leastCommonMultipleWithFirstNumber:16 secondNumber:20]);
+		NSLog(@"Least common multiple of two numbers is %lu", [@16 leastCommonMultipleWithNumber:20]);
         
             //Swap integer pointers without using a third element
         
         NSInteger intValue1 = 12, intValue2 = 21;
         NSLog(@"Integer values before swap: %ld, %ld", (long)intValue1, (long)intValue2);
-        [EKNumbersStuff swapValueOfIntPointer:&intValue1 withValueOfIntPointer:&intValue2];
+        [NSNumber swapValueOfIntPointer:&intValue1 withValueOfIntPointer:&intValue2];
         NSLog(@"Integer values after swap: %ld, %ld", (long)intValue1, (long)intValue2);
         
             //Factorial
-		NSLog(@"Factorial is %llu", (unsigned long long)[EKNumbersStuff factorialForNumber:3]);
+		NSLog(@"Factorial is %llu", (unsigned long long)[@3 factorial]);
         
             //Fibonacci numbers
-		NSLog(@"Fibonacci series is %@", [EKNumbersStuff fibonacciNumbersUpToNumber:15]);
+		NSLog(@"Fibonacci series is %@", [NSNumber fibonacciNumbersUpToNumber:15]);
         
             //Find sum of digits
-        NSLog(@"Sum of digits is: %lu", (unsigned long)[EKNumbersStuff sumOfDigitsOfNumber:1234]);
+        NSLog(@"Sum of digits is: %lu", (unsigned long)[@1234 sumOfDigits]);
         
             //Binary to decimal convertion
-        NSLog(@"Decimal is: %lu", (unsigned long)[EKNumbersStuff decimalNumberFromBinary:1101]);
+        NSLog(@"Decimal is: %lu", (unsigned long)[NSNumber decimalNumberFromBinary:1101]);
         
             //Decimal to binary
-        NSLog(@"Binary is %lu", (unsigned long)[EKNumbersStuff binaryNumberFromDecimal:3]);
+        NSLog(@"Binary is %lu", (unsigned long)[NSNumber binaryNumberFromDecimal:3]);
         
             //Fast Exp
-        NSLog(@"Fast exp %ld", (long)[EKNumbersStuff fastExpForNumber:2 withPower:10]);
+        NSLog(@"Fast exp %ld", (long)[NSNumber fastExpForNumber:2 withPower:10]);
         
             //Number reverse
-        NSLog(@"Reversed number is %li", (long)[EKNumbersStuff reverseNumberWithNumber:123456789]);
+        NSLog(@"Reversed number is %li", (long)[@123456789 reverseNumber]);
         
             //Even/Odd
-        NSLog(@"Given number even? - %@", [EKNumbersStuff isEvenNumber:1234567] ? @"YES" : @"NO");
+        NSLog(@"Given number even? - %@", [@1234567 isEven] ? @"YES" : @"NO");
         
             //Leap year check
-        NSLog(@"Is given year leap? - %@", [EKNumbersStuff isLeapGivenYear:2000] ? @"YES" : @"NO");
+        NSLog(@"Is given year leap? - %@", [@2000 isLeapGivenYear] ? @"YES" : @"NO");
         
             //Armstrong number check
-        NSLog(@"Is given number Armstrong? --> %@", [EKNumbersStuff isArmstrongNumber:407] ? @"YES" : @"NO");
+        NSLog(@"Is given number Armstrong? --> %@", [@407 isArmstrongNumber] ? @"YES" : @"NO");
         
             //Prime Number Check
-        NSLog(@"Is given number Prime? --> %@", [EKNumbersStuff isPrime:23] ? @"YES" : @"NO");
+        NSLog(@"Is given number Prime? --> %@", [@23 isPrime] ? @"YES" : @"NO");
         
     
             //Stack

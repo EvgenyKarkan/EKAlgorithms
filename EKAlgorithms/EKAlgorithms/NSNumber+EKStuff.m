@@ -1,15 +1,14 @@
 //
-//  ENumbers.m
+//  NSNumber+EKStuff.m
 //  EKAlgorithms
 //
-//  Created by Evgeny Karkan on 16.10.13.
+//  Created by Vittorio Monaco on 26/11/13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
-#import "EKNumbersStuff.h"
+#import "NSNumber+EKStuff.h"
 
-
-@implementation EKNumbersStuff;
+@implementation NSNumber (EKStuff)
 
 #pragma mark - Sieve of Eratosthenes
 
@@ -37,8 +36,9 @@
 
 #pragma mark - GCD
 
-+ (NSUInteger)greatestCommonDivisorWithFirstNumber:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber
+- (NSUInteger)greatestCommonDivisorWithNumber:(NSUInteger)secondNumber
 {
+	NSUInteger firstNumber = [self unsignedIntegerValue];
 	NSUInteger c = 0;
     
 	while (firstNumber != 0) {
@@ -52,18 +52,19 @@
 
 #pragma mark - LCM
 
-+ (NSUInteger)leastCommonMultipleWithFirstNumber:(NSUInteger)firstNumber secondNumber:(NSUInteger)secondNumber
+- (NSUInteger)leastCommonMultipleWithNumber:(NSUInteger)secondNumber
 {
-	return firstNumber * secondNumber  / [self greatestCommonDivisorWithFirstNumber:firstNumber secondNumber:secondNumber];
+	NSUInteger firstNumber = [self unsignedIntegerValue];
+	return firstNumber * secondNumber  / [self greatestCommonDivisorWithNumber:secondNumber];
 }
 
 #pragma mark - Factorial
 
-+ (NSUInteger)factorialForNumber:(NSUInteger)number
+- (NSUInteger)factorial
 {
 	NSUInteger factorial = 1;
     
-	for (NSUInteger i = 1; i <= number; i++) {
+	for (NSUInteger i = 1; i <= [self unsignedIntegerValue]; i++) {
 		factorial = factorial * i;
 	}
     
@@ -89,8 +90,9 @@
 
 #pragma mark - Sum of digits of a number
 
-+ (NSUInteger)sumOfDigitsOfNumber:(NSUInteger)number
+- (NSUInteger)sumOfDigits
 {
+	NSUInteger number = [self unsignedIntegerValue];
 	NSUInteger sum = 0;
     
 	while (number != 0) {
@@ -158,8 +160,9 @@
 
 #pragma mark - Number reverse
 
-+ (NSUInteger)reverseNumberWithNumber:(NSUInteger)numberToReverse
+- (NSUInteger)reverseNumber
 {
+	NSUInteger numberToReverse = [self unsignedIntegerValue];
 	NSUInteger rightDigit = 0;
 	NSMutableString *fooString = [@"" mutableCopy];
     
@@ -175,18 +178,19 @@
 
 #pragma mark - Even/Odd check
 
-+ (BOOL)isEvenNumber:(NSUInteger)number
+- (BOOL)isEven
 {
 	NSUInteger remainder = 0;
-	remainder = number % 2;
+	remainder = [self intValue] % 2;
     
 	return (remainder == 0) ? YES : NO;
 }
 
 #pragma mark - Leap year check
 
-+ (BOOL)isLeapGivenYear:(NSUInteger)givenYear
+- (BOOL)isLeapGivenYear
 {
+	NSInteger givenYear = [self intValue];
 	NSAssert(givenYear > 0 && givenYear <= 9999, @"Plz enter another year from 0001 - 100000 range");
     
 	NSUInteger remainder_4, remainder_100, remainder_400;
@@ -199,8 +203,9 @@
 
 #pragma mark - Armstrong number check
 
-+ (BOOL)isArmstrongNumber:(NSUInteger)givenNumber
+- (BOOL)isArmstrongNumber
 {
+	NSUInteger givenNumber = [self unsignedIntegerValue];
 	NSUInteger s = 0, m = givenNumber, r = 0;
     
 	do {
@@ -215,8 +220,9 @@
 
 #pragma mark - Prime Number Check
 
-+ (BOOL)isPrime:(NSUInteger)givenNumber
+- (BOOL)isPrime
 {
+	NSUInteger givenNumber = [self unsignedIntegerValue];
     if (givenNumber == 1)
         return false;
     
