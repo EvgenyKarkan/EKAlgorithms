@@ -1,23 +1,23 @@
 //
-//  EKString.m
+//  NSString+EKStuff.m
 //  EKAlgorithms
 //
-//  Created by Evgeny Karkan on 21.08.13.
+//  Created by Vittorio Monaco on 26/11/13.
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
-#import "EKStringStuff.h"
+#import "NSString+EKStuff.h"
 
-@implementation EKStringStuff;
+@implementation NSString (EKStuff)
 
 #pragma mark - Is string palindrome
 
-+ (BOOL)isGivenStringPalindrome:(NSString *)string
+- (BOOL)isPalindrome
 {
 	BOOL result = NO;
-	NSString *nonWhitespacedBufferString = [[string stringByReplacingOccurrencesOfString:@" " withString:@""] lowercaseString];
-	NSString *reverseString = [self reversedStringWithString:nonWhitespacedBufferString];
-	   
+	NSString *nonWhitespacedBufferString = [[self stringByReplacingOccurrencesOfString:@" " withString:@""] lowercaseString];
+	NSString *reverseString = [self reversedString];
+	
     result = [reverseString isEqualToString:nonWhitespacedBufferString] ? YES : NO;
     
 	return result;
@@ -25,12 +25,12 @@
 
 #pragma mark - String reverse
 
-+ (NSString *)reversedStringWithString:(NSString *)stringToReverse
+- (NSString *)reversedString
 {
 	NSMutableString *result = [[NSMutableString alloc] init];
     
-	for (NSInteger i = [stringToReverse length] - 1; i >= 0; i--) {
-		[result appendString:[NSString stringWithFormat:@"%C", [stringToReverse characterAtIndex:i]]];
+	for (NSInteger i = [self length] - 1; i >= 0; i--) {
+		[result appendString:[NSString stringWithFormat:@"%C", [self characterAtIndex:i]]];
 	}
     
 	return [result copy];
@@ -38,9 +38,9 @@
 
 #pragma mark - Words in string count
 
-+ (NSUInteger)numberOfWordsInString:(NSString *)string
+- (NSUInteger)numberOfWordsInString
 {
-	const char *str = [string UTF8String];
+	const char *str = [self UTF8String];
 	BOOL state = NO;
 	NSUInteger wordCounter = 0;
     
@@ -85,9 +85,9 @@
 
 #pragma mark - Occurrences of each character
 
-+ (void)countEachCharacterOccurrenceInString:(NSString *)givenString
+- (void)countEachCharacterOccurrenceInString
 {
-	const char *string = [[givenString lowercaseString] UTF8String];
+	const char *string = [[self lowercaseString] UTF8String];
 	int c = 0, count[26] = { 0 };
     
 	while (string[c] != '\0') {
@@ -102,18 +102,18 @@
 			NSLog(@"%c occurs %d times in the entered string\n", c + 'a', count[c]);
 		}
 	}
-        //TODO: modify to handle uppercase and special characters
+	//TODO: modify to handle uppercase and special characters
 }
 
 #pragma mark - Count needles in a haystack
 
-+ (NSUInteger)numberOfNeedles:(NSString *)needle inHaystack:(NSString *)haystack
+- (NSUInteger)numberOfOccurrenciesOfString:(NSString *)needle
 {
-	NSUInteger count = 0, length = [haystack length];
+	NSUInteger count = 0, length = [self length];
 	NSRange range = NSMakeRange(0, length);
     
 	while (range.location != NSNotFound) {
-		range = [haystack rangeOfString:needle options:0 range:range];
+		range = [self rangeOfString:needle options:0 range:range];
 		if (range.location != NSNotFound) {
 			range = NSMakeRange(range.location + range.length, length - (range.location + range.length));
 			count++;
@@ -139,9 +139,9 @@
 
 #pragma mark - Concatenation
 
-+ (NSString *)concatenatedStringWithString:(NSString *)givenString secondString:(NSString *)secondString
+- (NSString *)concatenateWithString:(NSString *)secondString
 {
-	const char *cStringOne = [givenString UTF8String];
+	const char *cStringOne = [self UTF8String];
 	const char *cStringTwo = [secondString UTF8String];
 	char cResult[256];
     
@@ -162,18 +162,18 @@
 
 #pragma mark - First occurrence of needle in a haystack
 
-+ (NSInteger)indexOfFirstOccurrenceOfNeedle:(NSString *)needle inHaystack:(NSString *)haystack
+- (NSInteger)indexOfFirstOccurrenceOfNeedle:(NSString *)needle
 {
-	NSAssert(needle != nil || haystack != nil, @"Seems you are trying to pass nil as a parameter");
+	NSAssert(needle != nil || self != nil, @"Seems you are trying to pass nil as a parameter");
 	NSAssert(![needle isEqualToString:@""], @"Needle should be valid");
-	NSAssert(![haystack isEqualToString:@""], @"Haystack should be valid");
-	NSAssert([needle length] <= [haystack length], @"Needle should be less or equal in compare with haystack");
+	NSAssert(![self isEqualToString:@""], @"Haystack should be valid");
+	NSAssert([needle length] <= [self length], @"Needle should be less or equal in compare with haystack");
     
 	NSInteger indexOfFirstOccurrence = -1;
 	NSInteger j = 0;
     
-	for (NSInteger i = 0; i < [haystack length]; i++) {
-		if ([haystack characterAtIndex:i] == [needle characterAtIndex:j]) {
+	for (NSInteger i = 0; i < [self length]; i++) {
+		if ([self characterAtIndex:i] == [needle characterAtIndex:j]) {
 			if (j == 0) {
 				indexOfFirstOccurrence = i;
 			}
@@ -182,7 +182,7 @@
 			}
 			j++;
 		}
-		else if ([haystack characterAtIndex:i] != [needle characterAtIndex:j] && j > 0) {
+		else if ([self characterAtIndex:i] != [needle characterAtIndex:j] && j > 0) {
 			i--;
 			j = 0;
 			indexOfFirstOccurrence = -1;
@@ -194,17 +194,17 @@
 
 #pragma mark - Last occurrence of needle in a haystack
 
-+ (NSInteger)indexOfLastOccurrenceOfNeedle:(NSString *)needle inHaystack:(NSString *)haystack
+- (NSInteger)indexOfLastOccurrenceOfNeedle:(NSString *)needle
 {
-	NSString *reversedNeedle = [self reversedStringWithString:needle];
-	NSString *reversedHaystack = [self reversedStringWithString:haystack];
+	NSString *reversedNeedle = [needle reversedString];
+	NSString *reversedHaystack = [self reversedString];
     
-	NSInteger firstOccurrenceInReversedString = [self indexOfFirstOccurrenceOfNeedle:reversedNeedle inHaystack:reversedHaystack];
+	NSInteger firstOccurrenceInReversedString = [reversedHaystack indexOfFirstOccurrenceOfNeedle:reversedNeedle];
     
 	NSInteger result = 0;
     
 	if (firstOccurrenceInReversedString >= 0) {
-		result = [haystack length] - [needle length] - firstOccurrenceInReversedString;
+		result = [self length] - [needle length] - firstOccurrenceInReversedString;
 	}
 	else {
 		result = -1;
@@ -214,4 +214,3 @@
 }
 
 @end
-

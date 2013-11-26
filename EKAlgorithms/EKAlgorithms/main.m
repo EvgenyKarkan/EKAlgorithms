@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "NSArray+EKStuff.h"
-#import "EKStringStuff.h"
 #import "EKNumbersStuff.h"
+#import "NSString+EKStuff.h"
 #import "EKStack.h"
 #import "EKQueue.h"
 #import "EKDeque.h"
@@ -63,35 +63,37 @@ int main(int argc, const char *argv[])
         
         
             //Palindrome string
-		NSLog(@"Palindrome? Answer:%@", [EKStringStuff isGivenStringPalindrome:@"Was it a car or a cat I saw"] ? @"YES" : @"NO");
+		NSLog(@"Palindrome? Answer:%@", [@"Was it a car or a cat I saw" isPalindrome] ? @"YES" : @"NO");
+        
+		NSLog(@"Palindrome? Answer:%@", [@"wasitacaroracatisaw" isPalindrome] ? @"YES" : @"NO");
         
             //Reverse
-        NSLog(@"Reverse is: %@", [EKStringStuff reversedStringWithString:@"Lorem ipsum dolor"]);
+        NSLog(@"Reverse is: %@", [@"Lorem ipsum dolor" reversedString]);
         
             //Count words
-        NSLog(@"Words # %lu", (unsigned long)[EKStringStuff numberOfWordsInString:@"fgf fgfdgfdg dfgfdgfd dfgfdgfd dfg"]);
+        NSLog(@"Words # %lu", (unsigned long)[@"fgf fgfdgfdg dfgfdgfd dfgfdgfd dfg" numberOfWordsInString]);
         
             //Permutations
         char a[] = "ABC";
-        [EKStringStuff allPermutationsOfCString:a withFirstCharacterPosition:0 lastCharacterPosition:2];
+        [NSString allPermutationsOfCString:a withFirstCharacterPosition:0 lastCharacterPosition:2];
         
             //Count each letter occurence in string
-        [EKStringStuff countEachCharacterOccurrenceInString:@"Hello World"];
+        [@"Hello World" countEachCharacterOccurrenceInString];
         
             //Needles in haystack
-        NSLog(@"Needle %lu", (unsigned long)[EKStringStuff numberOfNeedles:@"foo" inHaystack:@"Foo is a bar with foo bar foo"]);
+        NSLog(@"Needle %lu", (unsigned long)[@"Foo is a bar with foo bar foo" numberOfOccurrenciesOfString:@"foo"]);
         
             //Random string
-        NSLog(@"Random string %@", [EKStringStuff randomStringWithLength:100]);
+        NSLog(@"Random string %@", [NSString randomStringWithLength:100]);
         
             //Concat
-        NSLog(@"Concat string is --> %@", [EKStringStuff concatenatedStringWithString:@"Hello" secondString:@"World!"]);
+        NSLog(@"Concat string is --> %@", [@"Hello" concatenateWithString:@"World!"]);
         
             //First occurance of needle in a haystack
-        NSLog(@"Index is --> %ld", (long)[EKStringStuff indexOfFirstOccurrenceOfNeedle:@"em" inHaystack:@"Lorem ipsum dolor sit amet lorem ipsum"]);
+        NSLog(@"Index is --> %ld", (long)[@"Lorem ipsum dolor sit amet lorem ipsum" indexOfFirstOccurrenceOfNeedle:@"em"]);
         
             //Last occurance of needle in a haystack
-        NSLog(@"Index is --> %ld", (long)[EKStringStuff indexOfLastOccurrenceOfNeedle:@"or" inHaystack:@"Lorem ipsum dolor sit amet lorem ipsum"]);
+        NSLog(@"Index is --> %ld", (long)[@"Lorem ipsum dolor sit amet lorem ipsum" indexOfLastOccurrenceOfNeedle:@"or"]);
         
         
             //Longest string from array
