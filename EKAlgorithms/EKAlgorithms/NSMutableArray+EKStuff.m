@@ -8,12 +8,15 @@
 
 #import "NSMutableArray+EKStuff.h"
 
-@implementation NSMutableArray (EKStuff)
+@implementation NSMutableArray (EKStuff);
+
+
+#pragma mark - Used in merge sort
 
 - (void)partitionArrayWithMinimalIndex:(NSInteger)min withMaximumIndex:(NSInteger)max
 {
 	NSInteger mid = 0;
-	
+    
 	if (min < max) {
 		mid = (min + max) / 2;
 		[self partitionArrayWithMinimalIndex:min withMaximumIndex:mid];
@@ -25,15 +28,15 @@
 - (void)mergeArrayWithMinimalIndex:(NSInteger)min withMediumIndex:(NSInteger)mid withMaximalIndex:(NSInteger)max
 {
 	NSMutableArray *temporaryArray = [NSMutableArray array];
-	
+    
 	for (NSInteger i = 0; i < [self count]; i++) {
 		[temporaryArray addObject:[NSNull null]];
 	}
-	
+    
 	NSInteger i = 0, j = 0, k = 0, m = 0;
 	j = min;
 	m = mid + 1;
-	
+    
 	for (i = min; j <= mid && m <= max; i++) {
 		if ([[self objectAtIndex:j] floatValue] <= [[self objectAtIndex:m] floatValue]) {
 			[temporaryArray replaceObjectAtIndex:i withObject:[self objectAtIndex:j]];
@@ -60,6 +63,8 @@
 		[self replaceObjectAtIndex:k withObject:[temporaryArray objectAtIndex:k]];
 	}
 }
+
+#pragma mark - Used in heap sort
 
 - (void)siftDownArrayWithStart:(NSInteger)startIndex end:(NSInteger)endIndex
 {

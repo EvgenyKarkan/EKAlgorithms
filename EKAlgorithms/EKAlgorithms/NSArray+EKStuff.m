@@ -9,20 +9,21 @@
 #import "NSArray+EKStuff.h"
 #import "NSMutableArray+EKStuff.h"
 
-@implementation NSArray (EKStuff)
+@implementation NSArray (EKStuff);
+
 
 #pragma mark - Max element in array
 
 - (NSUInteger)indexOfMaximumElement
 {
 	id max = [self objectAtIndex:0];
-	
+    
 	for (NSUInteger i = 1; i < [self count]; i++) {
 		if ([self objectAtIndex:i] > max) {
 			max = [self objectAtIndex:i];
 		}
 	}
-	
+    
 	return [self indexOfObject:max];
 }
 
@@ -31,7 +32,7 @@
 - (NSString *)longestString
 {
 	NSString *returnValue = nil;
-	
+    
 	for (NSString *string in self) {
 		if (returnValue == nil || [string length] > [returnValue length]) {
 			returnValue = string;
@@ -46,7 +47,7 @@
 - (NSString *)shortestString
 {
 	NSString *returnValue = nil;
-	
+    
 	for (NSString *string in self) {
 		if (returnValue == nil || [string length] < [returnValue length]) {
 			returnValue = string;
@@ -60,17 +61,17 @@
 
 - (NSArray *)reversedArray
 {
-    return [[self reverseObjectEnumerator] allObjects];
+	return [[self reverseObjectEnumerator] allObjects];
 }
 
 #pragma mark - Intersection of two arrays
 
 - (NSArray *)intersectionWithArray:(NSArray *)secondArray
 {
-    NSMutableSet *intersection = [NSMutableSet setWithArray:self];
-    [intersection intersectSet:[NSSet setWithArray:secondArray]];
-	
-    return [intersection allObjects];
+	NSMutableSet *intersection = [NSMutableSet setWithArray:self];
+	[intersection intersectSet:[NSSet setWithArray:secondArray]];
+    
+	return [intersection allObjects];
 }
 
 #pragma mark - Union of two arrays
@@ -105,13 +106,13 @@
 
 + (NSArray *)randomObjectsWithArraySize:(NSUInteger)arraySize maxRandomValue:(NSUInteger)maxValue uniqueObjects:(BOOL)unique
 {
-    NSAssert(maxValue >= arraySize, @"Max random value should not be less than array size");
+	NSAssert(maxValue >= arraySize, @"Max random value should not be less than array size");
     
 	NSMutableArray *objects = [@[] mutableCopy];
 	NSUInteger randomObject = 0;
     
 	while ([objects count] < arraySize) {
-        randomObject = arc4random() % maxValue;
+		randomObject = arc4random() % maxValue;
 		if (unique && ![objects containsObject:[NSNumber numberWithUnsignedInteger:randomObject]]) {
 			[objects addObject:[NSNumber numberWithUnsignedInteger:randomObject]];
 		}
@@ -123,13 +124,12 @@
 	return [objects copy];
 }
 
-
 #pragma mark - Linear search
 
 - (NSInteger)indexOfObjectViaLinearSearch:(id)object
 {
 	NSInteger i = 0, indexOfFoundedObject = 0;
-	
+    
 	for (i = 0; i < [self count]; i++) {
 		if (object == [self objectAtIndex:i]) {
 			indexOfFoundedObject = i;
@@ -139,7 +139,7 @@
 	if (i == [self count]) {
 		indexOfFoundedObject = -1;
 	}
-	
+    
 	return indexOfFoundedObject;
 }
 
@@ -150,7 +150,7 @@
 	NSUInteger firstIndex = 0;
 	NSUInteger uptoIndex = [self count];
 	NSUInteger indexOfFoundedObject = 0;
-	
+    
 	while (firstIndex < uptoIndex) {
 		NSUInteger mid = (firstIndex + uptoIndex) / 2;
 		if ([object isKindOfClass:[NSNumber class]]) {
@@ -165,10 +165,9 @@
 			}
 		}
 	}
-	
+    
 	return indexOfFoundedObject = -1;
 }
-
 
 #pragma mark - Bubble sort
 
@@ -176,7 +175,7 @@
 {
 	NSMutableArray *selfCopy = [self mutableCopy];
 	id temp = nil;
-	
+    
 	for (int i = (int)[selfCopy count] - 2; i >= 0; i--) {
 		for (int j = 0; j <= i; j++) {
 			if ([selfCopy[j] integerValue] > [selfCopy[j + 1] integerValue]) {
@@ -186,7 +185,7 @@
 			}
 		}
 	}
-	
+    
 	return selfCopy;
 }
 
@@ -196,7 +195,7 @@
 {
 	NSMutableArray *selfCopy = [self mutableCopy];
 	id temp = nil;
-	
+    
 	for (NSInteger i = [selfCopy count] / 2; i > 0; i = i / 2) {
 		for (NSInteger j = i; j < [selfCopy count]; j++) {
 			for (NSInteger k = j - i; k >= 0; k = k - i) {
@@ -211,7 +210,7 @@
 			}
 		}
 	}
-	
+    
 	return selfCopy;
 }
 
@@ -221,7 +220,7 @@
 {
 	NSMutableArray *selfCopy = [self mutableCopy];
 	[selfCopy partitionArrayWithMinimalIndex:0 withMaximumIndex:(NSInteger)[selfCopy count] - 1];
-	
+    
 	return selfCopy;
 }
 
@@ -230,15 +229,18 @@
 - (NSMutableArray *)quickSortedArrayWithLeftIndex:(NSInteger)left withRightIndex:(NSInteger)right
 {
 	NSMutableArray *selfCopy = (NSMutableArray *)self;
-	if(![self isKindOfClass:[NSMutableArray class]])
+    
+	if (![self isKindOfClass:[NSMutableArray class]]) {
 		selfCopy = [self mutableCopy];
+	}
+    
 	NSInteger i = 0, j = 0;
 	id x = nil, y = nil;
-	
+    
 	i = left;
 	j = right;
 	x = selfCopy[(left + right) / 2];
-	
+    
 	do {
 		while (([selfCopy[i] floatValue] < [x floatValue]) && (i < right)) {
 			i++;
@@ -246,7 +248,7 @@
 		while (([x floatValue] < [selfCopy[j] floatValue]) && (j > left)) {
 			j--;
 		}
-		
+        
 		if (i <= j) {
 			y = selfCopy[i];
 			[selfCopy replaceObjectAtIndex:i withObject:selfCopy[j]];
@@ -256,14 +258,14 @@
 		}
 	}
 	while (i <= j);
-	
+    
 	if (left < j) {
 		selfCopy = [selfCopy quickSortedArrayWithLeftIndex:left withRightIndex:j];
 	}
 	if (i < right) {
 		selfCopy = [selfCopy quickSortedArrayWithLeftIndex:i withRightIndex:right];
 	}
-	
+    
 	return selfCopy;
 }
 
@@ -273,9 +275,9 @@
 {
 	NSMutableArray *selfCopy = [self mutableCopy];
 	NSInteger a = 0, b = 0;
-	
+    
 	id temp = nil;
-	
+    
 	for (a = 1; a < (NSInteger)[selfCopy count]; ++a) {
 		temp = selfCopy[a];
 		for (b = a - 1; (b >= 0) && ([temp floatValue] < [selfCopy[b] floatValue]); b--) {
@@ -283,7 +285,7 @@
 		}
 		selfCopy[b + 1] = temp;
 	}
-	
+    
 	return selfCopy;
 }
 
@@ -292,6 +294,7 @@
 - (NSMutableArray *)selectionSortedArray
 {
 	NSMutableArray *selfCopy = [self mutableCopy];
+    
 	for (NSUInteger i = 0; i < [selfCopy count] - 1; i++) {
 		NSUInteger min = i;
 		for (NSUInteger j = i + 1; j < [selfCopy count]; j++) {
@@ -299,6 +302,7 @@
 				min = j;
 			}
 		}
+        
 		id tempObject = selfCopy[i];
 		selfCopy[i] = selfCopy[min];
 		selfCopy[min] = tempObject;

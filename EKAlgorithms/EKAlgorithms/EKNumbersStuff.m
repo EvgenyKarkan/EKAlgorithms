@@ -189,7 +189,7 @@
 {
 	NSAssert(givenYear > 0 && givenYear <= 9999, @"Plz enter another year from 0001 - 10000 range");
     
-	NSUInteger remainder_4, remainder_100, remainder_400;
+	NSUInteger remainder_4 = 0, remainder_100 = 0, remainder_400 = 0;
 	remainder_4 = givenYear % 4;
 	remainder_100 = givenYear % 100;
 	remainder_400 = givenYear % 400;
@@ -217,25 +217,26 @@
 
 + (BOOL)isPrime:(NSUInteger)givenNumber
 {
-    if (givenNumber == 1)
-        return false;
+	if (givenNumber == 1) {
+		return NO;
+	}
     
-    for (int i = 2; i <= (int) sqrt(givenNumber); i++)
-    {
-        if (givenNumber % i == 0)
-            return false;
-    }
+	for (int i = 2; i <= (int)sqrt(givenNumber); i++) {
+		if (givenNumber % i == 0) {
+			return YES;
+		}
+	}
     
-    return true;
+	return YES;
 }
 
 #pragma mark - Smart swap
 
-+ (void) swapValueOfIntPointer:(NSInteger *)xPointer withValueOfIntPointer:(NSInteger *)yPointer
++ (void)swapValueOfIntPointer:(NSInteger *)xPointer withValueOfIntPointer:(NSInteger *)yPointer
 {
-    *xPointer += *yPointer;
-    *yPointer = *xPointer - *yPointer;
-    *xPointer = *xPointer - *yPointer;
+	*xPointer += *yPointer;
+	*yPointer = *xPointer - *yPointer;
+	*xPointer = *xPointer - *yPointer;
 }
 
 @end
