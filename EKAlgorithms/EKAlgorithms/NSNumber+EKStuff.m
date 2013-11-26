@@ -8,7 +8,8 @@
 
 #import "NSNumber+EKStuff.h"
 
-@implementation NSNumber (EKStuff)
+@implementation NSNumber (EKStuff);
+
 
 #pragma mark - Sieve of Eratosthenes
 
@@ -191,7 +192,7 @@
 - (BOOL)isLeapGivenYear
 {
 	NSInteger givenYear = [self intValue];
-	NSAssert(givenYear > 0 && givenYear <= 9999, @"Plz enter another year from 0001 - 100000 range");
+	NSAssert(givenYear > 0 && givenYear <= 9999, @"Plz enter another year from 0001 - 10000 range");
     
 	NSUInteger remainder_4 = 0, remainder_100 = 0, remainder_400 = 0;
 	remainder_4 = givenYear % 4;
@@ -223,8 +224,10 @@
 - (BOOL)isPrime
 {
 	NSUInteger givenNumber = [self unsignedIntegerValue];
-    if (givenNumber == 1)
-        return false;
+    
+	if (givenNumber == 1) {
+		return NO;
+	}
     
 	for (int i = 2; i <= (int)sqrt(givenNumber); i++) {
 		if (givenNumber % i == 0) {
