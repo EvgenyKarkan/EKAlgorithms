@@ -13,7 +13,6 @@
 - (BOOL)isPalindrome;
 - (NSString *)reversedString;
 - (NSUInteger)numberOfWordsInString;
-- (void)allPermutationsWithFirstCharacterPosition:(int)i lastCharacterPosition:(int)n;
 - (void)countEachCharacterOccurrenceInString;
 - (NSUInteger)numberOfOccurrenciesOfString:(NSString *)needle;
 + (NSString *)randomStringWithLength:(NSUInteger)lenght;
