@@ -127,8 +127,6 @@
 			children = (
 				DEC568A0182C258600AA90E1 /* Data Structures */,
 				DEADAD7517B7A6A80031DEB9 /* main.m */,
-				DEADAD7917B7A6A80031DEB9 /* EKAlgorithms.1 */,
-				DEADAD7717B7A6A80031DEB9 /* Supporting Files */,
 				A463D39818448D2600A3018B /* NSArray+EKStuff.h */,
 				A463D39918448D2600A3018B /* NSArray+EKStuff.m */,
 				A463D39F1844943000A3018B /* NSMutableArray+EKStuff.h */,
@@ -137,6 +135,8 @@
 				A4D204D61844DC4B00F19AFB /* NSString+EKStuff.m */,
 				A4D204D81844E2EA00F19AFB /* NSNumber+EKStuff.h */,
 				A4D204D91844E2EA00F19AFB /* NSNumber+EKStuff.m */,
+				DEADAD7917B7A6A80031DEB9 /* EKAlgorithms.1 */,
+				DEADAD7717B7A6A80031DEB9 /* Supporting Files */,
 			);
 			path = EKAlgorithms;
 			sourceTree = "<group>";

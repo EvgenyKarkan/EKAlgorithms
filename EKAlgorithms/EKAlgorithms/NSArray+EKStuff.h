@@ -18,6 +18,7 @@
 - (NSArray *)unionWithoutDuplicatesWithArray:(NSArray *)secondArray;
 - (BOOL)hasDuplicates;
 + (NSArray *)randomObjectsWithArraySize:(NSUInteger)arraySize maxRandomValue:(NSUInteger)maxValue uniqueObjects:(BOOL)unique;
+- (BOOL)isSorted;
 
 //search
 

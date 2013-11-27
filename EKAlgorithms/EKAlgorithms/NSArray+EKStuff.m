@@ -11,7 +11,7 @@
 
 @implementation NSArray (EKStuff);
 
-
+#pragma mark - ARRAY STUFF
 #pragma mark - Max element in array
 
 - (NSUInteger)indexOfMaximumElement
@@ -124,6 +124,23 @@
 	return [objects copy];
 }
 
+- (BOOL)isSorted
+{
+	for (NSUInteger i = 0; i < [self count] - 1; i++) {
+		if ([self[i] isKindOfClass:[NSNumber class]]) {
+			if ([self[i] floatValue] > [self[i + 1] floatValue]) {
+				return NO;
+			}
+		}
+		else {
+			NSException *exception = [NSException exceptionWithName:@"NSNumber not found" reason:@"Method can check is array sorted with NSNumber members only" userInfo:nil];
+			[exception raise];
+		}
+	}
+	return YES;
+}
+
+#pragma mark - SEARCH STUFF
 #pragma mark - Linear search
 
 - (NSInteger)indexOfObjectViaLinearSearch:(id)object
@@ -169,6 +186,7 @@
 	return indexOfFoundedObject = -1;
 }
 
+#pragma mark - SORT STUFF
 #pragma mark - Bubble sort
 
 - (NSMutableArray *)bubbleSortedArray

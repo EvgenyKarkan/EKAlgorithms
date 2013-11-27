@@ -73,7 +73,7 @@
 	while ((root * 2 + 1) <= endIndex) {
 		NSInteger child = root * 2 + 1;
         
-		if (child + 1 <= endIndex && [self[child] integerValue] < [self[child + 1] integerValue]) {
+		if (child + 1 <= endIndex && [self[child] floatValue] < [self[child + 1] floatValue]) {
 			child++;
 		}
         
