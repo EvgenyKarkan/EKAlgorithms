@@ -61,6 +61,7 @@ Number
 13. Armstrong number check.
 14. Prime number check.
 15. Swap the value of two NSInteger pointers.
+16. Square root using Newton-Raphson method.
 
 Data structures
 ---------------
