@@ -171,7 +171,7 @@ int main(int argc, const char *argv[])
         NSLog(@"Is given number Prime? --> %@", [@23 isPrime] ? @"YES" : @"NO");
         
             //Square root
-        NSLog(@"Square root is --> %f", [@144.0 squareRoot]);
+        NSLog(@"Square root is --> %f", [@-144.0 squareRoot]);
         NSLog(@"Square root is --> %f", [@2.0 squareRoot]);
 
     

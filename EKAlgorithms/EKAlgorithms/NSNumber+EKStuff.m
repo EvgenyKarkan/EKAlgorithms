@@ -251,6 +251,10 @@
 
 - (CGFloat)squareRoot
 {
+    if ([self floatValue] < 0) {
+        return -1;
+    }
+    
 	const CGFloat epsilon = 0.00001f;
 	CGFloat guess = 1.0f;
     
