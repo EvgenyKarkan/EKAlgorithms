@@ -14,7 +14,7 @@ Array
 6. Union of two arrays (with remove duplicates).
 7. Find duplicates.
 8. Array with N unique/not unique random objects.
-9. Check is array sorted.
+9. Check if array is sorted.
 
 Search
 ------ 
