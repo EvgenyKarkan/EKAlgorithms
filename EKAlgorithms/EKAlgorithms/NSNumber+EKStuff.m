@@ -247,4 +247,27 @@
 	*xPointer = *xPointer - *yPointer;
 }
 
+#pragma mark - Square root using Newton–Raphson algo
+
+- (CGFloat)squareRoot
+{
+	const CGFloat epsilon = 0.00001f;
+	CGFloat guess = 1.0f;
+    
+	while ([NSNumber absoluteValue:guess * guess - [self floatValue]] >= epsilon) {
+		guess = ([self floatValue] / guess + guess) / 2.0f;
+	}
+    
+	return guess;
+}
+
++ (CGFloat)absoluteValue:(CGFloat)number
+{
+	if (number < 0) {
+		number = -number;
+	}
+    
+	return number;
+}
+
 @end

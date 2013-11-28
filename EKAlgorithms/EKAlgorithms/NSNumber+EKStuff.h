@@ -25,5 +25,6 @@
 - (BOOL)isArmstrongNumber;
 - (BOOL)isPrime;
 + (void)swapValueOfIntPointer:(NSInteger *)xPointer withValueOfIntPointer:(NSInteger *)yPointer;
+- (CGFloat)squareRoot;
 
 @end
