@@ -85,10 +85,9 @@ Originally, the compiled exercises are for educational purposes only and have no
 Important Note
 --------------
 The Foundation framework already includes tools and methods for most of the exercises contained here. Kudos to Apple on that!
-But... this. is. SPARTA! ©
-So lets get our hands dirty and try to implement cool CS stuff without or with minimal of the existing APIs.
+But... this. is. SPARTA!
+So lets get our hands dirty and try to implement cool CS stuff with minimal use of existing APIs.
 
 Thanks!
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/EvgenyKarkan/ekalgorithms/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
