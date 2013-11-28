@@ -1,11 +1,13 @@
 EKAlgorithms
 ============
 
-EKAlgorithms is a gradually increasing bunch of algorithms in which some well known CS algorithms, data structures & others are implemented in Objective-C language.  
-I will be posting new algorithms, stay in touch.
+EKAlgorithms is a set of computer exercises implemented in Objective-C. 
+Data structures, well known algorithms, CS curiosities, you name it!
 
-Array
------ 
+Don't forget to *watch* the repository; Its content will be expanded and updated frequently.
+
+Arrays and Lists
+----------------------
 1. Index of maximum element in array. 
 2. Find longest string in array of strings. 
 3. Find shortest string in array of strings.
@@ -16,13 +18,13 @@ Array
 8. Array with N unique/not unique random objects.
 9. Check if array is sorted.
 
-Search
------- 
+Search Algorithms
+-----------------
 1. Linear search.
 2. Binary search.
 
-Sort
-----
+Sorting Algorithms
+------------------
 1. Bubble sort.
 2. Shell sort.
 3. Merge sort.  
@@ -31,8 +33,8 @@ Sort
 6. Selection sort.
 7. Heap sort.
 
-String
-------
+Strings
+-------
 1. Palindrome or not.
 2. String reverse.
 3. Words count.
@@ -44,8 +46,8 @@ String
 9. Find 1st occurrence of "needle" in a "haystack".
 10. Last occurrence of "needle" in a "haystack".
 
-Number
--------
+Numeric Problems
+----------------
 1. Sieve of Eratosthenes.
 2. Great common divisor (GCD).
 3. Least common multiple (LCM).
@@ -63,7 +65,7 @@ Number
 15. Swap the value of two NSInteger pointers.
 16. Square root using Newton-Raphson method.
 
-Data structures
+Data Structures
 ---------------
 1. Stack (LIFO).
 2. Queue (FIFO).
@@ -76,17 +78,15 @@ Data structures
 
 Contributions
 -------------   
-All the algorithms are compiled for the self educational purposes only and are not intended to be the best "Big O" solution.   
-But I hope EKAlgorithms can serve you as an excellent starting point for the beginning of an in-depth study of algorithms and their optimization.   
-So pull requests are welcome! If you want to do something, please open an issue first.
+Pull requests are welcome! But if you want to do a contribution, open an issue first.
 
-Please note
------------
-We all know that the Foundation framework already includes such things as array reverse API, string concatenation API, binary search, comparison and a lot of other stuff.  
-What can we say? Right...Thank you Apple! :), because using in our projects native algorithmic APIs saves us a lot of time. 
+Originally, the compiled exercises are for educational purposes only and have no intention of being the ultimate solution complexity-wise, but they do intend to be used by you as a starting point of a deeper study on algorithms and their optimization. 
 
-But this ... is ... S P A R T A! ©    
-So lets get our hands dirty and try to implement CS algorithms without or with minimal using of native Foundation APIs. 
+Important Note
+--------------
+The Foundation framework already includes tools and methods for most of the exercises contained here. Kudos to Apple on that!
+But... this. is. SPARTA! ©
+So lets get our hands dirty and try to implement cool CS stuff without or with minimal of the existing APIs.
 
 Thanks!
 
