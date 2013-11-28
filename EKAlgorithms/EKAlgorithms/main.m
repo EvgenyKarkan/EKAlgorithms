@@ -260,6 +260,10 @@ int main(int argc, const char *argv[])
 		NSLog(@"Nodes in list after remove - %lu", (unsigned long)[list count]);
 		[list printList];
         
-	}
+        for (int i = 0; i < 300; i++) {
+            NSLog(@"Fibonacci at index %i: %@", i, [NSNumber fibonacciAtIndex:i]);
+            NSLog(@"Fibonacci at index %i: %@", i, [NSNumber fibonacciWithDecimal:i]);
+        }
+    }
 	return 0;
 }

@@ -74,6 +74,9 @@
 
 #pragma mark - Fibonacci
 
+/*
+ Original implementation does only get Fibonaccis up to the 92nd.
+ */
 + (NSMutableArray *)fibonacciNumbersUpToNumber:(NSUInteger)number
 {
 	NSMutableArray *resultArray = [@[] mutableCopy];
@@ -87,6 +90,74 @@
 	}
     
 	return resultArray;
+}
+
+/*
+ Very slow recursive Fibonacci alogrith.
+ */
++ (long long int)recursiveFibonacci:(NSUInteger)index
+{
+    if (index == 0) {
+        return (long long int)0;
+    } else if (index == 1) {
+        return (long long int)1;
+    } else {
+        return [NSNumber recursiveFibonacci:index - 2] + [NSNumber recursiveFibonacci:index - 1];
+    }
+    
+    
+}
+
+/*
+ Very fast Fibonacci alogrithm. Uses unsigned long long to store numbers up to 
+ 2^64 = 1.8446744e+19 = 18446744073709551615. => 92 is the last index that should
+ work with unsigned long long.
+ */
++ (unsigned long long)fibonacciWithLongLong:(int)index {
+    // this does not work because "last" can't hold a number larger than ULLONG_MAX...
+    if (index > 93) {
+        NSLog(@"Fibonacci at index %i would be too long for ULLONG", index);
+    }
+    
+    unsigned long long beforeLast = 0, last = 1;
+    while (index > 0) {
+        last += beforeLast;
+        beforeLast = last - beforeLast;
+        --index;
+    }
+    
+    if (index == 0) {
+        return beforeLast;
+    }
+    
+    return last;
+}
+
+/*
+ This one uses NSDecimalNumber and is correct until index 185.
+ */
++ (NSDecimalNumber *)fibonacciWithDecimal:(int)index {
+    NSDecimalNumber *beforeLast, *last;
+    beforeLast = [NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO];
+    last = [NSDecimalNumber decimalNumberWithMantissa:1 exponent:0 isNegative:NO];
+
+    while (index > 0) {
+        last = [last decimalNumberByAdding:beforeLast];
+        beforeLast = [last decimalNumberBySubtracting:beforeLast];
+        --index;
+    }
+    
+    if (index == 0) {
+        return beforeLast;
+    }
+    
+    return last;
+}
+
++ (NSNumber *)fibonacciAtIndex:(NSUInteger)index
+{
+    NSArray *array = [NSNumber fibonacciNumbersUpToNumber:index + 1];
+    return [array objectAtIndex:index];
 }
 
 #pragma mark - Sum of digits of a number

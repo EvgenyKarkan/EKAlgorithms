@@ -15,6 +15,10 @@
 - (NSUInteger)leastCommonMultipleWithNumber:(NSUInteger)secondNumber;
 - (NSUInteger)factorial;
 + (NSMutableArray *)fibonacciNumbersUpToNumber:(NSUInteger)number;
++ (NSNumber *)fibonacciAtIndex:(NSUInteger)index;
++ (long long int)recursiveFibonacci:(NSUInteger)index;
++ (unsigned long long)fibonacciWithLongLong:(int)index;
++ (NSDecimalNumber *)fibonacciWithDecimal:(int)index;
 - (NSUInteger)sumOfDigits;
 + (NSUInteger)decimalNumberFromBinary:(NSUInteger)binary;
 + (NSUInteger)binaryNumberFromDecimal:(NSUInteger)decimal;
