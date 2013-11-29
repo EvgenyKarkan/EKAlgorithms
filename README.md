@@ -64,8 +64,9 @@ Numeric Problems
 12. Leap year check.
 13. Armstrong number check.
 14. Prime number check.
-15. Swap the value of two NSInteger pointers.
-16. Square root using Newton-Raphson method.
+15. Find Nth prime.
+16. Swap the value of two NSInteger pointers.
+17. Square root using Newton-Raphson method.
 
 Data Structures
 ---------------
