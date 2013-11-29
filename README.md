@@ -45,6 +45,8 @@ Strings
 8. Concatenation of two strings.
 9. Find 1st occurrence of "needle" in a "haystack".
 10. Last occurrence of "needle" in a "haystack".
+11. Longest common subsequence.
+12. Levenshtein distance.
 
 Numeric Problems
 ----------------
