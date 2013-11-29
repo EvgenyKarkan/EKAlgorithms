@@ -238,6 +238,27 @@
 	return YES;
 }
 
+#pragma mark - Nth prime number
+
++ (NSUInteger)nthPrime:(NSUInteger)n
+{
+	NSUInteger number = 1, count = 0, i = 0;
+    
+	while (count < n) {
+		number = number + 1;
+		for (i = 2; i <= number; i++) {
+			if (number % i == 0) {
+				break;
+			}
+		}
+		if (i == number) {
+			count = count + 1;
+		}
+	}
+    
+	return number;
+}
+
 #pragma mark - Smart swap
 
 + (void)swapValueOfIntPointer:(NSInteger *)xPointer withValueOfIntPointer:(NSInteger *)yPointer

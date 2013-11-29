@@ -170,6 +170,9 @@ int main(int argc, const char *argv[])
             //Prime Number Check
         NSLog(@"Is given number Prime? --> %@", [@23 isPrime] ? @"YES" : @"NO");
         
+            //Nth prime
+        NSLog(@"Nth prime is --> %lu", (unsigned long)[NSNumber nthPrime:101]);
+        
             //Square root
         NSLog(@"Square root is --> %f", [@-144.0 squareRoot]);
         NSLog(@"Square root is --> %f", [@2.0 squareRoot]);

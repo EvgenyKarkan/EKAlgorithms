@@ -24,6 +24,7 @@
 - (BOOL)isLeapGivenYear;
 - (BOOL)isArmstrongNumber;
 - (BOOL)isPrime;
++ (NSUInteger)nthPrime:(NSUInteger)n;
 + (void)swapValueOfIntPointer:(NSInteger *)xPointer withValueOfIntPointer:(NSInteger *)yPointer;
 - (CGFloat)squareRoot;
 
