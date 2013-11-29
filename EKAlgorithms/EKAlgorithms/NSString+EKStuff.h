@@ -21,4 +21,19 @@
 - (NSInteger)indexOfLastOccurrenceOfNeedle:(NSString *)needle;
 + (void)allPermutationsOfCString:(char *)string withFirstCharacterPosition:(int)i lastCharacterPosition:(int)n;
 
+/**
+ *@param
+ *  other: the string for comparing with self
+ *@Output
+ *  an array of common sequence of the two strings
+ */
+- (NSArray*)LCS_WithString:(NSString*)other;
+/**
+ *@param
+ *  other: the string for comparing with self
+ *@Output
+ *  the Levenshtein Distance of the two strings
+ */
+- (NSInteger)LD_WithString:(NSString*)other;
+
 @end
