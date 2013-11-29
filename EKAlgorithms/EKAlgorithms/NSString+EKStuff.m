@@ -214,8 +214,7 @@
 	return result;
 }
 
-
-#pragma mark - longest common sequence
+#pragma mark - Longest common sequence
 
 static char arrayKey;
 
@@ -282,10 +281,10 @@ enum decreaseDir {kInit = 0, kLeftUp, kUp, kLeft};
  *                  row: the row index in the matrix LCS_direction
  *                  col: the column index in the matrix LCS_direction
  **/
-- (void)LCS_Print:(NSArray*)direction
-       withString:(NSString*)other
-              row:(NSInteger)i
-        andColumn:(NSInteger)j
+-(void)LCS_Print:(NSArray *)direction
+      withString:(NSString *)other
+             row:(NSInteger)i
+       andColumn:(NSInteger)j
 {
 	if (other == nil) {
 		return;
@@ -310,12 +309,15 @@ enum decreaseDir {kInit = 0, kLeftUp, kUp, kLeft};
 		[self LCS_Print:direction withString:other row:i - 1 andColumn:j];
 	}
 	else {
-		[self LCS_Print:direction withString
-					   :other row:i andColumn:j - 1];
+		[self LCS_Print:direction
+             withString:other
+                    row:i
+              andColumn:j - 1];
 	}
 }
 
 #pragma mark -  Levenshtein distance
+
 - (NSInteger)LD_WithString:(NSString *)other
 {
         //creating and retaining a matrix of size self.length+1 by other.length+1

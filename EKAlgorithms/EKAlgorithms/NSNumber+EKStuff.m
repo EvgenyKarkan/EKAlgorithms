@@ -104,8 +104,6 @@
     } else {
         return [NSNumber recursiveFibonacci:index - 2] + [NSNumber recursiveFibonacci:index - 1];
     }
-    
-    
 }
 
 /*
@@ -113,45 +111,47 @@
  2^64 = 1.8446744e+19 = 18446744073709551615. => 92 is the last index that should
  work with unsigned long long.
  */
-+ (unsigned long long)fibonacciWithLongLong:(int)index {
-    // this does not work because "last" can't hold a number larger than ULLONG_MAX...
-    if (index > 93) {
-        NSLog(@"Fibonacci at index %i would be too long for ULLONG", index);
-    }
++ (unsigned long long)fibonacciWithLongLong:(int)index
+{
+        // this does not work because "last" can't hold a number larger than ULLONG_MAX...
+	if (index > 93) {
+		NSLog(@"Fibonacci at index %i would be too long for ULLONG", index);
+	}
     
-    unsigned long long beforeLast = 0, last = 1;
-    while (index > 0) {
-        last += beforeLast;
-        beforeLast = last - beforeLast;
-        --index;
-    }
+	unsigned long long beforeLast = 0, last = 1;
+	while (index > 0) {
+		last += beforeLast;
+		beforeLast = last - beforeLast;
+		--index;
+	}
     
-    if (index == 0) {
-        return beforeLast;
-    }
+	if (index == 0) {
+		return beforeLast;
+	}
     
-    return last;
+	return last;
 }
 
 /*
  This one uses NSDecimalNumber and is correct until index 185.
  */
-+ (NSDecimalNumber *)fibonacciWithDecimal:(int)index {
-    NSDecimalNumber *beforeLast, *last;
-    beforeLast = [NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO];
-    last = [NSDecimalNumber decimalNumberWithMantissa:1 exponent:0 isNegative:NO];
-
-    while (index > 0) {
-        last = [last decimalNumberByAdding:beforeLast];
-        beforeLast = [last decimalNumberBySubtracting:beforeLast];
-        --index;
-    }
++ (NSDecimalNumber *)fibonacciWithDecimal:(int)index
+{
+	NSDecimalNumber *beforeLast = nil, *last = nil;
+	beforeLast = [NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO];
+	last = [NSDecimalNumber decimalNumberWithMantissa:1 exponent:0 isNegative:NO];
     
-    if (index == 0) {
-        return beforeLast;
-    }
+	while (index > 0) {
+		last = [last decimalNumberByAdding:beforeLast];
+		beforeLast = [last decimalNumberBySubtracting:beforeLast];
+		--index;
+	}
     
-    return last;
+	if (index == 0) {
+		return beforeLast;
+	}
+    
+	return last;
 }
 
 + (NSNumber *)fibonacciAtIndex:(NSUInteger)index
