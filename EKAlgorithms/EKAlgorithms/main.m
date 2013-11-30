@@ -95,6 +95,11 @@ int main(int argc, const char *argv[])
             //Last occurance of needle in a haystack
         NSLog(@"Index is --> %ld", (long)[@"Lorem ipsum dolor sit amet lorem ipsum" indexOfLastOccurrenceOfNeedle:@"or"]);
         
+            //Longest common sequence
+        NSLog(@"Longest common sequence of abcdbceea and cabdefga is --> %@",[@"abcdbceea" LCS_WithString:@"cabdefga"]);
+        
+            //Levenshtein Distance
+        NSLog(@"Levenshtein Distance of levenshtein and meilenstein is --> %ld",(long)[@"levenshtein" LD_WithString:@"meilenstein"]);
         
             //Longest string from array
 		NSLog(@"The longest string is %@", [@[@"Kiev", @"Moscow", @"Tokyo", @"Saint-Petersburg", @"SanFrancisco"] longestString]);
