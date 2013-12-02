@@ -283,15 +283,15 @@ int main(int argc, const char *argv[])
 		[list printList];
         
             //BST stuff
-        EKBSTree *tree = [[EKBSTree alloc] initWithObject:[NSNumber numberWithInt:4] compareSelector:@selector(compare:)];
-        [tree insertObject:[NSNumber numberWithInt:9]];
-        [tree insertObject:[NSNumber numberWithInt:2]];
-        [tree insertObject:[NSNumber numberWithInt:10]];
-        [tree insertObject:[NSNumber numberWithInt:7]];
-        [tree insertObject:[NSNumber numberWithInt:-5]];
-        [tree insertObject:[NSNumber numberWithInt:-1]];
-        [tree insertObject:[NSNumber numberWithFloat:2.5f]];
-        [tree insertObject:[NSNumber numberWithFloat:-5.5f]];
+        EKBSTree *tree = [[EKBSTree alloc] initWithObject:@4 compareSelector:@selector(compare:)];
+        [tree insertObject:@9];
+        [tree insertObject:@2];
+        [tree insertObject:@10];
+        [tree insertObject:@7];
+        [tree insertObject:@-5];
+        [tree insertObject:@-1];
+        [tree insertObject:@2.5f];
+        [tree insertObject:@-5.5f];
 
         [tree printDescription]; // see EKBSTree.png picture
 
