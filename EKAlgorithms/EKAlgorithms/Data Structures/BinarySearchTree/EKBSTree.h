@@ -14,8 +14,9 @@
 @property (nonatomic, strong) EKTreeNode *root;
 
 - (instancetype)initWithObject:(NSObject *)object compareSelector:(SEL)selector;
-- (BOOL)find:(NSObject *)object;
 - (void)insertObject:(NSObject *)newObject;
+- (void)printDescription;
+- (BOOL)find:(NSObject *)object;
 - (void)deleteObject:(NSObject *)object;
 
 @end

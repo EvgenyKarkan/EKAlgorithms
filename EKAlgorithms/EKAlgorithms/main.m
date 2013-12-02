@@ -17,6 +17,7 @@
 #import "EKGraph.h"
 #import "EKLinkedList.h"
 #import "EKNode.h"
+#import "EKBSTree.h"
 
 int main(int argc, const char *argv[])
 {
@@ -148,6 +149,11 @@ int main(int argc, const char *argv[])
             //Fibonacci numbers
 		NSLog(@"Fibonacci series is %@", [NSNumber fibonacciNumbersUpToNumber:15]);
         
+        for (int i = 298; i < 300; i++) {
+            NSLog(@"Fibonacci at index %i: %@", i, [NSNumber fibonacciAtIndex:i]); //limited by 92
+            NSLog(@"Fibonacci at index %i: %@", i, [NSNumber fibonacciWithDecimal:i]);
+        }
+
             //Find sum of digits
         NSLog(@"Sum of digits is: %lu", (unsigned long)[@1234 sumOfDigits]);
         
@@ -276,10 +282,20 @@ int main(int argc, const char *argv[])
 		NSLog(@"Nodes in list after remove - %lu", (unsigned long)[list count]);
 		[list printList];
         
-        for (int i = 0; i < 300; i++) {
-            NSLog(@"Fibonacci at index %i: %@", i, [NSNumber fibonacciAtIndex:i]);
-            NSLog(@"Fibonacci at index %i: %@", i, [NSNumber fibonacciWithDecimal:i]);
-        }
+            //BST stuff
+        EKBSTree *tree = [[EKBSTree alloc] initWithObject:[NSNumber numberWithInt:4] compareSelector:@selector(compare:)];
+        [tree insertObject:[NSNumber numberWithInt:9]];
+        [tree insertObject:[NSNumber numberWithInt:2]];
+        [tree insertObject:[NSNumber numberWithInt:10]];
+        [tree insertObject:[NSNumber numberWithInt:7]];
+        [tree insertObject:[NSNumber numberWithInt:-5]];
+        [tree insertObject:[NSNumber numberWithInt:-1]];
+        [tree insertObject:[NSNumber numberWithFloat:2.5f]];
+        [tree insertObject:[NSNumber numberWithFloat:-5.5f]];
+
+        [tree printDescription]; // see EKBSTree.png picture
+
     }
+    
 	return 0;
 }

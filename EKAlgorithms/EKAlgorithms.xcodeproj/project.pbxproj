@@ -52,6 +52,7 @@
 		DE46B4CC183274A200353AC8 /* EKGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKGraph.h; sourceTree = "<group>"; };
 		DE46B4CD183274A200353AC8 /* EKGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKGraph.m; sourceTree = "<group>"; };
 		DE46B4CF1832A29A00353AC8 /* EKGraphPicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EKGraphPicture.png; sourceTree = "<group>"; };
+		DE7C1EF6184CC7DD00B9A103 /* EKBSTree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EKBSTree.png; sourceTree = "<group>"; };
 		DEADAD6F17B7A6A80031DEB9 /* EKAlgorithms */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EKAlgorithms; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEADAD7217B7A6A80031DEB9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DEADAD7517B7A6A80031DEB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -168,6 +169,7 @@
 		DEC568AA182C261000AA90E1 /* BinarySearchTree */ = {
 			isa = PBXGroup;
 			children = (
+				DE7C1EF6184CC7DD00B9A103 /* EKBSTree.png */,
 				DED2740018357F3A0002C2F5 /* EKTreeNode.h */,
 				DED2740118357F3A0002C2F5 /* EKTreeNode.m */,
 				DED2740318357F530002C2F5 /* EKBSTree.h */,
