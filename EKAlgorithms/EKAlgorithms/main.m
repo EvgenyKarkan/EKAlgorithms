@@ -187,6 +187,9 @@ int main(int argc, const char *argv[])
             //Square root
         NSLog(@"Square root is --> %f", [@-144.0 squareRoot]);
         NSLog(@"Square root is --> %f", [@2.0 squareRoot]);
+        
+            //Convertion to another numeral system
+        NSLog(@"Converted number is --> %@", [@42 convertedNumberWithBase:2]);
 
     
             //Stack
