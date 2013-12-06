@@ -67,7 +67,7 @@ Numeric Problems
 15. Find Nth prime.
 16. Swap the value of two NSInteger pointers.
 17. Square root using Newton-Raphson method.
-18. Convert integer to another numeral system (2, 8, 10, 12, 16).
+18. Convert integer to another numeral system (2, 8, 12, 16).
 
 Data Structures
 ---------------
