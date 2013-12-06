@@ -58,59 +58,54 @@
 
 + (NSMutableArray *)mergeSortedArrayWithUnsortedArray:(NSMutableArray *)unsortedArray
 {
-	[self partitionArray:unsortedArray withMinimalIndex:0 withMaximumIndex:(NSInteger)[unsortedArray count] - 1];
+	[self mergeArray:unsortedArray withMinimalIndex:0 withMaximumIndex:[unsortedArray count] - 1];
 	
 	return unsortedArray;
 }
 
-+ (void)partitionArray:(NSMutableArray *)arrayToPartition withMinimalIndex:(NSInteger)min withMaximumIndex:(NSInteger)max
++ (void)mergeArray:(NSMutableArray *)arrayToPartition withMinimalIndex:(NSUInteger)minIndex withMaximumIndex:(NSUInteger)maxIndex
 {
-	NSInteger mid = 0;
-	
-	if (min < max) {
-		mid = (min + max) / 2;
-		[self partitionArray:arrayToPartition withMinimalIndex:min withMaximumIndex:mid];
-		[self partitionArray:arrayToPartition withMinimalIndex:mid + 1 withMaximumIndex:max];
-		[self mergeArray:arrayToPartition withMinimalIndex:min withMediumIndex:mid withMaximalIndex:max];
+	NSUInteger mid;
+	if (minIndex < maxIndex) {
+		mid = (minIndex + maxIndex) / 2;
+		[self mergeArray:arrayToPartition withMinimalIndex:minIndex withMaximumIndex:mid];
+		[self mergeArray:arrayToPartition withMinimalIndex:mid + 1 withMaximumIndex:maxIndex];
+		[self mergeArray:arrayToPartition withMinimalIndex:minIndex withMediumIndex:mid withMaximalIndex:maxIndex];
 	}
 }
 
-+ (void)mergeArray:(NSMutableArray *)arrayToMerge withMinimalIndex:(NSInteger)min withMediumIndex:(NSInteger)mid withMaximalIndex:(NSInteger)max
++ (void)mergeArray:(NSMutableArray *)arrayToMerge withMinimalIndex:(NSUInteger)minIndex withMediumIndex:(NSUInteger)midIndex withMaximalIndex:(NSUInteger)maxIndex
 {
 	NSMutableArray *temporaryArray = [NSMutableArray array];
 	
-	for (NSInteger i = 0; i < [arrayToMerge count]; i++) {
-		[temporaryArray addObject:[NSNull null]];
-	}
+	NSInteger j = minIndex,
+              m = midIndex + 1;
 	
-	NSInteger i = 0, j = 0, k = 0, m = 0;
-	j = min;
-	m = mid + 1;
-	
-	for (i = min; j <= mid && m <= max; i++) {
-		if ([[arrayToMerge objectAtIndex:j] floatValue] <= [[arrayToMerge objectAtIndex:m] floatValue]) {
-			[temporaryArray replaceObjectAtIndex:i withObject:[arrayToMerge objectAtIndex:j]];
+	while (j <= midIndex && m <= maxIndex) {
+		if ([arrayToMerge[j] compare:arrayToMerge[m]] == NSOrderedSame || [arrayToMerge[j] compare:arrayToMerge[m]] == NSOrderedAscending) {
+			[temporaryArray addObject:arrayToMerge[j]];
 			j++;
 		}
 		else {
-			[temporaryArray replaceObjectAtIndex:i withObject:[arrayToMerge objectAtIndex:m]];
+			[temporaryArray addObject:arrayToMerge[m]];
 			m++;
 		}
 	}
-	if (j > mid) {
-		for (k = m; k <= max; k++) {
-			[temporaryArray replaceObjectAtIndex:i withObject:[arrayToMerge objectAtIndex:k]];
-			i++;
+    
+	if (j > midIndex) {
+		while (m <= maxIndex) {
+			[temporaryArray addObject:arrayToMerge[m++]];
 		}
 	}
 	else {
-		for (k = j; k <= mid; k++) {
-			[temporaryArray replaceObjectAtIndex:i withObject:[arrayToMerge objectAtIndex:k]];
-			i++;
+		while (j <= midIndex) {
+			[temporaryArray addObject:arrayToMerge[j++]];
 		}
 	}
-	for (k = min; k <= max; k++) {
-		[arrayToMerge replaceObjectAtIndex:k withObject:[temporaryArray objectAtIndex:k]];
+    
+    NSUInteger tempIndex = 0;
+	while (minIndex <= maxIndex) {
+		[arrayToMerge replaceObjectAtIndex:minIndex++ withObject:temporaryArray[tempIndex++]];
 	}
 }
 
