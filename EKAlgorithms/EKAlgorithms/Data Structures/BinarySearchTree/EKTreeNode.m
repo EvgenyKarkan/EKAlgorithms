@@ -12,14 +12,17 @@
 
 - (void)printDescription
 {
-	NSLog(@"%@", self.object);
+    NSLog(@"%@", self.object);
     
 	if (self.leftChild) {
-		[self.leftChild printDescription];
+        NSLog(@"Left child of %@ will be the -->", self.object);
+		[self.leftChild printDescription];;
 	}
     
 	if (self.rightChild) {
+        NSLog(@"Right child of %@ will be the -->", self.object);
 		[self.rightChild printDescription];
 	}
 }
+
 @end

@@ -7,11 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EKSearchStuff.h"
-#import "EKSortStuff.h"
-#import "EKArrayStuff.h"
-#import "EKStringStuff.h"
-#import "EKNumbersStuff.h"
+#import "NSArray+EKStuff.h"
+#import "NSNumber+EKStuff.h"
+#import "NSString+EKStuff.h"
 #import "EKStack.h"
 #import "EKQueue.h"
 #import "EKDeque.h"
@@ -19,15 +17,16 @@
 #import "EKGraph.h"
 #import "EKLinkedList.h"
 #import "EKNode.h"
+#import "EKBSTree.h"
 
 int main(int argc, const char *argv[])
 {
 	@autoreleasepool {
             //Linear search
-		NSLog(@"Linear search result: %li", (long)[EKSearchStuff indexOfObjectViaLinearSearch:@42 inArray:@[@6, @9, @12, @13, @14, @29, @42]]);
+		NSLog(@"Linear search result: %li", (long)[@[@6, @9, @12, @13, @14, @29, @42] indexOfObjectViaLinearSearch:@42]);
         
             //Binary search
-		NSLog(@"Binary search result: %li", (long)[EKSearchStuff indexOfObjectViaBinarySearch:@42 inSortedArray:@[@6, @9, @12, @13, @14, @29, @42]]);
+		NSLog(@"Binary search result: %li", (long)[@[@6, @9, @12, @13, @14, @29, @42] indexOfObjectViaBinarySearch:@42]);
         
             //Init array with 5 random elements
 		NSMutableArray *array = [NSMutableArray array];
@@ -37,129 +36,161 @@ int main(int argc, const char *argv[])
         
             //Max element of array
 		NSLog(@"Max element of created array %@ is equals to %@ and stored at index %li", [array debugDescription],
-		      [array objectAtIndex:(long)[EKArrayStuff indexOfMaximumElementInArray:array]],
-		      (long)[EKArrayStuff indexOfMaximumElementInArray:array]);
+		      [array objectAtIndex:(long)[array indexOfMaximumElement]],
+		      (long)[array indexOfMaximumElement]);
         
             //Bubble sort
-		NSLog(@"Bubble sorted array is: %@", [EKSortStuff bubbleSortedArrayWithUnsortedArray:array]);
+		NSLog(@"Bubble sorted array is: %@", [array bubbleSortedArray]);
         
             //Shell sort
-		NSLog(@"Shell sorted array is %@", [EKSortStuff shellSortedArrayWithUnsortedArray:[NSMutableArray arrayWithArray:@[@2, @45, @8, @1, @27, @16, @5.3, @ - 53.7]]]);
+		NSLog(@"Shell sorted array is %@", [@[@2, @45, @8, @1, @27, @16, @5.3, @ - 53.7] shellSortedArray]);
         
             //Merge sort
-		NSLog(@"Merge sorted array %@", [EKSortStuff mergeSortedArrayWithUnsortedArray:[NSMutableArray arrayWithArray:@[@21, @45, @87, @10, @273, @616, @0.2, @ - 0.52]]]);
+		NSLog(@"Merge sorted array %@", [@[@21, @45, @87, @10, @273, @616, @0.2, @ - 0.52] mergeSortedArray]);
         
             //Quick sort numbers
-		NSLog(@"Quick sorted array %@", [EKSortStuff quickSortedArrayWithUnsortedArray:[NSMutableArray arrayWithArray:@[@2.1, @405, @817, @10, @2732, @616, @0.2, @ - 0.52]]
-		                                                                 withLeftIndex:0
+		NSLog(@"Quick sorted array %@", [@[@2.1, @405, @817, @10, @2732, @616, @0.2, @ - 0.52] quickSortedArrayWithLeftIndex:0
 		                                                                withRightIndex:[[NSMutableArray arrayWithArray:@[@21, @45, @87, @10, @273, @616, @0.2, @ - 0.52]] count] - 1]);
         
             //Insertion sort
-		NSLog(@"Insertion sorted array %@", [EKSortStuff insertionSortedArrayWithUnsortedArray:[@[@ -23.0154, @46, @0.021, @42, @5, @NO, @YES] mutableCopy]]);
+		NSLog(@"Insertion sorted array %@", [@[@ -23.0154, @46, @0.021, @42, @5, @NO, @YES] insertionSortedArray]);
         
             //Selection sort
-		NSLog(@"Selection sorted array  %@", [EKSortStuff selectionSortedArrayWithUnsortedArray:[@[@160, @0.097, @NO, @89, @ -61.001256, @7.5, @YES] mutableCopy]]);
+		NSLog(@"Selection sorted array  %@", [@[@160, @0.097, @NO, @89, @ -61.001256, @7.5, @YES] selectionSortedArray]);
         
             //Heap sort
-        NSLog(@"Heap sorted array --> %@", [EKSortStuff heapSortedArrayWithUnsortedArray:[@[@9871523, @0.0987516, @NO, @89, @ -61.001256, @712.5, @YES, @384756] mutableCopy]]);
+        NSLog(@"Heap sorted array --> %@", [@[@9871523, @0.0987516, @NO, @89, @ -61.001256, @712.5, @YES, @384756] heapSortedArray]);
         
         
         
             //Palindrome string
-		NSLog(@"Palindrome? Answer:%@", [EKStringStuff isGivenStringPalindrome:@"Was it a car or a cat I saw"] ? @"YES" : @"NO");
+		NSLog(@"Palindrome? Answer:%@", [@"Was it a car or a cat I saw" isPalindrome] ? @"YES" : @"NO");
+        
+		NSLog(@"Palindrome? Answer:%@", [@"wasitacaroracatisaw" isPalindrome] ? @"YES" : @"NO");
         
             //Reverse
-        NSLog(@"Reverse is: %@", [EKStringStuff reversedStringWithString:@"Lorem ipsum dolor"]);
+        NSLog(@"Reverse is: %@", [@"Lorem ipsum dolor" reversedString]);
         
             //Count words
-        NSLog(@"Words # %lu", (unsigned long)[EKStringStuff numberOfWordsInString:@"fgf fgfdgfdg dfgfdgfd dfgfdgfd dfg"]);
+        NSLog(@"Words # %lu", (unsigned long)[@"fgf fgfdgfdg dfgfdgfd dfgfdgfd dfg" numberOfWordsInString]);
         
             //Permutations
         char a[] = "ABC";
-        [EKStringStuff allPermutationsOfCString:a withFirstCharacterPosition:0 lastCharacterPosition:2];
+        [NSString allPermutationsOfCString:a withFirstCharacterPosition:0 lastCharacterPosition:2];
         
             //Count each letter occurence in string
-        [EKStringStuff countEachCharacterOccurrenceInString:@"Hello World"];
+        [@"Hello World" countEachCharacterOccurrenceInString];
         
             //Needles in haystack
-        NSLog(@"Needle %lu", (unsigned long)[EKStringStuff numberOfNeedles:@"foo" inHaystack:@"Foo is a bar with foo bar foo"]);
+        NSLog(@"Needle %lu", (unsigned long)[@"Foo is a bar with foo bar foo" numberOfOccurrenciesOfString:@"foo"]);
         
             //Random string
-        NSLog(@"Random string %@", [EKStringStuff randomStringWithLength:100]);
+        NSLog(@"Random string %@", [NSString randomStringWithLength:100]);
         
             //Concat
-        NSLog(@"Concat string is --> %@", [EKStringStuff concatenatedStringWithString:@"Hello" secondString:@"World!"]);
+        NSLog(@"Concat string is --> %@", [@"Hello" concatenateWithString:@"World!"]);
         
             //First occurance of needle in a haystack
-        NSLog(@"Index is --> %ld", (long)[EKStringStuff indexOfFirstOccurrenceOfNeedle:@"em" inHaystack:@"Lorem ipsum dolor sit amet lorem ipsum"]);
+        NSLog(@"Index is --> %ld", (long)[@"Lorem ipsum dolor sit amet lorem ipsum" indexOfFirstOccurrenceOfNeedle:@"em"]);
         
             //Last occurance of needle in a haystack
-        NSLog(@"Index is --> %ld", (long)[EKStringStuff indexOfLastOccurrenceOfNeedle:@"or" inHaystack:@"Lorem ipsum dolor sit amet lorem ipsum"]);
+        NSLog(@"Index is --> %ld", (long)[@"Lorem ipsum dolor sit amet lorem ipsum" indexOfLastOccurrenceOfNeedle:@"or"]);
         
+            //Longest common sequence
+        NSLog(@"Longest common sequence of abcdbceea and cabdefga is --> %@",[@"abcdbceea" LCS_WithString:@"cabdefga"]);
+        
+            //Levenshtein Distance
+        NSLog(@"Levenshtein Distance of levenshtein and meilenstein is --> %ld",(long)[@"levenshtein" LD_WithString:@"meilenstein"]);
         
             //Longest string from array
-		NSLog(@"The longest string is %@", [EKArrayStuff longestStringInArray:[@[@"Kiev", @"Moscow", @"Tokyo", @"Saint-Petersburg", @"SanFrancisco"] mutableCopy]]);
+		NSLog(@"The longest string is %@", [@[@"Kiev", @"Moscow", @"Tokyo", @"Saint-Petersburg", @"SanFrancisco"] longestString]);
         
             //Shortest string from array
-		NSLog(@"The shortest string is %@", [EKArrayStuff shortestStringInArray:[@[@"DRY", @"KISS", @"YAGNI", @"SOLID", @"GRASP"] mutableCopy]]);
+		NSLog(@"The shortest string is %@", [@[@"DRY", @"KISS", @"YAGNI", @"SOLID", @"GRASP"] shortestString]);
         
             //Reverse of array
-        NSLog(@"Reversed array is %@", [EKArrayStuff reversedArrayWithArray:@[@"one", @"two", @"three", @"four", @"five"] usingNativeAPI:YES]);
+        NSLog(@"Reversed array is %@", [@[@"one", @"two", @"three", @"four", @"five"] reversedArray]);
         
             //Intersection of two arrays
-        NSLog(@"Intersection is %@", [EKArrayStuff intersectionOfArray:@[@"one", @"two", @"three"] withArray:@[@"two", @"three", @"four"]]);
+        NSLog(@"Intersection is %@", [@[@"one", @"two", @"three"] intersectionWithArray:@[@"two", @"three", @"four"]]);
         
             //Union of two arrays
-        NSLog(@"Union is %@", [EKArrayStuff unionWithoutDuplicatesOfArray:@[@"Honda", @"Toyota"] withArray:@[@"Toyota", @"Alfa Romeo"]]);
+        NSLog(@"Union is %@", [@[@"Honda", @"Toyota"] unionWithoutDuplicatesWithArray:@[@"Toyota", @"Alfa Romeo"]]);
         
             //Find duplicates
-        NSLog(@"Result of finding duplicates is %@", [EKArrayStuff findDuplicatesInArray:@[@"foo", @"bar", @"buzz", @"foo"]] ? @"YES" : @"NO");
+        NSLog(@"Result of finding duplicates is %@", [@[@"foo", @"bar", @"buzz", @"foo"] hasDuplicates] ? @"YES" : @"NO");
         
             //Random object
-        NSLog(@"Random array %@", [EKArrayStuff randomObjectsWithArraySize:5 maxRandomValue:6 uniqueObjects:YES]);
+        NSLog(@"Random array %@", [NSArray randomObjectsWithArraySize:5 maxRandomValue:6 uniqueObjects:YES]);
+        
+            //Is sorted check
+        NSLog(@"Given array sorted? --> %@", [@[@1.1, @1.5, @1.9, @2.5, @3, @4, @4] isSorted] ? @"YES" : @"NO");
+        
         
             //Sieve of Eratosf
-		NSLog(@"Primes from sieve %@", [[EKNumbersStuff primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);
+		NSLog(@"Primes from sieve %@", [[NSNumber primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);
         
             //GCD
-		NSLog(@"Greatest common divisor of two numbers is %lu", (unsigned long)[EKNumbersStuff greatestCommonDivisorWithFirstNumber:42 secondNumber:84]);
+		NSLog(@"Greatest common divisor of two numbers is %lu", (unsigned long)[@42 greatestCommonDivisorWithNumber:84]);
         
             //LCM
-		NSLog(@"Least common multiple of two numbers is %lu", [EKNumbersStuff leastCommonMultipleWithFirstNumber:16 secondNumber:20]);
+		NSLog(@"Least common multiple of two numbers is %lu", [@16 leastCommonMultipleWithNumber:20]);
+        
+            //Swap integer pointers without using a third element
+        
+        NSInteger intValue1 = 12, intValue2 = 21;
+        NSLog(@"Integer values before swap: %ld, %ld", (long)intValue1, (long)intValue2);
+        [NSNumber swapValueOfIntPointer:&intValue1 withValueOfIntPointer:&intValue2];
+        NSLog(@"Integer values after swap: %ld, %ld", (long)intValue1, (long)intValue2);
         
             //Factorial
-		NSLog(@"Factorial is %llu", (unsigned long long)[EKNumbersStuff factorialForNumber:3]);
+		NSLog(@"Factorial is %llu", (unsigned long long)[@3 factorial]);
         
             //Fibonacci numbers
-		NSLog(@"Fibonacci series is %@", [EKNumbersStuff fibonacciNumbersUpToNumber:15]);
+		NSLog(@"Fibonacci series is %@", [NSNumber fibonacciNumbersUpToNumber:15]);
         
+        for (int i = 298; i < 300; i++) {
+            NSLog(@"Fibonacci at index %i: %@", i, [NSNumber fibonacciAtIndex:i]); //limited by 92
+            NSLog(@"Fibonacci at index %i: %@", i, [NSNumber fibonacciWithDecimal:i]);
+        }
+
             //Find sum of digits
-        NSLog(@"Sum of digits is: %lu", (unsigned long)[EKNumbersStuff sumOfDigitsOfNumber:1234]);
+        NSLog(@"Sum of digits is: %lu", (unsigned long)[@1234 sumOfDigits]);
         
             //Binary to decimal convertion
-        NSLog(@"Decimal is: %lu", (unsigned long)[EKNumbersStuff decimalNumberFromBinary:1101]);
+        NSLog(@"Decimal is: %lu", (unsigned long)[NSNumber decimalNumberFromBinary:1101]);
         
             //Decimal to binary
-        NSLog(@"Binary is %lu", (unsigned long)[EKNumbersStuff binaryNumberFromDecimal:3]);
+        NSLog(@"Binary is %lu", (unsigned long)[NSNumber binaryNumberFromDecimal:3]);
         
             //Fast Exp
-        NSLog(@"Fast exp %ld", (long)[EKNumbersStuff fastExpForNumber:2 withPower:10]);
+        NSLog(@"Fast exp %ld", (long)[NSNumber fastExpForNumber:2 withPower:10]);
         
             //Number reverse
-        NSLog(@"Reversed number is %li", (long)[EKNumbersStuff reverseNumberWithNumber:123456789]);
+        NSLog(@"Reversed number is %li", (long)[@123456789 reverseNumber]);
         
             //Even/Odd
-        NSLog(@"Given number even? - %@", [EKNumbersStuff isEvenNumber:1234567] ? @"YES" : @"NO");
+        NSLog(@"Given number even? - %@", [@1234567 isEven] ? @"YES" : @"NO");
         
             //Leap year check
-        NSLog(@"Is given year leap? - %@", [EKNumbersStuff isLeapGivenYear:2000] ? @"YES" : @"NO");
+        NSLog(@"Is given year leap? - %@", [@2000 isLeapGivenYear] ? @"YES" : @"NO");
         
             //Armstrong number check
-        NSLog(@"Is given number Armstrong? --> %@", [EKNumbersStuff isArmstrongNumber:407] ? @"YES" : @"NO");
+        NSLog(@"Is given number Armstrong? --> %@", [@407 isArmstrongNumber] ? @"YES" : @"NO");
         
             //Prime Number Check
-        NSLog(@"Is given number Prime? --> %@", [EKNumbersStuff isPrime:23] ? @"YES" : @"NO");
+        NSLog(@"Is given number Prime? --> %@", [@23 isPrime] ? @"YES" : @"NO");
         
+            //Nth prime
+        NSLog(@"Nth prime is --> %lu", (unsigned long)[NSNumber nthPrime:101]);
+        
+            //Square root
+        NSLog(@"Square root is --> %f", [@-144.0 squareRoot]);
+        NSLog(@"Square root is --> %f", [@2.0 squareRoot]);
+        
+            //Convertion to another numeral system
+        NSLog(@"Converted number is --> %@", [@42 convertedNumberWithBase:2]);
+
     
             //Stack
 		EKStack *stack = [[EKStack alloc] initWithSize:3];
@@ -254,6 +285,20 @@ int main(int argc, const char *argv[])
 		NSLog(@"Nodes in list after remove - %lu", (unsigned long)[list count]);
 		[list printList];
         
-	}
+            //BST stuff
+        EKBSTree *tree = [[EKBSTree alloc] initWithObject:@4 compareSelector:@selector(compare:)];
+        [tree insertObject:@9];
+        [tree insertObject:@2];
+        [tree insertObject:@10];
+        [tree insertObject:@7];
+        [tree insertObject:@-5];
+        [tree insertObject:@-1];
+        [tree insertObject:@2.5f];
+        [tree insertObject:@-5.5f];
+
+        [tree printDescription]; // see EKBSTree.png picture
+
+    }
+    
 	return 0;
 }
