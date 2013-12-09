@@ -130,7 +130,9 @@ int main(int argc, const char *argv[])
         
             //Is sorted check
         NSLog(@"Given array sorted? --> %@", [@[@1.1, @1.5, @1.9, @2.5, @3, @4, @4] isSorted] ? @"YES" : @"NO");
-        
+
+            // Array Shuffle (Fisher–Yates)
+        NSLog(@"Array Shuffle of array: %@ is: %@", array, [array shuffledArray]);
         
             //Sieve of Eratosf
 		NSLog(@"Primes from sieve %@", [[NSNumber primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);

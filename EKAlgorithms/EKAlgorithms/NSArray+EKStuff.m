@@ -199,6 +199,20 @@
 	return YES;
 }
 
+- (NSArray *)shuffledArray {
+    NSUInteger i = self.count;
+
+    NSMutableArray *shuffledArray = [self mutableCopy];
+
+    while (i) {
+        NSUInteger randomIndex = arc4random_uniform((u_int32_t)i);
+
+        [shuffledArray exchangeObjectAtIndex:randomIndex withObjectAtIndex:--i];
+    }
+
+    return [shuffledArray copy];
+}
+
 #pragma mark - SEARCH STUFF
 #pragma mark - Linear search
 
