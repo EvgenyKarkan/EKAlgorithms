@@ -27,6 +27,65 @@
 	return [self indexOfObject:max];
 }
 
+- (NSArray *)indexesOfMinimumAndMaximumElements
+{
+    if (self.count == 0) return nil;
+
+    NSInteger minimalValue = NSIntegerMax,
+              maximalValue = NSIntegerMin;
+
+    NSUInteger minimalValueIndex,
+               maximalValueIndex;
+
+    NSUInteger count = self.count;
+
+    BOOL oddnessFlag = count % 2;
+
+    if (oddnessFlag) {
+        minimalValue = maximalValue = [self.firstObject integerValue];
+        minimalValueIndex = maximalValueIndex = 0;
+    }
+
+	for (NSUInteger i = oddnessFlag; i < count; i = i + 2) {
+        NSInteger iValue = [[self objectAtIndex:i] integerValue];
+        NSInteger ip1Value = [[self objectAtIndex:i + 1] integerValue];
+
+        if (iValue < ip1Value) {
+            if (minimalValue > iValue) {
+                minimalValue = iValue;
+                minimalValueIndex = i;
+            }
+
+            if (maximalValue < ip1Value) {
+                maximalValue = ip1Value;
+                maximalValueIndex = i + 1;
+            }
+        } else if (iValue > ip1Value) {
+            if (minimalValue > ip1Value) {
+                minimalValue = ip1Value;
+                minimalValueIndex = i + 1;
+            }
+
+            if (maximalValue < iValue) {
+                maximalValue = iValue;
+                maximalValueIndex = i;
+            }
+        } else {
+            if (minimalValue > iValue) {
+                minimalValue = iValue;
+                minimalValueIndex = i;
+            }
+
+            if (maximalValue < iValue) {
+                maximalValue = iValue;
+                maximalValueIndex = i;
+            }
+        }
+	}
+
+    return @[ @(minimalValueIndex), @(maximalValueIndex) ];
+}
+
 #pragma mark - Longest string in array
 
 - (NSString *)longestString
