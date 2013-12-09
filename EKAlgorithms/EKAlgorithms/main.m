@@ -35,10 +35,15 @@ int main(int argc, const char *argv[])
 		}
         
             //Max element of array
-		NSLog(@"Max element of created array %@ is equals to %@ and stored at index %li", [array debugDescription],
+		NSLog(@"Max element of created array %@ equals to %@ and stored at index %li", [array debugDescription],
 		      [array objectAtIndex:(long)[array indexOfMaximumElement]],
 		      (long)[array indexOfMaximumElement]);
-        
+
+            //Get the Max and Min Simultaneously.
+        NSArray *indexes = [array indexesOfMinimumAndMaximumElements];
+		NSLog(@"Min and max elements of created array %@ equal to %@ and %@ and stored at indexes: %@ %@", [array debugDescription], [array objectAtIndex:[[indexes firstObject] unsignedIntegerValue]], [array objectAtIndex:[[indexes lastObject] unsignedIntegerValue]],
+		      [indexes firstObject], [indexes lastObject]);
+
             //Bubble sort
 		NSLog(@"Bubble sorted array is: %@", [array bubbleSortedArray]);
         

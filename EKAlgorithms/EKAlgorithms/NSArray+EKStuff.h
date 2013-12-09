@@ -11,6 +11,18 @@
 @interface NSArray (EKStuff)
 
 - (NSUInteger)indexOfMaximumElement;
+
+/**
+ Get the Max and Min Simultaneously.
+
+ Original idea: http://tristan-interview.blogspot.com/2012/02/get-max-and-min-simultaneously.html
+
+ @note Assumes array of NSInteger values
+
+ @return NSArray with two elements: indexes of elements with minimal/maximal values respectively or nil if receiver array is empty
+ */
+- (NSArray *)indexesOfMinimumAndMaximumElements;
+
 - (NSString *)longestString;
 - (NSString *)shortestString;
 - (NSArray *)reversedArray;
