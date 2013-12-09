@@ -32,6 +32,15 @@
 + (NSArray *)randomObjectsWithArraySize:(NSUInteger)arraySize maxRandomValue:(NSUInteger)maxValue uniqueObjects:(BOOL)unique;
 - (BOOL)isSorted;
 
+/**
+ Array Shuffle (Fisher–Yates)
+
+ Source: http://ruby-doc.org/core-2.0.0/Array.html#method-i-shuffle-21
+
+ @return Array with elements of original array in a randomized order
+ */
+- (NSArray *)shuffledArray;
+
 //search
 
 - (NSInteger)indexOfObjectViaLinearSearch:(id)object;
