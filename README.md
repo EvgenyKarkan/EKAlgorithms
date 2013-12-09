@@ -19,7 +19,7 @@ Arrays and Lists
 8. Find duplicates.
 9. Array with N unique/not unique random objects.
 10. Check if array is sorted.
-11. Array Shuffle (Fisher–Yates)
+11. Array shuffle (Fisher–Yates).
 
 Search Algorithms
 -----------------
