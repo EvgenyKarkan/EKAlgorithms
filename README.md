@@ -56,7 +56,7 @@ Numeric Problems
 2. Great common divisor (GCD).
 3. Least common multiple (LCM).
 4. Factorial.
-5. Fibonacci numbers.
+5. Fibonacci numbers (5 algos).
 6. Sum of digits.
 7. Binary to decimal conversion.
 8. Decimal to binary conversion.
