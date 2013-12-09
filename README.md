@@ -8,15 +8,17 @@ Don't forget to *watch* the repository; Its content will be expanded and updated
 
 Arrays and Lists
 ----------------------
-1. Index of maximum element in array. 
-2. Find longest string in array of strings. 
-3. Find shortest string in array of strings.
-4. Array reverse.
-5. Intersection of two arrays.
-6. Union of two arrays (with remove duplicates).
-7. Find duplicates.
-8. Array with N unique/not unique random objects.
-9. Check if array is sorted.
+ 
+1. Index of maximum element in array.
+2. Indexes of maximum and minimum elements simultaneously.
+3. Find longest string in array of strings. 
+4. Find shortest string in array of strings.
+5. Array reverse.
+6. Intersection of two arrays.
+7. Union of two arrays (with remove duplicates).
+8. Find duplicates.
+9. Array with N unique/not unique random objects.
+10. Check if array is sorted.
 
 Search Algorithms
 -----------------
