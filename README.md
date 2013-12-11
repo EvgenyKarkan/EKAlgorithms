@@ -99,7 +99,7 @@ Thanks!
 
 Contributors
 ------------
-Special thanks to this guys for their efforts of the project's development:
+Special thanks to these guys for their contributions to the project's development:
 - [@stanislaw](https://github.com/stanislaw)
 - [@vittoriom ](https://github.com/vittoriom)
 
