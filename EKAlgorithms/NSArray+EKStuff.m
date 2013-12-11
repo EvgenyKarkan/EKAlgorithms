@@ -183,6 +183,8 @@
 	return [objects copy];
 }
 
+#pragma mark - Check if array is sorted
+
 - (BOOL)isSorted
 {
 	for (NSUInteger i = 0; i < [self count] - 1; i++) {
@@ -199,18 +201,19 @@
 	return YES;
 }
 
-- (NSArray *)shuffledArray {
-    NSUInteger i = self.count;
+#pragma mark - Array shuffle
 
-    NSMutableArray *shuffledArray = [self mutableCopy];
-
-    while (i) {
-        NSUInteger randomIndex = arc4random_uniform((u_int32_t)i);
-
-        [shuffledArray exchangeObjectAtIndex:randomIndex withObjectAtIndex:--i];
-    }
-
-    return [shuffledArray copy];
+- (NSArray *)shuffledArray
+{
+	NSUInteger i = self.count;
+	NSMutableArray *shuffledArray = [self mutableCopy];
+    
+	while (i) {
+		NSUInteger randomIndex = arc4random_uniform((u_int32_t)i);
+		[shuffledArray exchangeObjectAtIndex:randomIndex withObjectAtIndex:--i];
+	}
+    
+	return [shuffledArray copy];
 }
 
 #pragma mark - SEARCH STUFF
