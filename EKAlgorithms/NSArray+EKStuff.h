@@ -10,7 +10,16 @@
 
 @interface NSArray (EKStuff)
 
+
+/**
+ Get the index of maximum element in array.
+
+ @note Assumes array of NSInteger values
+
+ @return Index of maximum element in array
+ */
 - (NSUInteger)indexOfMaximumElement;
+
 
 /**
  Get the Max and Min Simultaneously.
