@@ -97,4 +97,11 @@ So lets get our hands dirty and try to implement cool CS stuff with minimal use 
 
 Thanks!
 
+Contributors
+------------
+Special thanks to this guys for their efforts of the project's development:
+- [@stanislaw](https://github.com/stanislaw)
+- [@vittoriom ](https://github.com/vittoriom)
+
+-
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/EvgenyKarkan/ekalgorithms/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
