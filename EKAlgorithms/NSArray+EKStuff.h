@@ -25,7 +25,10 @@
 
 - (NSString *)longestString;
 - (NSString *)shortestString;
+
 - (NSArray *)reversedArray;
+- (NSArray *)CocoaImplementationOfReversedArray;
+
 - (NSArray *)intersectionWithArray:(NSArray *)secondArray;
 - (NSArray *)unionWithoutDuplicatesWithArray:(NSArray *)secondArray;
 - (BOOL)hasDuplicates;

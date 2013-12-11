@@ -20,6 +20,45 @@ describe(@"NSArray-based algorithms", ^{
             });
         });
     });
+
+    describe(@"Reversing array", ^{
+        describe(@"CocoaImplementationOfReversedArray - Cocoa implementation", ^{
+            it(@"should return reversed array for a given array", ^{
+                NSUInteger N = 100;
+
+                NSMutableArray *originalArray = [NSMutableArray array];
+
+                for (int i = 0; i < N; i++) {
+                    [originalArray addObject:@(i + 1)];
+                }
+
+                NSArray *reversedArray = [originalArray CocoaImplementationOfReversedArray];
+
+                for (int i = 0; i < N; i++) {
+                    [[[reversedArray objectAtIndex:i] should] equal:[originalArray objectAtIndex:(originalArray.count - 1 - i)]];
+                }
+            });
+        });
+
+        describe(@"reversedArray - EKAlgorithms implementation", ^{
+            it(@"should return reversed array for a given array", ^{
+                NSUInteger N = 100;
+
+                NSMutableArray *originalArray = [NSMutableArray array];
+
+                for (int i = 0; i < N; i++) {
+                    [originalArray addObject:@(i + 1)];
+                }
+
+                NSArray *reversedArray = [originalArray reversedArray];
+
+                for (int i = 0; i < N; i++) {
+                    [[[reversedArray objectAtIndex:i] should] equal:[originalArray objectAtIndex:(originalArray.count - 1 - i)]];
+                }
+            });
+        });
+    });
+
 });
 
 SPEC_END
