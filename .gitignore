@@ -1,6 +1,10 @@
 # Xcode
 .DS_Store
-build/
+
+EKAlgorithmsApp/build/
+EKAlgorithmsApp/Pods/
+Podfile.lock
+
 *.pbxuser
 !default.pbxuser
 *.mode1v3
