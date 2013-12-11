@@ -16,15 +16,19 @@
 
 - (NSUInteger)indexOfMaximumElement
 {
-	id max = [self objectAtIndex:0];
-    
+	NSInteger maximumValue = [[self objectAtIndex:0] integerValue];
+    NSUInteger indexOfMaximumValue = 0;
+
 	for (NSUInteger i = 1; i < [self count]; i++) {
-		if ([self objectAtIndex:i] > max) {
-			max = [self objectAtIndex:i];
+        NSInteger value = [[self objectAtIndex:i] integerValue];
+
+		if (value > maximumValue) {
+			maximumValue = value;
+            indexOfMaximumValue = i;
 		}
 	}
     
-	return [self indexOfObject:max];
+	return indexOfMaximumValue;
 }
 
 - (NSArray *)indexesOfMinimumAndMaximumElements
