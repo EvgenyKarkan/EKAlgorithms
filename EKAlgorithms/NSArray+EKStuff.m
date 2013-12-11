@@ -17,14 +17,14 @@
 - (NSUInteger)indexOfMaximumElement
 {
 	NSInteger maximumValue = [[self objectAtIndex:0] integerValue];
-    NSUInteger indexOfMaximumValue = 0;
-
+	NSUInteger indexOfMaximumValue = 0;
+    
 	for (NSUInteger i = 1; i < [self count]; i++) {
-        NSInteger value = [[self objectAtIndex:i] integerValue];
-
+		NSInteger value = [[self objectAtIndex:i] integerValue];
+        
 		if (value > maximumValue) {
 			maximumValue = value;
-            indexOfMaximumValue = i;
+			indexOfMaximumValue = i;
 		}
 	}
     
