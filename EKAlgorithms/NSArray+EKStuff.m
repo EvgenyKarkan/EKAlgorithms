@@ -120,6 +120,19 @@
 
 - (NSArray *)reversedArray
 {
+	NSMutableArray *reversedArray = [self mutableCopy];
+
+    NSUInteger count = reversedArray.count;
+
+    for (int i = 0; i < count / 2; i++) {
+        [reversedArray exchangeObjectAtIndex:i withObjectAtIndex:(count - 1 - i)];
+    }
+
+    return [reversedArray copy];
+}
+
+- (NSArray *)CocoaImplementationOfReversedArray
+{
 	return [[self reverseObjectEnumerator] allObjects];
 }
 
