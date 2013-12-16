@@ -53,6 +53,15 @@
  */
 - (NSArray *)shuffledArray;
 
+/**
+ Sum of array elements
+
+ @note Assumes array of long long values
+
+ @return NSNumber with long long int value
+ */
+- (NSNumber *)sumOfElements;
+
 //search
 
 - (NSInteger)indexOfObjectViaLinearSearch:(id)object;

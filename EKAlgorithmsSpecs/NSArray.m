@@ -78,6 +78,13 @@ describe(@"NSArray-based algorithms", ^{
             });
         });
     });
+    
+    describe(@"sumOfElements", ^{
+        it(@"should return sum of all elements in array", ^{
+            NSArray *array = @[@1, @2, @3, @4, @5];
+            [[[array sumOfElements] should] equal: @15];
+        });
+    });
 
 });
 

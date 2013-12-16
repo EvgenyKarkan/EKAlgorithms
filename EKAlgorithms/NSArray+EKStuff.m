@@ -109,7 +109,7 @@
 
 - (NSString *)shortestString
 {
-	NSString *returnValue = nil;
+    NSString *returnValue = nil;
     
 	for (NSString *string in self) {
 		if (returnValue == nil || [string length] < [returnValue length]) {
@@ -124,7 +124,7 @@
 
 - (NSArray *)reversedArray
 {
-	NSMutableArray *reversedArray = [self mutableCopy];
+    NSMutableArray *reversedArray = [self mutableCopy];
 
     NSUInteger count = reversedArray.count;
 
@@ -137,7 +137,7 @@
 
 - (NSArray *)CocoaImplementationOfReversedArray
 {
-	return [[self reverseObjectEnumerator] allObjects];
+    return [[self reverseObjectEnumerator] allObjects];
 }
 
 #pragma mark - Intersection of two arrays
@@ -216,6 +216,19 @@
 		}
 	}
 	return YES;
+}
+
+#pragma mark - Sum of elements
+
+- (NSNumber *)sumOfElements
+{
+    long long int sum = 0;
+    
+    for (NSUInteger i = 0; i < [self count]; i++) {
+        sum = sum + [self[i] longLongValue];
+    }
+    
+    return @(sum);
 }
 
 #pragma mark - Array shuffle

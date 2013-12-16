@@ -133,7 +133,11 @@ int main(int argc, const char *argv[])
 
         // Array Shuffle (Fisher–Yates)
         NSLog(@"Array Shuffle of array: %@ is: %@", array, [array shuffledArray]);
+        
+        //Sum of elements in array
+        NSLog(@"Sum is --> %@", [@[@-5, @-5, @-5, @-5, @-5] sumOfElements]);
 
+        
         //Sieve of Eratosf
 		NSLog(@"Primes from sieve %@", [[NSNumber primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);
 
