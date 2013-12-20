@@ -30,6 +30,8 @@
 		860B78871858133A0071079A /* NSString+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B787A1858133A0071079A /* NSString+EKStuff.m */; };
 		860B7889185814810071079A /* NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B7888185814810071079A /* NSArray.m */; };
 		860B788A185815BC0071079A /* NSArray+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B78741858133A0071079A /* NSArray+EKStuff.m */; };
+		869FE65F186419E600509FE7 /* NSNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 869FE65E186419E600509FE7 /* NSNumber.m */; };
+		869FE66018641C1200509FE7 /* NSNumber+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B78781858133A0071079A /* NSNumber+EKStuff.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -96,6 +98,7 @@
 		860B78791858133A0071079A /* NSString+EKStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EKStuff.h"; sourceTree = "<group>"; };
 		860B787A1858133A0071079A /* NSString+EKStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EKStuff.m"; sourceTree = "<group>"; };
 		860B7888185814810071079A /* NSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArray.m; path = ../../EKAlgorithmsSpecs/NSArray.m; sourceTree = "<group>"; };
+		869FE65E186419E600509FE7 /* NSNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSNumber.m; path = ../../EKAlgorithmsSpecs/NSNumber.m; sourceTree = "<group>"; };
 		F1911596D6814341BCF9FC8E /* libPods-EKAlgorithmsSpecs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EKAlgorithmsSpecs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -175,6 +178,7 @@
 			children = (
 				860B7851185811420071079A /* Supporting Files */,
 				860B7888185814810071079A /* NSArray.m */,
+				869FE65E186419E600509FE7 /* NSNumber.m */,
 			);
 			path = EKAlgorithmsSpecs;
 			sourceTree = "<group>";
@@ -382,9 +386,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869FE66018641C1200509FE7 /* NSNumber+EKStuff.m in Sources */,
 				860B7889185814810071079A /* NSArray.m in Sources */,
 				860B788A185815BC0071079A /* NSArray+EKStuff.m in Sources */,
 				860B7850185811420071079A /* main.m in Sources */,
+				869FE65F186419E600509FE7 /* NSNumber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
