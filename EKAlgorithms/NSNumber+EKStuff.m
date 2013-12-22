@@ -252,10 +252,17 @@
 
 - (BOOL)isEven
 {
+    /*
 	NSUInteger remainder = 0;
 	remainder = [self intValue] % 2;
-    
+
 	return (remainder == 0) ? YES : NO;
+     */
+
+    // Machine way of doing odd/even check is better than mathematical check above
+    BOOL evennessFlag = (self.intValue & 1) == NO;
+
+    return evennessFlag;
 }
 
 #pragma mark - Leap year check

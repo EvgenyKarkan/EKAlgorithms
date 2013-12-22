@@ -43,7 +43,8 @@
 
     NSUInteger count = self.count;
 
-    BOOL oddnessFlag = count % 2;
+    // Machine way of doing odd/even check is better than mathematical count % 2
+    BOOL oddnessFlag = count & 1;
 
     if (oddnessFlag) {
         minimalValue = maximalValue = [self.firstObject integerValue];
