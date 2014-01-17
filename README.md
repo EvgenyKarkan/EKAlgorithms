@@ -21,6 +21,7 @@ Arrays and Lists
 10. Check if array is sorted.
 11. Array shuffle (Fisher–Yates).
 12. Sum of array elements.
+13. N of occurences of each element in array.
 
 Search Algorithms
 -----------------
