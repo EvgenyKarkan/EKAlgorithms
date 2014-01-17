@@ -137,6 +137,11 @@ int main(int argc, const char *argv[])
         //Sum of elements in array
         NSLog(@"Sum is --> %@", [@[@-5, @-5, @-5, @-5, @-5] sumOfElements]);
 
+        //Find occurences of each element in array
+        NSLog(@"Occurences is --> %@", [@[@3, @3, @4, @5, @4, @1, @3, @8, @1] occurencesOfEachElementInArray]);
+        NSLog(@"Occurences via Cocoa APIs is --> %@", [@[@3, @3, @4, @5, @4, @1, @3, @8, @1] CocoaImplementationOfOccurencesOfEachElementInArray]);
+        
+        
         
         //Sieve of Eratosf
 		NSLog(@"Primes from sieve %@", [[NSNumber primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);

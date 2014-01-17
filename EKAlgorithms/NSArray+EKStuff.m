@@ -219,19 +219,6 @@
 	return YES;
 }
 
-#pragma mark - Sum of elements
-
-- (NSNumber *)sumOfElements
-{
-    long long int sum = 0;
-    
-    for (NSUInteger i = 0; i < [self count]; i++) {
-        sum = sum + [self[i] longLongValue];
-    }
-    
-    return @(sum);
-}
-
 #pragma mark - Array shuffle
 
 - (NSArray *)shuffledArray
@@ -245,6 +232,55 @@
 	}
     
 	return [shuffledArray copy];
+}
+
+#pragma mark - Sum of elements
+
+- (NSNumber *)sumOfElements
+{
+    long long int sum = 0;
+    
+    for (NSUInteger i = 0; i < [self count]; i++) {
+        sum = sum + [self[i] longLongValue];
+    }
+    
+    return @(sum);
+}
+
+#pragma mark - Occurrences of each element in array
+
+- (NSDictionary *)occurencesOfEachElementInArray
+{
+	NSMutableDictionary *result = [@{} mutableCopy];
+    
+	for (NSUInteger i = 0; i < [self count]; i++) {
+		NSParameterAssert(self[i] != nil);
+		NSUInteger counter = 0;
+		for (NSUInteger j = 0; j < [self count]; j++) {
+			NSParameterAssert(self[j] != nil);
+			if (self[i] == self[j]) {
+				counter++;
+			}
+		}
+		[result setObject:[NSNumber numberWithUnsignedInteger:counter]
+		           forKey:self[i]];
+	}
+    
+	return result;
+}
+
+- (NSDictionary *)CocoaImplementationOfOccurencesOfEachElementInArray
+{
+	NSCountedSet *countedSet = [[NSCountedSet alloc] initWithArray:self];
+	NSMutableDictionary *dictionary = [@{} mutableCopy];
+    
+	for (id object in [countedSet allObjects]) {
+		NSParameterAssert(object != nil);
+		[dictionary setObject:@([countedSet countForObject:object])
+		               forKey:object];
+	}
+    
+	return dictionary;
 }
 
 #pragma mark - SEARCH STUFF

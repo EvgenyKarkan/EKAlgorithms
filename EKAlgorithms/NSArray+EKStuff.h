@@ -62,6 +62,9 @@
  */
 - (NSNumber *)sumOfElements;
 
+- (NSDictionary *)occurencesOfEachElementInArray;
+- (NSDictionary *)CocoaImplementationOfOccurencesOfEachElementInArray;
+
 //search
 
 - (NSInteger)indexOfObjectViaLinearSearch:(id)object;
