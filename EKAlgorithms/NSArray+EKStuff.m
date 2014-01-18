@@ -280,7 +280,7 @@
 
         NSNumber *existingElementCounter = result[currentElement];
 
-		NSUInteger currentCount = existingElementCounter ? existingElementCounter.unsignedIntegerValue : 0;
+        NSUInteger currentCount = existingElementCounter ? existingElementCounter.unsignedIntegerValue : 0;
 
         currentCount++;
 
