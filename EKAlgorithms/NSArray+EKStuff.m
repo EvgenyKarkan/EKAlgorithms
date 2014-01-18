@@ -258,7 +258,7 @@
 		NSUInteger counter = 0;
 		for (NSUInteger j = 0; j < [self count]; j++) {
 			NSParameterAssert(self[j] != nil);
-			if (self[i] == self[j]) {
+			if ([self[i] isEqual:self[j]]) {
 				counter++;
 			}
 		}
@@ -266,6 +266,27 @@
 		           forKey:self[i]];
 	}
     
+	return result;
+}
+
+- (NSDictionary *)occurencesOfEachElementInArrayByUsingDictionary
+{
+	NSMutableDictionary *result = [@{} mutableCopy];
+
+	for (NSUInteger i = 0; i < [self count]; i++) {
+        id currentElement = self[i];
+
+        NSParameterAssert(currentElement != nil);
+
+        NSNumber *existingElementCounter = result[currentElement];
+
+		NSUInteger currentCount = existingElementCounter ? existingElementCounter.unsignedIntegerValue : 0;
+
+        currentCount++;
+
+        result[currentElement] = [NSNumber numberWithUnsignedInteger:currentCount];
+	}
+
 	return result;
 }
 

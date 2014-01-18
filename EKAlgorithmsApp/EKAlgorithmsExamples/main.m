@@ -139,9 +139,8 @@ int main(int argc, const char *argv[])
 
         //Find occurences of each element in array
         NSLog(@"Occurences is --> %@", [@[@3, @3, @4, @5, @4, @1, @3, @8, @1] occurencesOfEachElementInArray]);
+        NSLog(@"Occurences by using dictionary is --> %@", [@[@[], @{}, @"four", @"five", @"four", @"one", @"three", @"eight", @"one", @"four"] occurencesOfEachElementInArrayByUsingDictionary]);
         NSLog(@"Occurences via Cocoa APIs is --> %@", [@[@3, @3, @4, @5, @4, @1, @3, @8, @1] CocoaImplementationOfOccurencesOfEachElementInArray]);
-        
-        
         
         //Sieve of Eratosf
 		NSLog(@"Primes from sieve %@", [[NSNumber primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);
