@@ -86,6 +86,50 @@ describe(@"NSArray-based algorithms", ^{
         });
     });
 
+    describe(@"Occurrences of each element in array", ^{
+        describe(@"occurencesOfEachElementInArray", ^{
+            specify(^{
+                NSMutableArray *originalArray = [NSMutableArray array];
+
+                // Just the array to test the method against
+                // [@(1), @(2), @(2), @(3), @(3), @(3), ...]
+                int N = 10;
+                for (int i = 1; i <= N; i++) {
+                    for (int j = 1; j <= i; j++) {
+                        [originalArray addObject:@(i)];
+                    }
+                }
+
+                NSDictionary *result = [originalArray occurencesOfEachElementInArray];
+
+                for (int i = 1; i <= N; i++) {
+                    [[result[@(i)] should] equal:@(i)];
+                }
+            });
+        });
+
+        describe(@"occurencesOfEachElementInArrayByUsingDictionary", ^{
+            specify(^{
+                NSMutableArray *originalArray = [NSMutableArray array];
+
+                // Just the array to test the method against
+                // [@(1), @(2), @(2), @(3), @(3), @(3), ...]
+                int N = 10;
+                for (int i = 1; i <= N; i++) {
+                    for (int j = 1; j <= i; j++) {
+                        [originalArray addObject:@(i)];
+                    }
+                }
+
+                NSDictionary *result = [originalArray occurencesOfEachElementInArrayByUsingDictionary];
+
+                for (int i = 1; i <= N; i++) {
+                    [[result[@(i)] should] equal:@(i)];
+                }
+            });
+        });
+    });
+
 });
 
 SPEC_END
