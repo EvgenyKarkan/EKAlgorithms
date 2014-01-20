@@ -85,6 +85,10 @@ Data Structures
     - BFS (breadth-first search).
 6. Binary search tree (BST).
 
+Geometry
+--------
+1. Array of sorted locations according to a distance to a given location.
+
 Contributions
 -------------   
 Pull requests are welcome! But if you want to do a contribution, open an issue first.
