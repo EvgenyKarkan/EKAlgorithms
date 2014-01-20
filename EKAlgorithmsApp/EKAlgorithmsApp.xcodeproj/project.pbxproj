@@ -37,6 +37,8 @@
 		86A2D37A188D2661004A908F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A2D379188D2661004A908F /* CoreLocation.framework */; };
 		86A2D37B188D2668004A908F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A2D379188D2661004A908F /* CoreLocation.framework */; };
 		86A2D37C188D2705004A908F /* NSArray+EKGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A2D374188D23DA004A908F /* NSArray+EKGeometry.m */; };
+		86A2D37E188D7E44004A908F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A2D37D188D7E44004A908F /* MapKit.framework */; };
+		86A2D37F188D7E4D004A908F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A2D37D188D7E44004A908F /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -109,6 +111,7 @@
 		86A2D374188D23DA004A908F /* NSArray+EKGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+EKGeometry.m"; path = "Geometry/NSArray+EKGeometry.m"; sourceTree = "<group>"; };
 		86A2D377188D2440004A908F /* EKGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EKGeometry.m; path = ../../EKAlgorithmsSpecs/EKGeometry.m; sourceTree = "<group>"; };
 		86A2D379188D2661004A908F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		86A2D37D188D7E44004A908F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F1911596D6814341BCF9FC8E /* libPods-EKAlgorithmsSpecs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EKAlgorithmsSpecs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -117,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86A2D37F188D7E4D004A908F /* MapKit.framework in Frameworks */,
 				86A2D37B188D2668004A908F /* CoreLocation.framework in Frameworks */,
 				860B783B185810F10071079A /* Foundation.framework in Frameworks */,
 			);
@@ -126,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86A2D37E188D7E44004A908F /* MapKit.framework in Frameworks */,
 				86A2D37A188D2661004A908F /* CoreLocation.framework in Frameworks */,
 				860B7859185811970071079A /* SenTestingKit.framework in Frameworks */,
 				860B784D185811420071079A /* Foundation.framework in Frameworks */,
@@ -160,6 +165,7 @@
 		860B7839185810F10071079A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				86A2D37D188D7E44004A908F /* MapKit.framework */,
 				86A2D379188D2661004A908F /* CoreLocation.framework */,
 				860B7858185811970071079A /* SenTestingKit.framework */,
 				860B783A185810F10071079A /* Foundation.framework */,
