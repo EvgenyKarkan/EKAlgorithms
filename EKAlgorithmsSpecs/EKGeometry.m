@@ -1,29 +1,38 @@
 #import <Kiwi/Kiwi.h>
 
+#import <MapKit/MapKit.h>
+
+#import "NSArray+EKStuff.h"
 #import "NSArray+EKGeometry.h"
+
+// It is not used anywhere, but is useful for testing. Let it be here for a while
+double RandomDoubleWithinRange(double min, double max) {
+    double precision = 10000000;
+    return ((double)arc4random_uniform((u_int32_t)((max - min) * precision))) / precision + min;
+};
 
 SPEC_BEGIN(NSArray_EKGeometry_Specs)
 
 describe(@"NSArray+EKGeometry algorithms", ^{
     describe(@"+[NSArray sortArrayOfLocations:byDistanceToLocation:]", ^{
         it(@"should sort array of locations by a distance to given location", ^{
-            NSMutableArray *locations = [NSMutableArray array];
+            NSMutableArray *sortedLocations = [NSMutableArray array];
 
-            CLLocation *zeroLocation = [[CLLocation alloc] initWithLatitude:0 longitude:0];
+            CLLocation *referenceLocation = [[CLLocation alloc] initWithLatitude:0 longitude:0];
 
             double N = 80;
             for (double i = 0; i < N; i++) {
                 CLLocation *location = [[CLLocation alloc] initWithLatitude:i longitude:i];
-                [locations insertObject:location atIndex:0];
+
+                [sortedLocations addObject:location];
             }
 
-            NSArray *sortedArrayOfLocations = [NSArray sortArrayOfLocations:locations byDistanceToLocation:zeroLocation];
+            NSArray *shuffledLocations = [sortedLocations shuffledArray];
 
-            [sortedArrayOfLocations enumerateObjectsUsingBlock:^(CLLocation *location, NSUInteger idx, BOOL *stop) {
-                [[theValue(location.coordinate.latitude) should] equal:@(idx)];
-            }];
+            NSArray *arraySortedByEKAlgorithm = [NSArray sortArrayOfLocations:shuffledLocations byDistanceToLocation:referenceLocation];
+
+            [[theValue([arraySortedByEKAlgorithm isEqualToArray:sortedLocations]) should] beYes];
         });
-
     });
 });
 

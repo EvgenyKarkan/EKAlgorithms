@@ -11,6 +11,9 @@
 @implementation NSArray (EKGeometry)
 
 + (NSArray *)sortArrayOfLocations:(NSArray *)array byDistanceToLocation:(CLLocation *)location {
+    CLLocationDegrees lat = location.coordinate.latitude;
+    CLLocationDegrees lng = location.coordinate.longitude;
+
     return [array sortedArrayUsingComparator:^NSComparisonResult(CLLocation *location1, CLLocation *location2) {
         /* 
          Naive version:
@@ -29,14 +32,13 @@
 
         /* Example of more efficient algorithm. Don't forget about "distance is not the same distance" for a different regions of world map, but if you don't care about this precision, the following algo works pretty fine */
 
-        CLLocationDegrees lat = location.coordinate.latitude;
-        CLLocationDegrees lng = location.coordinate.longitude;
-
+        
         CLLocationDegrees lat1 = location1.coordinate.latitude;
         CLLocationDegrees lng1 = location1.coordinate.longitude;
 
         CLLocationDegrees lat2 = location2.coordinate.latitude;
         CLLocationDegrees lng2 = location2.coordinate.longitude;
+
 
         // Comparison of distance beetween location1 and location and distance beetween location2 and location
         // is equivalent to
@@ -52,7 +54,8 @@
 
         CLLocationDegrees differenceBeetweenSquaredDistances =
             pow(lat1, 2) + pow(lng1, 2) - pow(lat2, 2) - pow(lng2, 2) // (4*)
-            + 2 * ((lat1 + lat2) * lat + (lng2 - lng1) * lng);
+            + 2 * ((lat2 - lat1) * lat + (lng2 - lng1) * lng);
+
 
         // the last thing to note is that
         // if faster calculation is needed: these squares (4*) can be pre-calculated or cached after their first calculation for each location:
