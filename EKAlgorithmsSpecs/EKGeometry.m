@@ -1,9 +1,10 @@
-#import <Kiwi/Kiwi.h>
+#import "SpecHelpers.h"
 
 #import <MapKit/MapKit.h>
 
 #import "NSArray+EKStuff.h"
 #import "NSArray+EKGeometry.h"
+#import "EKALocation.h"
 
 // It is not used anywhere, but is useful for testing. Let it be here for a while
 double RandomDoubleWithinRange(double min, double max) {
@@ -16,22 +17,26 @@ SPEC_BEGIN(NSArray_EKGeometry_Specs)
 describe(@"NSArray+EKGeometry algorithms", ^{
     describe(@"+[NSArray sortArrayOfLocations:byDistanceToLocation:]", ^{
         it(@"should sort array of locations by a distance to given location", ^{
-            NSMutableArray *sortedLocations = [NSMutableArray array];
+            NSMutableArray *originalLocations = [NSMutableArray array];
 
-            CLLocation *referenceLocation = [[CLLocation alloc] initWithLatitude:0 longitude:0];
+            EKALocation *referenceLocation = [[EKALocation alloc] initWithLatitude:0 longitude:0];
 
-            double N = 80;
+            // When N is greater than 1000, precision problems appear and break the test.
+            double N = 1000;
             for (double i = 0; i < N; i++) {
-                CLLocation *location = [[CLLocation alloc] initWithLatitude:i longitude:i];
+                EKALocation *location = [[EKALocation alloc] initWithLatitude:(i * 90/ N) longitude:(i * 90/ N)];
 
-                [sortedLocations addObject:location];
+                //CLLocation *location = [[CLLocation alloc] initWithLatitude:(i) longitude:(i)];
+                //CLLocation *location = [[CLLocation alloc] initWithLatitude:RandomDoubleWithinRange(30, 30.10) longitude:RandomDoubleWithinRange(30, 30.10)];
+
+                [originalLocations addObject:location];
             }
 
-            NSArray *shuffledLocations = [sortedLocations shuffledArray];
+            NSArray *shuffledLocations = [originalLocations shuffledArray];
 
             NSArray *arraySortedByEKAlgorithm = [NSArray sortArrayOfLocations:shuffledLocations byDistanceToLocation:referenceLocation];
 
-            [[theValue([arraySortedByEKAlgorithm isEqualToArray:sortedLocations]) should] beYes];
+            [[theValue([arraySortedByEKAlgorithm isEqualToArray:originalLocations]) should] beYes];
         });
     });
 });
