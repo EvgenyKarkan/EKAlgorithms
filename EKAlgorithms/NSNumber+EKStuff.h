@@ -32,5 +32,6 @@
 + (void)swapValueOfIntPointer:(NSInteger *)xPointer withValueOfIntPointer:(NSInteger *)yPointer;
 - (CGFloat)squareRoot;
 - (id)convertedNumberWithBase:(int)base;
+- (CGFloat)fastInverseSquareRoot;
 
 @end

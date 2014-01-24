@@ -206,7 +206,9 @@ int main(int argc, const char *argv[])
         //Convertion to another numeral system
         NSLog(@"Converted number is --> %@", [@42 convertedNumberWithBase:2]);
 
-
+        //Fast inverse square root
+        NSLog(@"FISR is --> %@", @([@5 fastInverseSquareRoot]));
+        
         //Stack
 		EKStack *stack = [[EKStack alloc] initWithSize:3];
 		[stack push:@"Hello"];

@@ -414,4 +414,24 @@
 	return resultOfConvertion;
 }
 
+#pragma mark - Fast inverse square root
+
+- (CGFloat)fastInverseSquareRoot
+{
+	NSParameterAssert([self floatValue] > 0);
+    
+	Float32 result = (Float32)[self floatValue];
+	Float32 halfOfResult = result * 0.5f;
+    
+	int32_t i = *(int32_t *)&result;                                // get bits for floating value
+	i = 0x5f3759df - (i >> 1);                                      // gives initial guess
+	result = *(Float32 *)&i;                                        // convert bits back to float
+    
+	for (NSUInteger i = 0; i < 4; i++) {
+		result = result * (1.5f - halfOfResult * result * result);  // Newton step, repeating increases accuracy return x;
+	}
+    
+	return result;
+}
+
 @end
