@@ -1,6 +1,6 @@
 //
 //  EKRecursionStuff.h
-//  EKAlgorithmsApp
+//  EKAlgorithms
 //
 //  Created by Evgeny Karkan on 26.01.14.
 //  Copyright (c) 2014 Evgeny Karkan. All rights reserved.
