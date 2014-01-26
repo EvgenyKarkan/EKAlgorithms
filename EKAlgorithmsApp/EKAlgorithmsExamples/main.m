@@ -18,16 +18,11 @@
 #import "EKLinkedList.h"
 #import "EKNode.h"
 #import "EKBSTree.h"
+#import "EKRecursionStuff.h"
 
 int main(int argc, const char *argv[])
 {
 	@autoreleasepool {
-        //Linear search
-		NSLog(@"Linear search result: %li", (long)[@[@6, @9, @12, @13, @14, @29, @42] indexOfObjectViaLinearSearch:@42]);
-
-        //Binary search
-		NSLog(@"Binary search result: %li", (long)[@[@6, @9, @12, @13, @14, @29, @42] indexOfObjectViaBinarySearch:@42]);
-
         //Init array with 5 random elements
 		NSMutableArray *array = [NSMutableArray array];
 		for (int i = 0; i < 5; i++) {
@@ -44,6 +39,51 @@ int main(int argc, const char *argv[])
 		NSLog(@"Min and max elements of created array %@ equal to %@ and %@ and stored at indexes: %@ %@", [array debugDescription], [array objectAtIndex:[[indexes firstObject] unsignedIntegerValue]], [array objectAtIndex:[[indexes lastObject] unsignedIntegerValue]],
 		      [indexes firstObject], [indexes lastObject]);
 
+        //Longest string from array
+		NSLog(@"The longest string is %@", [@[@"Kiev", @"Moscow", @"Tokyo", @"Saint-Petersburg", @"SanFrancisco"] longestString]);
+        
+        //Shortest string from array
+		NSLog(@"The shortest string is %@", [@[@"DRY", @"KISS", @"YAGNI", @"SOLID", @"GRASP"] shortestString]);
+        
+        //Reverse of array
+        NSLog(@"Reversed array is %@", [@[@"one", @"two", @"three", @"four", @"five"] reversedArray]);
+        
+        //Intersection of two arrays
+        NSLog(@"Intersection is %@", [@[@"one", @"two", @"three"] intersectionWithArray:@[@"two", @"three", @"four"]]);
+        
+        //Union of two arrays
+        NSLog(@"Union is %@", [@[@"Honda", @"Toyota"] unionWithoutDuplicatesWithArray:@[@"Toyota", @"Alfa Romeo"]]);
+        
+        //Find duplicates
+        NSLog(@"Result of finding duplicates is %@", [@[@"foo", @"bar", @"buzz", @"foo"] hasDuplicates] ? @"YES" : @"NO");
+        
+        //Random object
+        NSLog(@"Random array %@", [NSArray randomObjectsWithArraySize:5 maxRandomValue:6 uniqueObjects:YES]);
+        
+        //Is sorted check
+        NSLog(@"Given array sorted? --> %@", [@[@1.1, @1.5, @1.9, @2.5, @3, @4, @4] isSorted] ? @"YES" : @"NO");
+        
+        // Array Shuffle (Fisher–Yates)
+        NSLog(@"Array Shuffle of array: %@ is: %@", array, [array shuffledArray]);
+        
+        //Sum of elements in array
+        NSLog(@"Sum is --> %@", [@[@-5, @-5, @-5, @-5, @-5] sumOfElements]);
+        
+        //Find occurences of each element in array
+        NSLog(@"Occurences is --> %@", [@[@3, @3, @4, @5, @4, @1, @3, @8, @1] occurencesOfEachElementInArray]);
+        NSLog(@"Occurences by using dictionary is --> %@", [@[@[], @{}, @"four", @"five", @"four", @"one", @"three", @"eight", @"one", @"four"] occurencesOfEachElementInArrayByUsingDictionary]);
+        NSLog(@"Occurences via Cocoa APIs is --> %@", [@[@3, @3, @4, @5, @4, @1, @3, @8, @1] CocoaImplementationOfOccurencesOfEachElementInArray]);
+        
+        //SEARCH------------------------------------------------------------------------------------
+        
+        //Linear search
+		NSLog(@"Linear search result: %li", (long)[@[@6, @9, @12, @13, @14, @29, @42] indexOfObjectViaLinearSearch:@42]);
+        
+        //Binary search
+		NSLog(@"Binary search result: %li", (long)[@[@6, @9, @12, @13, @14, @29, @42] indexOfObjectViaBinarySearch:@42]);
+        
+        //SORTING-----------------------------------------------------------------------------------
+        
         //Bubble sort
 		NSLog(@"Bubble sorted array is: %@", [array bubbleSortedArray]);
 
@@ -56,7 +96,6 @@ int main(int argc, const char *argv[])
         //Quick sort numbers
 		NSLog(@"Quick sorted array %@", [@[@2.1, @405, @817, @10, @2732, @616, @0.2, @ - 0.52] quickSortedArrayWithLeftIndex:0
                                                                                                               withRightIndex:[[NSMutableArray arrayWithArray:@[@21, @45, @87, @10, @273, @616, @0.2, @ - 0.52]] count] - 1]);
-
         //Insertion sort
 		NSLog(@"Insertion sorted array %@", [@[@ -23.0154, @46, @0.021, @42, @5, @NO, @YES] insertionSortedArray]);
 
@@ -66,7 +105,7 @@ int main(int argc, const char *argv[])
         //Heap sort
         NSLog(@"Heap sorted array --> %@", [@[@9871523, @0.0987516, @NO, @89, @ -61.001256, @712.5, @YES, @384756] heapSortedArray]);
 
-
+        //STRINGS-----------------------------------------------------------------------------------
 
         //Palindrome string
 		NSLog(@"Palindrome? Answer:%@", [@"Was it a car or a cat I saw" isPalindrome] ? @"YES" : @"NO");
@@ -107,40 +146,7 @@ int main(int argc, const char *argv[])
         //Levenshtein Distance
         NSLog(@"Levenshtein Distance of levenshtein and meilenstein is --> %ld",(long)[@"levenshtein" LD_WithString:@"meilenstein"]);
 
-        //Longest string from array
-		NSLog(@"The longest string is %@", [@[@"Kiev", @"Moscow", @"Tokyo", @"Saint-Petersburg", @"SanFrancisco"] longestString]);
-
-        //Shortest string from array
-		NSLog(@"The shortest string is %@", [@[@"DRY", @"KISS", @"YAGNI", @"SOLID", @"GRASP"] shortestString]);
-
-        //Reverse of array
-        NSLog(@"Reversed array is %@", [@[@"one", @"two", @"three", @"four", @"five"] reversedArray]);
-
-        //Intersection of two arrays
-        NSLog(@"Intersection is %@", [@[@"one", @"two", @"three"] intersectionWithArray:@[@"two", @"three", @"four"]]);
-
-        //Union of two arrays
-        NSLog(@"Union is %@", [@[@"Honda", @"Toyota"] unionWithoutDuplicatesWithArray:@[@"Toyota", @"Alfa Romeo"]]);
-
-        //Find duplicates
-        NSLog(@"Result of finding duplicates is %@", [@[@"foo", @"bar", @"buzz", @"foo"] hasDuplicates] ? @"YES" : @"NO");
-
-        //Random object
-        NSLog(@"Random array %@", [NSArray randomObjectsWithArraySize:5 maxRandomValue:6 uniqueObjects:YES]);
-
-        //Is sorted check
-        NSLog(@"Given array sorted? --> %@", [@[@1.1, @1.5, @1.9, @2.5, @3, @4, @4] isSorted] ? @"YES" : @"NO");
-
-        // Array Shuffle (Fisher–Yates)
-        NSLog(@"Array Shuffle of array: %@ is: %@", array, [array shuffledArray]);
-        
-        //Sum of elements in array
-        NSLog(@"Sum is --> %@", [@[@-5, @-5, @-5, @-5, @-5] sumOfElements]);
-
-        //Find occurences of each element in array
-        NSLog(@"Occurences is --> %@", [@[@3, @3, @4, @5, @4, @1, @3, @8, @1] occurencesOfEachElementInArray]);
-        NSLog(@"Occurences by using dictionary is --> %@", [@[@[], @{}, @"four", @"five", @"four", @"one", @"three", @"eight", @"one", @"four"] occurencesOfEachElementInArrayByUsingDictionary]);
-        NSLog(@"Occurences via Cocoa APIs is --> %@", [@[@3, @3, @4, @5, @4, @1, @3, @8, @1] CocoaImplementationOfOccurencesOfEachElementInArray]);
+        //NUMERIC PROBLEMS--------------------------------------------------------------------------
         
         //Sieve of Eratosf
 		NSLog(@"Primes from sieve %@", [[NSNumber primeNumbersFromSieveEratosthenesWithMaxNumber:42] description]);
@@ -208,6 +214,8 @@ int main(int argc, const char *argv[])
 
         //Fast inverse square root
         NSLog(@"FISR is --> %@", @([@5 fastInverseSquareRoot]));
+        
+        //DATA STRUCTURES---------------------------------------------------------------------------
         
         //Stack
 		EKStack *stack = [[EKStack alloc] initWithSize:3];
@@ -314,7 +322,12 @@ int main(int argc, const char *argv[])
         [tree insertObject:@-5.5f];
 
         [tree printDescription]; // see EKBSTree.png picture
-
+        
+        //RECURSION---------------------------------------------------------------------------------
+        
+        //Tower of Hanoi
+        [EKRecursionStuff solveTowerOfHanoiWithDisksNumber:3 from:@"A" to:@"C" withExtraPin:@"B"];
+        
     }
 
 	return 0;

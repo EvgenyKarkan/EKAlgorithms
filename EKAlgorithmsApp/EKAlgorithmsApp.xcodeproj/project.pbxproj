@@ -41,6 +41,7 @@
 		86A2D37F188D7E4D004A908F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A2D37D188D7E44004A908F /* MapKit.framework */; };
 		86A2D386188E63C2004A908F /* EKALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A2D385188E63C2004A908F /* EKALocation.m */; };
 		86A2D387188E6491004A908F /* EKALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A2D385188E63C2004A908F /* EKALocation.m */; };
+		DE630A5E189544A600256CC5 /* EKRecursionStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DE630A5D189544A600256CC5 /* EKRecursionStuff.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -116,6 +117,8 @@
 		86A2D37D188D7E44004A908F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		86A2D384188E63C2004A908F /* EKALocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKALocation.h; sourceTree = "<group>"; };
 		86A2D385188E63C2004A908F /* EKALocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKALocation.m; sourceTree = "<group>"; };
+		DE630A5C189544A600256CC5 /* EKRecursionStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKRecursionStuff.h; sourceTree = "<group>"; };
+		DE630A5D189544A600256CC5 /* EKRecursionStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKRecursionStuff.m; sourceTree = "<group>"; };
 		F1911596D6814341BCF9FC8E /* libPods-EKAlgorithmsSpecs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EKAlgorithmsSpecs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -231,6 +234,8 @@
 				860B78781858133A0071079A /* NSNumber+EKStuff.m */,
 				860B78791858133A0071079A /* NSString+EKStuff.h */,
 				860B787A1858133A0071079A /* NSString+EKStuff.m */,
+				DE630A5C189544A600256CC5 /* EKRecursionStuff.h */,
+				DE630A5D189544A600256CC5 /* EKRecursionStuff.m */,
 			);
 			name = EKAlgorithms;
 			path = ../EKAlgorithms;
@@ -343,8 +348,9 @@
 		860B782F185810F10071079A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = EK;
 				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = "Stanislaw Pankevich";
+				ORGANIZATIONNAME = "Evgeny Karkan";
 			};
 			buildConfigurationList = 860B7832185810F10071079A /* Build configuration list for PBXProject "EKAlgorithmsApp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -406,6 +412,7 @@
 				860B787D1858133A0071079A /* EKDeque.m in Sources */,
 				86A2D386188E63C2004A908F /* EKALocation.m in Sources */,
 				860B78861858133A0071079A /* NSNumber+EKStuff.m in Sources */,
+				DE630A5E189544A600256CC5 /* EKRecursionStuff.m in Sources */,
 				860B78821858133A0071079A /* EKLinkedList.m in Sources */,
 				860B78841858133A0071079A /* NSArray+EKStuff.m in Sources */,
 				860B787E1858133A0071079A /* EKQueue.m in Sources */,

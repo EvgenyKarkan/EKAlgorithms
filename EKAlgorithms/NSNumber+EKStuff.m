@@ -428,7 +428,7 @@
 	result = *(Float32 *)&i;                                        // convert bits back to float
     
 	for (NSUInteger i = 0; i < 4; i++) {
-		result = result * (1.5f - halfOfResult * result * result);  // Newton step, repeating increases accuracy return x;
+		result = result * (1.5f - halfOfResult * result * result);  // Newton step, repeating increases accuracy
 	}
     
 	return result;

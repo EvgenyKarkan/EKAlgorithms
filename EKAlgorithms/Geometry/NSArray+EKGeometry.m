@@ -12,12 +12,14 @@
 
 @implementation NSArray (EKGeometry)
 
-+ (NSArray *)sortArrayOfLocations:(NSArray *)array byDistanceToLocation:(CLLocation *)location {
++ (NSArray *)sortArrayOfLocations:(NSArray *)array byDistanceToLocation:(CLLocation *)location
+{
     for (EKALocation *_location in array) {
         _location->precalculatedDistanceToLocation = @([_location distanceFromLocation:location]);
     }
 
-    return [array sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"precalculatedDistanceToLocation" ascending:YES]]];
+    return [array sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"precalculatedDistanceToLocation"
+                                                                              ascending:YES]]];
 }
 
 @end
