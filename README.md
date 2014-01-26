@@ -88,7 +88,11 @@ Data Structures
 
 Geometry
 --------
-1. Array of sorted locations according to a distance to a given location.
+1. Array of sorted locations according to a distance to a given location.  
+
+Recursion  
+---------
+1. Tower of Hanoi.
 
 Contributions
 -------------   
