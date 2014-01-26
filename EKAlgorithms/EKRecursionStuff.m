@@ -23,6 +23,8 @@
 	if (number == 1) {
 		NSLog(@"Move disk 1 from pin %@ to Pin %@", fromPin, toPin);
 		return;
+            //Minimal moves count should be equal to 2^number - 1
+            //e.g 3 disks --> 2^3 - 1 = 7 moves
 	}
     
 	[self solveTowerOfHanoiWithDisksNumber:number - 1 from:fromPin to:extraPin withExtraPin:toPin];
