@@ -14,15 +14,15 @@
 {
     NSLog(@"%@", self.object);
     
-	if (self.leftChild) {
+    if (self.leftChild) {
         NSLog(@"Left child of %@ will be the -->", self.object);
-		[self.leftChild printDescription];;
-	}
+        [self.leftChild printDescription];
+    }
     
-	if (self.rightChild) {
+    if (self.rightChild) {
         NSLog(@"Right child of %@ will be the -->", self.object);
-		[self.rightChild printDescription];
-	}
+        [self.rightChild printDescription];
+    }
 }
 
 @end

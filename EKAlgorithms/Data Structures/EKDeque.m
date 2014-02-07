@@ -21,91 +21,91 @@
 
 - (id)init
 {
-	self = [super init];
-	if (self) {
-		self.dequeArray = [@[] mutableCopy];
-	}
-	return self;
+    self = [super init];
+    if (self) {
+        self.dequeArray = [@[] mutableCopy];
+    }
+    return self;
 }
 
 #pragma mark - Public API
 
 - (void)insertObjectToBack:(id)object
 {
-	if (object != nil) {
-		[self.dequeArray addObject:object];
-	}
-	else {
-		NSAssert(object != nil, @"You can't push nil object to deque");
-	}
+    if (object != nil) {
+        [self.dequeArray addObject:object];
+    }
+    else {
+        NSAssert(object != nil, @"You can't push nil object to deque");
+    }
 }
 
 - (void)insertObjectToFront:(id)object
 {
-	if (object != nil) {
-		[self.dequeArray insertObject:object atIndex:0];
-	}
-	else {
-		NSAssert(object != nil, @"You can't push nil object to deque");
-	}
+    if (object != nil) {
+        [self.dequeArray insertObject:object atIndex:0];
+    }
+    else {
+        NSAssert(object != nil, @"You can't push nil object to deque");
+    }
 }
 
 - (id)removeFirstObject
 {
-	if ([self.dequeArray count] > 0) {
-		id object = [self peekFirstObject];
-		[self.dequeArray removeObjectAtIndex:0];
-		return object;
-	}
+    if ([self.dequeArray count] > 0) {
+        id object = [self peekFirstObject];
+        [self.dequeArray removeObjectAtIndex:0];
+        return object;
+    }
     
-	return nil;
+    return nil;
 }
 
 - (id)removeLastObject
 {
-	id object = [self peekLastObject];
-	[self.dequeArray removeLastObject];
+    id object = [self peekLastObject];
+    [self.dequeArray removeLastObject];
     
-	return object;
+    return object;
 }
 
 - (id)peekFirstObject
 {
-	if ([self.dequeArray count] > 0) {
-		return [self.dequeArray objectAtIndex:0];
-	}
+    if ([self.dequeArray count] > 0) {
+        return [self.dequeArray objectAtIndex:0];
+    }
     
-	return nil;
+    return nil;
 }
 
 - (id)peekLastObject
 {
-	if ([self.dequeArray count] > 0) {
-		return [self.dequeArray lastObject];
-	}
+    if ([self.dequeArray count] > 0) {
+        return [self.dequeArray lastObject];
+    }
     
-	return nil;
+    return nil;
 }
 
 - (BOOL)isEmpty
 {
-	return [self.dequeArray count] == 0;
+    return [self.dequeArray count] == 0;
 }
 
 - (void)clear
 {
-	[self.dequeArray removeAllObjects];
+    [self.dequeArray removeAllObjects];
 }
 
 - (NSArray *)allObjectsFromDeque
 {
-	NSMutableArray *buffer = [@[] mutableCopy];
+    NSMutableArray *buffer = [@[] mutableCopy];
     
-	for (id object in self.dequeArray) {
-		[buffer addObject:object];
-	}
+    for (id object in self.dequeArray) {
+        [buffer addObject:object];
+    }
     
-	return [buffer copy];
+    return [buffer copy];
 }
 
 @end

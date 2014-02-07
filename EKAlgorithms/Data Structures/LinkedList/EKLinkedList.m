@@ -13,111 +13,111 @@
 
 - (instancetype)initWithHead:(NSObject *)value
 {
-	self = [super init];
+    self = [super init];
     
-	if (self) {
-		self.head = [[EKNode alloc] initWithObject:value];
-	}
-	return self;
+    if (self) {
+        self.head = [[EKNode alloc] initWithObject:value];
+    }
+    return self;
 }
 
 - (void)addToFront:(NSObject *)value
 {
-	EKNode *node = [[EKNode alloc] initWithObject:value];
+    EKNode *node = [[EKNode alloc] initWithObject:value];
     
-	node.next = self.head;
-	self.head.previous = node;
-	self.head = node;
+    node.next = self.head;
+    self.head.previous = node;
+    self.head = node;
 }
 
 - (void)addToBack:(NSObject *)value
 {
-	EKNode *node = [[EKNode alloc] initWithObject:value];
+    EKNode *node = [[EKNode alloc] initWithObject:value];
     
-	node.previous = self.tail;
-	self.tail.next = node;
-	self.tail = node;
+    node.previous = self.tail;
+    self.tail.next = node;
+    self.tail = node;
 }
 
 - (void)insertObject:(NSObject *)object atIndex:(NSUInteger)index
 {
-	EKNode *currentNode = self.head;
-	EKNode *previousNode = nil;
-	EKNode *nextNode = nil;
+    EKNode *currentNode = self.head;
+    EKNode *previousNode = nil;
+    EKNode *nextNode = nil;
     
-	for (NSUInteger i = 1; i <= index; i++) {
-		currentNode = currentNode.next;
-		if (i == index - 1) {
-			previousNode = currentNode;
-		}
-		else if (i == index) {
-			nextNode = currentNode;
-		}
-	}
+    for (NSUInteger i = 1; i <= index; i++) {
+        currentNode = currentNode.next;
+        if (i == index - 1) {
+            previousNode = currentNode;
+        }
+        else if (i == index) {
+            nextNode = currentNode;
+        }
+    }
     
-	EKNode *newNode = [[EKNode alloc] initWithObject:object];
+    EKNode *newNode = [[EKNode alloc] initWithObject:object];
     
-	if (!previousNode) {
-		self.head = newNode;
-	}
-	else {
-		previousNode.next = newNode;
-		newNode.previous = previousNode;
+    if (!previousNode) {
+        self.head = newNode;
+    }
+    else {
+        previousNode.next = newNode;
+        newNode.previous = previousNode;
         
-		nextNode.previous = newNode;
-		newNode.next = nextNode;
-	}
+        nextNode.previous = newNode;
+        newNode.next = nextNode;
+    }
 }
 
 - (NSObject *)first
 {
-	return self.head.value;
+    return self.head.value;
 }
 
 - (NSObject *)currentValue
 {
-	return self.current.value;
+    return self.current.value;
 }
 
 - (NSObject *)next
 {
-	self.current = self.current.next;
+    self.current = self.current.next;
     
-	return self.current.value;
+    return self.current.value;
 }
 
 - (NSObject *)previous
 {
-	self.current = self.current.previous;
+    self.current = self.current.previous;
     
-	return self.current.value;
+    return self.current.value;
 }
 
 - (NSUInteger)count
 {
-	if (!self.head) {
-		return 0;
-	}
+    if (!self.head) {
+        return 0;
+    }
     
-	EKNode *currentNode = self.head;
-	NSUInteger i = 1;
+    EKNode *currentNode = self.head;
+    NSUInteger i = 1;
     
-	while (currentNode.next) {
-		currentNode = currentNode.next;
-		i++;
-	}
-	return i;
+    while (currentNode.next) {
+        currentNode = currentNode.next;
+        i++;
+    }
+    return i;
 }
 
 - (NSObject *)objectAtIndex:(NSUInteger)index
 {
-	EKNode *currentNode = self.head;
+    EKNode *currentNode = self.head;
     
-	for (NSUInteger i = 1; i < index; i++) {
+    for (NSUInteger i = 1; i < index; i++) {
         currentNode = currentNode.next;
-	}
+    }
     
-	return currentNode.value;
+    return currentNode.value;
 }
 
 - (BOOL)removeCurrent
@@ -139,33 +139,33 @@
 
 - (BOOL)removeObjectAtIndex:(NSUInteger)index
 {
-	if (index < 1 || index > [self count]) {
+    if (index < 1 || index > [self count]) {
         NSLog(@"You are trying to delete head or index out of list count");
-		return NO;
-	}
+        return NO;
+    }
     
-	EKNode *current = self.head;
+    EKNode *current = self.head;
     
-	for (NSUInteger i = 1; i < index; i++) {
-		if (current.next == nil) {
-			return NO;
-		}
-		current = current.next;
-	}
+    for (NSUInteger i = 1; i < index; i++) {
+        if (current.next == nil) {
+            return NO;
+        }
+        current = current.next;
+    }
     
-	current.next = current.next.next;
+    current.next = current.next.next;
     
-	return YES;
+    return YES;
 }
 
 - (void)printList
 {
-	EKNode *node = self.head;
+    EKNode *node = self.head;
     
-	while (node != nil) {
-		NSLog(@"Node %@", node.value);
-		node = node.next;
-	}
+    while (node != nil) {
+        NSLog(@"Node %@", node.value);
+        node = node.next;
+    }
 }
 
 @end

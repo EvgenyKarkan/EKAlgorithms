@@ -22,53 +22,53 @@
 
 - (id)init
 {
-	self = [super init];
-	if (self) {
-		self.stackArray = [@[] mutableCopy];
-	}
-	return self;
+    self = [super init];
+    if (self) {
+        self.stackArray = [@[] mutableCopy];
+    }
+    return self;
 }
 
 #pragma mark - Init with limited size of stack
 
 - (id)initWithSize:(NSUInteger)size
 {
-	self = [super init];
-	if (self) {
-		if (size > 0) {
-			self.stackArray = [@[] mutableCopy];
-			self.maxStackSize = size;
-		}
-		else {
-			NSAssert(size != 0, @"Stack size must be > 0");
-		}
-	}
-	return self;
+    self = [super init];
+    if (self) {
+        if (size > 0) {
+            self.stackArray = [@[] mutableCopy];
+            self.maxStackSize = size;
+        }
+        else {
+            NSAssert(size != 0, @"Stack size must be > 0");
+        }
+    }
+    return self;
 }
 
 #pragma mark - Public API
 
 - (id)popLastObject
 {
-	id object = [self peek];
-	[self.stackArray removeLastObject];
+    id object = [self peek];
+    [self.stackArray removeLastObject];
     
-	return object;
+    return object;
 }
 
 - (void)push:(id)object
 {
-	if ([self isFull] && self.maxStackSize) {
-		NSLog(@"Stack is full");
-		return;
-	}
+    if ([self isFull] && self.maxStackSize) {
+        NSLog(@"Stack is full");
+        return;
+    }
     
-	if (object != nil) {
-		[self.stackArray addObject:object];
-	}
-	else {
-		NSAssert(object != nil, @"You can't push nil object to stack");
-	}
+    if (object != nil) {
+        [self.stackArray addObject:object];
+    }
+    else {
+        NSAssert(object != nil, @"You can't push nil object to stack");
+    }
 }
 
 - (id)peek
@@ -77,38 +77,38 @@
         return [self.stackArray lastObject];
     }
     
-	return nil;
+    return nil;
 }
 
 - (NSInteger)sizeOfStack
 {
-	return [self.stackArray count];
+    return [self.stackArray count];
 }
 
 - (BOOL)isEmpty
 {
-	return [self.stackArray count] == 0;
+    return [self.stackArray count] == 0;
 }
 
 - (BOOL)isFull
 {
-	return ([self sizeOfStack] == self.maxStackSize) ? YES : NO;
+    return ([self sizeOfStack] == self.maxStackSize) ? YES : NO;
 }
 
 - (void)clear
 {
-	[self.stackArray removeAllObjects];
+    [self.stackArray removeAllObjects];
 }
 
 - (NSArray *)allObjectsFromStack
 {
-	NSMutableArray *buffer = [@[] mutableCopy];
+    NSMutableArray *buffer = [@[] mutableCopy];
     
-	for (id object in self.stackArray) {
-		[buffer addObject:object];
-	}
+    for (id object in self.stackArray) {
+        [buffer addObject:object];
+    }
     
-	return [buffer copy];
+    return [buffer copy];
 }
 
 @end

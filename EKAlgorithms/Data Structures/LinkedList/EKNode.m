@@ -12,10 +12,10 @@
 
 - (instancetype)initWithObject:(NSObject *)object
 {
-	if (self = [super init]) {
-		self.value = object;
-	}
-	return self;
+    if (self = [super init]) {
+        self.value = object;
+    }
+    return self;
 }
 
 @end
