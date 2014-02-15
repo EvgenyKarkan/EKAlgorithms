@@ -36,4 +36,6 @@
 
 - (void)printList;
 
+- (void)reverseList;
+
 @end

@@ -168,4 +168,21 @@
     }
 }
 
+- (void)reverseList
+{
+    self.current = self.head;
+    
+    EKNode *previousNode = nil;
+    EKNode *nextNode = nil;
+    
+    while (self.current) {
+        nextNode = self.current.next;
+        self.current.next = previousNode;
+        previousNode = self.current;
+        self.current  = nextNode;
+    }
+    
+    self.head = previousNode;
+}
+
 @end
