@@ -304,6 +304,11 @@ int main(int argc, const char *argv[])
         NSLog(@"Nodes in list - %lu", (unsigned long)[list count]);
         
         [list printList];
+        
+        [list reverseList];
+        NSLog(@"Nodes in list after reverse:");
+        [list printList];
+        
         [list removeObjectAtIndex:3];
         
         NSLog(@"Nodes in list after remove - %lu", (unsigned long)[list count]);
