@@ -214,7 +214,9 @@
             }
         }
         else {
-            NSException *exception = [NSException exceptionWithName:@"NSNumber not found" reason:@"Method can check is array sorted with NSNumber members only" userInfo:nil];
+            NSException *exception = [NSException exceptionWithName:@"NSNumber not found"
+                                                             reason:@"Method can check is array sorted with NSNumber members only"
+                                                           userInfo:nil];
             [exception raise];
         }
     }
