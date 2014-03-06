@@ -90,7 +90,9 @@
 
  @param K Number of first K elements to sort
 
+ Example:
  @code
+ N = 10, K = 5
  [9, 7, 10, 6, 4, 2, 5, 1, 3, 8] -> [1, 2, 3, 4, 5, 7, 6, 9, 10, 8]
  @endcode
 

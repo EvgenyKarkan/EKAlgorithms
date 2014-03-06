@@ -39,6 +39,10 @@ Sorting Algorithms
 7. Partial selection sort.
 8. Heap sort.
 
+Selection Algorithms
+--------------------
+1. Quickselect.
+
 Strings
 -------
 1. Palindrome or not.
