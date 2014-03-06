@@ -40,7 +40,7 @@
 
 - (NSUInteger)selectKthSmallestElement:(NSUInteger)left right:(NSUInteger)right K:(NSUInteger)K {
     if (left == right) {
-        return [self[left] unsignedIntegerValue];
+        return left;
     }
 
     do {
