@@ -477,25 +477,57 @@
 
 #pragma mark - Selection sort
 
-- (NSMutableArray *)selectionSortedArray
+- (NSArray *)selectionSortedArray
 {
+    NSUInteger count = self.count;
+
     NSMutableArray *selfCopy = [self mutableCopy];
     
-    for (NSUInteger i = 0; i < [selfCopy count] - 1; i++) {
+    for (NSUInteger i = 0; i < count; i++) {
         NSUInteger min = i;
-        for (NSUInteger j = i + 1; j < [selfCopy count]; j++) {
+        
+        for (NSUInteger j = i + 1; j < count; j++) {
             if ([selfCopy[j] floatValue]  < [selfCopy[min] floatValue]) {
                 min = j;
             }
         }
-        
-        id tempObject = selfCopy[i];
-        selfCopy[i] = selfCopy[min];
-        selfCopy[min] = tempObject;
+
+        [selfCopy exchangeObjectAtIndex:i withObjectAtIndex:min];
     }
     
-    return selfCopy;
+    return [selfCopy copy];
 }
+
+#pragma mark - Partial Selection Sort
+
+- (NSArray *)partialSelectionSortedArray:(NSUInteger)K {
+    NSUInteger count = self.count;
+    NSParameterAssert(K <= count);
+
+    NSMutableArray *newArray = [self mutableCopy];
+
+    NSUInteger minIndex;
+    NSUInteger minValue;
+
+    for (NSUInteger i = 0; i < K; i++) {
+        minIndex = i;
+        minValue = [[newArray objectAtIndex:i] unsignedIntegerValue];
+
+        for (NSUInteger j = i + 1; j < count; j++) {
+            NSUInteger el = [[newArray objectAtIndex:j] unsignedIntegerValue];
+
+            if (el < minValue) {
+                minIndex = j;
+                minValue = el;
+            }
+        }
+
+        [newArray exchangeObjectAtIndex:i withObjectAtIndex:minIndex];
+    }
+
+    return [newArray copy];
+}
+
 
 #pragma mark - Heap sort
 
