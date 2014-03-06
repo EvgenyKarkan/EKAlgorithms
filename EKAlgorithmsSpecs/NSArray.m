@@ -1,6 +1,8 @@
 #import <Kiwi/Kiwi.h>
 
 #import "NSArray+EKStuff.h"
+#import "NSMutableArray+EKStuff.h"
+#import "NSArray+Selection.h"
 
 SPEC_BEGIN(NSArray_Specs)
 
@@ -186,6 +188,43 @@ describe(@"NSArray-based algorithms", ^{
             });
         });
     });
+
+    describe(@"Selection algorithms", ^{
+        describe(@"Quickselect", ^{
+            it(@"", ^{
+                NSMutableArray *array = [NSMutableArray array];
+
+                NSUInteger N = 1000, n = 500;
+
+                for (int i = 0; i < N; i++) {
+                    [array addObject:@(i + 1)];
+                }
+
+                NSArray *shuffledArray = [array shuffledArray];
+
+                array = [NSMutableArray arrayWithArray:shuffledArray];
+
+                NSUInteger indexOfNthSmallestElement = [array selectKthSmallestElement:0 right:(N - 1) K:n];
+
+                [[theValue(indexOfNthSmallestElement) should] equal:theValue(n)];
+
+                NSUInteger valueOfNthSmallestElement = [[array objectAtIndex:indexOfNthSmallestElement] unsignedIntegerValue];
+
+                for (NSUInteger i = 0; i < indexOfNthSmallestElement; i++) {
+                    NSUInteger ithElementValue = [[array objectAtIndex:i] unsignedIntegerValue];
+
+                    [[theValue(ithElementValue < valueOfNthSmallestElement) should] beTrue];
+                }
+
+                for (NSUInteger i = indexOfNthSmallestElement + 1; i < N; i++) {
+                    NSUInteger ithElementValue = [[array objectAtIndex:i] unsignedIntegerValue];
+
+                    [[theValue(ithElementValue > valueOfNthSmallestElement) should] beTrue];
+                }
+            });
+        });
+    });
+
 
 });
 

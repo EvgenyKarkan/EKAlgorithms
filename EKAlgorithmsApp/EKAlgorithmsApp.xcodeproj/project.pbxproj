@@ -30,6 +30,9 @@
 		860B78871858133A0071079A /* NSString+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B787A1858133A0071079A /* NSString+EKStuff.m */; };
 		860B7889185814810071079A /* NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B7888185814810071079A /* NSArray.m */; };
 		860B788A185815BC0071079A /* NSArray+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B78741858133A0071079A /* NSArray+EKStuff.m */; };
+		8641D23F18C88D6700B109E4 /* NSMutableArray+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B78761858133A0071079A /* NSMutableArray+EKStuff.m */; };
+		8641D24618C89B7100B109E4 /* NSArray+Selection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8641D24518C89B7100B109E4 /* NSArray+Selection.m */; };
+		8641D24718C89BC900B109E4 /* NSArray+Selection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8641D24518C89B7100B109E4 /* NSArray+Selection.m */; };
 		869FE65F186419E600509FE7 /* NSNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 869FE65E186419E600509FE7 /* NSNumber.m */; };
 		869FE66018641C1200509FE7 /* NSNumber+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B78781858133A0071079A /* NSNumber+EKStuff.m */; };
 		86A2D375188D23DA004A908F /* NSArray+EKGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A2D374188D23DA004A908F /* NSArray+EKGeometry.m */; };
@@ -108,6 +111,8 @@
 		860B78791858133A0071079A /* NSString+EKStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EKStuff.h"; sourceTree = "<group>"; };
 		860B787A1858133A0071079A /* NSString+EKStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EKStuff.m"; sourceTree = "<group>"; };
 		860B7888185814810071079A /* NSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArray.m; path = ../../EKAlgorithmsSpecs/NSArray.m; sourceTree = "<group>"; };
+		8641D24418C89B7100B109E4 /* NSArray+Selection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Selection.h"; sourceTree = "<group>"; };
+		8641D24518C89B7100B109E4 /* NSArray+Selection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Selection.m"; sourceTree = "<group>"; };
 		869FE65E186419E600509FE7 /* NSNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSNumber.m; path = ../../EKAlgorithmsSpecs/NSNumber.m; sourceTree = "<group>"; };
 		86A2D2D7188AABB3004A908F /* SpecHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecHelpers.h; sourceTree = "<group>"; };
 		86A2D373188D23DA004A908F /* NSArray+EKGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+EKGeometry.h"; path = "Geometry/NSArray+EKGeometry.h"; sourceTree = "<group>"; };
@@ -224,6 +229,7 @@
 		860B785A1858133A0071079A /* EKAlgorithms */ = {
 			isa = PBXGroup;
 			children = (
+				8641D24218C89B4A00B109E4 /* Selection */,
 				86A2D372188D23B1004A908F /* Geometry */,
 				860B785B1858133A0071079A /* Data Structures */,
 				860B78731858133A0071079A /* NSArray+EKStuff.h */,
@@ -290,6 +296,15 @@
 				860B78721858133A0071079A /* EKNode.m */,
 			);
 			path = LinkedList;
+			sourceTree = "<group>";
+		};
+		8641D24218C89B4A00B109E4 /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+				8641D24418C89B7100B109E4 /* NSArray+Selection.h */,
+				8641D24518C89B7100B109E4 /* NSArray+Selection.m */,
+			);
+			path = Selection;
 			sourceTree = "<group>";
 		};
 		86A2D372188D23B1004A908F /* Geometry */ = {
@@ -415,6 +430,7 @@
 				DE630A5E189544A600256CC5 /* EKRecursionStuff.m in Sources */,
 				860B78821858133A0071079A /* EKLinkedList.m in Sources */,
 				860B78841858133A0071079A /* NSArray+EKStuff.m in Sources */,
+				8641D24618C89B7100B109E4 /* NSArray+Selection.m in Sources */,
 				860B787E1858133A0071079A /* EKQueue.m in Sources */,
 				860B78871858133A0071079A /* NSString+EKStuff.m in Sources */,
 				860B787B1858133A0071079A /* EKBSTree.m in Sources */,
@@ -433,11 +449,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				869FE66018641C1200509FE7 /* NSNumber+EKStuff.m in Sources */,
+				8641D24718C89BC900B109E4 /* NSArray+Selection.m in Sources */,
 				860B7889185814810071079A /* NSArray.m in Sources */,
 				86A2D387188E6491004A908F /* EKALocation.m in Sources */,
 				860B788A185815BC0071079A /* NSArray+EKStuff.m in Sources */,
 				86A2D37C188D2705004A908F /* NSArray+EKGeometry.m in Sources */,
 				86A2D378188D2440004A908F /* EKGeometry.m in Sources */,
+				8641D23F18C88D6700B109E4 /* NSMutableArray+EKStuff.m in Sources */,
 				860B7850185811420071079A /* main.m in Sources */,
 				869FE65F186419E600509FE7 /* NSNumber.m in Sources */,
 			);
