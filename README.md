@@ -36,7 +36,8 @@ Sorting Algorithms
 4. Quick sort.  
 5. Insertion sort.
 6. Selection sort.
-7. Heap sort.
+7. Partial selection sort.
+8. Heap sort.
 
 Strings
 -------

@@ -78,7 +78,26 @@
 - (NSMutableArray *)mergeSortedArray;
 - (NSMutableArray *)quickSortedArrayWithLeftIndex:(NSInteger)left withRightIndex:(NSInteger)right;
 - (NSMutableArray *)insertionSortedArray;
-- (NSMutableArray *)selectionSortedArray;
+
+- (NSArray *)selectionSortedArray;
+
+/**
+ Partial selection sort
+
+ This implementation is based on http://en.wikipedia.org/wiki/Selection_algorithm#Partial_selection_sort
+
+ @note Assumes array of NSUInteger values
+
+ @param K Number of first K elements to sort
+
+ @code
+ [9, 7, 10, 6, 4, 2, 5, 1, 3, 8] -> [1, 2, 3, 4, 5, 7, 6, 9, 10, 8]
+ @endcode
+
+ @return NSArray with first K elements sorted. If K = N / 2 then Kth element of sorted array is a median for both sorted and original arrays
+ */
+- (NSArray *)partialSelectionSortedArray:(NSUInteger)K;
+
 - (NSMutableArray *)heapSortedArray;
 
 @end
