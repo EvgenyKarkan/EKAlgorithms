@@ -33,59 +33,73 @@
 
 - (NSArray *)indexesOfMinimumAndMaximumElements
 {
-    if (self.count == 0) return nil;
-    
-    NSInteger minimalValue = NSIntegerMax,
-    maximalValue = NSIntegerMin;
-    
-    NSUInteger minimalValueIndex,
-    maximalValueIndex;
-    
     NSUInteger count = self.count;
+
+    if (count == 0) return nil;
     
-        // Machine way of doing odd/even check is better than mathematical count % 2
+    NSInteger minimalValue = NSIntegerMax;
+    NSInteger maximalValue = NSIntegerMin;
+    
+    NSUInteger minimalValueIndex;
+    NSUInteger maximalValueIndex;
+
+    // Machine way of doing odd/even check is better than mathematical count % 2
     BOOL oddnessFlag = count & 1;
     
     if (oddnessFlag) {
-        minimalValue = maximalValue = [self.firstObject integerValue];
-        minimalValueIndex = maximalValueIndex = 0;
+        minimalValue = maximalValue = [self.lastObject integerValue];
+        minimalValueIndex = maximalValueIndex = count - 1;
     }
-    
-    for (NSUInteger i = oddnessFlag; i < count; i = i + 2) {
-        NSInteger iValue = [[self objectAtIndex:i] integerValue];
-        NSInteger ip1Value = [[self objectAtIndex:i + 1] integerValue];
-        
+
+    NSUInteger idx = 0;
+    NSInteger values[2];
+
+    for (NSNumber *number in self) {
+        if (((idx++) & 1) == 0) {
+            values[0] = [number integerValue];
+
+            continue;
+        } else {
+            values[1] = [number integerValue];
+        }
+
+        NSInteger iValue = values[0];
+        NSInteger ip1Value = values[1];
+
+        NSUInteger iidx = idx - 2;
+        NSUInteger ip1idx = idx - 1;
+
         if (iValue < ip1Value) {
             if (minimalValue > iValue) {
                 minimalValue = iValue;
-                minimalValueIndex = i;
+                minimalValueIndex = iidx;
             }
             
             if (maximalValue < ip1Value) {
                 maximalValue = ip1Value;
-                maximalValueIndex = i + 1;
+                maximalValueIndex = ip1idx;
             }
         }
         else if (iValue > ip1Value) {
             if (minimalValue > ip1Value) {
                 minimalValue = ip1Value;
-                minimalValueIndex = i + 1;
+                minimalValueIndex = ip1idx;
             }
             
             if (maximalValue < iValue) {
                 maximalValue = iValue;
-                maximalValueIndex = i;
+                maximalValueIndex = iidx;
             }
         }
         else {
             if (minimalValue > iValue) {
                 minimalValue = iValue;
-                minimalValueIndex = i;
+                minimalValueIndex = iidx;
             }
             
             if (maximalValue < iValue) {
                 maximalValue = iValue;
-                maximalValueIndex = i;
+                maximalValueIndex = iidx;
             }
         }
     }
