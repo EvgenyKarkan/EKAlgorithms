@@ -364,6 +364,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = EK;
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Evgeny Karkan";
 			};
