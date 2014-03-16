@@ -89,7 +89,9 @@ Data Structures
 5. Graph 
     - DFS (depth-first search);
     - BFS (breadth-first search).
-6. Binary search tree (BST).
+6. Tree.  
+7. Binary tree.  
+8. Binary search tree (BST).
 
 Geometry
 --------
