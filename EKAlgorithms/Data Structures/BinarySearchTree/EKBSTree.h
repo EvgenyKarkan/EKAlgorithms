@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+
 #import "EKBTreeNode.h"
 
 @interface EKBSTree : NSObject
