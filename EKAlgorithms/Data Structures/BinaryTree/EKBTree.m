@@ -1,0 +1,84 @@
+//
+//  EKBTree.m
+//  EKAlgorithmsApp
+//
+//  Created by Yifei Zhou on 3/16/14.
+//  Copyright (c) 2014 Evgeny Karkan. All rights reserved.
+//
+
+#import "EKBTree.h"
+
+@implementation EKBTree
+
+- (instancetype)initWithObject:(NSObject *)object
+{
+    if (self = [super init]) {
+        self.root = [[EKBTreeNode alloc] init];
+        self.root.object = object;
+    }
+    
+    return self;
+}
+
+- (BOOL)insertNode:(EKBTreeNode *)node parent:(EKBTreeNode *)parent isLeftChild:(BOOL)value
+{
+    if (value == true && parent.leftChild == nil) {
+        parent.leftChild = node;
+    } else if (parent.rightChild == nil) {
+        parent.rightChild = node;
+    } else {
+        NSAssert(parent.leftChild != nil || parent.rightChild != nil, @"Can't insert into parent node!");
+        return false;
+    }
+    return true;
+}
+
+- (void)preOrderTraversal
+{
+    if (self.root) {
+        [EKBTree preOrderTraversalRecursive:self.root];
+    }
+}
+
+- (void)inOrderTraversal
+{
+    if (self.root) {
+        [EKBTree inOrderTraversalRecursive:self.root];
+    }
+}
+
+- (void)postOrderTraversal
+{
+    if (self.root) {
+        [EKBTree postOrderTraversalRecursive:self.root];
+    }
+}
+
++ (void)preOrderTraversalRecursive:(EKBTreeNode *)node
+{
+    if (node) {
+        NSLog(@"%@",node.object);
+        [EKBTree preOrderTraversalRecursive:node.leftChild];
+        [EKBTree preOrderTraversalRecursive:node.rightChild];
+    }
+}
+
++ (void)inOrderTraversalRecursive:(EKBTreeNode *)node
+{
+    if (node) {
+        [EKBTree inOrderTraversalRecursive:node.leftChild];
+        NSLog(@"%@",node.object);
+        [EKBTree inOrderTraversalRecursive:node.rightChild];
+    }
+}
+
++ (void)postOrderTraversalRecursive:(EKBTreeNode *)node
+{
+    if (node) {
+        [EKBTree postOrderTraversalRecursive:node.leftChild];
+        [EKBTree postOrderTraversalRecursive:node.rightChild];
+        NSLog(@"%@",node.object);
+    }
+}
+
+@end

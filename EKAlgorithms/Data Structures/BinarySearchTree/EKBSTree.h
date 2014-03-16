@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EKTreeNode.h"
+#import "EKBTreeNode.h"
 
 @interface EKBSTree : NSObject
 
-@property (nonatomic, strong) EKTreeNode *root;
+@property (nonatomic, strong) EKBTreeNode *root;
 
 - (instancetype)initWithObject:(NSObject *)object compareSelector:(SEL)selector;
 - (void)insertObject:(NSObject *)newObject;

@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EKTreeNode : NSObject
+@interface EKBTreeNode : NSObject
 
 @property (nonatomic, strong) NSObject *object;
-@property (nonatomic, strong) EKTreeNode *leftChild;
-@property (nonatomic, strong) EKTreeNode *rightChild;
+@property (nonatomic, strong) EKBTreeNode *leftChild;
+@property (nonatomic, strong) EKBTreeNode *rightChild;
 @property (nonatomic, assign) SEL compareSelector;
 
 - (void)printDescription;
