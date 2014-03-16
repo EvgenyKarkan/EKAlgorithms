@@ -25,6 +25,13 @@
 {
     EKNode *node = [[EKNode alloc] initWithObject:value];
     
+    if (self.tail == nil) {
+        EKNode *lastNode = self.head;
+        for (NSUInteger i = 1; i < self.count; i++) {
+            lastNode = lastNode.next;
+        }
+        self.tail = lastNode;
+    }
     node.next = self.head;
     self.head.previous = node;
     self.head = node;
@@ -34,6 +41,13 @@
 {
     EKNode *node = [[EKNode alloc] initWithObject:value];
     
+    if (self.tail == nil) {
+        EKNode *lastNode = self.head;
+        for (NSUInteger i = 1; i < self.count; i++) {
+            lastNode = lastNode.next;
+        }
+        self.tail = lastNode;
+    }
     node.previous = self.tail;
     self.tail.next = node;
     self.tail = node;

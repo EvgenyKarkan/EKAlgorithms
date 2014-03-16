@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
-#import "EKTreeNode.h"
+#import "EKBTreeNode.h"
 
-@implementation EKTreeNode
+@implementation EKBTreeNode
 
 - (void)printDescription
 {

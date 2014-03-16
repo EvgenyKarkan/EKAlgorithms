@@ -14,7 +14,7 @@
 - (instancetype)initWithObject:(NSObject *)obj compareSelector:(SEL)selector
 {
     if (self = [super init]) {
-        self.root = [[EKTreeNode alloc] init];
+        self.root = [[EKBTreeNode alloc] init];
         self.root.object = obj;
         self.root.compareSelector = selector;
     }
@@ -24,11 +24,11 @@
 
 - (void)insertObject:(NSObject *)newObj
 {
-    EKTreeNode *treeNode = [[EKTreeNode alloc] init];
+    EKBTreeNode *treeNode = [[EKBTreeNode alloc] init];
     treeNode.object = newObj;
     treeNode.compareSelector = self.root.compareSelector;
     
-    EKTreeNode *currentNode = self.root;
+    EKBTreeNode *currentNode = self.root;
     
     while (YES) {
 #pragma clang diagnostic push
