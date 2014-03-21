@@ -66,9 +66,29 @@
 {
 }
 
-- (BOOL)find:(NSObject *)obj
+- (EKBTreeNode *)find:(NSObject *)obj
 {
-    return NO;
+    EKBTreeNode *currentNode = self.root;
+    while (YES) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        NSComparisonResult result = (NSComparisonResult)[obj performSelector : currentNode.compareSelector withObject : currentNode.object];
+#pragma clang diagnostic pop
+        if (result > 0) {
+            if (currentNode.rightChild) {
+                currentNode = currentNode.rightChild;
+            } else
+                return nil;
+        } else if (result < 0) {
+            if (currentNode.leftChild) {
+                currentNode = currentNode.leftChild;
+            } else
+                return nil;
+        } else {
+            break;
+        }
+    }
+    return currentNode;
 }
 
 @end

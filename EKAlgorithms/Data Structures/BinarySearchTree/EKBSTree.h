@@ -16,7 +16,7 @@
 - (instancetype)initWithObject:(NSObject *)object compareSelector:(SEL)selector;
 - (void)insertObject:(NSObject *)newObject;
 - (void)printDescription;
-- (BOOL)find:(NSObject *)object;
+- (EKBTreeNode *)find:(NSObject *)object;
 - (void)deleteObject:(NSObject *)object;
 
 @end
