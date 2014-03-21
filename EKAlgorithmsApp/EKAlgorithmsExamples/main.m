@@ -327,6 +327,12 @@ int main(int argc, const char *argv[])
         
         [tree printDescription];         // see EKBSTree.png picture
         
+        NSLog(@"%@", [tree find:@7].object);        // find @7 and print it
+        
+        [tree deleteObject:@2];         // delete @2 node
+        
+        [tree printDescription];
+        
         //RECURSION---------------------------------------------------------------------------------
         
             //Tower of Hanoi
