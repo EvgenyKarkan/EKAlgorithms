@@ -17,6 +17,6 @@
 - (void)insertObject:(NSObject *)newObject;
 - (void)printDescription;
 - (EKBTreeNode *)find:(NSObject *)object;
-- (void)deleteObject:(NSObject *)object;
+- (EKBTreeNode *)deleteObject:(NSObject *)object;
 
 @end

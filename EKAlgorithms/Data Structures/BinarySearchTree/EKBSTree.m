@@ -29,6 +29,7 @@
     treeNode.compareSelector = self.root.compareSelector;
     
     EKBTreeNode *currentNode = self.root;
+    EKBTreeNode *parentNode = self.root;
     
     while (YES) {
 #pragma clang diagnostic push
@@ -38,19 +39,23 @@
         if (result >= 0) {
             if (!currentNode.rightChild) {
                 currentNode.rightChild = treeNode;
+                treeNode.parent = parentNode;
                 break;
             }
             else {
                 currentNode = currentNode.rightChild;
+                parentNode = currentNode;
             }
         }
         else {
             if (!currentNode.leftChild) {
                 currentNode.leftChild = treeNode;
+                treeNode.parent = parentNode;
                 break;
             }
             else {
                 currentNode = currentNode.leftChild;
+                parentNode = currentNode;
             }
         }
     }
@@ -61,9 +66,42 @@
     [self.root printDescription];
 }
 
-    //TODO: to finish this
-- (void)deleteObject:(NSObject *)obj
+- (EKBTreeNode *)deleteObject:(NSObject *)obj
 {
+    EKBTreeNode *node = [self find:obj];
+    if (node) {
+        if (node.leftChild && node.rightChild) {
+            // Use in-order successor node
+            EKBTreeNode *tmpCell = node.rightChild;
+            while (tmpCell.leftChild) {
+                tmpCell = tmpCell.leftChild;
+            }
+            /*
+             // If you would like to use in-order predecessor node, uncomment this and comment code above
+             EKBTreeNode *tmpCell = node.leftChild;
+             while (tmpCell.rightChild) {
+             tmpCell = tmpCell.rightChild;
+             }
+             */
+            NSObject *temp;
+            temp = [node.object copy];
+            node.object = [tmpCell.object copy];
+            tmpCell.object = temp;
+            node.rightChild = [self deleteObject:temp];
+        } else {
+            if (node.leftChild != nil) {
+                node = node.leftChild;
+            } else if (node.rightChild != nil) {
+                node = node.rightChild;
+            }
+            if ([node isLeftChildOfParent]) {
+                node.parent.leftChild = nil;
+            } else {
+                node.parent.rightChild = nil;
+            }
+        }
+    }
+    return node;
 }
 
 - (EKBTreeNode *)find:(NSObject *)obj

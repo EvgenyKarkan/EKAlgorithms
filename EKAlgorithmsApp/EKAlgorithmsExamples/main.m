@@ -327,6 +327,10 @@ int main(int argc, const char *argv[])
         
         [tree printDescription];         // see EKBSTree.png picture
         
+        [tree deleteObject:@2];
+        
+        [tree printDescription];
+        
         //RECURSION---------------------------------------------------------------------------------
         
             //Tower of Hanoi

@@ -25,4 +25,9 @@
     }
 }
 
+- (BOOL)isLeftChildOfParent
+{
+    return self.parent.leftChild == self ? YES : NO;
+}
+
 @end
