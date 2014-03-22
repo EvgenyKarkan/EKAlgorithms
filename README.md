@@ -96,6 +96,7 @@ Data Structures
 Geometry
 --------
 1. Array of sorted locations according to a distance to a given location.  
+2. Cartesian quadrant selection algorithms
 
 Recursion  
 ---------
