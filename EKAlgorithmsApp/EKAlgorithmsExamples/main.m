@@ -286,6 +286,8 @@ int main(int argc, const char *argv[])
                             [[EKEdge alloc] initWithAdjacentTo:dV andWeight:@9], nil];
         dV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:cV andWeight:@10], nil];
         eV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:aV andWeight:@1], nil];
+        // Code below is to test isUndirectedGraph method
+        //eV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:bV andWeight:@1], nil];
         fV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:aV andWeight:@5],
                             [[EKEdge alloc] initWithAdjacentTo:gV andWeight:@3], nil];
         gV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:fV andWeight:@2], nil];
@@ -293,6 +295,15 @@ int main(int argc, const char *argv[])
             //Init graph (see EKGraphPicture.png)
         EKGraph *graph = [[EKGraph alloc] initWithStartVertex:aV];
         graph.vertices = [@[aV, bV, cV, dV, eV, fV, gV] mutableCopy];
+        
+        
+            //Is it a directed Graph
+        if ([graph isUndirectedGraph]) {
+            NSLog(@"This graph is a undirected graph");
+        } else {
+            NSLog(@"This graph is a directed graph");
+        }
+        
         [graph depthFirstSearch];
         
             //BFS

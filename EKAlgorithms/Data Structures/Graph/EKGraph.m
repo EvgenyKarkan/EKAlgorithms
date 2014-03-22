@@ -29,6 +29,30 @@
     return self;
 }
 
+- (BOOL)isUndirectedGraph
+{
+    NSAssert([self.vertices count] > 0, @"No any vertex in graph");
+    
+    for (EKVertex *vertex in self.vertices) {
+        if (![self hasOppositeEdge:vertex]) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+- (BOOL)hasOppositeEdge:(EKVertex *)vertex
+{
+    for (EKEdge *eachEdge in vertex.adjacentEdges) {
+        for (EKEdge *edge in eachEdge.adjacentTo.adjacentEdges) {
+            if (edge.adjacentTo == vertex) {
+                return YES;
+            }
+        }
+    }
+    return NO;
+}
+
 #pragma mark - DFS
 
 - (void)depthFirstSearch
