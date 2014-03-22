@@ -15,6 +15,7 @@
 #import "EKDeque.h"
 #import "EKVertex.h"
 #import "EKGraph.h"
+#import "EKEdge.h"
 #import "EKLinkedList.h"
 #import "EKNode.h"
 #import "EKBSTree.h"
@@ -276,13 +277,18 @@ int main(int argc, const char *argv[])
         gV.label = @"G vertex";
         
             //Set adjacent vertices
-        aV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:bV, eV, fV, nil];
-        bV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:aV, cV, nil];
-        cV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:bV, dV, nil];
-        dV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:cV, nil];
-        eV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:aV, nil];
-        fV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:aV, gV, nil];
-        gV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:fV, nil];
+        aV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:bV andWeight:@1],
+                            [[EKEdge alloc] initWithAdjacentTo:eV andWeight:@3],
+                            [[EKEdge alloc] initWithAdjacentTo:fV andWeight:@5], nil];
+        bV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:aV andWeight:@1],
+                            [[EKEdge alloc] initWithAdjacentTo:cV andWeight:@7], nil];
+        cV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:bV andWeight:@2],
+                            [[EKEdge alloc] initWithAdjacentTo:dV andWeight:@9], nil];
+        dV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:cV andWeight:@10], nil];
+        eV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:aV andWeight:@1], nil];
+        fV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:aV andWeight:@5],
+                            [[EKEdge alloc] initWithAdjacentTo:gV andWeight:@3], nil];
+        gV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:fV andWeight:@2], nil];
         
             //Init graph (see EKGraphPicture.png)
         EKGraph *graph = [[EKGraph alloc] initWithStartVertex:aV];

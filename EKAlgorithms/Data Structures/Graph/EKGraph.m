@@ -8,6 +8,7 @@
 
 #import "EKGraph.h"
 #import "EKVertex.h"
+#import "EKEdge.h"
 #import "EKStack.h"
 #import "EKQueue.h"
 
@@ -45,12 +46,12 @@
         EKVertex *lastVertex = [stack peek];
         BOOL isAddNewVertex = NO;
         
-        for (EKVertex *adjacentVertex in lastVertex.adjacentVertices) {
-            if (!adjacentVertex.wasVisited) {
-                [stack push:adjacentVertex];
-                adjacentVertex.wasVisited = YES;
+        for (EKEdge *adjacentEdge in lastVertex.adjacentEdges) {
+            if (!adjacentEdge.adjacentTo.wasVisited) {
+                [stack push:adjacentEdge.adjacentTo];
+                adjacentEdge.adjacentTo.wasVisited = YES;
                 isAddNewVertex = YES;
-                [self displayVisitedVertex:adjacentVertex];
+                [self displayVisitedVertex:adjacentEdge.adjacentTo];
                 break;
             }
         }
@@ -82,11 +83,11 @@
     
     while (![queue isEmpty]) {
         EKVertex *foo = [queue removeFirstObject];
-        for (EKVertex *adjacentVertex in foo.adjacentVertices) {
-            if (!adjacentVertex.wasVisited) {
-                [queue insertObject:adjacentVertex];
-                adjacentVertex.wasVisited = YES;
-                [self displayVisitedVertex:adjacentVertex];
+        for (EKEdge *adjacentEdge in foo.adjacentEdges) {
+            if (!adjacentEdge.adjacentTo.wasVisited) {
+                [queue insertObject:adjacentEdge.adjacentTo];
+                adjacentEdge.adjacentTo.wasVisited = YES;
+                [self displayVisitedVertex:adjacentEdge.adjacentTo];
             }
         }
     }

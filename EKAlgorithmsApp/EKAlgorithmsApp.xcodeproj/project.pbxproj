@@ -47,6 +47,7 @@
 		8F42638318D5BE5B0069E81D /* EKTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F42638218D5BE5B0069E81D /* EKTreeNode.m */; };
 		8F42638618D5C01E0069E81D /* EKTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F42638518D5C01E0069E81D /* EKTree.m */; };
 		8F42638A18D5C59F0069E81D /* EKBTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F42638918D5C59F0069E81D /* EKBTree.m */; };
+		8F443DC518DDA7D90005E571 /* EKEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F443DC418DDA7D90005E571 /* EKEdge.m */; };
 		DE630A5E189544A600256CC5 /* EKRecursionStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = DE630A5D189544A600256CC5 /* EKRecursionStuff.m */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +132,8 @@
 		8F42638518D5C01E0069E81D /* EKTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKTree.m; sourceTree = "<group>"; };
 		8F42638818D5C59F0069E81D /* EKBTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKBTree.h; sourceTree = "<group>"; };
 		8F42638918D5C59F0069E81D /* EKBTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKBTree.m; sourceTree = "<group>"; };
+		8F443DC318DDA7D90005E571 /* EKEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKEdge.h; sourceTree = "<group>"; };
+		8F443DC418DDA7D90005E571 /* EKEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKEdge.m; sourceTree = "<group>"; };
 		DE630A5C189544A600256CC5 /* EKRecursionStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKRecursionStuff.h; sourceTree = "<group>"; };
 		DE630A5D189544A600256CC5 /* EKRecursionStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKRecursionStuff.m; sourceTree = "<group>"; };
 		F1911596D6814341BCF9FC8E /* libPods-EKAlgorithmsSpecs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EKAlgorithmsSpecs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,6 +297,8 @@
 				860B786B1858133A0071079A /* EKGraphPicture.png */,
 				860B786C1858133A0071079A /* EKVertex.h */,
 				860B786D1858133A0071079A /* EKVertex.m */,
+				8F443DC318DDA7D90005E571 /* EKEdge.h */,
+				8F443DC418DDA7D90005E571 /* EKEdge.m */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -475,6 +480,7 @@
 				860B783E185810F10071079A /* main.m in Sources */,
 				86A2D375188D23DA004A908F /* NSArray+EKGeometry.m in Sources */,
 				860B78801858133A0071079A /* EKGraph.m in Sources */,
+				8F443DC518DDA7D90005E571 /* EKEdge.m in Sources */,
 				860B78831858133A0071079A /* EKNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
