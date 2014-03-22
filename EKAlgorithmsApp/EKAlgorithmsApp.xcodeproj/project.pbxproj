@@ -116,6 +116,7 @@
 		860B7888185814810071079A /* NSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArray.m; path = ../../EKAlgorithmsSpecs/NSArray.m; sourceTree = "<group>"; };
 		8641D24418C89B7100B109E4 /* NSArray+Selection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Selection.h"; sourceTree = "<group>"; };
 		8641D24518C89B7100B109E4 /* NSArray+Selection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Selection.m"; sourceTree = "<group>"; };
+		869865A418DE03C300B9455F /* EKGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EKGeometry.h; sourceTree = "<group>"; };
 		869FE65E186419E600509FE7 /* NSNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSNumber.m; path = ../../EKAlgorithmsSpecs/NSNumber.m; sourceTree = "<group>"; };
 		86A2D2D7188AABB3004A908F /* SpecHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecHelpers.h; sourceTree = "<group>"; };
 		86A2D373188D23DA004A908F /* NSArray+EKGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+EKGeometry.h"; path = "Geometry/NSArray+EKGeometry.h"; sourceTree = "<group>"; };
@@ -325,6 +326,7 @@
 				86A2D374188D23DA004A908F /* NSArray+EKGeometry.m */,
 				86A2D384188E63C2004A908F /* EKALocation.h */,
 				86A2D385188E63C2004A908F /* EKALocation.m */,
+				869865A418DE03C300B9455F /* EKGeometry.h */,
 			);
 			name = Geometry;
 			sourceTree = "<group>";
