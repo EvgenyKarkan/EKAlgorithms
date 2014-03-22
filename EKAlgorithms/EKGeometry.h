@@ -51,7 +51,13 @@ static inline int EKDistributionQuadrantForPointInsideMapRect_Bitwise(MKMapRect 
      */
 
 #define EK_LONG_LONG_SIGN (sizeof(long long) * 8 - 1)
-    return (((long long)(point.y - MKMapRectGetMidY(mapRect)) >> EK_LONG_LONG_SIGN) & 3) ^ ((long long)(point.x - MKMapRectGetMidX(mapRect)) >> EK_LONG_LONG_SIGN) & 1;
+    double dx = point.x - MKMapRectGetMidX(mapRect);
+    double dy = point.y - MKMapRectGetMidY(mapRect);
+
+    long long *pdx = (void *)&dx;
+    long long *pdy = (void *)&dy;
+
+    return ((*pdy >> EK_LONG_LONG_SIGN) & 3) ^ ((*pdx >> EK_LONG_LONG_SIGN) & 1);
 }
 
 #endif

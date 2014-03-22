@@ -32,7 +32,7 @@ describe(@"EKGeometry.h algorithms", ^{
             [[theValue(quadrant) should] equal:@(0)];
 
 
-            point = MKMapPointMake(RandomDoubleWithinRange(1, 1000), RandomDoubleWithinRange(1, 1000));
+            point = MKMapPointMake(RandomDoubleWithinRange(1, MKMapRectWorld.size.width), RandomDoubleWithinRange(1, MKMapRectWorld.size.height));
 
             quadrant = EKDistributionQuadrantForPointInsideMapRect_Bitwise(mapRect, point);
             [[theValue(quadrant) should] equal:@(0)];
@@ -41,7 +41,7 @@ describe(@"EKGeometry.h algorithms", ^{
             [[theValue(quadrant) should] equal:@(0)];
 
 
-            point = MKMapPointMake((-1) * RandomDoubleWithinRange(1, 1000), RandomDoubleWithinRange(1, 1000));
+            point = MKMapPointMake((-1) * RandomDoubleWithinRange(1, MKMapRectWorld.size.width), RandomDoubleWithinRange(1, MKMapRectWorld.size.height));
 
             quadrant = EKDistributionQuadrantForPointInsideMapRect_Bitwise(mapRect, point);
             [[theValue(quadrant) should] equal:@(1)];
@@ -50,7 +50,7 @@ describe(@"EKGeometry.h algorithms", ^{
             [[theValue(quadrant) should] equal:@(1)];
 
 
-            point = MKMapPointMake((-1) * RandomDoubleWithinRange(1, 1000), (-1) * RandomDoubleWithinRange(1, 1000));
+            point = MKMapPointMake((-1) * RandomDoubleWithinRange(1, MKMapRectWorld.size.height), (-1) * RandomDoubleWithinRange(1, MKMapRectWorld.size.height));
 
             quadrant = EKDistributionQuadrantForPointInsideMapRect_Bitwise(mapRect, point);
             [[theValue(quadrant) should] equal:@(2)];
@@ -59,7 +59,7 @@ describe(@"EKGeometry.h algorithms", ^{
             [[theValue(quadrant) should] equal:@(2)];
 
 
-            point = MKMapPointMake(RandomDoubleWithinRange(1, 1000), (-1) * RandomDoubleWithinRange(1, 1000));
+            point = MKMapPointMake(RandomDoubleWithinRange(1, MKMapRectWorld.size.width), (-1) * RandomDoubleWithinRange(1, MKMapRectWorld.size.height));
 
             quadrant = EKDistributionQuadrantForPointInsideMapRect_Bitwise(mapRect, point);
             [[theValue(quadrant) should] equal:@(3)];
