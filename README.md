@@ -86,11 +86,14 @@ Data Structures
 2. Queue (FIFO).
 3. Deque.
 4. Linked list.
-5. Graph 
+5. Graph: 
     - DFS (depth-first search);
     - BFS (breadth-first search).
 6. Tree.  
-7. Binary tree.  
+7. Binary tree:  
+    - Pre-order traversal;
+    - In-order traversal;
+    - Post-order traversal.
 8. Binary search tree (BST).
 
 Geometry
