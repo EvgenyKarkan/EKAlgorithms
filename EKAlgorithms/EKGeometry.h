@@ -15,7 +15,6 @@
 /**
  Find quadrant which a given point is distributed to from a center of a given map rect
  Wikipedia: http://en.wikipedia.org/wiki/Cartesian_coordinate_system#Quadrants_and_octants
- StackOverflow: "Optimizing quadrant selection" (http://stackoverflow.com/questions/3313847/optimizing-quadrant-selection/22580404#22580404)
 
  @code
  -----
@@ -46,11 +45,12 @@ static inline int EKDistributionQuadrantForPointInsideMapRect_Branching(MKMapRec
     }
 }
 
-static inline int EKDistributionQuadrantForPointInsideMapRect_Bitwise(MKMapRect mapRect, MKMapPoint point) {
-    /* There is bitwise version which is very useful for educational purposes but is slower than the code with simple branching (above)
-     */
 
+/* There is bitwise version which is very useful for educational purposes but is slower than the code with simple branching (above)
+ */
+static inline int EKDistributionQuadrantForPointInsideMapRect_Bitwise(MKMapRect mapRect, MKMapPoint point) {
 #define EK_LONG_LONG_SIGN (sizeof(long long) * 8 - 1)
+
     double dx = point.x - MKMapRectGetMidX(mapRect);
     double dy = point.y - MKMapRectGetMidY(mapRect);
 
@@ -58,6 +58,27 @@ static inline int EKDistributionQuadrantForPointInsideMapRect_Bitwise(MKMapRect 
     long long *pdy = (void *)&dy;
 
     return ((*pdy >> EK_LONG_LONG_SIGN) & 3) ^ ((*pdx >> EK_LONG_LONG_SIGN) & 1);
+}
+
+
+/**
+ There is bitwise version alternative to the one above - it works almost as fast as branching method does on Mac OS X and is slightly faster on Linux machines (we just measured this without knowing why is the difference)
+ StackOverflow: "Optimizing quadrant selection" http://stackoverflow.com/questions/3313847/optimizing-quadrant-selection/
+
+ @note Returns quadrants in incorrect order: 0 2 3 1
+
+ @return Number of quadrant, one of 0, 2, 3, 1 (i.e. cartesian I, II, III, IV respectively)
+ */
+static inline int EKDistributionQuadrantForPointInsideMapRect_Bitwise_Alternative(MKMapRect mapRect, MKMapPoint point) {
+#define EK_UINT64_SIGN (sizeof(uint64_t) * 8 - 1)
+
+    double dx = point.x - MKMapRectGetMidX(mapRect);
+    double dy = point.y - MKMapRectGetMidY(mapRect);
+
+    uint64_t *pdx = (void *)&dx;
+    uint64_t *pdy = (void *)&dy;
+
+    return ((*pdx >> (EK_UINT64_SIGN - 1)) & 2) | (*pdy >> EK_UINT64_SIGN);
 }
 
 #endif
