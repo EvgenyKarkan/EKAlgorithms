@@ -47,8 +47,10 @@ static inline int EKDistributionQuadrantForPointInsideMapRect_Branching(MKMapRec
 
 
 /* There is bitwise version which is very useful for educational purposes but is slower than the code with simple branching (above)
+ 
+   Detailed discussion on HashCode (russian StackOverflow): http://hashcode.ru/questions/306437)
  */
-static inline int EKDistributionQuadrantForPointInsideMapRect_Bitwise(MKMapRect mapRect, MKMapPoint point) {
+NS_INLINE int EKDistributionQuadrantForPointInsideMapRect_Bitwise(MKMapRect mapRect, MKMapPoint point) {
 #define EK_LONG_LONG_SIGN (sizeof(long long) * 8 - 1)
 
     double dx = point.x - MKMapRectGetMidX(mapRect);
@@ -63,13 +65,16 @@ static inline int EKDistributionQuadrantForPointInsideMapRect_Bitwise(MKMapRect 
 
 /**
  There is bitwise version alternative to the one above - it works almost as fast as branching method does on Mac OS X and is slightly faster on Linux machines (we just measured this without knowing why is the difference)
+ 
  StackOverflow: "Optimizing quadrant selection" http://stackoverflow.com/questions/3313847/optimizing-quadrant-selection/
+ 
+ Detailed discussion on HashCode (russian StackOverflow): http://hashcode.ru/questions/306437)
 
  @note Returns quadrants in incorrect order: 0 2 3 1
 
  @return Number of quadrant, one of 0, 2, 3, 1 (i.e. cartesian I, II, III, IV respectively)
  */
-static inline int EKDistributionQuadrantForPointInsideMapRect_Bitwise_Alternative(MKMapRect mapRect, MKMapPoint point) {
+NS_INLINE int EKDistributionQuadrantForPointInsideMapRect_Bitwise_Alternative(MKMapRect mapRect, MKMapPoint point) {
 #define EK_UINT64_SIGN (sizeof(uint64_t) * 8 - 1)
 
     double dx = point.x - MKMapRectGetMidX(mapRect);
