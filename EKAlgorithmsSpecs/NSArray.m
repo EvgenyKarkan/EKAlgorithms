@@ -170,6 +170,18 @@ describe(@"NSArray-based algorithms", ^{
         });
     });
 
+    describe(@"hasDuplicates", ^{
+        it(@"should return sum of all elements in array", ^{
+            NSArray *array;
+
+            array = @[@1, @2, @3, @4, @5];
+            [[theValue([array hasDuplicates]) should] beNo];
+
+            array = @[@1, @2, @2, @4, @5];
+            [[theValue([array hasDuplicates]) should] beYes];
+        });
+    });
+
     describe(@"Occurrences of each element in array", ^{
         describe(@"occurencesOfEachElementInArray", ^{
             specify(^{
