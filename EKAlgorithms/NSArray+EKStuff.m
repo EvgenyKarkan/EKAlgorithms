@@ -221,7 +221,9 @@
 
 - (BOOL)isSorted
 {
-    for (NSUInteger i = 0; i < [self count] - 1; i++) {
+    NSUInteger countMinusOne = self.count - 1;
+
+    for (NSUInteger i = 0; i < countMinusOne; i++) {
         if ([self[i] isKindOfClass:[NSNumber class]]) {
             if ([self[i] floatValue] > [self[i + 1] floatValue]) {
                 return NO;
@@ -430,34 +432,32 @@
 {
     NSMutableArray *selfCopy = (NSMutableArray *)self;
     
-    if (![self isKindOfClass:[NSMutableArray class]]) {
+    if ([self isKindOfClass:[NSMutableArray class]] == NO) {
         selfCopy = [self mutableCopy];
     }
     
-    NSInteger i = 0, j = 0;
-    id x = nil, y = nil;
-    
-    i = left;
-    j = right;
-    x = selfCopy[(left + right) / 2];
+    NSInteger i = left;
+    NSInteger j = right;
+
+    id pivotalElement = nil;
+
+    pivotalElement = selfCopy[(left + right) / 2];
     
     do {
-        while (([selfCopy[i] floatValue] < [x floatValue]) && (i < right)) {
+        while (([selfCopy[i] floatValue] < [pivotalElement floatValue]) && (i < right)) {
             i++;
         }
-        while (([x floatValue] < [selfCopy[j] floatValue]) && (j > left)) {
+        while (([pivotalElement floatValue] < [selfCopy[j] floatValue]) && (j > left)) {
             j--;
         }
         
         if (i <= j) {
-            y = selfCopy[i];
-            [selfCopy replaceObjectAtIndex:i withObject:selfCopy[j]];
-            selfCopy[j] = y;
+            [selfCopy exchangeObjectAtIndex:i withObjectAtIndex:j];
+
             i++;
             j--;
         }
-    }
-    while (i <= j);
+    } while (i <= j);
     
     if (left < j) {
         selfCopy = [selfCopy quickSortedArrayWithLeftIndex:left withRightIndex:j];
