@@ -184,11 +184,13 @@
 
 - (BOOL)hasDuplicates
 {
-    for (NSUInteger i = 0; i < [self count]; i++) {
-        for (NSUInteger j = i + 1; j < [self count]; j++) {
-            if (i != j && [self[i] isEqualTo:self[j]]) {
-                return YES;
-            }
+    NSMutableDictionary *registry = [[NSMutableDictionary alloc] initWithCapacity:self.count];
+
+    for (id element in self) {
+        if (registry[element] == nil) {
+            registry[element] = @(YES);
+        } else {
+            return YES;
         }
     }
     
