@@ -11,9 +11,12 @@
 
 @interface EKEdge : NSObject
 
+@property (nonatomic, strong) EKVertex *adjacentFrom;
 @property (nonatomic, strong) EKVertex *adjacentTo;
 @property (nonatomic, strong) NSObject *weight;
 
-- (instancetype)initWithAdjacentTo:(EKVertex *)vertex andWeight:(NSObject *)weight;
+- (instancetype)initWithAdjacentFrom:(EKVertex *)vertexFrom
+                                  To:(EKVertex *)vertexTo
+                           andWeight:(NSObject *)weight;
 
 @end

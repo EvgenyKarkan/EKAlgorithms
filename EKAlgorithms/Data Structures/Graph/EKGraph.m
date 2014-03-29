@@ -53,6 +53,54 @@
     return NO;
 }
 
+#pragma mark - Prim Algorithm
+- (void)primMST:(id)start
+{
+    EKVertex *startVertex = start;
+    NSMutableArray *parent = [@[] mutableCopy];
+    [self clearVisitHistory];
+    
+    startVertex.wasVisited = YES;
+    while ([self visitedVertices].count != self.vertices.count) {
+        EKEdge *minimumEdge = [EKGraph minimumWeightEdgeInVertices:[self visitedVertices]];
+        if (minimumEdge) {
+            [parent addObject:minimumEdge];
+        }
+        minimumEdge.adjacentTo.wasVisited = YES;
+    }
+    for (EKEdge *edge in parent) {
+        NSLog(@"From %@, To %@, Weight %@", edge.adjacentFrom.label, edge.adjacentTo.label, edge.weight);
+    }
+}
+
++ (EKEdge *)minimumWeightEdgeInVertices:(NSArray *)vertices
+{
+    EKEdge *minimumEdge = nil;
+    for (EKVertex *vertex in vertices) {
+        for (EKEdge *edge in vertex.adjacentEdges) {
+            if (!minimumEdge && !edge.adjacentTo.wasVisited) {
+                minimumEdge = edge;
+            } else {
+                if ([minimumEdge.weight isGreaterThan:edge.weight] && !edge.adjacentTo.wasVisited) {
+                    minimumEdge = edge;
+                }
+            }
+        }
+    }
+    return minimumEdge;
+}
+
+- (NSArray *)visitedVertices
+{
+    NSMutableArray *visited = [@[] mutableCopy];
+    for (EKVertex *vertex in self.vertices) {
+        if (vertex.wasVisited) {
+            [visited addObject:vertex];
+        }
+    }
+    return visited;
+}
+
 #pragma mark - DFS
 
 - (void)depthFirstSearch

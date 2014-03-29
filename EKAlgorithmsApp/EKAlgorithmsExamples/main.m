@@ -280,22 +280,32 @@ int main(int argc, const char *argv[])
         gV.label = @"G vertex";
         
             //Set adjacent vertices
-        aV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:bV andWeight:@1],
-                            [[EKEdge alloc] initWithAdjacentTo:eV andWeight:@3],
-                            [[EKEdge alloc] initWithAdjacentTo:fV andWeight:@5], nil];
-        bV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:aV andWeight:@1],
-                            [[EKEdge alloc] initWithAdjacentTo:cV andWeight:@7], nil];
-        cV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:bV andWeight:@2],
-                            [[EKEdge alloc] initWithAdjacentTo:dV andWeight:@9], nil];
-        dV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:cV andWeight:@10], nil];
-        eV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:aV andWeight:@1], nil];
-        // Code below is to test isUndirectedGraph method
-        //eV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:bV andWeight:@1], nil];
-        fV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:aV andWeight:@5],
-                            [[EKEdge alloc] initWithAdjacentTo:gV andWeight:@3], nil];
-        gV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:fV andWeight:@2], nil];
+        aV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:aV To:cV andWeight:@4],
+                            [[EKEdge alloc] initWithAdjacentFrom:aV To:dV andWeight:@1],
+                            [[EKEdge alloc] initWithAdjacentFrom:aV To:bV andWeight:@2], nil];
+        bV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:bV To:aV andWeight:@2],
+                            [[EKEdge alloc] initWithAdjacentFrom:bV To:dV andWeight:@3],
+                            [[EKEdge alloc] initWithAdjacentFrom:bV To:eV andWeight:@10], nil];
+        cV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:cV To:aV andWeight:@4],
+                            [[EKEdge alloc] initWithAdjacentFrom:cV To:dV andWeight:@2],
+                            [[EKEdge alloc] initWithAdjacentFrom:cV To:fV andWeight:@5], nil];
+        dV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:dV To:aV andWeight:@1],
+                            [[EKEdge alloc] initWithAdjacentFrom:dV To:bV andWeight:@3],
+                            [[EKEdge alloc] initWithAdjacentFrom:dV To:cV andWeight:@2],
+                            [[EKEdge alloc] initWithAdjacentFrom:dV To:eV andWeight:@7],
+                            [[EKEdge alloc] initWithAdjacentFrom:dV To:fV andWeight:@8],
+                            [[EKEdge alloc] initWithAdjacentFrom:dV To:gV andWeight:@4], nil];
+        eV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:eV To:bV andWeight:@10],
+                            [[EKEdge alloc] initWithAdjacentFrom:eV To:dV andWeight:@7],
+                            [[EKEdge alloc] initWithAdjacentFrom:eV To:gV andWeight:@6], nil];
+        fV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:fV To:cV andWeight:@5],
+                            [[EKEdge alloc] initWithAdjacentFrom:fV To:dV andWeight:@8],
+                            [[EKEdge alloc] initWithAdjacentFrom:fV To:gV andWeight:@1], nil];
+        gV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:gV To:fV andWeight:@1],
+                            [[EKEdge alloc] initWithAdjacentFrom:gV To:dV andWeight:@4],
+                            [[EKEdge alloc] initWithAdjacentFrom:gV To:eV andWeight:@6], nil];
         
-            //Init graph (see EKGraphPicture.png)
+            //Init graph (!!!should update EKGraphPicture.png!!!)
         EKGraph *graph = [[EKGraph alloc] initWithStartVertex:aV];
         graph.vertices = [@[aV, bV, cV, dV, eV, fV, gV] mutableCopy];
         
@@ -311,6 +321,9 @@ int main(int argc, const char *argv[])
         
             //BFS
         [graph breadthFirstSearch];
+        
+            // Prim
+        [graph primMST:aV];
         
             //Linked list stuff
         EKLinkedList *list = [[EKLinkedList alloc] initWithHead:@5];

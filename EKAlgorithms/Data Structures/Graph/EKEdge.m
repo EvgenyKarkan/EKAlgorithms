@@ -10,11 +10,14 @@
 
 @implementation EKEdge
 
-- (instancetype)initWithAdjacentTo:(EKVertex *)vertex andWeight:(NSObject *)weight
+- (instancetype)initWithAdjacentFrom:(EKVertex *)vertexFrom
+                                  To:(EKVertex *)vertexTo
+                           andWeight:(NSObject *)weight
 {
     self = [super init];
     if (self) {
-        self.adjacentTo = vertex;
+        self.adjacentFrom = vertexFrom;
+        self.adjacentTo = vertexTo;
         self.weight = weight;
     }
     return self;

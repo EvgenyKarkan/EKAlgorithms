@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
+@class EKVertex;
 
 @interface EKGraph : NSObject
 
@@ -15,5 +16,7 @@
 - (void)depthFirstSearch;
 - (void)breadthFirstSearch;
 - (BOOL)isUndirectedGraph;
+
+- (void)primMST:(id)startVertex;
 
 @end
