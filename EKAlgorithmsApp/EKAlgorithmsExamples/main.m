@@ -13,6 +13,7 @@
 #import "EKStack.h"
 #import "EKQueue.h"
 #import "EKDeque.h"
+#import "EKBHeap.h"
 #import "EKVertex.h"
 #import "EKGraph.h"
 #import "EKEdge.h"
@@ -253,6 +254,19 @@ int main(int argc, const char *argv[])
         NSLog(@"PEEK last object %@", [deque peekLastObject]);
         [deque removeLastObject];
         NSLog(@"All objects from deque %@", [deque allObjectsFromDeque]);
+        
+            // Binary Heap
+        
+        EKBHeap *heap = [[EKBHeap alloc] init];
+        [heap insertNumber:@6];
+        [heap insertNumber:@7];
+        [heap insertNumber:@12];
+        [heap insertNumber:@10];
+        [heap insertNumber:@15];
+        [heap insertNumber:@17];
+        [heap insertNumber:@5];
+        
+        NSLog(@"Minimum Number deleted: %@", [heap deleteMin]);
         
             //Graph stuff
         
