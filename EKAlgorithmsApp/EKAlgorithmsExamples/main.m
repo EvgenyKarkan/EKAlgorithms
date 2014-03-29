@@ -19,6 +19,7 @@
 #import "EKLinkedList.h"
 #import "EKNode.h"
 #import "EKBSTree.h"
+#import "EKAVLTree.h"
 #import "EKRecursionStuff.h"
 
 int main(int argc, const char *argv[])
@@ -349,6 +350,24 @@ int main(int argc, const char *argv[])
         NSLog(@"Deleted %@", [tree deleteObject:@2]);      // delete @2 node
         
         [tree printDescription];
+        
+        
+            // AVL Tree stuff.
+        EKAVLTree *avlt = [[EKAVLTree alloc] initWithObject:@4 compareSelector:@selector(compare:)];
+        [avlt insertObject:@9];
+        [avlt insertObject:@2];
+        [avlt insertObject:@10];
+        [avlt insertObject:@7];
+        [avlt insertObject:@ - 5];
+        [avlt insertObject:@ - 1];
+        [avlt insertObject:@2.5f];
+        [avlt insertObject:@ - 5.5f];
+        [avlt insertObject:@11];
+        [avlt insertObject:@22];
+        [avlt insertObject:@21];
+        
+        [avlt printDescription];
+        
         
         //RECURSION---------------------------------------------------------------------------------
         
