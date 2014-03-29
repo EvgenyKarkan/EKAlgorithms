@@ -7,6 +7,7 @@
 //
 
 #import "EKBTree.h"
+#import "EKQueue.h"
 
 @implementation EKBTree
 
@@ -33,6 +34,26 @@
     return true;
 }
 
+- (EKBTreeNode *)find:(NSObject *)object
+{
+    EKQueue *queue = [[EKQueue alloc] init];
+    [queue insertObject:self.root];
+    EKBTreeNode *node;
+    while (![queue isEmpty]) {
+        node = [queue removeFirstObject];
+        if ([node.object isEqualTo:object]) {
+            return node;
+        }
+        if (node.leftChild) {
+            [queue insertObject:node.leftChild];
+        }
+        if (node.rightChild) {
+            [queue insertObject:node.rightChild];
+        }
+    }
+    return nil;
+}
+
 - (void)preOrderTraversal
 {
     if (self.root) {
@@ -51,6 +72,24 @@
 {
     if (self.root) {
         [EKBTree postOrderTraversalRecursive:self.root];
+    }
+}
+
+- (void)levelOrderTraversal
+{
+    if (self.root) {
+        EKQueue *queue = [[EKQueue alloc] init];
+        [queue insertObject:self.root];
+        while (![queue isEmpty]) {
+            EKBTreeNode *currentNode = [queue removeFirstObject];
+            if (currentNode.leftChild) {
+                [queue insertObject:currentNode.leftChild];
+            }
+            if (currentNode.rightChild) {
+                [queue insertObject:currentNode.rightChild];
+            }
+            NSLog(@"%@", currentNode.object);
+        }
     }
 }
 

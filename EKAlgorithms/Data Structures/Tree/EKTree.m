@@ -7,6 +7,8 @@
 //
 
 #import "EKTree.h"
+#import "EKBTree.h"
+#import "EKQueue.h"
 
 @implementation EKTree
 
@@ -36,4 +38,42 @@
     [self.root printDescription];
 }
 
++ (EKBTree *)forestToBinaryTree:(NSArray *)trees
+{
+    if ([trees count] > 0) {
+        // Union trees
+        EKTree *previous = [trees firstObject];
+        for (EKTree *tree in trees) {
+            if (tree != previous) {
+                previous.root.sibling = tree.root;
+                previous = tree;
+            }
+        }
+        EKQueue *queue = [[EKQueue alloc] init];
+        [queue insertObject:((EKTree *)[trees firstObject]).root];
+        EKBTree *result = [[EKBTree alloc] initWithObject:((EKTreeNode *)[queue peek]).object];
+        
+        // Create binary tree
+        while (![queue isEmpty]) {
+            EKTreeNode *node = [queue removeFirstObject];
+            EKBTreeNode *root = [result find:node.object];
+            if (node.child) {
+                [queue insertObject:node.child];
+                root.leftChild = [[EKBTreeNode alloc] init];
+                root.leftChild.object = node.child.object;
+                root.leftChild.parent = root;
+            }
+            if (node.sibling) {
+                [queue insertObject:node.sibling];
+                root.rightChild = [[EKBTreeNode alloc] init];
+                root.rightChild.object = node.sibling.object;
+                root.rightChild.parent = root;
+            }
+        }
+        return result;
+    } else {
+        NSAssert([trees count] > 0, @"There is no tree in array!");
+        return nil;
+    }
+}
 @end

@@ -8,6 +8,8 @@
 
 #import "EKTreeNode.h"
 
+@class EKBTree;
+
 @interface EKTree : NSObject
 
 @property (nonatomic, strong) EKTreeNode *root;
@@ -15,5 +17,7 @@
 - (instancetype)initWithObject:(NSObject *)object;
 - (void)insertNode:(EKTreeNode *)node leftSibling:(EKTreeNode *)leftSibling parent:(EKTreeNode *)parent;
 - (void)printDescription;
+
++ (EKBTree *)forestToBinaryTree:(NSArray *)trees;
 
 @end

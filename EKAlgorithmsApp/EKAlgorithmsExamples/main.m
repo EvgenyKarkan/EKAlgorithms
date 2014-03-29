@@ -20,6 +20,8 @@
 #import "EKNode.h"
 #import "EKBSTree.h"
 #import "EKAVLTree.h"
+#import "EKTree.h"
+#import "EKBTree.h"
 #import "EKRecursionStuff.h"
 
 int main(int argc, const char *argv[])
@@ -372,7 +374,41 @@ int main(int argc, const char *argv[])
         
         [avlt printDescription];
         
+            // Tree stuff
+        EKTree *forest1 = [[EKTree alloc] initWithObject:@"A"];
+        EKTree *forest2 = [[EKTree alloc] initWithObject:@"D"];
         
+        EKTreeNode *nodeB = [[EKTreeNode alloc] init];
+        nodeB.object = @"B";
+        EKTreeNode *nodeC = [[EKTreeNode alloc] init];
+        nodeC.object = @"C";
+        EKTreeNode *nodeE = [[EKTreeNode alloc] init];
+        nodeE.object = @"E";
+        EKTreeNode *nodeF = [[EKTreeNode alloc] init];
+        nodeF.object = @"F";
+        EKTreeNode *nodeG = [[EKTreeNode alloc] init];
+        nodeG.object = @"G";
+        EKTreeNode *nodeH = [[EKTreeNode alloc] init];
+        nodeH.object = @"H";
+        EKTreeNode *nodeJ = [[EKTreeNode alloc] init];
+        nodeJ.object = @"J";
+        EKTreeNode *nodeK = [[EKTreeNode alloc] init];
+        nodeK.object = @"K";
+        
+        [forest1 insertNode:nodeB leftSibling:nil parent:forest1.root];
+        [forest1 insertNode:nodeC leftSibling:nodeB parent:forest1.root];
+        [forest1 insertNode:nodeK leftSibling:nil parent:nodeC];
+        
+        [forest2 insertNode:nodeE leftSibling:nil parent:forest2.root];
+        [forest2 insertNode:nodeH leftSibling:nil parent:nodeE];
+        [forest2 insertNode:nodeF leftSibling:nodeE parent:forest2.root];
+        [forest2 insertNode:nodeJ leftSibling:nil parent:nodeF];
+        [forest2 insertNode:nodeG leftSibling:nodeF parent:forest2.root];
+        
+        [forest1 printDescription];
+        [forest2 printDescription];
+        
+        [[EKTree forestToBinaryTree:@[forest1, forest2]] levelOrderTraversal];
         //RECURSION---------------------------------------------------------------------------------
         
             //Tower of Hanoi

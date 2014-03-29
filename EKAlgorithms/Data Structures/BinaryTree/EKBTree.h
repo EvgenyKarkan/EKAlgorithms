@@ -15,8 +15,11 @@
 
 - (instancetype)initWithObject:(NSObject *)object;
 - (BOOL)insertNode:(EKBTreeNode *)node parent:(EKBTreeNode *)parent isLeftChild:(BOOL)value;
+- (EKBTreeNode *)find:(NSObject *)object;
+
 - (void)preOrderTraversal;
 - (void)inOrderTraversal;
 - (void)postOrderTraversal;
+- (void)levelOrderTraversal;
 
 @end
