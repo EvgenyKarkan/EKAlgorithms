@@ -20,6 +20,8 @@
 #import "EKNode.h"
 #import "EKBSTree.h"
 #import "EKAVLTree.h"
+#import "EKTree.h"
+#import "EKBTree.h"
 #import "EKRecursionStuff.h"
 
 int main(int argc, const char *argv[])
@@ -278,22 +280,32 @@ int main(int argc, const char *argv[])
         gV.label = @"G vertex";
         
             //Set adjacent vertices
-        aV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:bV andWeight:@1],
-                            [[EKEdge alloc] initWithAdjacentTo:eV andWeight:@3],
-                            [[EKEdge alloc] initWithAdjacentTo:fV andWeight:@5], nil];
-        bV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:aV andWeight:@1],
-                            [[EKEdge alloc] initWithAdjacentTo:cV andWeight:@7], nil];
-        cV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:bV andWeight:@2],
-                            [[EKEdge alloc] initWithAdjacentTo:dV andWeight:@9], nil];
-        dV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:cV andWeight:@10], nil];
-        eV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:aV andWeight:@1], nil];
-        // Code below is to test isUndirectedGraph method
-        //eV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:bV andWeight:@1], nil];
-        fV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:aV andWeight:@5],
-                            [[EKEdge alloc] initWithAdjacentTo:gV andWeight:@3], nil];
-        gV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:fV andWeight:@2], nil];
+        aV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:aV To:cV andWeight:@4],
+                            [[EKEdge alloc] initWithAdjacentFrom:aV To:dV andWeight:@1],
+                            [[EKEdge alloc] initWithAdjacentFrom:aV To:bV andWeight:@2], nil];
+        bV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:bV To:aV andWeight:@2],
+                            [[EKEdge alloc] initWithAdjacentFrom:bV To:dV andWeight:@3],
+                            [[EKEdge alloc] initWithAdjacentFrom:bV To:eV andWeight:@10], nil];
+        cV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:cV To:aV andWeight:@4],
+                            [[EKEdge alloc] initWithAdjacentFrom:cV To:dV andWeight:@2],
+                            [[EKEdge alloc] initWithAdjacentFrom:cV To:fV andWeight:@5], nil];
+        dV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:dV To:aV andWeight:@1],
+                            [[EKEdge alloc] initWithAdjacentFrom:dV To:bV andWeight:@3],
+                            [[EKEdge alloc] initWithAdjacentFrom:dV To:cV andWeight:@2],
+                            [[EKEdge alloc] initWithAdjacentFrom:dV To:eV andWeight:@7],
+                            [[EKEdge alloc] initWithAdjacentFrom:dV To:fV andWeight:@8],
+                            [[EKEdge alloc] initWithAdjacentFrom:dV To:gV andWeight:@4], nil];
+        eV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:eV To:bV andWeight:@10],
+                            [[EKEdge alloc] initWithAdjacentFrom:eV To:dV andWeight:@7],
+                            [[EKEdge alloc] initWithAdjacentFrom:eV To:gV andWeight:@6], nil];
+        fV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:fV To:cV andWeight:@5],
+                            [[EKEdge alloc] initWithAdjacentFrom:fV To:dV andWeight:@8],
+                            [[EKEdge alloc] initWithAdjacentFrom:fV To:gV andWeight:@1], nil];
+        gV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:gV To:fV andWeight:@1],
+                            [[EKEdge alloc] initWithAdjacentFrom:gV To:dV andWeight:@4],
+                            [[EKEdge alloc] initWithAdjacentFrom:gV To:eV andWeight:@6], nil];
         
-            //Init graph (see EKGraphPicture.png)
+            //Init graph (!!!should update EKGraphPicture.png!!!)
         EKGraph *graph = [[EKGraph alloc] initWithStartVertex:aV];
         graph.vertices = [@[aV, bV, cV, dV, eV, fV, gV] mutableCopy];
         
@@ -309,6 +321,9 @@ int main(int argc, const char *argv[])
         
             //BFS
         [graph breadthFirstSearch];
+        
+            // Prim
+        [graph primMST:aV];
         
             //Linked list stuff
         EKLinkedList *list = [[EKLinkedList alloc] initWithHead:@5];
@@ -372,7 +387,41 @@ int main(int argc, const char *argv[])
         
         [avlt printDescription];
         
+            // Tree stuff
+        EKTree *forest1 = [[EKTree alloc] initWithObject:@"A"];
+        EKTree *forest2 = [[EKTree alloc] initWithObject:@"D"];
         
+        EKTreeNode *nodeB = [[EKTreeNode alloc] init];
+        nodeB.object = @"B";
+        EKTreeNode *nodeC = [[EKTreeNode alloc] init];
+        nodeC.object = @"C";
+        EKTreeNode *nodeE = [[EKTreeNode alloc] init];
+        nodeE.object = @"E";
+        EKTreeNode *nodeF = [[EKTreeNode alloc] init];
+        nodeF.object = @"F";
+        EKTreeNode *nodeG = [[EKTreeNode alloc] init];
+        nodeG.object = @"G";
+        EKTreeNode *nodeH = [[EKTreeNode alloc] init];
+        nodeH.object = @"H";
+        EKTreeNode *nodeJ = [[EKTreeNode alloc] init];
+        nodeJ.object = @"J";
+        EKTreeNode *nodeK = [[EKTreeNode alloc] init];
+        nodeK.object = @"K";
+        
+        [forest1 insertNode:nodeB leftSibling:nil parent:forest1.root];
+        [forest1 insertNode:nodeC leftSibling:nodeB parent:forest1.root];
+        [forest1 insertNode:nodeK leftSibling:nil parent:nodeC];
+        
+        [forest2 insertNode:nodeE leftSibling:nil parent:forest2.root];
+        [forest2 insertNode:nodeH leftSibling:nil parent:nodeE];
+        [forest2 insertNode:nodeF leftSibling:nodeE parent:forest2.root];
+        [forest2 insertNode:nodeJ leftSibling:nil parent:nodeF];
+        [forest2 insertNode:nodeG leftSibling:nodeF parent:forest2.root];
+        
+        [forest1 printDescription];
+        [forest2 printDescription];
+        
+        [[EKTree forestToBinaryTree:@[forest1, forest2]] levelOrderTraversal];
         //RECURSION---------------------------------------------------------------------------------
         
             //Tower of Hanoi
