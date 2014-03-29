@@ -95,6 +95,51 @@
     return currentNode;
 }
 
+- (void)deleteObject:(NSObject *)object
+{
+    [self deleteObject:object AtNode:self.root];
+}
+
+- (EKAVLTreeNode *)deleteObject:(NSObject *)object AtNode:(EKAVLTreeNode *)T
+{
+    if (!T) {
+        return nil;
+    }
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    NSComparisonResult result = (NSComparisonResult)[object performSelector : T.compareSelector withObject : T.object];
+#pragma clang diagnostic pop
+    if (result == 0) {
+        if (T.rightChild == nil) {
+            EKAVLTreeNode *temp = T;
+            T = T.leftChild;
+            temp = nil;
+        } else {
+            EKAVLTreeNode *temp = T.rightChild;
+            while (temp.leftChild != nil) {
+                temp = temp.leftChild;
+            }
+            T.object = [temp.object copy];
+            T.rightChild = [self deleteObject:temp.object AtNode:T.rightChild];
+            T.height = MAX([EKAVLTree heightOfNode:T.leftChild], [EKAVLTree heightOfNode:T.rightChild])+1;
+        }
+        return T;
+    } else if (result < 0) {
+        T.leftChild = [self deleteObject:object AtNode:T.leftChild];
+    } else {
+        T.rightChild = [self deleteObject:object AtNode:T.rightChild];
+    }
+    T.height = MAX([EKAVLTree heightOfNode:T.leftChild], [EKAVLTree heightOfNode:T.rightChild])+1;
+    if (T.leftChild != nil) {
+        T.leftChild = [EKAVLTree rotateSingleNode:T.leftChild];
+    }
+    if (T.rightChild != nil) {
+        T.rightChild = [EKAVLTree rotateSingleNode:T.rightChild];
+    }
+    T = [EKAVLTree rotateSingleNode:T];
+    return T;
+}
+
 + (NSInteger)heightOfNode:(EKAVLTreeNode *)node
 {
     if (!node)
@@ -143,6 +188,25 @@
 {
     K3.rightChild = [EKAVLTree singleRotateWithLeft:K3.rightChild];
     return [EKAVLTree singleRotateWithRight:K3];
+}
+
++ (EKAVLTreeNode *)rotateSingleNode:(EKAVLTreeNode *)T
+{
+    if ([EKAVLTree heightOfNode:T.leftChild] - [EKAVLTree heightOfNode:T.rightChild] == 2) {
+        if ([EKAVLTree heightOfNode:T.leftChild.leftChild] >= [EKAVLTree heightOfNode:T.leftChild.rightChild]) {
+            T = [EKAVLTree singleRotateWithLeft:T];
+        } else {
+            T = [EKAVLTree doubleRotateWithLeft:T];
+        }
+    }
+    if ([EKAVLTree heightOfNode:T.rightChild] - [EKAVLTree heightOfNode:T.leftChild] == 2) {
+        if ([EKAVLTree heightOfNode:T.rightChild.rightChild] >= [EKAVLTree heightOfNode:T.rightChild.leftChild]) {
+            T = [EKAVLTree singleRotateWithRight:T];
+        } else {
+            T = [EKAVLTree doubleRotateWithRight:T];
+        }
+    }
+    return T;
 }
 
 @end

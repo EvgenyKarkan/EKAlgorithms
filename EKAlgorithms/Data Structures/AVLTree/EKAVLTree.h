@@ -16,12 +16,6 @@
 - (void)insertObject:(NSObject *)newObject;
 - (void)printDescription;
 - (EKAVLTreeNode *)find:(NSObject *)object;
-
-+ (NSInteger)heightOfNode:(EKAVLTreeNode *)node;
-
-+ (EKAVLTreeNode *)singleRotateWithLeft:(EKAVLTreeNode *)K2;
-+ (EKAVLTreeNode *)singleRotateWithRight:(EKAVLTreeNode *)K2;
-+ (EKAVLTreeNode *)doubleRotateWithLeft:(EKAVLTreeNode *)K3;
-+ (EKAVLTreeNode *)doubleRotateWithRight:(EKAVLTreeNode *)K3;
+- (void)deleteObject:(NSObject *)object;
 
 @end

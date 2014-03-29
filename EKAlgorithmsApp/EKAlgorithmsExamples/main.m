@@ -368,6 +368,10 @@ int main(int argc, const char *argv[])
         
         [avlt printDescription];
         
+        [avlt deleteObject:@11];
+        
+        [avlt printDescription];
+        
         
         //RECURSION---------------------------------------------------------------------------------
         
