@@ -8,7 +8,32 @@ SPEC_BEGIN(NSArray_Specs)
 
 describe(@"NSArray-based algorithms", ^{
     describe(@"Sorting algorithms", ^{
-        describe(@"Selection sort", ^{
+        describe(@"Quick Sort", ^{
+            it(@"", ^{
+                NSMutableArray *array = [NSMutableArray array];
+
+                NSUInteger N = 100;
+
+                for (int i = 0; i < N; i++) {
+                    [array addObject:@(i + 1)];
+                }
+
+                array = [NSMutableArray arrayWithArray:[array shuffledArray]];
+
+                NSArray *sortedArray = [array quickSortedArrayWithLeftIndex:0 withRightIndex:(array.count - 1)];
+
+                [[theValue([sortedArray isSorted]) should] beYes];
+                
+                for (NSUInteger i = 0; i < N - 1; i++) {
+                    float ithElementValue = [[sortedArray objectAtIndex:i] floatValue];
+                    float iplus1thElementValue = [[sortedArray objectAtIndex:i + 1] floatValue];
+
+                    [[theValue(ithElementValue < iplus1thElementValue) should] beTrue];
+                }
+            });
+        });
+
+        describe(@"Selection Sort", ^{
             it(@"", ^{
                 NSMutableArray *array = [NSMutableArray array];
 
@@ -31,7 +56,7 @@ describe(@"NSArray-based algorithms", ^{
             });
         });
 
-        describe(@"Partial selection sort", ^{
+        describe(@"Partial Selection Sort", ^{
             it(@"", ^{
                 NSMutableArray *array = [NSMutableArray array];
 
@@ -142,6 +167,18 @@ describe(@"NSArray-based algorithms", ^{
         it(@"should return sum of all elements in array", ^{
             NSArray *array = @[@1, @2, @3, @4, @5];
             [[[array sumOfElements] should] equal: @15];
+        });
+    });
+
+    describe(@"hasDuplicates", ^{
+        it(@"should return sum of all elements in array", ^{
+            NSArray *array;
+
+            array = @[@1, @2, @3, @4, @5];
+            [[theValue([array hasDuplicates]) should] beNo];
+
+            array = @[@1, @2, @2, @4, @5];
+            [[theValue([array hasDuplicates]) should] beYes];
         });
     });
 
