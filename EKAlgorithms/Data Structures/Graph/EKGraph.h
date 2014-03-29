@@ -14,5 +14,6 @@
 - (instancetype)initWithStartVertex:(id)startVertex;
 - (void)depthFirstSearch;
 - (void)breadthFirstSearch;
+- (BOOL)isUndirectedGraph;
 
 @end

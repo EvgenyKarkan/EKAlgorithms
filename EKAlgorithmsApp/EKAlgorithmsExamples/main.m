@@ -15,9 +15,11 @@
 #import "EKDeque.h"
 #import "EKVertex.h"
 #import "EKGraph.h"
+#import "EKEdge.h"
 #import "EKLinkedList.h"
 #import "EKNode.h"
 #import "EKBSTree.h"
+#import "EKAVLTree.h"
 #import "EKRecursionStuff.h"
 
 int main(int argc, const char *argv[])
@@ -276,17 +278,33 @@ int main(int argc, const char *argv[])
         gV.label = @"G vertex";
         
             //Set adjacent vertices
-        aV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:bV, eV, fV, nil];
-        bV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:aV, cV, nil];
-        cV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:bV, dV, nil];
-        dV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:cV, nil];
-        eV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:aV, nil];
-        fV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:aV, gV, nil];
-        gV.adjacentVertices = [[NSMutableSet alloc] initWithObjects:fV, nil];
+        aV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:bV andWeight:@1],
+                            [[EKEdge alloc] initWithAdjacentTo:eV andWeight:@3],
+                            [[EKEdge alloc] initWithAdjacentTo:fV andWeight:@5], nil];
+        bV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:aV andWeight:@1],
+                            [[EKEdge alloc] initWithAdjacentTo:cV andWeight:@7], nil];
+        cV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:bV andWeight:@2],
+                            [[EKEdge alloc] initWithAdjacentTo:dV andWeight:@9], nil];
+        dV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:cV andWeight:@10], nil];
+        eV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:aV andWeight:@1], nil];
+        // Code below is to test isUndirectedGraph method
+        //eV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:bV andWeight:@1], nil];
+        fV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:aV andWeight:@5],
+                            [[EKEdge alloc] initWithAdjacentTo:gV andWeight:@3], nil];
+        gV.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentTo:fV andWeight:@2], nil];
         
             //Init graph (see EKGraphPicture.png)
         EKGraph *graph = [[EKGraph alloc] initWithStartVertex:aV];
         graph.vertices = [@[aV, bV, cV, dV, eV, fV, gV] mutableCopy];
+        
+        
+            //Is it a directed Graph
+        if ([graph isUndirectedGraph]) {
+            NSLog(@"This graph is a undirected graph");
+        } else {
+            NSLog(@"This graph is a directed graph");
+        }
+        
         [graph depthFirstSearch];
         
             //BFS
@@ -332,6 +350,28 @@ int main(int argc, const char *argv[])
         NSLog(@"Deleted %@", [tree deleteObject:@2]);      // delete @2 node
         
         [tree printDescription];
+        
+        
+            // AVL Tree stuff.
+        EKAVLTree *avlt = [[EKAVLTree alloc] initWithObject:@4 compareSelector:@selector(compare:)];
+        [avlt insertObject:@9];
+        [avlt insertObject:@2];
+        [avlt insertObject:@10];
+        [avlt insertObject:@7];
+        [avlt insertObject:@ - 5];
+        [avlt insertObject:@ - 1];
+        [avlt insertObject:@2.5f];
+        [avlt insertObject:@ - 5.5f];
+        [avlt insertObject:@11];
+        [avlt insertObject:@22];
+        [avlt insertObject:@21];
+        
+        [avlt printDescription];
+        
+        [avlt deleteObject:@11];
+        
+        [avlt printDescription];
+        
         
         //RECURSION---------------------------------------------------------------------------------
         
