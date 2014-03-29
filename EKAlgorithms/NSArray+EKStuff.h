@@ -41,6 +41,14 @@
 - (NSArray *)unionWithoutDuplicatesWithArray:(NSArray *)secondArray;
 - (BOOL)hasDuplicates;
 + (NSArray *)randomObjectsWithArraySize:(NSUInteger)arraySize maxRandomValue:(NSUInteger)maxValue uniqueObjects:(BOOL)unique;
+
+/**
+ Check if array is sorted
+
+ @note Assumes array of NSNumber elements
+
+ @return YES, if array is sorted, and NO otherwise.
+ */
 - (BOOL)isSorted;
 
 /**

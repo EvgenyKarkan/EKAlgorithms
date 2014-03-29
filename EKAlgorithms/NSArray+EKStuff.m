@@ -226,18 +226,11 @@
     NSUInteger countMinusOne = self.count - 1;
 
     for (NSUInteger i = 0; i < countMinusOne; i++) {
-        if ([self[i] isKindOfClass:[NSNumber class]]) {
-            if ([self[i] floatValue] > [self[i + 1] floatValue]) {
-                return NO;
-            }
-        }
-        else {
-            NSException *exception = [NSException exceptionWithName:@"NSNumber not found"
-                                                             reason:@"Method can check is array sorted with NSNumber members only"
-                                                           userInfo:nil];
-            [exception raise];
+        if ([self[i] compare:self[i + 1]] == NSOrderedDescending) {
+            return NO;
         }
     }
+
     return YES;
 }
 
