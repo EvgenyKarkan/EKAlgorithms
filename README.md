@@ -94,7 +94,8 @@ Data Structures
     - Pre-order traversal;
     - In-order traversal;
     - Post-order traversal.
-8. Binary search tree (BST).
+8. Binary search tree (BST).  
+9. AVL tree.
 
 Geometry
 --------
