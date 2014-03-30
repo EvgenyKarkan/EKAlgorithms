@@ -101,6 +101,65 @@
     return visited;
 }
 
+#pragma mark - Dijkstra Algorithm
+
+- (void)dijkstraSPTFrom:(id)source To:(id)target
+{
+    EKVertex *sourceVertex = source, *targetVertex = target;
+    NSMutableDictionary *dist = [@{} mutableCopy];
+    NSMutableDictionary *previous = [@{} mutableCopy];
+    for (EKVertex *vertex in self.vertices) {
+        [dist setValue:@INT_MAX forKey:vertex.label];
+        [previous setValue:[NSNull null] forKey:vertex.label];
+    }
+    [dist setValue:@0 forKey:sourceVertex.label];
+    NSMutableArray *Q = [self.vertices mutableCopy];
+    while ([Q count] > 0) {
+        EKVertex *u = [EKGraph hasMinimumDistance:dist InVertices:Q];
+        if (u == targetVertex) {
+            break;
+        }
+        if ([[dist valueForKey:u.label] isEqualTo:@INT_MAX]) {
+            break;
+        }
+        for (EKEdge *edge in u.adjacentEdges) {
+            EKVertex *v = edge.adjacentTo;
+            NSNumber *alt = [NSNumber numberWithInteger:[[dist valueForKey:u.label] integerValue] + ((NSNumber *)edge.weight).integerValue];
+            if ([alt isLessThan:[dist valueForKey:v.label]]) {
+                [dist setValue:alt forKey:v.label];
+                [previous setValue:u forKey:v.label];
+            }
+        }
+        [Q removeObject:u];
+    }
+    for (NSString *label in previous) {
+        if (![[previous valueForKey:label] isMemberOfClass:[NSNull class]]) {
+            NSLog(@"%@ previous node --> %@", label, ((EKVertex *)[previous valueForKey:label]).label);
+        } else {
+            NSLog(@"%@ has no previous node", label);
+        }
+    }
+}
+
++ (EKVertex *)hasMinimumDistance:(NSDictionary *)dist InVertices:(NSArray *)Q
+{
+    NSNumber *minDist;
+    NSUInteger index;
+    for (EKVertex *vertex in Q) {
+        NSString *label = vertex.label;
+        if (!minDist) {
+            minDist = [dist valueForKey:label];
+            index = [Q indexOfObject:vertex];
+        } else {
+            if ([minDist isGreaterThan:[dist valueForKey:label]]) {
+                minDist = [dist valueForKey:label];
+                index = [Q indexOfObject:vertex];
+            }
+        }
+    }
+    return [Q objectAtIndex:index];
+}
+
 #pragma mark - DFS
 
 - (void)depthFirstSearch

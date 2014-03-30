@@ -339,6 +339,9 @@ int main(int argc, const char *argv[])
             // Prim
         [graph primMST:aV];
         
+            // Dijkstra
+        [graph dijkstraSPTFrom:aV To:nil];
+        
             //Linked list stuff
         EKLinkedList *list = [[EKLinkedList alloc] initWithHead:@5];
         [list addToFront:@7];
