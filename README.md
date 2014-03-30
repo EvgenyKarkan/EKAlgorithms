@@ -88,13 +88,15 @@ Data Structures
 4. Linked list.
 5. Graph: 
     - DFS (depth-first search);
-    - BFS (breadth-first search).
+    - BFS (breadth-first search);
+    - MST (minimum spanning tree - Prim's algorithm).
 6. Tree.  
 7. Binary tree:  
     - Pre-order traversal;
     - In-order traversal;
     - Post-order traversal.
-8. Binary search tree (BST).
+8. Binary search tree (BST).  
+9. AVL tree.
 
 Geometry
 --------
