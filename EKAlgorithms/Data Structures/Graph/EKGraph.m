@@ -15,10 +15,13 @@
 @interface EKGraph ()
 
 @property (nonatomic, strong) EKVertex *firstVertex;
+@property (nonatomic, strong) NSMutableDictionary *indegree;
 
 @end
 
 @implementation EKGraph;
+
+@synthesize indegree = _indegree;
 
 - (instancetype)initWithStartVertex:(id)startVertex
 {
@@ -158,6 +161,63 @@
         }
     }
     return [Q objectAtIndex:index];
+}
+
+#pragma mark - Topsort
+
+- (void)topSort
+{
+    NSMutableArray *topNum = [@[] mutableCopy];
+    EKQueue *queue = [[EKQueue alloc] init];
+    
+    for (NSUInteger i = 0; i < self.vertices.count; i++) {
+        EKVertex *vertex = [self findNewVertexOfIndegreeZero:self.vertices];
+        if (vertex) {
+            [queue insertObject:vertex];
+        }
+    }
+    NSAssert(![queue isEmpty], @"Graph has a cycle!");
+    
+    while (![queue isEmpty]) {
+        EKVertex *V = [queue removeFirstObject];
+        [topNum addObject:V];
+        
+        for (EKEdge *edge in V.adjacentEdges) {
+            [_indegree setValue:[NSNumber numberWithInteger:([[_indegree valueForKey:edge.adjacentTo.label] integerValue])-1] forKey:edge.adjacentTo.label];
+            if ([[_indegree valueForKey:edge.adjacentTo.label] isEqualToNumber:@0]) {
+                [queue insertObject:edge.adjacentTo];
+            }
+        }
+    }
+    
+    for (EKVertex *vertex in topNum) {
+        NSLog(@"Topsort %lu --> %@", (unsigned long)[topNum indexOfObject:vertex], vertex.label);
+    }
+}
+
+- (EKVertex *)findNewVertexOfIndegreeZero:(NSArray *)vertices
+{
+    if (!_indegree) {
+        // Graph should not change at runtime
+        _indegree = [@{} mutableCopy];
+        [self clearVisitHistory];
+        for (EKVertex *vertex in vertices) {
+            [_indegree setValue:@0 forKey:vertex.label];
+        }
+        for (EKVertex *vertex in vertices) {
+            for (EKEdge *edge in vertex.adjacentEdges) {
+                EKVertex *adjTo = edge.adjacentTo;
+                [_indegree setValue:[NSNumber numberWithInteger:([[_indegree valueForKey:adjTo.label] integerValue])+1] forKey:adjTo.label];
+            }
+        }
+    }
+    for (EKVertex *vertex in vertices) {
+        if ([[_indegree valueForKey:vertex.label] isEqualToNumber:@0] && !vertex.wasVisited) {
+            vertex.wasVisited = YES;
+            return vertex;
+        }
+    }
+    return nil;
 }
 
 #pragma mark - DFS

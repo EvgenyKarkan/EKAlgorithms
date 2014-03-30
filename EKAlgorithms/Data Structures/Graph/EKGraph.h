@@ -19,5 +19,6 @@
 
 - (void)primMST:(id)startVertex;
 - (void)dijkstraSPTFrom:(id)sourceVertex To:(id)targetVertex;
+- (void)topSort;
 
 @end
