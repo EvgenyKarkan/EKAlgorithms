@@ -15,10 +15,13 @@
 @interface EKGraph ()
 
 @property (nonatomic, strong) EKVertex *firstVertex;
+@property (nonatomic, strong) NSMutableDictionary *indegree;
 
 @end
 
 @implementation EKGraph;
+
+@synthesize indegree = _indegree;
 
 - (instancetype)initWithStartVertex:(id)startVertex
 {
@@ -99,6 +102,122 @@
         }
     }
     return visited;
+}
+
+#pragma mark - Dijkstra Algorithm
+
+- (void)dijkstraSPTFrom:(id)source To:(id)target
+{
+    EKVertex *sourceVertex = source, *targetVertex = target;
+    NSMutableDictionary *dist = [@{} mutableCopy];
+    NSMutableDictionary *previous = [@{} mutableCopy];
+    for (EKVertex *vertex in self.vertices) {
+        [dist setValue:@INT_MAX forKey:vertex.label];
+        [previous setValue:[NSNull null] forKey:vertex.label];
+    }
+    [dist setValue:@0 forKey:sourceVertex.label];
+    NSMutableArray *Q = [self.vertices mutableCopy];
+    while ([Q count] > 0) {
+        EKVertex *u = [EKGraph hasMinimumDistance:dist InVertices:Q];
+        if (u == targetVertex) {
+            break;
+        }
+        if ([[dist valueForKey:u.label] isEqualTo:@INT_MAX]) {
+            break;
+        }
+        for (EKEdge *edge in u.adjacentEdges) {
+            EKVertex *v = edge.adjacentTo;
+            NSNumber *alt = [NSNumber numberWithInteger:[[dist valueForKey:u.label] integerValue] + ((NSNumber *)edge.weight).integerValue];
+            if ([alt isLessThan:[dist valueForKey:v.label]]) {
+                [dist setValue:alt forKey:v.label];
+                [previous setValue:u forKey:v.label];
+            }
+        }
+        [Q removeObject:u];
+    }
+    for (NSString *label in previous) {
+        if (![[previous valueForKey:label] isMemberOfClass:[NSNull class]]) {
+            NSLog(@"%@ previous node --> %@", label, ((EKVertex *)[previous valueForKey:label]).label);
+        } else {
+            NSLog(@"%@ has no previous node", label);
+        }
+    }
+}
+
++ (EKVertex *)hasMinimumDistance:(NSDictionary *)dist InVertices:(NSArray *)Q
+{
+    NSNumber *minDist;
+    NSUInteger index;
+    for (EKVertex *vertex in Q) {
+        NSString *label = vertex.label;
+        if (!minDist) {
+            minDist = [dist valueForKey:label];
+            index = [Q indexOfObject:vertex];
+        } else {
+            if ([minDist isGreaterThan:[dist valueForKey:label]]) {
+                minDist = [dist valueForKey:label];
+                index = [Q indexOfObject:vertex];
+            }
+        }
+    }
+    return [Q objectAtIndex:index];
+}
+
+#pragma mark - Topsort
+
+- (void)topSort
+{
+    NSMutableArray *topNum = [@[] mutableCopy];
+    EKQueue *queue = [[EKQueue alloc] init];
+    
+    for (NSUInteger i = 0; i < self.vertices.count; i++) {
+        EKVertex *vertex = [self findNewVertexOfIndegreeZero:self.vertices];
+        if (vertex) {
+            [queue insertObject:vertex];
+        }
+    }
+    NSAssert(![queue isEmpty], @"Graph has a cycle!");
+    
+    while (![queue isEmpty]) {
+        EKVertex *V = [queue removeFirstObject];
+        [topNum addObject:V];
+        
+        for (EKEdge *edge in V.adjacentEdges) {
+            [_indegree setValue:[NSNumber numberWithInteger:([[_indegree valueForKey:edge.adjacentTo.label] integerValue])-1] forKey:edge.adjacentTo.label];
+            if ([[_indegree valueForKey:edge.adjacentTo.label] isEqualToNumber:@0]) {
+                [queue insertObject:edge.adjacentTo];
+            }
+        }
+    }
+    
+    for (EKVertex *vertex in topNum) {
+        NSLog(@"Topsort %lu --> %@", (unsigned long)[topNum indexOfObject:vertex], vertex.label);
+    }
+}
+
+- (EKVertex *)findNewVertexOfIndegreeZero:(NSArray *)vertices
+{
+    if (!_indegree) {
+        // Graph should not change at runtime
+        _indegree = [@{} mutableCopy];
+        [self clearVisitHistory];
+        for (EKVertex *vertex in vertices) {
+            [_indegree setValue:@0 forKey:vertex.label];
+        }
+        for (EKVertex *vertex in vertices) {
+            for (EKEdge *edge in vertex.adjacentEdges) {
+                EKVertex *adjTo = edge.adjacentTo;
+                [_indegree setValue:[NSNumber numberWithInteger:([[_indegree valueForKey:adjTo.label] integerValue])+1] forKey:adjTo.label];
+            }
+        }
+    }
+    for (EKVertex *vertex in vertices) {
+        if ([[_indegree valueForKey:vertex.label] isEqualToNumber:@0] && !vertex.wasVisited) {
+            vertex.wasVisited = YES;
+            return vertex;
+        }
+    }
+    return nil;
 }
 
 #pragma mark - DFS

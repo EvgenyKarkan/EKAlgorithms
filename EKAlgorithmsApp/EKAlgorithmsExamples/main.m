@@ -13,6 +13,7 @@
 #import "EKStack.h"
 #import "EKQueue.h"
 #import "EKDeque.h"
+#import "EKBHeap.h"
 #import "EKVertex.h"
 #import "EKGraph.h"
 #import "EKEdge.h"
@@ -254,6 +255,19 @@ int main(int argc, const char *argv[])
         [deque removeLastObject];
         NSLog(@"All objects from deque %@", [deque allObjectsFromDeque]);
         
+            // Binary Heap
+        
+        EKBHeap *heap = [[EKBHeap alloc] init];
+        [heap insertNumber:@6];
+        [heap insertNumber:@7];
+        [heap insertNumber:@12];
+        [heap insertNumber:@10];
+        [heap insertNumber:@15];
+        [heap insertNumber:@17];
+        [heap insertNumber:@5];
+        
+        NSLog(@"Minimum Number deleted: %@", [heap deleteMin]);
+        
             //Graph stuff
         
             //DFS
@@ -324,6 +338,47 @@ int main(int argc, const char *argv[])
         
             // Prim
         [graph primMST:aV];
+        
+            // Dijkstra
+        [graph dijkstraSPTFrom:aV To:nil];
+        
+            // Topsort
+        EKVertex *c101V = [[EKVertex alloc] init];         //We simulate courses in university
+        c101V.label = @"C101";
+        
+        EKVertex *c102V = [[EKVertex alloc] init];
+        c102V.label = @"C102";
+        
+        EKVertex *c103V = [[EKVertex alloc] init];
+        c103V.label = @"C103";
+        
+        EKVertex *d211V = [[EKVertex alloc] init];
+        d211V.label = @"D211";
+        
+        EKVertex *e107V = [[EKVertex alloc] init];
+        e107V.label = @"E107";
+        
+        EKVertex *f110V = [[EKVertex alloc] init];
+        f110V.label = @"F110";
+        
+        EKVertex *g201V = [[EKVertex alloc] init];
+        g201V.label = @"G201";
+        
+        c101V.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:c101V To:c103V andWeight:@1], nil];
+        c103V.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:c103V To:g201V andWeight:@1], nil];
+        c102V.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:c102V To:c103V andWeight:@1],
+                               [[EKEdge alloc] initWithAdjacentFrom:c102V To:d211V andWeight:@1],
+                               [[EKEdge alloc] initWithAdjacentFrom:c102V To:e107V andWeight:@1], nil];
+        d211V.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:d211V To:g201V andWeight:@1],
+                               [[EKEdge alloc] initWithAdjacentFrom:d211V To:f110V andWeight:@1], nil];
+        e107V.adjacentEdges = [[NSMutableSet alloc] initWithObjects:[[EKEdge alloc] initWithAdjacentFrom:e107V To:f110V andWeight:@1], nil];
+        
+        EKGraph *topGraph = [[EKGraph alloc] init];
+        topGraph.vertices = [@[c101V, c102V, c103V, d211V, e107V, f110V, g201V] mutableCopy];
+        
+        [topGraph topSort];
+        
+        
         
             //Linked list stuff
         EKLinkedList *list = [[EKLinkedList alloc] initWithHead:@5];
