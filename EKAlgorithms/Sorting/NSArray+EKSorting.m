@@ -257,7 +257,9 @@
 {
     NSMutableArray *temporaryArray = [NSMutableArray array];
 
-    for (NSInteger i = 0; i < [self count]; i++) {
+    NSUInteger count = [self count];
+
+    for (NSInteger i = 0; i < count; i++) {
         [temporaryArray addObject:[NSNull null]];
     }
 

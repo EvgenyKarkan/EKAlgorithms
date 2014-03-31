@@ -172,8 +172,10 @@
     
     NSInteger indexOfFirstOccurrence = -1;
     NSInteger j = 0;
-    
-    for (NSInteger i = 0; i < [self length]; i++) {
+
+    NSUInteger length = [self length];
+
+    for (NSInteger i = 0; i < length; i++) {
         if ([self characterAtIndex:i] == [needle characterAtIndex:j]) {
             if (j == 0) {
                 indexOfFirstOccurrence = i;
