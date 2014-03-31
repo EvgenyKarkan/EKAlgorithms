@@ -1,7 +1,6 @@
 #import <Kiwi/Kiwi.h>
 
 #import "NSArray+EKStuff.h"
-#import "NSMutableArray+EKStuff.h"
 #import "NSArray+Selection.h"
 #import "NSArray+EKSorting.h"
 
@@ -245,13 +244,34 @@ describe(@"NSArray-based algorithms", ^{
     });
 
     describe(@"Occurrences of each element in array", ^{
-        describe(@"occurencesOfEachElementInArray", ^{
+        describe(@"occurencesOfEachElementInArray_naive", ^{
             specify(^{
                 NSMutableArray *originalArray = [NSMutableArray array];
 
                 // Just the array to test the method against
                 // [@(1), @(2), @(2), @(3), @(3), @(3), ...]
                 int N = 10;
+                for (int i = 1; i <= N; i++) {
+                    for (int j = 1; j <= i; j++) {
+                        [originalArray addObject:@(i)];
+                    }
+                }
+
+                NSDictionary *result = [originalArray occurencesOfEachElementInArray_naive];
+
+                for (int i = 1; i <= N; i++) {
+                    [[result[@(i)] should] equal:@(i)];
+                }
+            });
+        });
+
+        describe(@"occurencesOfEachElementInArray", ^{
+            specify(^{
+                NSMutableArray *originalArray = [NSMutableArray array];
+
+                // Just the array to test the method against
+                // [@(1), @(2), @(2), @(3), @(3), @(3), ...]
+                int N = 100;
                 for (int i = 1; i <= N; i++) {
                     for (int j = 1; j <= i; j++) {
                         [originalArray addObject:@(i)];
@@ -266,26 +286,27 @@ describe(@"NSArray-based algorithms", ^{
             });
         });
 
-        describe(@"occurencesOfEachElementInArrayByUsingDictionary", ^{
+        describe(@"CocoaImplementationOfOccurencesOfEachElementInArray", ^{
             specify(^{
                 NSMutableArray *originalArray = [NSMutableArray array];
 
                 // Just the array to test the method against
                 // [@(1), @(2), @(2), @(3), @(3), @(3), ...]
-                int N = 10;
+                int N = 100;
                 for (int i = 1; i <= N; i++) {
                     for (int j = 1; j <= i; j++) {
                         [originalArray addObject:@(i)];
                     }
                 }
 
-                NSDictionary *result = [originalArray occurencesOfEachElementInArrayByUsingDictionary];
+                NSDictionary *result = [originalArray CocoaImplementationOfOccurencesOfEachElementInArray];
 
                 for (int i = 1; i <= N; i++) {
                     [[result[@(i)] should] equal:@(i)];
                 }
             });
         });
+
     });
 
     describe(@"Selection algorithms", ^{
