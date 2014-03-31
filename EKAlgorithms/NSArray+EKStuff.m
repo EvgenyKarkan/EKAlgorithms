@@ -469,16 +469,13 @@
 - (NSMutableArray *)insertionSortedArray
 {
     NSMutableArray *selfCopy = [self mutableCopy];
-    NSInteger a = 0, b = 0;
-    
-    id temp = nil;
-    
-    for (a = 1; a < (NSInteger)[selfCopy count]; ++a) {
-        temp = selfCopy[a];
-        for (b = a - 1; (b >= 0) && ([temp floatValue] < [selfCopy[b] floatValue]); b--) {
-            [selfCopy replaceObjectAtIndex:b + 1 withObject:selfCopy[b]];
+
+    NSUInteger count = self.count;
+
+    for (int i = 1; i < count; i++) {
+        for (int j = i; (j > 0) && ([selfCopy[j - 1] floatValue] > [selfCopy[j] floatValue]); j--) {
+            [selfCopy exchangeObjectAtIndex:j withObjectAtIndex:(j - 1)];
         }
-        selfCopy[b + 1] = temp;
     }
     
     return selfCopy;
