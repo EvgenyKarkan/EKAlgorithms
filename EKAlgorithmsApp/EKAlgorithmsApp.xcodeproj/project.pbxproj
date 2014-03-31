@@ -25,12 +25,10 @@
 		860B78821858133A0071079A /* EKLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B78701858133A0071079A /* EKLinkedList.m */; };
 		860B78831858133A0071079A /* EKNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B78721858133A0071079A /* EKNode.m */; };
 		860B78841858133A0071079A /* NSArray+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B78741858133A0071079A /* NSArray+EKStuff.m */; };
-		860B78851858133A0071079A /* NSMutableArray+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B78761858133A0071079A /* NSMutableArray+EKStuff.m */; };
 		860B78861858133A0071079A /* NSNumber+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B78781858133A0071079A /* NSNumber+EKStuff.m */; };
 		860B78871858133A0071079A /* NSString+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B787A1858133A0071079A /* NSString+EKStuff.m */; };
 		860B7889185814810071079A /* NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B7888185814810071079A /* NSArray.m */; };
 		860B788A185815BC0071079A /* NSArray+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B78741858133A0071079A /* NSArray+EKStuff.m */; };
-		8641D23F18C88D6700B109E4 /* NSMutableArray+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 860B78761858133A0071079A /* NSMutableArray+EKStuff.m */; };
 		8641D24618C89B7100B109E4 /* NSArray+Selection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8641D24518C89B7100B109E4 /* NSArray+Selection.m */; };
 		8641D24718C89BC900B109E4 /* NSArray+Selection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8641D24518C89B7100B109E4 /* NSArray+Selection.m */; };
 		8692312418E983A2002F7CBA /* NSArray+EKSorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A39FCE18E97F3300124215 /* NSArray+EKSorting.m */; };
@@ -116,8 +114,6 @@
 		860B78721858133A0071079A /* EKNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKNode.m; sourceTree = "<group>"; };
 		860B78731858133A0071079A /* NSArray+EKStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EKStuff.h"; sourceTree = "<group>"; };
 		860B78741858133A0071079A /* NSArray+EKStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EKStuff.m"; sourceTree = "<group>"; };
-		860B78751858133A0071079A /* NSMutableArray+EKStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+EKStuff.h"; sourceTree = "<group>"; };
-		860B78761858133A0071079A /* NSMutableArray+EKStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+EKStuff.m"; sourceTree = "<group>"; };
 		860B78771858133A0071079A /* NSNumber+EKStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+EKStuff.h"; sourceTree = "<group>"; };
 		860B78781858133A0071079A /* NSNumber+EKStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+EKStuff.m"; sourceTree = "<group>"; };
 		860B78791858133A0071079A /* NSString+EKStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EKStuff.h"; sourceTree = "<group>"; };
@@ -264,8 +260,6 @@
 				860B785B1858133A0071079A /* Data Structures */,
 				860B78731858133A0071079A /* NSArray+EKStuff.h */,
 				860B78741858133A0071079A /* NSArray+EKStuff.m */,
-				860B78751858133A0071079A /* NSMutableArray+EKStuff.h */,
-				860B78761858133A0071079A /* NSMutableArray+EKStuff.m */,
 				860B78771858133A0071079A /* NSNumber+EKStuff.h */,
 				860B78781858133A0071079A /* NSNumber+EKStuff.m */,
 				860B78791858133A0071079A /* NSString+EKStuff.h */,
@@ -502,7 +496,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				860B78851858133A0071079A /* NSMutableArray+EKStuff.m in Sources */,
 				860B787D1858133A0071079A /* EKDeque.m in Sources */,
 				8FF772EF18E6E24300DF6B3A /* EKAVLTree.m in Sources */,
 				8F8F83FE18E75E5A0009D125 /* EKBHeap.m in Sources */,
@@ -545,7 +538,6 @@
 				86A2D37C188D2705004A908F /* NSArray+EKGeometry.m in Sources */,
 				8F8F83FF18E75E5A0009D125 /* EKBHeap.m in Sources */,
 				86A2D378188D2440004A908F /* EKGeometry.m in Sources */,
-				8641D23F18C88D6700B109E4 /* NSMutableArray+EKStuff.m in Sources */,
 				860B7850185811420071079A /* main.m in Sources */,
 				869FE65F186419E600509FE7 /* NSNumber.m in Sources */,
 				8FF772F418E6E53F00DF6B3A /* EKAVLTreeNode.m in Sources */,

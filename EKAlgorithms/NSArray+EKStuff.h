@@ -49,8 +49,8 @@
  */
 - (NSNumber *)sumOfElements;
 
+- (NSDictionary *)occurencesOfEachElementInArray_naive;
 - (NSDictionary *)occurencesOfEachElementInArray;
-- (NSDictionary *)occurencesOfEachElementInArrayByUsingDictionary;
 - (NSDictionary *)CocoaImplementationOfOccurencesOfEachElementInArray;
 
 //search

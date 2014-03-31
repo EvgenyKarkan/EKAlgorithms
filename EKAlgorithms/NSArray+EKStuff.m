@@ -7,7 +7,6 @@
 //
 
 #import "NSArray+EKStuff.h"
-#import "NSMutableArray+EKStuff.h"
 
 @implementation NSArray (EKStuff);
 
@@ -18,8 +17,10 @@
 {
     NSInteger maximumValue = [[self objectAtIndex:0] integerValue];
     NSUInteger indexOfMaximumValue = 0;
-    
-    for (NSUInteger i = 1; i < [self count]; i++) {
+
+    NSUInteger count = [self count];
+
+    for (NSUInteger i = 1; i < count; i++) {
         NSInteger value = [[self objectAtIndex:i] integerValue];
         
         if (value > maximumValue) {
@@ -114,7 +115,7 @@
     NSString *returnValue = nil;
     
     for (NSString *string in self) {
-        if (returnValue == nil || [string length] > [returnValue length]) {
+        if (returnValue == nil || ([string length] > [returnValue length])) {
             returnValue = string;
         }
     }
@@ -129,7 +130,7 @@
     NSString *returnValue = nil;
     
     for (NSString *string in self) {
-        if (returnValue == nil || [string length] < [returnValue length]) {
+        if (returnValue == nil || ([string length] < [returnValue length])) {
             returnValue = string;
         }
     }
@@ -143,7 +144,7 @@
 {
     NSMutableSet *intersection = [NSMutableSet setWithArray:self];
     [intersection intersectSet:[NSSet setWithArray:secondArray]];
-    
+
     return [intersection allObjects];
 }
 
@@ -203,9 +204,11 @@
 
 - (NSNumber *)sumOfElements
 {
+    NSUInteger count = [self count];
+
     long long int sum = 0;
     
-    for (NSUInteger i = 0; i < [self count]; i++) {
+    for (NSUInteger i = 0; i < count; i++) {
         sum = sum + [self[i] longLongValue];
     }
     
@@ -214,45 +217,47 @@
 
 #pragma mark - Occurrences of each element in array
 
-- (NSDictionary *)occurencesOfEachElementInArray
+- (NSDictionary *)occurencesOfEachElementInArray_naive
 {
-    NSMutableDictionary *result = [@{} mutableCopy];
-    
-    for (NSUInteger i = 0; i < [self count]; i++) {
-        NSParameterAssert(self[i] != nil);
+    NSUInteger count = [self count];
+
+    NSMutableDictionary *registry = [NSMutableDictionary dictionaryWithCapacity:count];
+
+    for (NSUInteger i = 0; i < count; i++) {
         NSUInteger counter = 0;
-        for (NSUInteger j = 0; j < [self count]; j++) {
-            NSParameterAssert(self[j] != nil);
+
+        for (NSUInteger j = 0; j < count; j++) {
             if ([self[i] isEqual:self[j]]) {
                 counter++;
             }
         }
-        [result setObject:[NSNumber numberWithUnsignedInteger:counter]
+
+        [registry setObject:@(counter)
                    forKey:self[i]];
     }
     
-    return result;
+    return registry;
 }
 
-- (NSDictionary *)occurencesOfEachElementInArrayByUsingDictionary
+- (NSDictionary *)occurencesOfEachElementInArray
 {
-    NSMutableDictionary *result = [@{} mutableCopy];
-    
-    for (NSUInteger i = 0; i < [self count]; i++) {
+    NSUInteger count = [self count];
+
+    NSMutableDictionary *registry = [NSMutableDictionary dictionaryWithCapacity:count];
+
+    for (NSUInteger i = 0; i < count; i++) {
         id currentElement = self[i];
-        
-        NSParameterAssert(currentElement != nil);
-        
-        NSNumber *existingElementCounter = result[currentElement];
+
+        NSNumber *existingElementCounter = registry[currentElement];
         
         NSUInteger currentCount = existingElementCounter ? existingElementCounter.unsignedIntegerValue : 0;
         
         currentCount++;
         
-        result[currentElement] = [NSNumber numberWithUnsignedInteger:currentCount];
+        registry[currentElement] = @(currentCount);
     }
     
-    return result;
+    return registry;
 }
 
 - (NSDictionary *)CocoaImplementationOfOccurencesOfEachElementInArray
@@ -261,7 +266,6 @@
     NSMutableDictionary *dictionary = [@{} mutableCopy];
     
     for (id object in [countedSet allObjects]) {
-        NSParameterAssert(object != nil);
         [dictionary setObject:@([countedSet countForObject:object])
                        forKey:object];
     }
@@ -274,19 +278,15 @@
 
 - (NSInteger)indexOfObjectViaLinearSearch:(id)object
 {
-    NSInteger i = 0, indexOfFoundedObject = 0;
-    
-    for (i = 0; i < [self count]; i++) {
-        if (object == [self objectAtIndex:i]) {
-            indexOfFoundedObject = i;
-            break;
+    NSUInteger count = [self count];
+
+    for (int i = 0; i < count; i++) {
+        if ([object isEqual:[self objectAtIndex:i]]) {
+            return i;
         }
     }
-    if (i == [self count]) {
-        indexOfFoundedObject = -1;
-    }
-    
-    return indexOfFoundedObject;
+
+    return NSNotFound;
 }
 
 #pragma mark - Binary search
@@ -295,24 +295,22 @@
 {
     NSUInteger firstIndex = 0;
     NSUInteger uptoIndex = [self count];
-    NSUInteger indexOfFoundedObject = 0;
-    
+
     while (firstIndex < uptoIndex) {
         NSUInteger mid = (firstIndex + uptoIndex) / 2;
-        if ([object isKindOfClass:[NSNumber class]]) {
-            if ([object integerValue] < [[self objectAtIndex:mid] integerValue]) {
-                uptoIndex = mid;
-            }
-            else if ([object integerValue] > [[self objectAtIndex:mid] integerValue]) {
-                firstIndex = mid + 1;
-            }
-            else {
-                return indexOfFoundedObject = mid;
-            }
+
+        if ([object integerValue] < [[self objectAtIndex:mid] integerValue]) {
+            uptoIndex = mid;
+        }
+        else if ([object integerValue] > [[self objectAtIndex:mid] integerValue]) {
+            firstIndex = mid + 1;
+        }
+        else {
+            return mid;
         }
     }
     
-    return indexOfFoundedObject = -1;
+    return NSNotFound;
 }
 
 
