@@ -7,14 +7,3 @@
 //
 
 
-@interface NSMutableArray (EKStuff)
-
-- (void)partitionArrayWithMinimalIndex:(NSInteger)min withMaximumIndex:(NSInteger)max;
-
-- (void)mergeArrayWithMinimalIndex:(NSInteger)min withMediumIndex:(NSInteger)mid withMaximalIndex:(NSInteger)max;
-
-- (void)siftDownArrayWithStart:(NSInteger)startIndex end:(NSInteger)endIndex;
-
-- (void)heapifyArrayWithSize:(NSInteger)size;
-
-@end

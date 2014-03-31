@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NSArray+EKStuff.h"
+#import "NSArray+EKSorting.h"
 #import "NSNumber+EKStuff.h"
 #import "NSString+EKStuff.h"
 #import "EKStack.h"
@@ -51,7 +52,7 @@ int main(int argc, const char *argv[])
         NSLog(@"The shortest string is %@", [@[@"DRY", @"KISS", @"YAGNI", @"SOLID", @"GRASP"] shortestString]);
         
             //Reverse of array
-        NSLog(@"Reversed array is %@", [@[@"one", @"two", @"three", @"four", @"five"] reversedArray]);
+        NSLog(@"Reversed array is %@", [[@[@"one", @"two", @"three", @"four", @"five"] mutableCopy] reverse]);
         
             //Intersection of two arrays
         NSLog(@"Intersection is %@", [@[@"one", @"two", @"three"] intersectionWithArray: @[@"two", @"three", @"four"]]);
@@ -69,7 +70,7 @@ int main(int argc, const char *argv[])
         NSLog(@"Given array sorted? --> %@", [@[@1.1, @1.5, @1.9, @2.5, @3, @4, @4] isSorted] ? @"YES" : @"NO");
         
             // Array Shuffle (Fisher–Yates)
-        NSLog(@"Array Shuffle of array: %@ is: %@", array, [array shuffledArray]);
+        NSLog(@"Array Shuffle of array: %@ is: %@", array, [[array mutableCopy] shuffle]);
         
             //Sum of elements in array
         NSLog(@"Sum is --> %@", [@[@ - 5, @ - 5, @ - 5, @ - 5, @ - 5] sumOfElements]);
@@ -90,25 +91,25 @@ int main(int argc, const char *argv[])
         //SORTING-----------------------------------------------------------------------------------
         
             //Bubble sort
-        NSLog(@"Bubble sorted array is: %@", [array bubbleSortedArray]);
+        NSLog(@"Bubble sorted array is: %@", [[array mutableCopy] bubbleSort]);
         
             //Shell sort
-        NSLog(@"Shell sorted array is %@", [@[@2, @45, @8, @1, @27, @16, @5.3, @ - 53.7] shellSortedArray]);
+        NSLog(@"Shell sorted array is %@", [[@[@2, @45, @8, @1, @27, @16, @5.3, @ - 53.7] mutableCopy] shellSort]);
         
             //Merge sort
-        NSLog(@"Merge sorted array %@", [@[@21, @45, @87, @10, @273, @616, @0.2, @ - 0.52] mergeSortedArray]);
+        NSLog(@"Merge sorted array %@", [[@[@21, @45, @87, @10, @273, @616, @0.2, @ - 0.52] mutableCopy] mergeSort]);
         
             //Quick sort numbers
-        NSLog(@"Quick sorted array %@", [@[@2.1, @405, @817, @10, @2732, @616, @0.2, @ - 0.52] quickSortedArrayWithLeftIndex: 0
+        NSLog(@"Quick sorted array %@", [[@[@2.1, @405, @817, @10, @2732, @616, @0.2, @ - 0.52] mutableCopy] quickSortWithLeftIndex: 0
                                                                                                               withRightIndex:[[NSMutableArray arrayWithArray:@[@21, @45, @87, @10, @273, @616, @0.2, @ - 0.52]] count] - 1]);
             //Insertion sort
-        NSLog(@"Insertion sorted array %@", [@[@ - 23.0154, @46, @0.021, @42, @5, @NO, @YES] insertionSortedArray]);
+        NSLog(@"Insertion sorted array %@", [[@[@ - 23.0154, @46, @0.021, @42, @5, @NO, @YES] mutableCopy] insertionSort]);
         
             //Selection sort
-        NSLog(@"Selection sorted array  %@", [@[@160, @0.097, @NO, @89, @ - 61.001256, @7.5, @YES] selectionSortedArray]);
+        NSLog(@"Selection sorted array  %@", [[@[@160, @0.097, @NO, @89, @ - 61.001256, @7.5, @YES] mutableCopy] selectionSort]);
         
             //Heap sort
-        NSLog(@"Heap sorted array --> %@", [@[@9871523, @0.0987516, @NO, @89, @ - 61.001256, @712.5, @YES, @384756] heapSortedArray]);
+        NSLog(@"Heap sorted array --> %@", [[@[@9871523, @0.0987516, @NO, @89, @ - 61.001256, @712.5, @YES, @384756] mutableCopy] heapSort]);
         
         //STRINGS-----------------------------------------------------------------------------------
         
