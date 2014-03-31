@@ -3,36 +3,12 @@
 #import "NSArray+EKStuff.h"
 #import "NSMutableArray+EKStuff.h"
 #import "NSArray+Selection.h"
+#import "NSArray+EKSorting.h"
 
 SPEC_BEGIN(NSArray_Specs)
 
 describe(@"NSArray-based algorithms", ^{
     describe(@"Sorting algorithms", ^{
-        describe(@"Quick Sort", ^{
-            it(@"", ^{
-                NSMutableArray *array = [NSMutableArray array];
-
-                NSUInteger N = 100;
-
-                for (int i = 0; i < N; i++) {
-                    [array addObject:@(i + 1)];
-                }
-
-                array = [NSMutableArray arrayWithArray:[array shuffledArray]];
-
-                NSArray *sortedArray = [array quickSortedArrayWithLeftIndex:0 withRightIndex:(array.count - 1)];
-
-                [[theValue([sortedArray isSorted]) should] beYes];
-                
-                for (NSUInteger i = 0; i < N - 1; i++) {
-                    float ithElementValue = [[sortedArray objectAtIndex:i] floatValue];
-                    float iplus1thElementValue = [[sortedArray objectAtIndex:i + 1] floatValue];
-
-                    [[theValue(ithElementValue < iplus1thElementValue) should] beTrue];
-                }
-            });
-        });
-
         describe(@"Insertion Sort", ^{
             it(@"", ^{
                 NSMutableArray *array = [NSMutableArray array];
@@ -43,9 +19,11 @@ describe(@"NSArray-based algorithms", ^{
                     [array addObject:@(i + 1)];
                 }
 
-                array = [NSMutableArray arrayWithArray:[array shuffledArray]];
+                array = [NSMutableArray arrayWithArray:[array shuffle]];
 
-                NSArray *sortedArray = [array insertionSortedArray];
+                [array insertionSort];
+
+                NSArray *sortedArray = [array copy];
 
                 [[theValue([sortedArray isSorted]) should] beYes];
 
@@ -68,9 +46,11 @@ describe(@"NSArray-based algorithms", ^{
                     [array addObject:@(i + 1)];
                 }
 
-                array = [NSMutableArray arrayWithArray:[array shuffledArray]];
+                array = [NSMutableArray arrayWithArray:[array shuffle]];
 
-                NSArray *sortedArray = [array selectionSortedArray];
+                [array selectionSort];
+
+                NSArray *sortedArray = [array copy];
 
                 for (NSUInteger i = 0; i < N - 1; i++) {
                     float ithElementValue = [[sortedArray objectAtIndex:i] floatValue];
@@ -91,9 +71,11 @@ describe(@"NSArray-based algorithms", ^{
                     [array addObject:@(i + 1)];
                 }
 
-                array = [NSMutableArray arrayWithArray:[array shuffledArray]];
+                array = [NSMutableArray arrayWithArray:[array shuffle]];
 
-                NSArray *sortedArray = [array partialSelectionSortedArray:5];
+                [array partialSelectionSort:5];
+
+                NSArray *sortedArray = [array copy];
 
                 NSUInteger kthElementValue = [[sortedArray objectAtIndex:K - 1] unsignedIntegerValue];
 
@@ -112,6 +94,61 @@ describe(@"NSArray-based algorithms", ^{
                 }
             });
         });
+
+        describe(@"Quick Sort", ^{
+            it(@"", ^{
+                NSMutableArray *array = [NSMutableArray array];
+
+                NSUInteger N = 100;
+
+                for (int i = 0; i < N; i++) {
+                    [array addObject:@(i + 1)];
+                }
+
+                array = [NSMutableArray arrayWithArray:[array shuffle]];
+
+                [array quickSortWithLeftIndex:0 withRightIndex:(array.count - 1)];
+
+                NSArray *sortedArray = [array copy];
+
+                [[theValue([sortedArray isSorted]) should] beYes];
+
+                for (NSUInteger i = 0; i < N - 1; i++) {
+                    float ithElementValue = [[sortedArray objectAtIndex:i] floatValue];
+                    float iplus1thElementValue = [[sortedArray objectAtIndex:i + 1] floatValue];
+
+                    [[theValue(ithElementValue < iplus1thElementValue) should] beTrue];
+                }
+            });
+        });
+
+        describe(@"Heap Sort", ^{
+            it(@"", ^{
+                NSMutableArray *array = [NSMutableArray array];
+
+                NSUInteger N = 100;
+
+                for (int i = 0; i < N; i++) {
+                    [array addObject:@(i + 1)];
+                }
+
+                array = [NSMutableArray arrayWithArray:[array shuffle]];
+
+                [array heapSort];
+
+                NSArray *sortedArray = [array copy];
+
+                [[theValue([sortedArray isSorted]) should] beYes];
+
+                for (NSUInteger i = 0; i < N - 1; i++) {
+                    float ithElementValue = [[sortedArray objectAtIndex:i] floatValue];
+                    float iplus1thElementValue = [[sortedArray objectAtIndex:i + 1] floatValue];
+                    
+                    [[theValue(ithElementValue < iplus1thElementValue) should] beTrue];
+                }
+            });
+        });
+
     });
 
     describe(@"Search algorithms", ^{
@@ -169,7 +206,7 @@ describe(@"NSArray-based algorithms", ^{
             });
         });
 
-        describe(@"reversedArray - EKAlgorithms implementation", ^{
+        describe(@"reverse - EKAlgorithms implementation", ^{
             it(@"should return reversed array for a given array", ^{
                 NSUInteger N = 100;
 
@@ -179,7 +216,7 @@ describe(@"NSArray-based algorithms", ^{
                     [originalArray addObject:@(i + 1)];
                 }
 
-                NSArray *reversedArray = [originalArray reversedArray];
+                NSMutableArray *reversedArray = [[originalArray mutableCopy] reverse];
 
                 for (int i = 0; i < N; i++) {
                     [[[reversedArray objectAtIndex:i] should] equal:[originalArray objectAtIndex:(originalArray.count - 1 - i)]];
@@ -262,9 +299,7 @@ describe(@"NSArray-based algorithms", ^{
                     [array addObject:@(i + 1)];
                 }
 
-                NSArray *shuffledArray = [array shuffledArray];
-
-                array = [NSMutableArray arrayWithArray:shuffledArray];
+                array = [NSMutableArray arrayWithArray:[array shuffle]];
 
                 NSUInteger indexOfNthSmallestElement = [array selectKthSmallestElement:0 right:(N - 1) K:n];
 

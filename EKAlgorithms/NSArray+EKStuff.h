@@ -34,31 +34,11 @@
 - (NSString *)longestString;
 - (NSString *)shortestString;
 
-- (NSArray *)reversedArray;
-- (NSArray *)CocoaImplementationOfReversedArray;
-
 - (NSArray *)intersectionWithArray:(NSArray *)secondArray;
 - (NSArray *)unionWithoutDuplicatesWithArray:(NSArray *)secondArray;
 - (BOOL)hasDuplicates;
 + (NSArray *)randomObjectsWithArraySize:(NSUInteger)arraySize maxRandomValue:(NSUInteger)maxValue uniqueObjects:(BOOL)unique;
 
-/**
- Check if array is sorted
-
- @note Assumes array of NSNumber elements
-
- @return YES, if array is sorted, and NO otherwise.
- */
-- (BOOL)isSorted;
-
-/**
- Array Shuffle (Fisher–Yates)
-
- Source: http://ruby-doc.org/core-2.0.0/Array.html#method-i-shuffle-21
-
- @return Array with elements of original array in a randomized order
- */
-- (NSArray *)shuffledArray;
 
 /**
  Sum of array elements
@@ -77,36 +57,5 @@
 
 - (NSInteger)indexOfObjectViaLinearSearch:(id)object;
 - (NSInteger)indexOfObjectViaBinarySearch:(id)object;
-
-//sort
-
-- (NSMutableArray *)bubbleSortedArray;
-- (NSMutableArray *)shellSortedArray;
-- (NSMutableArray *)mergeSortedArray;
-- (NSMutableArray *)quickSortedArrayWithLeftIndex:(NSInteger)left withRightIndex:(NSInteger)right;
-- (NSMutableArray *)insertionSortedArray;
-
-- (NSArray *)selectionSortedArray;
-
-/**
- Partial selection sort
-
- This implementation is based on http://en.wikipedia.org/wiki/Selection_algorithm#Partial_selection_sort
-
- @note Assumes array of NSUInteger values
-
- @param K Number of first K elements to sort
-
- Example:
- @code
- N = 10, K = 5
- [9, 7, 10, 6, 4, 2, 5, 1, 3, 8] -> [1, 2, 3, 4, 5, 7, 6, 9, 10, 8]
- @endcode
-
- @return NSArray with first K elements sorted. If K = N / 2 then Kth element of sorted array is a median for both sorted and original arrays
- */
-- (NSArray *)partialSelectionSortedArray:(NSUInteger)K;
-
-- (NSMutableArray *)heapSortedArray;
 
 @end

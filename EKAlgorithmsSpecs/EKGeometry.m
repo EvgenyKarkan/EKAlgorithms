@@ -4,6 +4,8 @@
 
 #import "NSArray+EKStuff.h"
 #import "NSArray+EKGeometry.h"
+#import "NSArray+EKSorting.h"
+
 #import "EKALocation.h"
 #import "EKGeometry.h"
 
@@ -116,7 +118,7 @@ describe(@"NSArray+EKGeometry algorithms", ^{
             EKALocation *referenceLocation = [[EKALocation alloc] initWithLatitude:0 longitude:0];
 
             // When N is greater than 1000, precision problems appear and break the test.
-            double N = 1000;
+            double N = 10;
             for (double i = 0; i < N; i++) {
                 EKALocation *location = [[EKALocation alloc] initWithLatitude:(i * 90/ N) longitude:(i * 90/ N)];
 
@@ -126,7 +128,7 @@ describe(@"NSArray+EKGeometry algorithms", ^{
                 [originalLocations addObject:location];
             }
 
-            NSArray *shuffledLocations = [originalLocations shuffledArray];
+            NSArray *shuffledLocations = [NSArray arrayWithArray:[[originalLocations mutableCopy] shuffle]];
 
             NSArray *arraySortedByEKAlgorithm = [NSArray sortArrayOfLocations:shuffledLocations byDistanceToLocation:referenceLocation];
 
