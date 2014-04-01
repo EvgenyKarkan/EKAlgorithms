@@ -259,7 +259,6 @@ int main(int argc, const char *argv[])
         NSLog(@"All objects from deque %@", [deque allObjectsFromDeque]);
         
             // Binary Heap
-        
         EKBHeap *heap = [[EKBHeap alloc] init];
         [heap insertNumber:@6];
         [heap insertNumber:@7];
@@ -381,8 +380,6 @@ int main(int argc, const char *argv[])
         
         [topGraph topSort];
         
-        
-        
             //Linked list stuff
         EKLinkedList *list = [[EKLinkedList alloc] initWithHead:@5];
         [list addToFront:@7];
@@ -428,7 +425,6 @@ int main(int argc, const char *argv[])
         NSLog(@"Deleted %@", [tree deleteObject:@2]);      // delete @2 node
         
         [tree printDescription];
-        
         
             // AVL Tree stuff.
         EKAVLTree *avlt = [[EKAVLTree alloc] initWithObject:@4 compareSelector:@selector(compare:)];
@@ -485,6 +481,7 @@ int main(int argc, const char *argv[])
         [forest2 printDescription];
         
         [[EKTree forestToBinaryTree:@[forest1, forest2]] levelOrderTraversal];
+        
         //RECURSION---------------------------------------------------------------------------------
         
             //Tower of Hanoi
