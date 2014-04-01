@@ -30,6 +30,8 @@
 - (NSUInteger)count;
 - (NSObject *)objectAtIndex:(NSUInteger)index;
 
+- (NSArray *)findObject:(NSObject *)object;
+
 - (BOOL)removeCurrent;
 - (BOOL)removeObjectAtIndex:(NSUInteger)index;
 
