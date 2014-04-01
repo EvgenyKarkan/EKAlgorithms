@@ -134,6 +134,22 @@
     return currentNode.value;
 }
 
+- (NSArray *)findObject:(NSObject *)object
+{
+    if (object) {
+        NSMutableArray *result = [@[] mutableCopy];
+        EKNode *currentNode = self.head;
+        while (currentNode.next != nil) {
+            if ([currentNode.value isEqualTo:object]) {
+                [result addObject:currentNode];
+            }
+            currentNode = currentNode.next;
+        }
+        return result;
+    }
+    return nil;
+}
+
 - (BOOL)removeCurrent
 {
         //FIXME: improve code below

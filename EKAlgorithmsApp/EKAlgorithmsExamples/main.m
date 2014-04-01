@@ -77,7 +77,7 @@ int main(int argc, const char *argv[])
         
             //Find occurences of each element in array
         NSLog(@"Occurences is --> %@", [@[@3, @3, @4, @5, @4, @1, @3, @8, @1] occurencesOfEachElementInArray]);
-        NSLog(@"Occurences by using dictionary is --> %@", [@[@[], @{}, @"four", @"five", @"four", @"one", @"three", @"eight", @"one", @"four"] occurencesOfEachElementInArrayByUsingDictionary]);
+        //NSLog(@"Occurences by using dictionary is --> %@", [@[@[], @{}, @"four", @"five", @"four", @"one", @"three", @"eight", @"one", @"four"] occurencesOfEachElementInArrayByUsingDictionary]);
         NSLog(@"Occurences via Cocoa APIs is --> %@", [@[@3, @3, @4, @5, @4, @1, @3, @8, @1] CocoaImplementationOfOccurencesOfEachElementInArray]);
         
         //SEARCH------------------------------------------------------------------------------------
@@ -388,6 +388,8 @@ int main(int argc, const char *argv[])
         [list addToFront:@11];
         [list addToFront:@13];
         [list addToFront:@15];
+        [list addToBack:@11];
+        [list addToBack:@5];
         
         NSLog(@"Head is %@", list.head.value);
         NSLog(@"Nodes in list - %lu", (unsigned long)[list count]);
@@ -402,6 +404,9 @@ int main(int argc, const char *argv[])
         
         NSLog(@"Nodes in list after remove - %lu", (unsigned long)[list count]);
         [list printList];
+        
+        NSLog(@"Find number 3 in list, count: %lu", (unsigned long)[list findObject:@3].count);
+        NSLog(@"Find number 11 in list, count: %lu", (unsigned long)[list findObject:@11].count);
         
             //BST stuff
         EKBSTree *tree = [[EKBSTree alloc] initWithObject:@4 compareSelector:@selector(compare:)];
