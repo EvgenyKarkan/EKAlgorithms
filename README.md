@@ -1,5 +1,6 @@
 EKAlgorithms
 ============
+[![Build Status](https://travis-ci.org/EvgenyKarkan/EKAlgorithms.svg)](https://travis-ci.org/EvgenyKarkan/EKAlgorithms)
 
 EKAlgorithms is a set of computer exercises implemented in Objective-C. 
 Data structures, well known algorithms, CS curiosities, you name it!
@@ -19,7 +20,7 @@ Arrays and Lists
 8. Find duplicates.
 9. Array with N unique/not unique random objects.
 10. Check if array is sorted.
-11. Array shuffle (Fisher–Yates).
+11. Array shuffle (Fisherâ€“Yates).
 12. Sum of array elements.
 13. N of occurences of each element in array.
 
@@ -129,6 +130,8 @@ Contributors
 Special thanks to these guys for their contributions to the project's development:
 - [@stanislaw](https://github.com/stanislaw)
 - [@vittoriom ](https://github.com/vittoriom)
+- [@AustinChou](https://github.com/AustinChou)
 
--
+
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/EvgenyKarkan/ekalgorithms/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
