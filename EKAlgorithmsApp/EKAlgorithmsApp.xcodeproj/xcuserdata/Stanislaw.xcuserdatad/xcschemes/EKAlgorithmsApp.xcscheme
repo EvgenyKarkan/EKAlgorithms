@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8602E96D18EC44840044E1AB"
                BuildableName = "EKAlgorithmsApp"
-               BlueprintName = "EKAlgorithmsApp"
+               BlueprintName = "EKAlgorithmsExamples"
                ReferencedContainer = "container:EKAlgorithmsApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,7 +44,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8602E96D18EC44840044E1AB"
             BuildableName = "EKAlgorithmsApp"
-            BlueprintName = "EKAlgorithmsApp"
+            BlueprintName = "EKAlgorithmsExamples"
             ReferencedContainer = "container:EKAlgorithmsApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,7 +63,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8602E96D18EC44840044E1AB"
             BuildableName = "EKAlgorithmsApp"
-            BlueprintName = "EKAlgorithmsApp"
+            BlueprintName = "EKAlgorithmsExamples"
             ReferencedContainer = "container:EKAlgorithmsApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -81,7 +81,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8602E96D18EC44840044E1AB"
             BuildableName = "EKAlgorithmsApp"
-            BlueprintName = "EKAlgorithmsApp"
+            BlueprintName = "EKAlgorithmsExamples"
             ReferencedContainer = "container:EKAlgorithmsApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

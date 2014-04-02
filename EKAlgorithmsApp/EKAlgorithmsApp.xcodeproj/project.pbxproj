@@ -1,2152 +1,736 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>28EAAD30D5B24F3C8073D853</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>3B07F14A014D43D9A11FAAE7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-EKAlgorithmsSpecs-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>673AE02A7F2E4462ADC410F8</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-EKAlgorithmsSpecs.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>8602E96518EC44840044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E99218EC44AB0044E1AB</string>
-				<string>8602E97318EC44840044E1AB</string>
-				<string>8602E98618EC44920044E1AB</string>
-				<string>8602E97018EC44840044E1AB</string>
-				<string>8602E96F18EC44840044E1AB</string>
-				<string>CBAD4AE067C745129D5443B9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E96618EC44840044E1AB</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0510</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Evgeny Karkan</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>8602E96918EC44840044E1AB</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>8602E96518EC44840044E1AB</string>
-			<key>productRefGroup</key>
-			<string>8602E96F18EC44840044E1AB</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>8602E96D18EC44840044E1AB</string>
-				<string>8602E98218EC44920044E1AB</string>
-			</array>
-		</dict>
-		<key>8602E96918EC44840044E1AB</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>8602E97A18EC44840044E1AB</string>
-				<string>8602E97B18EC44840044E1AB</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>8602E96A18EC44840044E1AB</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>8602E9DD18EC44AC0044E1AB</string>
-				<string>8602E9DF18EC44AC0044E1AB</string>
-				<string>8602E9F618EC44AC0044E1AB</string>
-				<string>8602E9DB18EC44AC0044E1AB</string>
-				<string>8602E9EE18EC44AC0044E1AB</string>
-				<string>8602E97518EC44840044E1AB</string>
-				<string>8602E9FA18EC44AC0044E1AB</string>
-				<string>8602E9FE18EC44AC0044E1AB</string>
-				<string>8602E9EC18EC44AC0044E1AB</string>
-				<string>8602E9FC18EC44AC0044E1AB</string>
-				<string>8602E9E118EC44AC0044E1AB</string>
-				<string>8602E9F418EC44AC0044E1AB</string>
-				<string>8602E9D018EC44AC0044E1AB</string>
-				<string>8602E9D418EC44AC0044E1AB</string>
-				<string>8602E9D718EC44AC0044E1AB</string>
-				<string>8602E9D918EC44AC0044E1AB</string>
-				<string>8602E9E318EC44AC0044E1AB</string>
-				<string>8602E9E518EC44AC0044E1AB</string>
-				<string>8602E9F218EC44AC0044E1AB</string>
-				<string>8602E9F818EC44AC0044E1AB</string>
-				<string>8602EA0018EC44AC0044E1AB</string>
-				<string>8602E9E818EC44AC0044E1AB</string>
-				<string>8602E9EA18EC44AC0044E1AB</string>
-				<string>8602E9D218EC44AC0044E1AB</string>
-				<string>8602E9F018EC44AC0044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>8602E96B18EC44840044E1AB</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>8602E97218EC44840044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>8602E96C18EC44840044E1AB</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>dstPath</key>
-			<string>/usr/share/man/man1/</string>
-			<key>dstSubfolderSpec</key>
-			<string>0</string>
-			<key>files</key>
-			<array>
-				<string>8602E97918EC44840044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXCopyFilesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>1</string>
-		</dict>
-		<key>8602E96D18EC44840044E1AB</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>8602E97C18EC44840044E1AB</string>
-			<key>buildPhases</key>
-			<array>
-				<string>8602E96A18EC44840044E1AB</string>
-				<string>8602E96B18EC44840044E1AB</string>
-				<string>8602E96C18EC44840044E1AB</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>EKAlgorithmsApp</string>
-			<key>productName</key>
-			<string>EKAlgorithmsApp</string>
-			<key>productReference</key>
-			<string>8602E96E18EC44840044E1AB</string>
-			<key>productType</key>
-			<string>com.apple.product-type.tool</string>
-		</dict>
-		<key>8602E96E18EC44840044E1AB</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>compiled.mach-o.executable</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>EKAlgorithmsApp</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>8602E96F18EC44840044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E96E18EC44840044E1AB</string>
-				<string>8602E98318EC44920044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E97018EC44840044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E97118EC44840044E1AB</string>
-				<string>8602E98418EC44920044E1AB</string>
-				<string>673AE02A7F2E4462ADC410F8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E97118EC44840044E1AB</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>8602E97218EC44840044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E97118EC44840044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E97318EC44840044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E97418EC44840044E1AB</string>
-				<string>8602E97818EC44840044E1AB</string>
-				<string>8602E97618EC44840044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>EKAlgorithmsApp</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E97418EC44840044E1AB</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E97518EC44840044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E97418EC44840044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E97618EC44840044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E97718EC44840044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E97718EC44840044E1AB</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKAlgorithmsApp-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E97818EC44840044E1AB</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.man</string>
-			<key>path</key>
-			<string>EKAlgorithmsApp.1</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E97918EC44840044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E97818EC44840044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E97A18EC44840044E1AB</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_ENABLE_OBJC_EXCEPTIONS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>10.9</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>macosx</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>8602E97B18EC44840044E1AB</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_ENABLE_OBJC_EXCEPTIONS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>10.9</string>
-				<key>SDKROOT</key>
-				<string>macosx</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>8602E97C18EC44840044E1AB</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>8602E97D18EC44840044E1AB</string>
-				<string>8602E97E18EC44840044E1AB</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>8602E97D18EC44840044E1AB</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>EKAlgorithmsApp/EKAlgorithmsApp-Prefix.pch</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>8602E97E18EC44840044E1AB</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>EKAlgorithmsApp/EKAlgorithmsApp-Prefix.pch</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>8602E97F18EC44920044E1AB</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>8602E9DE18EC44AC0044E1AB</string>
-				<string>8602E9E018EC44AC0044E1AB</string>
-				<string>8602E9F718EC44AC0044E1AB</string>
-				<string>8602E9DC18EC44AC0044E1AB</string>
-				<string>8602E9EF18EC44AC0044E1AB</string>
-				<string>8602E9FB18EC44AC0044E1AB</string>
-				<string>8602E9FF18EC44AC0044E1AB</string>
-				<string>8602EA0818EC44C30044E1AB</string>
-				<string>8602E9ED18EC44AC0044E1AB</string>
-				<string>8602E9FD18EC44AC0044E1AB</string>
-				<string>8602E9E218EC44AC0044E1AB</string>
-				<string>8602E9F518EC44AC0044E1AB</string>
-				<string>8602E9D118EC44AC0044E1AB</string>
-				<string>8602E9D518EC44AC0044E1AB</string>
-				<string>8602EA0618EC44C30044E1AB</string>
-				<string>8602EA0718EC44C30044E1AB</string>
-				<string>8602E9D818EC44AC0044E1AB</string>
-				<string>8602E9DA18EC44AC0044E1AB</string>
-				<string>8602E9E418EC44AC0044E1AB</string>
-				<string>8602E9E618EC44AC0044E1AB</string>
-				<string>8602E9F318EC44AC0044E1AB</string>
-				<string>8602E9F918EC44AC0044E1AB</string>
-				<string>8602EA0118EC44AC0044E1AB</string>
-				<string>8602E9E918EC44AC0044E1AB</string>
-				<string>8602E9EB18EC44AC0044E1AB</string>
-				<string>8602E9D318EC44AC0044E1AB</string>
-				<string>8602E9F118EC44AC0044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>8602E98018EC44920044E1AB</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>8602E98518EC44920044E1AB</string>
-				<string>CDCEE45E05A84404BCD40EEE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>8602E98118EC44920044E1AB</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>8602E9E718EC44AC0044E1AB</string>
-				<string>8602E9D618EC44AC0044E1AB</string>
-				<string>8602E98B18EC44920044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>8602E98218EC44920044E1AB</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>8602E98F18EC44920044E1AB</string>
-			<key>buildPhases</key>
-			<array>
-				<string>28EAAD30D5B24F3C8073D853</string>
-				<string>8602E97F18EC44920044E1AB</string>
-				<string>8602E98018EC44920044E1AB</string>
-				<string>8602E98118EC44920044E1AB</string>
-				<string>3B07F14A014D43D9A11FAAE7</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>EKAlgorithmsSpecs</string>
-			<key>productName</key>
-			<string>EKAlgorithmsSpecs</string>
-			<key>productReference</key>
-			<string>8602E98318EC44920044E1AB</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>8602E98318EC44920044E1AB</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>EKAlgorithmsSpecs.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>8602E98418EC44920044E1AB</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>XCTest.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/XCTest.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>8602E98518EC44920044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E98418EC44920044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E98618EC44920044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602EA0218EC44C30044E1AB</string>
-				<string>8602EA0318EC44C30044E1AB</string>
-				<string>8602EA0418EC44C30044E1AB</string>
-				<string>8602EA0518EC44C30044E1AB</string>
-				<string>8602E98718EC44920044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>EKAlgorithmsSpecs</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E98718EC44920044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E98818EC44920044E1AB</string>
-				<string>8602E98918EC44920044E1AB</string>
-				<string>8602E98E18EC44920044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E98818EC44920044E1AB</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>EKAlgorithmsSpecs-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E98918EC44920044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E98A18EC44920044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E98A18EC44920044E1AB</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E98B18EC44920044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E98918EC44920044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E98E18EC44920044E1AB</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKAlgorithmsSpecs-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E98F18EC44920044E1AB</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>8602E99018EC44920044E1AB</string>
-				<string>8602E99118EC44920044E1AB</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>8602E99018EC44920044E1AB</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>CBAD4AE067C745129D5443B9</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>EKAlgorithmsSpecs/EKAlgorithmsSpecs-Prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>EKAlgorithmsSpecs/EKAlgorithmsSpecs-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>8602E99118EC44920044E1AB</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>CBAD4AE067C745129D5443B9</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>EKAlgorithmsSpecs/EKAlgorithmsSpecs-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>EKAlgorithmsSpecs/EKAlgorithmsSpecs-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>8602E99218EC44AB0044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E99318EC44AB0044E1AB</string>
-				<string>8602E9BC18EC44AC0044E1AB</string>
-				<string>8602E9BD18EC44AC0044E1AB</string>
-				<string>8602E9BE18EC44AC0044E1AB</string>
-				<string>8602E9C418EC44AC0044E1AB</string>
-				<string>8602E9C518EC44AC0044E1AB</string>
-				<string>8602E9C618EC44AC0044E1AB</string>
-				<string>8602E9C718EC44AC0044E1AB</string>
-				<string>8602E9C818EC44AC0044E1AB</string>
-				<string>8602E9C918EC44AC0044E1AB</string>
-				<string>8602E9CA18EC44AC0044E1AB</string>
-				<string>8602E9CD18EC44AC0044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>EKAlgorithms</string>
-			<key>path</key>
-			<string>../EKAlgorithms</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E99318EC44AB0044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E99418EC44AB0044E1AB</string>
-				<string>8602E99918EC44AB0044E1AB</string>
-				<string>8602E99F18EC44AC0044E1AB</string>
-				<string>8602E9A218EC44AC0044E1AB</string>
-				<string>8602E9A318EC44AC0044E1AB</string>
-				<string>8602E9A418EC44AC0044E1AB</string>
-				<string>8602E9A518EC44AC0044E1AB</string>
-				<string>8602E9A618EC44AC0044E1AB</string>
-				<string>8602E9A718EC44AC0044E1AB</string>
-				<string>8602E9A818EC44AC0044E1AB</string>
-				<string>8602E9A918EC44AC0044E1AB</string>
-				<string>8602E9AA18EC44AC0044E1AB</string>
-				<string>8602E9B218EC44AC0044E1AB</string>
-				<string>8602E9B718EC44AC0044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Data Structures</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E99418EC44AB0044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E99518EC44AB0044E1AB</string>
-				<string>8602E99618EC44AB0044E1AB</string>
-				<string>8602E99718EC44AB0044E1AB</string>
-				<string>8602E99818EC44AB0044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>AVLTree</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E99518EC44AB0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKAVLTree.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E99618EC44AB0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKAVLTree.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E99718EC44AB0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKAVLTreeNode.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E99818EC44AB0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKAVLTreeNode.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E99918EC44AB0044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E99A18EC44AB0044E1AB</string>
-				<string>8602E99B18EC44AB0044E1AB</string>
-				<string>8602E99C18EC44AB0044E1AB</string>
-				<string>8602E99D18EC44AB0044E1AB</string>
-				<string>8602E99E18EC44AC0044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>BinarySearchTree</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E99A18EC44AB0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKBSTree.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E99B18EC44AB0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKBSTree.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E99C18EC44AB0044E1AB</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>EKBSTree.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E99D18EC44AB0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKBTreeNode.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E99E18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKBTreeNode.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E99F18EC44AC0044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E9A018EC44AC0044E1AB</string>
-				<string>8602E9A118EC44AC0044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>BinaryTree</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9A018EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKBTree.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9A118EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKBTree.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9A218EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKBHeap.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9A318EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKBHeap.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9A418EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKDeque.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9A518EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKDeque.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9A618EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKQueue.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9A718EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKQueue.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9A818EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKStack.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9A918EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKStack.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9AA18EC44AC0044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E9AB18EC44AC0044E1AB</string>
-				<string>8602E9AC18EC44AC0044E1AB</string>
-				<string>8602E9AD18EC44AC0044E1AB</string>
-				<string>8602E9AE18EC44AC0044E1AB</string>
-				<string>8602E9AF18EC44AC0044E1AB</string>
-				<string>8602E9B018EC44AC0044E1AB</string>
-				<string>8602E9B118EC44AC0044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Graph</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9AB18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKEdge.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9AC18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKEdge.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9AD18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKGraph.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9AE18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKGraph.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9AF18EC44AC0044E1AB</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>EKGraphPicture.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9B018EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKVertex.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9B118EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKVertex.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9B218EC44AC0044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E9B318EC44AC0044E1AB</string>
-				<string>8602E9B418EC44AC0044E1AB</string>
-				<string>8602E9B518EC44AC0044E1AB</string>
-				<string>8602E9B618EC44AC0044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>LinkedList</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9B318EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKLinkedList.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9B418EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKLinkedList.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9B518EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKNode.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9B618EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKNode.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9B718EC44AC0044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E9B818EC44AC0044E1AB</string>
-				<string>8602E9B918EC44AC0044E1AB</string>
-				<string>8602E9BA18EC44AC0044E1AB</string>
-				<string>8602E9BB18EC44AC0044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Tree</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9B818EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKTree.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9B918EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKTree.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9BA18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKTreeNode.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9BB18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKTreeNode.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9BC18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKRecursionStuff.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9BD18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKRecursionStuff.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9BE18EC44AC0044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E9BF18EC44AC0044E1AB</string>
-				<string>8602E9C018EC44AC0044E1AB</string>
-				<string>8602E9C118EC44AC0044E1AB</string>
-				<string>8602E9C218EC44AC0044E1AB</string>
-				<string>8602E9C318EC44AC0044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Geometry</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9BF18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKALocation.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9C018EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>EKALocation.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9C118EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>EKGeometry.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9C218EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>NSArray+EKGeometry.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9C318EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>NSArray+EKGeometry.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9C418EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>NSArray+EKStuff.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9C518EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>NSArray+EKStuff.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9C618EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>NSNumber+EKStuff.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9C718EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>NSNumber+EKStuff.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9C818EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>NSString+EKStuff.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9C918EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>NSString+EKStuff.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9CA18EC44AC0044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E9CB18EC44AC0044E1AB</string>
-				<string>8602E9CC18EC44AC0044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Selection</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9CB18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>NSArray+Selection.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9CC18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>NSArray+Selection.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9CD18EC44AC0044E1AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8602E9CE18EC44AC0044E1AB</string>
-				<string>8602E9CF18EC44AC0044E1AB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Sorting</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9CE18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>NSArray+EKSorting.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9CF18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>NSArray+EKSorting.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602E9D018EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E99618EC44AB0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9D118EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E99618EC44AB0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9D218EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E99818EC44AB0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9D318EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E99818EC44AB0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9D418EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E99B18EC44AB0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9D518EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E99B18EC44AB0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9D618EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E99C18EC44AB0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9D718EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E99E18EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9D818EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E99E18EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9D918EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9A118EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9DA18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9A118EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9DB18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9A318EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9DC18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9A318EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9DD18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9A518EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9DE18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9A518EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9DF18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9A718EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9E018EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9A718EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9E118EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9A918EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9E218EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9A918EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9E318EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9AC18EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9E418EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9AC18EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9E518EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9AE18EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9E618EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9AE18EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9E718EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9AF18EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9E818EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9B118EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9E918EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9B118EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9EA18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9B418EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9EB18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9B418EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9EC18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9B618EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9ED18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9B618EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9EE18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9B918EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9EF18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9B918EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9F018EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9BB18EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9F118EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9BB18EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9F218EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9BD18EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9F318EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9BD18EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9F418EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9C018EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9F518EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9C018EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9F618EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9C318EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9F718EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9C318EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9F818EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9C518EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9F918EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9C518EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9FA18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9C718EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9FB18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9C718EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9FC18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9C918EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9FD18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9C918EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9FE18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9CC18EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602E9FF18EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9CC18EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602EA0018EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9CF18EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602EA0118EC44AC0044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602E9CF18EC44AC0044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602EA0218EC44C30044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>EKGeometry.m</string>
-			<key>path</key>
-			<string>../../EKAlgorithmsSpecs/EKGeometry.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602EA0318EC44C30044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSArray.m</string>
-			<key>path</key>
-			<string>../../EKAlgorithmsSpecs/NSArray.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602EA0418EC44C30044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSNumber.m</string>
-			<key>path</key>
-			<string>../../EKAlgorithmsSpecs/NSNumber.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602EA0518EC44C30044E1AB</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SpecHelpers.h</string>
-			<key>path</key>
-			<string>../../EKAlgorithmsSpecs/SpecHelpers.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8602EA0618EC44C30044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602EA0218EC44C30044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602EA0718EC44C30044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602EA0318EC44C30044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8602EA0818EC44C30044E1AB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8602EA0418EC44C30044E1AB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CBAD4AE067C745129D5443B9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-EKAlgorithmsSpecs.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods-EKAlgorithmsSpecs.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CDCEE45E05A84404BCD40EEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>673AE02A7F2E4462ADC410F8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>8602E96618EC44840044E1AB</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8602E97218EC44840044E1AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8602E97118EC44840044E1AB /* Foundation.framework */; };
+		8602E97518EC44840044E1AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E97418EC44840044E1AB /* main.m */; };
+		8602E97918EC44840044E1AB /* EKAlgorithmsApp.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8602E97818EC44840044E1AB /* EKAlgorithmsApp.1 */; };
+		8602E98518EC44920044E1AB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8602E98418EC44920044E1AB /* XCTest.framework */; };
+		8602E98B18EC44920044E1AB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8602E98918EC44920044E1AB /* InfoPlist.strings */; };
+		8602E9D018EC44AC0044E1AB /* EKAVLTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E99618EC44AB0044E1AB /* EKAVLTree.m */; };
+		8602E9D118EC44AC0044E1AB /* EKAVLTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E99618EC44AB0044E1AB /* EKAVLTree.m */; };
+		8602E9D218EC44AC0044E1AB /* EKAVLTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E99818EC44AB0044E1AB /* EKAVLTreeNode.m */; };
+		8602E9D318EC44AC0044E1AB /* EKAVLTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E99818EC44AB0044E1AB /* EKAVLTreeNode.m */; };
+		8602E9D418EC44AC0044E1AB /* EKBSTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E99B18EC44AB0044E1AB /* EKBSTree.m */; };
+		8602E9D518EC44AC0044E1AB /* EKBSTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E99B18EC44AB0044E1AB /* EKBSTree.m */; };
+		8602E9D618EC44AC0044E1AB /* EKBSTree.png in Resources */ = {isa = PBXBuildFile; fileRef = 8602E99C18EC44AB0044E1AB /* EKBSTree.png */; };
+		8602E9D718EC44AC0044E1AB /* EKBTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E99E18EC44AC0044E1AB /* EKBTreeNode.m */; };
+		8602E9D818EC44AC0044E1AB /* EKBTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E99E18EC44AC0044E1AB /* EKBTreeNode.m */; };
+		8602E9D918EC44AC0044E1AB /* EKBTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9A118EC44AC0044E1AB /* EKBTree.m */; };
+		8602E9DA18EC44AC0044E1AB /* EKBTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9A118EC44AC0044E1AB /* EKBTree.m */; };
+		8602E9DB18EC44AC0044E1AB /* EKBHeap.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9A318EC44AC0044E1AB /* EKBHeap.m */; };
+		8602E9DC18EC44AC0044E1AB /* EKBHeap.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9A318EC44AC0044E1AB /* EKBHeap.m */; };
+		8602E9DD18EC44AC0044E1AB /* EKDeque.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9A518EC44AC0044E1AB /* EKDeque.m */; };
+		8602E9DE18EC44AC0044E1AB /* EKDeque.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9A518EC44AC0044E1AB /* EKDeque.m */; };
+		8602E9DF18EC44AC0044E1AB /* EKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9A718EC44AC0044E1AB /* EKQueue.m */; };
+		8602E9E018EC44AC0044E1AB /* EKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9A718EC44AC0044E1AB /* EKQueue.m */; };
+		8602E9E118EC44AC0044E1AB /* EKStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9A918EC44AC0044E1AB /* EKStack.m */; };
+		8602E9E218EC44AC0044E1AB /* EKStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9A918EC44AC0044E1AB /* EKStack.m */; };
+		8602E9E318EC44AC0044E1AB /* EKEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9AC18EC44AC0044E1AB /* EKEdge.m */; };
+		8602E9E418EC44AC0044E1AB /* EKEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9AC18EC44AC0044E1AB /* EKEdge.m */; };
+		8602E9E518EC44AC0044E1AB /* EKGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9AE18EC44AC0044E1AB /* EKGraph.m */; };
+		8602E9E618EC44AC0044E1AB /* EKGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9AE18EC44AC0044E1AB /* EKGraph.m */; };
+		8602E9E718EC44AC0044E1AB /* EKGraphPicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 8602E9AF18EC44AC0044E1AB /* EKGraphPicture.png */; };
+		8602E9E818EC44AC0044E1AB /* EKVertex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9B118EC44AC0044E1AB /* EKVertex.m */; };
+		8602E9E918EC44AC0044E1AB /* EKVertex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9B118EC44AC0044E1AB /* EKVertex.m */; };
+		8602E9EA18EC44AC0044E1AB /* EKLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9B418EC44AC0044E1AB /* EKLinkedList.m */; };
+		8602E9EB18EC44AC0044E1AB /* EKLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9B418EC44AC0044E1AB /* EKLinkedList.m */; };
+		8602E9EC18EC44AC0044E1AB /* EKNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9B618EC44AC0044E1AB /* EKNode.m */; };
+		8602E9ED18EC44AC0044E1AB /* EKNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9B618EC44AC0044E1AB /* EKNode.m */; };
+		8602E9EE18EC44AC0044E1AB /* EKTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9B918EC44AC0044E1AB /* EKTree.m */; };
+		8602E9EF18EC44AC0044E1AB /* EKTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9B918EC44AC0044E1AB /* EKTree.m */; };
+		8602E9F018EC44AC0044E1AB /* EKTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9BB18EC44AC0044E1AB /* EKTreeNode.m */; };
+		8602E9F118EC44AC0044E1AB /* EKTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9BB18EC44AC0044E1AB /* EKTreeNode.m */; };
+		8602E9F218EC44AC0044E1AB /* EKRecursionStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9BD18EC44AC0044E1AB /* EKRecursionStuff.m */; };
+		8602E9F318EC44AC0044E1AB /* EKRecursionStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9BD18EC44AC0044E1AB /* EKRecursionStuff.m */; };
+		8602E9F418EC44AC0044E1AB /* EKALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9C018EC44AC0044E1AB /* EKALocation.m */; };
+		8602E9F518EC44AC0044E1AB /* EKALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9C018EC44AC0044E1AB /* EKALocation.m */; };
+		8602E9F618EC44AC0044E1AB /* NSArray+EKGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9C318EC44AC0044E1AB /* NSArray+EKGeometry.m */; };
+		8602E9F718EC44AC0044E1AB /* NSArray+EKGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9C318EC44AC0044E1AB /* NSArray+EKGeometry.m */; };
+		8602E9F818EC44AC0044E1AB /* NSArray+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9C518EC44AC0044E1AB /* NSArray+EKStuff.m */; };
+		8602E9F918EC44AC0044E1AB /* NSArray+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9C518EC44AC0044E1AB /* NSArray+EKStuff.m */; };
+		8602E9FA18EC44AC0044E1AB /* NSNumber+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9C718EC44AC0044E1AB /* NSNumber+EKStuff.m */; };
+		8602E9FB18EC44AC0044E1AB /* NSNumber+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9C718EC44AC0044E1AB /* NSNumber+EKStuff.m */; };
+		8602E9FC18EC44AC0044E1AB /* NSString+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9C918EC44AC0044E1AB /* NSString+EKStuff.m */; };
+		8602E9FD18EC44AC0044E1AB /* NSString+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9C918EC44AC0044E1AB /* NSString+EKStuff.m */; };
+		8602E9FE18EC44AC0044E1AB /* NSArray+Selection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9CC18EC44AC0044E1AB /* NSArray+Selection.m */; };
+		8602E9FF18EC44AC0044E1AB /* NSArray+Selection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9CC18EC44AC0044E1AB /* NSArray+Selection.m */; };
+		8602EA0018EC44AC0044E1AB /* NSArray+EKSorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9CF18EC44AC0044E1AB /* NSArray+EKSorting.m */; };
+		8602EA0118EC44AC0044E1AB /* NSArray+EKSorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602E9CF18EC44AC0044E1AB /* NSArray+EKSorting.m */; };
+		8602EA0618EC44C30044E1AB /* EKGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602EA0218EC44C30044E1AB /* EKGeometry.m */; };
+		8602EA0718EC44C30044E1AB /* NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602EA0318EC44C30044E1AB /* NSArray.m */; };
+		8602EA0818EC44C30044E1AB /* NSNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602EA0418EC44C30044E1AB /* NSNumber.m */; };
+		CDCEE45E05A84404BCD40EEE /* libPods-EKAlgorithmsSpecs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 673AE02A7F2E4462ADC410F8 /* libPods-EKAlgorithmsSpecs.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8602E96C18EC44840044E1AB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				8602E97918EC44840044E1AB /* EKAlgorithmsApp.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		673AE02A7F2E4462ADC410F8 /* libPods-EKAlgorithmsSpecs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EKAlgorithmsSpecs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8602E96E18EC44840044E1AB /* EKAlgorithmsApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EKAlgorithmsApp; sourceTree = BUILT_PRODUCTS_DIR; };
+		8602E97118EC44840044E1AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8602E97418EC44840044E1AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8602E97718EC44840044E1AB /* EKAlgorithmsApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EKAlgorithmsApp-Prefix.pch"; sourceTree = "<group>"; };
+		8602E97818EC44840044E1AB /* EKAlgorithmsApp.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = EKAlgorithmsApp.1; sourceTree = "<group>"; };
+		8602E98318EC44920044E1AB /* EKAlgorithmsSpecs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EKAlgorithmsSpecs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8602E98418EC44920044E1AB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8602E98818EC44920044E1AB /* EKAlgorithmsSpecs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EKAlgorithmsSpecs-Info.plist"; sourceTree = "<group>"; };
+		8602E98A18EC44920044E1AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8602E98E18EC44920044E1AB /* EKAlgorithmsSpecs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EKAlgorithmsSpecs-Prefix.pch"; sourceTree = "<group>"; };
+		8602E99518EC44AB0044E1AB /* EKAVLTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKAVLTree.h; sourceTree = "<group>"; };
+		8602E99618EC44AB0044E1AB /* EKAVLTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKAVLTree.m; sourceTree = "<group>"; };
+		8602E99718EC44AB0044E1AB /* EKAVLTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKAVLTreeNode.h; sourceTree = "<group>"; };
+		8602E99818EC44AB0044E1AB /* EKAVLTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKAVLTreeNode.m; sourceTree = "<group>"; };
+		8602E99A18EC44AB0044E1AB /* EKBSTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKBSTree.h; sourceTree = "<group>"; };
+		8602E99B18EC44AB0044E1AB /* EKBSTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKBSTree.m; sourceTree = "<group>"; };
+		8602E99C18EC44AB0044E1AB /* EKBSTree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EKBSTree.png; sourceTree = "<group>"; };
+		8602E99D18EC44AB0044E1AB /* EKBTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKBTreeNode.h; sourceTree = "<group>"; };
+		8602E99E18EC44AC0044E1AB /* EKBTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKBTreeNode.m; sourceTree = "<group>"; };
+		8602E9A018EC44AC0044E1AB /* EKBTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKBTree.h; sourceTree = "<group>"; };
+		8602E9A118EC44AC0044E1AB /* EKBTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKBTree.m; sourceTree = "<group>"; };
+		8602E9A218EC44AC0044E1AB /* EKBHeap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKBHeap.h; sourceTree = "<group>"; };
+		8602E9A318EC44AC0044E1AB /* EKBHeap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKBHeap.m; sourceTree = "<group>"; };
+		8602E9A418EC44AC0044E1AB /* EKDeque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKDeque.h; sourceTree = "<group>"; };
+		8602E9A518EC44AC0044E1AB /* EKDeque.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKDeque.m; sourceTree = "<group>"; };
+		8602E9A618EC44AC0044E1AB /* EKQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKQueue.h; sourceTree = "<group>"; };
+		8602E9A718EC44AC0044E1AB /* EKQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKQueue.m; sourceTree = "<group>"; };
+		8602E9A818EC44AC0044E1AB /* EKStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKStack.h; sourceTree = "<group>"; };
+		8602E9A918EC44AC0044E1AB /* EKStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKStack.m; sourceTree = "<group>"; };
+		8602E9AB18EC44AC0044E1AB /* EKEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKEdge.h; sourceTree = "<group>"; };
+		8602E9AC18EC44AC0044E1AB /* EKEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKEdge.m; sourceTree = "<group>"; };
+		8602E9AD18EC44AC0044E1AB /* EKGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKGraph.h; sourceTree = "<group>"; };
+		8602E9AE18EC44AC0044E1AB /* EKGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKGraph.m; sourceTree = "<group>"; };
+		8602E9AF18EC44AC0044E1AB /* EKGraphPicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EKGraphPicture.png; sourceTree = "<group>"; };
+		8602E9B018EC44AC0044E1AB /* EKVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKVertex.h; sourceTree = "<group>"; };
+		8602E9B118EC44AC0044E1AB /* EKVertex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKVertex.m; sourceTree = "<group>"; };
+		8602E9B318EC44AC0044E1AB /* EKLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKLinkedList.h; sourceTree = "<group>"; };
+		8602E9B418EC44AC0044E1AB /* EKLinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKLinkedList.m; sourceTree = "<group>"; };
+		8602E9B518EC44AC0044E1AB /* EKNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKNode.h; sourceTree = "<group>"; };
+		8602E9B618EC44AC0044E1AB /* EKNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKNode.m; sourceTree = "<group>"; };
+		8602E9B818EC44AC0044E1AB /* EKTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKTree.h; sourceTree = "<group>"; };
+		8602E9B918EC44AC0044E1AB /* EKTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKTree.m; sourceTree = "<group>"; };
+		8602E9BA18EC44AC0044E1AB /* EKTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKTreeNode.h; sourceTree = "<group>"; };
+		8602E9BB18EC44AC0044E1AB /* EKTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKTreeNode.m; sourceTree = "<group>"; };
+		8602E9BC18EC44AC0044E1AB /* EKRecursionStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKRecursionStuff.h; sourceTree = "<group>"; };
+		8602E9BD18EC44AC0044E1AB /* EKRecursionStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKRecursionStuff.m; sourceTree = "<group>"; };
+		8602E9BF18EC44AC0044E1AB /* EKALocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKALocation.h; sourceTree = "<group>"; };
+		8602E9C018EC44AC0044E1AB /* EKALocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKALocation.m; sourceTree = "<group>"; };
+		8602E9C118EC44AC0044E1AB /* EKGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKGeometry.h; sourceTree = "<group>"; };
+		8602E9C218EC44AC0044E1AB /* NSArray+EKGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EKGeometry.h"; sourceTree = "<group>"; };
+		8602E9C318EC44AC0044E1AB /* NSArray+EKGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EKGeometry.m"; sourceTree = "<group>"; };
+		8602E9C418EC44AC0044E1AB /* NSArray+EKStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EKStuff.h"; sourceTree = "<group>"; };
+		8602E9C518EC44AC0044E1AB /* NSArray+EKStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EKStuff.m"; sourceTree = "<group>"; };
+		8602E9C618EC44AC0044E1AB /* NSNumber+EKStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+EKStuff.h"; sourceTree = "<group>"; };
+		8602E9C718EC44AC0044E1AB /* NSNumber+EKStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+EKStuff.m"; sourceTree = "<group>"; };
+		8602E9C818EC44AC0044E1AB /* NSString+EKStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EKStuff.h"; sourceTree = "<group>"; };
+		8602E9C918EC44AC0044E1AB /* NSString+EKStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EKStuff.m"; sourceTree = "<group>"; };
+		8602E9CB18EC44AC0044E1AB /* NSArray+Selection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Selection.h"; sourceTree = "<group>"; };
+		8602E9CC18EC44AC0044E1AB /* NSArray+Selection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Selection.m"; sourceTree = "<group>"; };
+		8602E9CE18EC44AC0044E1AB /* NSArray+EKSorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EKSorting.h"; sourceTree = "<group>"; };
+		8602E9CF18EC44AC0044E1AB /* NSArray+EKSorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EKSorting.m"; sourceTree = "<group>"; };
+		8602EA0218EC44C30044E1AB /* EKGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EKGeometry.m; path = ../../EKAlgorithmsSpecs/EKGeometry.m; sourceTree = "<group>"; };
+		8602EA0318EC44C30044E1AB /* NSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArray.m; path = ../../EKAlgorithmsSpecs/NSArray.m; sourceTree = "<group>"; };
+		8602EA0418EC44C30044E1AB /* NSNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSNumber.m; path = ../../EKAlgorithmsSpecs/NSNumber.m; sourceTree = "<group>"; };
+		8602EA0518EC44C30044E1AB /* SpecHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecHelpers.h; path = ../../EKAlgorithmsSpecs/SpecHelpers.h; sourceTree = "<group>"; };
+		CBAD4AE067C745129D5443B9 /* Pods-EKAlgorithmsSpecs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EKAlgorithmsSpecs.xcconfig"; path = "Pods/Pods-EKAlgorithmsSpecs.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8602E96B18EC44840044E1AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8602E97218EC44840044E1AB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8602E98018EC44920044E1AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8602E98518EC44920044E1AB /* XCTest.framework in Frameworks */,
+				CDCEE45E05A84404BCD40EEE /* libPods-EKAlgorithmsSpecs.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8602E96518EC44840044E1AB = {
+			isa = PBXGroup;
+			children = (
+				8602E99218EC44AB0044E1AB /* EKAlgorithms */,
+				8602E97318EC44840044E1AB /* EKAlgorithmsExamples */,
+				8602E98618EC44920044E1AB /* EKAlgorithmsSpecs */,
+				8602E97018EC44840044E1AB /* Frameworks */,
+				8602E96F18EC44840044E1AB /* Products */,
+				CBAD4AE067C745129D5443B9 /* Pods-EKAlgorithmsSpecs.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		8602E96F18EC44840044E1AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8602E96E18EC44840044E1AB /* EKAlgorithmsApp */,
+				8602E98318EC44920044E1AB /* EKAlgorithmsSpecs.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8602E97018EC44840044E1AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8602E97118EC44840044E1AB /* Foundation.framework */,
+				8602E98418EC44920044E1AB /* XCTest.framework */,
+				673AE02A7F2E4462ADC410F8 /* libPods-EKAlgorithmsSpecs.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8602E97318EC44840044E1AB /* EKAlgorithmsExamples */ = {
+			isa = PBXGroup;
+			children = (
+				8602E97418EC44840044E1AB /* main.m */,
+				8602E97818EC44840044E1AB /* EKAlgorithmsApp.1 */,
+				8602E97618EC44840044E1AB /* Supporting Files */,
+			);
+			name = EKAlgorithmsExamples;
+			path = EKAlgorithmsApp;
+			sourceTree = "<group>";
+		};
+		8602E97618EC44840044E1AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8602E97718EC44840044E1AB /* EKAlgorithmsApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8602E98618EC44920044E1AB /* EKAlgorithmsSpecs */ = {
+			isa = PBXGroup;
+			children = (
+				8602EA0218EC44C30044E1AB /* EKGeometry.m */,
+				8602EA0318EC44C30044E1AB /* NSArray.m */,
+				8602EA0418EC44C30044E1AB /* NSNumber.m */,
+				8602EA0518EC44C30044E1AB /* SpecHelpers.h */,
+				8602E98718EC44920044E1AB /* Supporting Files */,
+			);
+			path = EKAlgorithmsSpecs;
+			sourceTree = "<group>";
+		};
+		8602E98718EC44920044E1AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8602E98818EC44920044E1AB /* EKAlgorithmsSpecs-Info.plist */,
+				8602E98918EC44920044E1AB /* InfoPlist.strings */,
+				8602E98E18EC44920044E1AB /* EKAlgorithmsSpecs-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8602E99218EC44AB0044E1AB /* EKAlgorithms */ = {
+			isa = PBXGroup;
+			children = (
+				8602E99318EC44AB0044E1AB /* Data Structures */,
+				8602E9BC18EC44AC0044E1AB /* EKRecursionStuff.h */,
+				8602E9BD18EC44AC0044E1AB /* EKRecursionStuff.m */,
+				8602E9BE18EC44AC0044E1AB /* Geometry */,
+				8602E9C418EC44AC0044E1AB /* NSArray+EKStuff.h */,
+				8602E9C518EC44AC0044E1AB /* NSArray+EKStuff.m */,
+				8602E9C618EC44AC0044E1AB /* NSNumber+EKStuff.h */,
+				8602E9C718EC44AC0044E1AB /* NSNumber+EKStuff.m */,
+				8602E9C818EC44AC0044E1AB /* NSString+EKStuff.h */,
+				8602E9C918EC44AC0044E1AB /* NSString+EKStuff.m */,
+				8602E9CA18EC44AC0044E1AB /* Selection */,
+				8602E9CD18EC44AC0044E1AB /* Sorting */,
+			);
+			name = EKAlgorithms;
+			path = ../EKAlgorithms;
+			sourceTree = "<group>";
+		};
+		8602E99318EC44AB0044E1AB /* Data Structures */ = {
+			isa = PBXGroup;
+			children = (
+				8602E99418EC44AB0044E1AB /* AVLTree */,
+				8602E99918EC44AB0044E1AB /* BinarySearchTree */,
+				8602E99F18EC44AC0044E1AB /* BinaryTree */,
+				8602E9A218EC44AC0044E1AB /* EKBHeap.h */,
+				8602E9A318EC44AC0044E1AB /* EKBHeap.m */,
+				8602E9A418EC44AC0044E1AB /* EKDeque.h */,
+				8602E9A518EC44AC0044E1AB /* EKDeque.m */,
+				8602E9A618EC44AC0044E1AB /* EKQueue.h */,
+				8602E9A718EC44AC0044E1AB /* EKQueue.m */,
+				8602E9A818EC44AC0044E1AB /* EKStack.h */,
+				8602E9A918EC44AC0044E1AB /* EKStack.m */,
+				8602E9AA18EC44AC0044E1AB /* Graph */,
+				8602E9B218EC44AC0044E1AB /* LinkedList */,
+				8602E9B718EC44AC0044E1AB /* Tree */,
+			);
+			path = "Data Structures";
+			sourceTree = "<group>";
+		};
+		8602E99418EC44AB0044E1AB /* AVLTree */ = {
+			isa = PBXGroup;
+			children = (
+				8602E99518EC44AB0044E1AB /* EKAVLTree.h */,
+				8602E99618EC44AB0044E1AB /* EKAVLTree.m */,
+				8602E99718EC44AB0044E1AB /* EKAVLTreeNode.h */,
+				8602E99818EC44AB0044E1AB /* EKAVLTreeNode.m */,
+			);
+			path = AVLTree;
+			sourceTree = "<group>";
+		};
+		8602E99918EC44AB0044E1AB /* BinarySearchTree */ = {
+			isa = PBXGroup;
+			children = (
+				8602E99A18EC44AB0044E1AB /* EKBSTree.h */,
+				8602E99B18EC44AB0044E1AB /* EKBSTree.m */,
+				8602E99C18EC44AB0044E1AB /* EKBSTree.png */,
+				8602E99D18EC44AB0044E1AB /* EKBTreeNode.h */,
+				8602E99E18EC44AC0044E1AB /* EKBTreeNode.m */,
+			);
+			path = BinarySearchTree;
+			sourceTree = "<group>";
+		};
+		8602E99F18EC44AC0044E1AB /* BinaryTree */ = {
+			isa = PBXGroup;
+			children = (
+				8602E9A018EC44AC0044E1AB /* EKBTree.h */,
+				8602E9A118EC44AC0044E1AB /* EKBTree.m */,
+			);
+			path = BinaryTree;
+			sourceTree = "<group>";
+		};
+		8602E9AA18EC44AC0044E1AB /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				8602E9AB18EC44AC0044E1AB /* EKEdge.h */,
+				8602E9AC18EC44AC0044E1AB /* EKEdge.m */,
+				8602E9AD18EC44AC0044E1AB /* EKGraph.h */,
+				8602E9AE18EC44AC0044E1AB /* EKGraph.m */,
+				8602E9AF18EC44AC0044E1AB /* EKGraphPicture.png */,
+				8602E9B018EC44AC0044E1AB /* EKVertex.h */,
+				8602E9B118EC44AC0044E1AB /* EKVertex.m */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
+		8602E9B218EC44AC0044E1AB /* LinkedList */ = {
+			isa = PBXGroup;
+			children = (
+				8602E9B318EC44AC0044E1AB /* EKLinkedList.h */,
+				8602E9B418EC44AC0044E1AB /* EKLinkedList.m */,
+				8602E9B518EC44AC0044E1AB /* EKNode.h */,
+				8602E9B618EC44AC0044E1AB /* EKNode.m */,
+			);
+			path = LinkedList;
+			sourceTree = "<group>";
+		};
+		8602E9B718EC44AC0044E1AB /* Tree */ = {
+			isa = PBXGroup;
+			children = (
+				8602E9B818EC44AC0044E1AB /* EKTree.h */,
+				8602E9B918EC44AC0044E1AB /* EKTree.m */,
+				8602E9BA18EC44AC0044E1AB /* EKTreeNode.h */,
+				8602E9BB18EC44AC0044E1AB /* EKTreeNode.m */,
+			);
+			path = Tree;
+			sourceTree = "<group>";
+		};
+		8602E9BE18EC44AC0044E1AB /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				8602E9BF18EC44AC0044E1AB /* EKALocation.h */,
+				8602E9C018EC44AC0044E1AB /* EKALocation.m */,
+				8602E9C118EC44AC0044E1AB /* EKGeometry.h */,
+				8602E9C218EC44AC0044E1AB /* NSArray+EKGeometry.h */,
+				8602E9C318EC44AC0044E1AB /* NSArray+EKGeometry.m */,
+			);
+			path = Geometry;
+			sourceTree = "<group>";
+		};
+		8602E9CA18EC44AC0044E1AB /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+				8602E9CB18EC44AC0044E1AB /* NSArray+Selection.h */,
+				8602E9CC18EC44AC0044E1AB /* NSArray+Selection.m */,
+			);
+			path = Selection;
+			sourceTree = "<group>";
+		};
+		8602E9CD18EC44AC0044E1AB /* Sorting */ = {
+			isa = PBXGroup;
+			children = (
+				8602E9CE18EC44AC0044E1AB /* NSArray+EKSorting.h */,
+				8602E9CF18EC44AC0044E1AB /* NSArray+EKSorting.m */,
+			);
+			path = Sorting;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8602E96D18EC44840044E1AB /* EKAlgorithmsExamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8602E97C18EC44840044E1AB /* Build configuration list for PBXNativeTarget "EKAlgorithmsExamples" */;
+			buildPhases = (
+				8602E96A18EC44840044E1AB /* Sources */,
+				8602E96B18EC44840044E1AB /* Frameworks */,
+				8602E96C18EC44840044E1AB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EKAlgorithmsExamples;
+			productName = EKAlgorithmsApp;
+			productReference = 8602E96E18EC44840044E1AB /* EKAlgorithmsApp */;
+			productType = "com.apple.product-type.tool";
+		};
+		8602E98218EC44920044E1AB /* EKAlgorithmsSpecs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8602E98F18EC44920044E1AB /* Build configuration list for PBXNativeTarget "EKAlgorithmsSpecs" */;
+			buildPhases = (
+				28EAAD30D5B24F3C8073D853 /* Check Pods Manifest.lock */,
+				8602E97F18EC44920044E1AB /* Sources */,
+				8602E98018EC44920044E1AB /* Frameworks */,
+				8602E98118EC44920044E1AB /* Resources */,
+				3B07F14A014D43D9A11FAAE7 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EKAlgorithmsSpecs;
+			productName = EKAlgorithmsSpecs;
+			productReference = 8602E98318EC44920044E1AB /* EKAlgorithmsSpecs.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8602E96618EC44840044E1AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Evgeny Karkan";
+			};
+			buildConfigurationList = 8602E96918EC44840044E1AB /* Build configuration list for PBXProject "EKAlgorithmsApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8602E96518EC44840044E1AB;
+			productRefGroup = 8602E96F18EC44840044E1AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8602E96D18EC44840044E1AB /* EKAlgorithmsExamples */,
+				8602E98218EC44920044E1AB /* EKAlgorithmsSpecs */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8602E98118EC44920044E1AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8602E9E718EC44AC0044E1AB /* EKGraphPicture.png in Resources */,
+				8602E9D618EC44AC0044E1AB /* EKBSTree.png in Resources */,
+				8602E98B18EC44920044E1AB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28EAAD30D5B24F3C8073D853 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3B07F14A014D43D9A11FAAE7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-EKAlgorithmsSpecs-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8602E96A18EC44840044E1AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8602E9DD18EC44AC0044E1AB /* EKDeque.m in Sources */,
+				8602E9DF18EC44AC0044E1AB /* EKQueue.m in Sources */,
+				8602E9F618EC44AC0044E1AB /* NSArray+EKGeometry.m in Sources */,
+				8602E9DB18EC44AC0044E1AB /* EKBHeap.m in Sources */,
+				8602E9EE18EC44AC0044E1AB /* EKTree.m in Sources */,
+				8602E97518EC44840044E1AB /* main.m in Sources */,
+				8602E9FA18EC44AC0044E1AB /* NSNumber+EKStuff.m in Sources */,
+				8602E9FE18EC44AC0044E1AB /* NSArray+Selection.m in Sources */,
+				8602E9EC18EC44AC0044E1AB /* EKNode.m in Sources */,
+				8602E9FC18EC44AC0044E1AB /* NSString+EKStuff.m in Sources */,
+				8602E9E118EC44AC0044E1AB /* EKStack.m in Sources */,
+				8602E9F418EC44AC0044E1AB /* EKALocation.m in Sources */,
+				8602E9D018EC44AC0044E1AB /* EKAVLTree.m in Sources */,
+				8602E9D418EC44AC0044E1AB /* EKBSTree.m in Sources */,
+				8602E9D718EC44AC0044E1AB /* EKBTreeNode.m in Sources */,
+				8602E9D918EC44AC0044E1AB /* EKBTree.m in Sources */,
+				8602E9E318EC44AC0044E1AB /* EKEdge.m in Sources */,
+				8602E9E518EC44AC0044E1AB /* EKGraph.m in Sources */,
+				8602E9F218EC44AC0044E1AB /* EKRecursionStuff.m in Sources */,
+				8602E9F818EC44AC0044E1AB /* NSArray+EKStuff.m in Sources */,
+				8602EA0018EC44AC0044E1AB /* NSArray+EKSorting.m in Sources */,
+				8602E9E818EC44AC0044E1AB /* EKVertex.m in Sources */,
+				8602E9EA18EC44AC0044E1AB /* EKLinkedList.m in Sources */,
+				8602E9D218EC44AC0044E1AB /* EKAVLTreeNode.m in Sources */,
+				8602E9F018EC44AC0044E1AB /* EKTreeNode.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8602E97F18EC44920044E1AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8602E9DE18EC44AC0044E1AB /* EKDeque.m in Sources */,
+				8602E9E018EC44AC0044E1AB /* EKQueue.m in Sources */,
+				8602E9F718EC44AC0044E1AB /* NSArray+EKGeometry.m in Sources */,
+				8602E9DC18EC44AC0044E1AB /* EKBHeap.m in Sources */,
+				8602E9EF18EC44AC0044E1AB /* EKTree.m in Sources */,
+				8602E9FB18EC44AC0044E1AB /* NSNumber+EKStuff.m in Sources */,
+				8602E9FF18EC44AC0044E1AB /* NSArray+Selection.m in Sources */,
+				8602EA0818EC44C30044E1AB /* NSNumber.m in Sources */,
+				8602E9ED18EC44AC0044E1AB /* EKNode.m in Sources */,
+				8602E9FD18EC44AC0044E1AB /* NSString+EKStuff.m in Sources */,
+				8602E9E218EC44AC0044E1AB /* EKStack.m in Sources */,
+				8602E9F518EC44AC0044E1AB /* EKALocation.m in Sources */,
+				8602E9D118EC44AC0044E1AB /* EKAVLTree.m in Sources */,
+				8602E9D518EC44AC0044E1AB /* EKBSTree.m in Sources */,
+				8602EA0618EC44C30044E1AB /* EKGeometry.m in Sources */,
+				8602EA0718EC44C30044E1AB /* NSArray.m in Sources */,
+				8602E9D818EC44AC0044E1AB /* EKBTreeNode.m in Sources */,
+				8602E9DA18EC44AC0044E1AB /* EKBTree.m in Sources */,
+				8602E9E418EC44AC0044E1AB /* EKEdge.m in Sources */,
+				8602E9E618EC44AC0044E1AB /* EKGraph.m in Sources */,
+				8602E9F318EC44AC0044E1AB /* EKRecursionStuff.m in Sources */,
+				8602E9F918EC44AC0044E1AB /* NSArray+EKStuff.m in Sources */,
+				8602EA0118EC44AC0044E1AB /* NSArray+EKSorting.m in Sources */,
+				8602E9E918EC44AC0044E1AB /* EKVertex.m in Sources */,
+				8602E9EB18EC44AC0044E1AB /* EKLinkedList.m in Sources */,
+				8602E9D318EC44AC0044E1AB /* EKAVLTreeNode.m in Sources */,
+				8602E9F118EC44AC0044E1AB /* EKTreeNode.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8602E98918EC44920044E1AB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8602E98A18EC44920044E1AB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8602E97A18EC44840044E1AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8602E97B18EC44840044E1AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8602E97D18EC44840044E1AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EKAlgorithmsApp/EKAlgorithmsApp-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8602E97E18EC44840044E1AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EKAlgorithmsApp/EKAlgorithmsApp-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8602E99018EC44920044E1AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBAD4AE067C745129D5443B9 /* Pods-EKAlgorithmsSpecs.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EKAlgorithmsSpecs/EKAlgorithmsSpecs-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "EKAlgorithmsSpecs/EKAlgorithmsSpecs-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8602E99118EC44920044E1AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBAD4AE067C745129D5443B9 /* Pods-EKAlgorithmsSpecs.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EKAlgorithmsSpecs/EKAlgorithmsSpecs-Prefix.pch";
+				INFOPLIST_FILE = "EKAlgorithmsSpecs/EKAlgorithmsSpecs-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8602E96918EC44840044E1AB /* Build configuration list for PBXProject "EKAlgorithmsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8602E97A18EC44840044E1AB /* Debug */,
+				8602E97B18EC44840044E1AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8602E97C18EC44840044E1AB /* Build configuration list for PBXNativeTarget "EKAlgorithmsExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8602E97D18EC44840044E1AB /* Debug */,
+				8602E97E18EC44840044E1AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8602E98F18EC44920044E1AB /* Build configuration list for PBXNativeTarget "EKAlgorithmsSpecs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8602E99018EC44920044E1AB /* Debug */,
+				8602E99118EC44920044E1AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8602E96618EC44840044E1AB /* Project object */;
+}
