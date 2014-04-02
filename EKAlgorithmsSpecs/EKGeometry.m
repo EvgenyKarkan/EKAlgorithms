@@ -1,7 +1,5 @@
 #import "SpecHelpers.h"
 
-#import <MapKit/MapKit.h>
-
 #import "NSArray+EKStuff.h"
 #import "NSArray+EKGeometry.h"
 #import "NSArray+EKSorting.h"
@@ -20,12 +18,12 @@ SPEC_BEGIN(NSArray_EKGeometry_Specs)
 describe(@"EKGeometry.h algorithms", ^{
     describe(@"EKDistributionQuadrantForPointInsideMapRect", ^{
         specify(^{
-            MKMapRect mapRect = MKMapRectMake(0, 0, 0, 0);
-            MKMapPoint point;
+            EKAMapRect mapRect = EKAMapRectMake(0, 0, 0, 0);
+            EKAMapPoint point;
             int quadrant;
 
 
-            point = MKMapPointMake(0, 0);
+            point = EKAMapPointMake(0, 0);
 
             quadrant = EKDistributionQuadrantForPointInsideMapRect_Bitwise(mapRect, point);
             [[theValue(quadrant) should] equal:@(0)];
@@ -34,7 +32,7 @@ describe(@"EKGeometry.h algorithms", ^{
             [[theValue(quadrant) should] equal:@(0)];
 
 
-            point = MKMapPointMake(RandomDoubleWithinRange(1, MKMapRectWorld.size.width), RandomDoubleWithinRange(1, MKMapRectWorld.size.height));
+            point = EKAMapPointMake(RandomDoubleWithinRange(1, EKAMapRectWorld.size.width), RandomDoubleWithinRange(1, EKAMapRectWorld.size.height));
 
             quadrant = EKDistributionQuadrantForPointInsideMapRect_Bitwise(mapRect, point);
             [[theValue(quadrant) should] equal:@(0)];
@@ -43,7 +41,7 @@ describe(@"EKGeometry.h algorithms", ^{
             [[theValue(quadrant) should] equal:@(0)];
 
 
-            point = MKMapPointMake((-1) * RandomDoubleWithinRange(1, MKMapRectWorld.size.width), RandomDoubleWithinRange(1, MKMapRectWorld.size.height));
+            point = EKAMapPointMake((-1) * RandomDoubleWithinRange(1, EKAMapRectWorld.size.width), RandomDoubleWithinRange(1, EKAMapRectWorld.size.height));
 
             quadrant = EKDistributionQuadrantForPointInsideMapRect_Bitwise(mapRect, point);
             [[theValue(quadrant) should] equal:@(1)];
@@ -52,7 +50,7 @@ describe(@"EKGeometry.h algorithms", ^{
             [[theValue(quadrant) should] equal:@(1)];
 
 
-            point = MKMapPointMake((-1) * RandomDoubleWithinRange(1, MKMapRectWorld.size.height), (-1) * RandomDoubleWithinRange(1, MKMapRectWorld.size.height));
+            point = EKAMapPointMake((-1) * RandomDoubleWithinRange(1, EKAMapRectWorld.size.height), (-1) * RandomDoubleWithinRange(1, EKAMapRectWorld.size.height));
 
             quadrant = EKDistributionQuadrantForPointInsideMapRect_Bitwise(mapRect, point);
             [[theValue(quadrant) should] equal:@(2)];
@@ -61,7 +59,7 @@ describe(@"EKGeometry.h algorithms", ^{
             [[theValue(quadrant) should] equal:@(2)];
 
 
-            point = MKMapPointMake(RandomDoubleWithinRange(1, MKMapRectWorld.size.width), (-1) * RandomDoubleWithinRange(1, MKMapRectWorld.size.height));
+            point = EKAMapPointMake(RandomDoubleWithinRange(1, EKAMapRectWorld.size.width), (-1) * RandomDoubleWithinRange(1, EKAMapRectWorld.size.height));
 
             quadrant = EKDistributionQuadrantForPointInsideMapRect_Bitwise(mapRect, point);
             [[theValue(quadrant) should] equal:@(3)];
@@ -73,34 +71,34 @@ describe(@"EKGeometry.h algorithms", ^{
 
     describe(@"EKDistributionQuadrantForPointInsideMapRect_Bitwise_Alternative", ^{
         specify(^{
-            MKMapRect mapRect = MKMapRectMake(0, 0, 0, 0);
-            MKMapPoint point;
+            EKAMapRect mapRect = EKAMapRectMake(0, 0, 0, 0);
+            EKAMapPoint point;
             int quadrant;
 
-            point = MKMapPointMake(0, 0);
+            point = EKAMapPointMake(0, 0);
 
             quadrant = EKDistributionQuadrantForPointInsideMapRect_Bitwise_Alternative(mapRect, point);
             [[theValue(quadrant) should] equal:@(0)];
 
-            point = MKMapPointMake(RandomDoubleWithinRange(1, MKMapRectWorld.size.width), RandomDoubleWithinRange(1, MKMapRectWorld.size.height));
+            point = EKAMapPointMake(RandomDoubleWithinRange(1, EKAMapRectWorld.size.width), RandomDoubleWithinRange(1, EKAMapRectWorld.size.height));
 
             quadrant = EKDistributionQuadrantForPointInsideMapRect_Bitwise_Alternative(mapRect, point);
             [[theValue(quadrant) should] equal:@(0)];
 
 
-            point = MKMapPointMake((-1) * RandomDoubleWithinRange(1, MKMapRectWorld.size.width), RandomDoubleWithinRange(1, MKMapRectWorld.size.height));
+            point = EKAMapPointMake((-1) * RandomDoubleWithinRange(1, EKAMapRectWorld.size.width), RandomDoubleWithinRange(1, EKAMapRectWorld.size.height));
 
             quadrant = EKDistributionQuadrantForPointInsideMapRect_Bitwise_Alternative(mapRect, point);
             [[theValue(quadrant) should] equal:@(2)];
 
 
-            point = MKMapPointMake((-1) * RandomDoubleWithinRange(1, MKMapRectWorld.size.height), (-1) * RandomDoubleWithinRange(1, MKMapRectWorld.size.height));
+            point = EKAMapPointMake((-1) * RandomDoubleWithinRange(1, EKAMapRectWorld.size.height), (-1) * RandomDoubleWithinRange(1, EKAMapRectWorld.size.height));
 
             quadrant = EKDistributionQuadrantForPointInsideMapRect_Bitwise_Alternative(mapRect, point);
             [[theValue(quadrant) should] equal:@(3)];
 
 
-            point = MKMapPointMake(RandomDoubleWithinRange(1, MKMapRectWorld.size.width), (-1) * RandomDoubleWithinRange(1, MKMapRectWorld.size.height));
+            point = EKAMapPointMake(RandomDoubleWithinRange(1, EKAMapRectWorld.size.width), (-1) * RandomDoubleWithinRange(1, EKAMapRectWorld.size.height));
 
             quadrant = EKDistributionQuadrantForPointInsideMapRect_Bitwise_Alternative(mapRect, point);
             [[theValue(quadrant) should] equal:@(1)];

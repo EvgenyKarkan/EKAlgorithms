@@ -42,7 +42,7 @@
 {
     if ([trees count] > 0) {
         // Union trees
-        EKTree *previous = [trees firstObject];
+        EKTree *previous = trees[0];
         for (EKTree *tree in trees) {
             if (tree != previous) {
                 previous.root.sibling = tree.root;
@@ -50,7 +50,7 @@
             }
         }
         EKQueue *queue = [[EKQueue alloc] init];
-        [queue insertObject:((EKTree *)[trees firstObject]).root];
+        [queue insertObject:((EKTree *)trees[0]).root];
         EKBTree *result = [[EKBTree alloc] initWithObject:((EKTreeNode *)[queue peek]).object];
         
         // Create binary tree

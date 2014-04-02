@@ -177,7 +177,7 @@ describe(@"NSArray-based algorithms", ^{
 
                 NSArray *arrayWithIndexesOfMinimumAndMaximumElements = [array indexesOfMinimumAndMaximumElements];
 
-                NSNumber *indexOfMinimumElement = arrayWithIndexesOfMinimumAndMaximumElements.firstObject;
+                NSNumber *indexOfMinimumElement = arrayWithIndexesOfMinimumAndMaximumElements[0];
                 NSNumber *indexOfMaximumElement = arrayWithIndexesOfMinimumAndMaximumElements.lastObject;
 
                 [[indexOfMinimumElement should] equal:@(2)];

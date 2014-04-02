@@ -6,10 +6,11 @@
 //  Copyright (c) 2014 Stanislaw Pankevich. All rights reserved.
 //
 
-#import <CoreLocation/CoreLocation.h>
+#import <Foundation/Foundation.h>
+
+@class EKALocation;
 
 @interface NSArray (EKGeometry)
-
 
 /**
  Sort array of locations according to their distances to a given location
@@ -18,6 +19,6 @@
 
  @return New array with locations sorted according to a distance to a given location.
  */
-+ (NSArray *)sortArrayOfLocations:(NSArray *)array byDistanceToLocation:(CLLocation *)location;
++ (NSArray *)sortArrayOfLocations:(NSArray *)array byDistanceToLocation:(EKALocation *)location;
 
 @end

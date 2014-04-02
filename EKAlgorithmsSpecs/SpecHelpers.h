@@ -7,3 +7,6 @@ static inline void Benchmark(size_t n, void(^block)(void)) {
 
     NSLog(@"The block have been run %zu times. Average time is %f milliseconds",  n, (time / 1000000));
 }
+
+
+
