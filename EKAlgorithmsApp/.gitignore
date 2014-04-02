@@ -1,0 +1,8 @@
+
+Build/
+Pods/
+Podfile.lock
+
+DerivedData
+.idea/
+

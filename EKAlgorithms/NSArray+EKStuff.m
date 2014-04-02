@@ -41,8 +41,8 @@
     NSInteger minimalValue = NSIntegerMax;
     NSInteger maximalValue = NSIntegerMin;
     
-    NSUInteger minimalValueIndex;
-    NSUInteger maximalValueIndex;
+    NSUInteger minimalValueIndex = 0;
+    NSUInteger maximalValueIndex = 0;
 
     // Machine way of doing odd/even check is better than mathematical count % 2
     BOOL oddnessFlag = count & 1;
