@@ -147,7 +147,7 @@
 + (EKVertex *)hasMinimumDistance:(NSDictionary *)dist InVertices:(NSArray *)Q
 {
     NSNumber *minDist;
-    NSUInteger index;
+    NSUInteger index = 0;
     for (EKVertex *vertex in Q) {
         NSString *label = vertex.label;
         if (!minDist) {
