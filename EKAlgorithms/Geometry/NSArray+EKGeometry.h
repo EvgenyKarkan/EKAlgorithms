@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Stanislaw Pankevich. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 
 @class EKALocation;
 

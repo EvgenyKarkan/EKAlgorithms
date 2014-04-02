@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "NSArray+EKStuff.h"
 #import "NSArray+EKSorting.h"
 #import "NSNumber+EKStuff.h"

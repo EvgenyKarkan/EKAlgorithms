@@ -7,7 +7,6 @@
 //
 
 #import "NSArray+EKGeometry.h"
-
 #import "EKALocation.h"
 
 @implementation NSArray (EKGeometry)
