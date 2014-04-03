@@ -1,0 +1,103 @@
+
+#import "JosephusProblem.h"
+
+SPEC_BEGIN(ProblemsSpecs)
+
+describe(@"Problems", ^{
+    describe(@"Josephus Problem", ^{
+        describe(@"'Killer iterator' version", ^{
+            it(@"", ^{
+                // N = 4, K = 2, 3, 4
+                {
+                    NSUInteger N = 4;
+
+                    NSIndexSet *indexesOfElementsSurvived;
+
+                    indexesOfElementsSurvived = JosephusProblemNaiveImplementation(N, 2);
+
+                    [[theValue(indexesOfElementsSurvived.count) should] equal:@(1)];
+                    [[theValue(indexesOfElementsSurvived.firstIndex) should] equal:@(1)];
+
+
+                    indexesOfElementsSurvived = JosephusProblemNaiveImplementation(N, 3);
+
+                    [[theValue(indexesOfElementsSurvived.count) should] equal:@(2)];
+
+                    [[theValue(indexesOfElementsSurvived.firstIndex) should] equal:@(1)];
+                    [[theValue(indexesOfElementsSurvived.lastIndex) should] equal:@(4)];
+
+                    indexesOfElementsSurvived = JosephusProblemNaiveImplementation(N, 4);
+
+                    [[theValue(indexesOfElementsSurvived.count) should] equal:@(3)];
+                    [[theValue(indexesOfElementsSurvived.firstIndex) should] equal:@(1)];
+                    [[theValue(indexesOfElementsSurvived.lastIndex) should] equal:@(3)];
+                }
+
+                // N = 5, K = 2, 3, 4, 5
+                {
+                    NSUInteger N = 5;
+
+                    NSIndexSet *indexesOfElementsSurvived;
+
+                    indexesOfElementsSurvived = JosephusProblemNaiveImplementation(N, 2);
+
+                    [[theValue(indexesOfElementsSurvived.count) should] equal:@(1)];
+                    [[theValue(indexesOfElementsSurvived.firstIndex) should] equal:@(3)];
+
+                    indexesOfElementsSurvived = JosephusProblemNaiveImplementation(N, 3);
+
+                    [[theValue(indexesOfElementsSurvived.count) should] equal:@(2)];
+                    [[theValue(indexesOfElementsSurvived.firstIndex) should] equal:@(2)];
+                    [[theValue(indexesOfElementsSurvived.lastIndex) should] equal:@(4)];
+
+                    indexesOfElementsSurvived = JosephusProblemNaiveImplementation(N, 4);
+
+                    [[theValue(indexesOfElementsSurvived.count) should] equal:@(3)];
+                    [[theValue(indexesOfElementsSurvived.firstIndex) should] equal:@(1)];
+                    [[theValue(indexesOfElementsSurvived.lastIndex) should] equal:@(5)];
+
+                    indexesOfElementsSurvived = JosephusProblemNaiveImplementation(N, 5);
+
+                    [[theValue(indexesOfElementsSurvived.count) should] equal:@(4)];
+                    [[theValue(indexesOfElementsSurvived.firstIndex) should] equal:@(1)];
+                    [[theValue(indexesOfElementsSurvived.lastIndex) should] equal:@(4)];
+                }
+
+                // N = 6, K = 3
+                {
+                    NSUInteger N = 6;
+
+                    NSIndexSet *indexesOfElementsSurvived;
+
+                    indexesOfElementsSurvived = JosephusProblemNaiveImplementation(N, 3);
+
+                    [[theValue(indexesOfElementsSurvived.count) should] equal:@(2)];
+                    [[theValue(indexesOfElementsSurvived.firstIndex) should] equal:@(1)];
+                    [[theValue(indexesOfElementsSurvived.lastIndex) should] equal:@(5)];
+                }
+            });
+        });
+
+        describe(@"Wikipedia version", ^{
+            it(@"", ^{
+                NSUInteger survivor;
+                
+                survivor = JosephusProblemByWikipedia(5, 2);
+                
+                [[theValue(survivor) should] equal:@(3)];
+                
+                survivor = JosephusProblemByWikipedia(5, 3);
+
+                [[theValue(survivor) should] equal:@(4)];
+                
+                survivor = JosephusProblemByWikipedia(6, 3);
+
+                [[theValue(survivor) should] equal:@(1)];
+            });
+        });
+        
+    });
+    
+});
+
+SPEC_END
