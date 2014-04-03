@@ -33,4 +33,16 @@
 - (id)convertedNumberWithBase:(int)base;
 - (CGFloat)fastInverseSquareRoot;
 
+/**
+ Josephus Problem
+ http://en.wikipedia.org/wiki/Josephus_problem
+
+ It is naive implementation of "killer iterator" which beheads elements using step of K, so the survivors (their number is always less than K) constitute a result.
+ 
+ There is obviously a much more efficient solution, but this is another story.
+ 
+ @return Returns index set with indexes of survivor elements.
+ */
++ (NSIndexSet *)JosephusProblem:(NSUInteger)N K:(NSUInteger)K;
+
 @end
