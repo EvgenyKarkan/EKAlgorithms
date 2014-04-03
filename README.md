@@ -80,6 +80,7 @@ Numeric Problems
 17. Square root using Newton-Raphson method.
 18. Convert integer to another numeral system (2, 8, 12, 16).  
 19. Fast inverse square root.
+20. Josephus Problem.
 
 Data Structures
 ---------------

@@ -436,4 +436,49 @@
     return result;
 }
 
+#pragma mark - Josephus Problem
+
++ (NSIndexSet *)JosephusProblem:(NSUInteger)N K:(NSUInteger)K {
+    NSParameterAssert(K > 1);
+    NSParameterAssert(K <= N);
+
+    NSMutableIndexSet *elements = [NSMutableIndexSet indexSetWithIndexesInRange:NSMakeRange(1, N)];
+
+    typedef void (^recursiveKillingIterationBlock)(NSUInteger offset);
+
+    __block
+    recursiveKillingIterationBlock weakRecursiveKillingIteration;
+    recursiveKillingIterationBlock recursiveKillingIteration;
+
+    weakRecursiveKillingIteration = recursiveKillingIteration = ^void(NSUInteger offset) {
+        if ((elements.count / K) > 0) {
+            __block NSUInteger indexOfIndex = 0;
+            __block NSUInteger indexOfLastKilledElement = NSNotFound;
+
+            NSMutableIndexSet *indexesOfElementsToKill = [NSMutableIndexSet indexSet];
+
+            [elements enumerateIndexesUsingBlock:^(NSUInteger indexOfElement, BOOL *stop) {
+                if (((NSInteger)(indexOfIndex + 1) + offset) % K == 0) {
+                    [indexesOfElementsToKill addIndex:indexOfElement];
+
+                    indexOfLastKilledElement = indexOfIndex;
+                }
+
+                indexOfIndex++;
+            }];
+
+            [elements removeIndexes:indexesOfElementsToKill];
+
+            weakRecursiveKillingIteration(indexOfIndex - 1 - indexOfLastKilledElement);
+        } else {
+            // This is where recursion stops - now 'elements' contain only the indexes of original elements who survived.
+        }
+    };
+
+    recursiveKillingIteration(0);
+
+    return [elements copy];
+}
+
+
 @end
