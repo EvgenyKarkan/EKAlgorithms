@@ -66,7 +66,7 @@ static inline NSIndexSet *JosephusProblemNaiveImplementation(NSUInteger N, NSUIn
     return [elements copy];
 }
 
-static inline NSUInteger JosephusProblemByWikipedia(NSUInteger N, NSUInteger K) {
+static inline NSUInteger JosephusProblemImplementationByWikipedia(NSUInteger N, NSUInteger K) {
     assert(K > 1);
     assert(K <= N);
 

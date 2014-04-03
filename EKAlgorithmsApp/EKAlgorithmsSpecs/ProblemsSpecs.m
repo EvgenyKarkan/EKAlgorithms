@@ -82,15 +82,15 @@ describe(@"Problems", ^{
             it(@"", ^{
                 NSUInteger survivor;
                 
-                survivor = JosephusProblemByWikipedia(5, 2);
+                survivor = JosephusProblemImplementationByWikipedia(5, 2);
                 
                 [[theValue(survivor) should] equal:@(3)];
                 
-                survivor = JosephusProblemByWikipedia(5, 3);
+                survivor = JosephusProblemImplementationByWikipedia(5, 3);
 
                 [[theValue(survivor) should] equal:@(4)];
                 
-                survivor = JosephusProblemByWikipedia(6, 3);
+                survivor = JosephusProblemImplementationByWikipedia(6, 3);
 
                 [[theValue(survivor) should] equal:@(1)];
             });
