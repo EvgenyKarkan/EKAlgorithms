@@ -59,8 +59,8 @@ Strings
 11. Longest common subsequence.
 12. Levenshtein distance.
 
-Numeric Problems
-----------------
+Numeric Algorithms
+------------------
 1. Sieve of Eratosthenes.
 2. Great common divisor (GCD).
 3. Least common multiple (LCM).
@@ -80,7 +80,6 @@ Numeric Problems
 17. Square root using Newton-Raphson method.
 18. Convert integer to another numeral system (2, 8, 12, 16).  
 19. Fast inverse square root.
-20. Josephus Problem.
 
 Data Structures
 ---------------
@@ -102,6 +101,10 @@ Data Structures
 8. Binary search tree (BST).  
 9. AVL tree.
 10. Binary heap.
+
+Problems
+--------
+1. Josephus Problem.
 
 Geometry
 --------
