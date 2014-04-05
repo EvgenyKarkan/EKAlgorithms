@@ -76,6 +76,8 @@ describe(@"Problems", ^{
                     [[theValue(indexesOfElementsSurvived.lastIndex) should] equal:@(5)];
                 }
             });
+
+            JosephusProblemNaiveImplementation(100, 3);
         });
 
         describe(@"Wikipedia version", ^{
@@ -95,7 +97,24 @@ describe(@"Problems", ^{
                 [[theValue(survivor) should] equal:@(1)];
             });
         });
-        
+
+        describe(@"Improved Wikipedia version", ^{
+            it(@"", ^{
+                NSUInteger survivor;
+
+                survivor = JosephusProblemImprovedImplementationByWikipedia(5, 2);
+                [[theValue(survivor) should] equal:@(2)];
+
+                survivor = JosephusProblemImprovedImplementationByWikipedia(5, 3);
+
+                [[theValue(survivor) should] equal:@(3)];
+
+                survivor = JosephusProblemImprovedImplementationByWikipedia(6, 3);
+
+                [[theValue(survivor) should] equal:@(0)];
+            });
+        });
+
     });
     
 });
