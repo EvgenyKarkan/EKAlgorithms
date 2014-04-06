@@ -1,5 +1,6 @@
 
 #import "JosephusProblem.h"
+#import "ModuloBias.h"
 
 SPEC_BEGIN(ProblemsSpecs)
 
@@ -116,7 +117,31 @@ describe(@"Problems", ^{
         });
 
     });
-    
+
+    describe(@"'Modulo bias' problem", ^{
+        describe(@"random0123UsingRandom01()", ^{
+            specify(^{
+                NSArray *expectedResults = @[ @(0), @(1), @(2), @(3) ];
+
+                int random = random0123UsingRandom01();
+
+                [[theValue([expectedResults containsObject:@(random)]) should] beYes];
+            });
+        });
+
+        describe(@"randomUsingRandom01()", ^{
+            it(@"", ^{
+                uint32_t randomUpperBound = arc4random_uniform(UINT32_MAX);
+
+                NSIndexSet *expectedResults = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, randomUpperBound - 1)];
+
+                uint32_t random = randomUsingRandom01(randomUpperBound);
+
+                [[theValue([expectedResults containsIndex:random]) should] beYes];
+            });
+        });
+
+    });
 });
 
 SPEC_END
