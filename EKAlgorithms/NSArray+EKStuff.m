@@ -15,15 +15,16 @@
 
 - (NSUInteger)indexOfMaximumElement
 {
-    NSInteger maximumValue = [[self objectAtIndex:0] integerValue];
+    id maximumValue = [self firstObject];
+
     NSUInteger indexOfMaximumValue = 0;
 
     NSUInteger count = [self count];
 
     for (NSUInteger i = 1; i < count; i++) {
-        NSInteger value = [[self objectAtIndex:i] integerValue];
+        id value = [self objectAtIndex:i];
         
-        if (value > maximumValue) {
+        if ([value compare:maximumValue] == NSOrderedDescending) {
             maximumValue = value;
             indexOfMaximumValue = i;
         }
@@ -38,8 +39,8 @@
 
     if (count == 0) return nil;
     
-    NSInteger minimalValue = NSIntegerMax;
-    NSInteger maximalValue = NSIntegerMin;
+    NSNumber  *minimalValue = @(NSIntegerMax);
+    NSNumber  *maximalValue = @(NSIntegerMin);
     
     NSUInteger minimalValueIndex = 0;
     NSUInteger maximalValueIndex = 0;
@@ -48,57 +49,57 @@
     BOOL oddnessFlag = count & 1;
     
     if (oddnessFlag) {
-        minimalValue = maximalValue = [self.lastObject integerValue];
+        minimalValue = maximalValue = self.lastObject;
         minimalValueIndex = maximalValueIndex = count - 1;
     }
 
     NSUInteger idx = 0;
-    NSInteger values[2];
+    NSNumber *values[2];
 
     for (NSNumber *number in self) {
         if (((idx++) & 1) == 0) {
-            values[0] = [number integerValue];
+            values[0] = number;
 
             continue;
         } else {
-            values[1] = [number integerValue];
+            values[1] = number;
         }
 
-        NSInteger iValue = values[0];
-        NSInteger ip1Value = values[1];
+        NSNumber *iValue   = values[0];
+        NSNumber *ip1Value = values[1];
 
         NSUInteger iidx = idx - 2;
         NSUInteger ip1idx = idx - 1;
 
-        if (iValue < ip1Value) {
-            if (minimalValue > iValue) {
+        if ([iValue compare:ip1Value] == NSOrderedAscending) {
+            if ([minimalValue compare:iValue] == NSOrderedDescending) {
                 minimalValue = iValue;
                 minimalValueIndex = iidx;
             }
             
-            if (maximalValue < ip1Value) {
+            if ([maximalValue compare:ip1Value] == NSOrderedAscending) {
                 maximalValue = ip1Value;
                 maximalValueIndex = ip1idx;
             }
         }
-        else if (iValue > ip1Value) {
-            if (minimalValue > ip1Value) {
+        else if ([iValue compare:ip1Value] == NSOrderedDescending) {
+            if ([minimalValue compare:ip1Value] == NSOrderedDescending) {
                 minimalValue = ip1Value;
                 minimalValueIndex = ip1idx;
             }
             
-            if (maximalValue < iValue) {
+            if ([maximalValue compare:iValue] == NSOrderedAscending) {
                 maximalValue = iValue;
                 maximalValueIndex = iidx;
             }
         }
         else {
-            if (minimalValue > iValue) {
+            if ([minimalValue compare:iValue] == NSOrderedDescending) {
                 minimalValue = iValue;
                 minimalValueIndex = iidx;
             }
             
-            if (maximalValue < iValue) {
+            if ([maximalValue compare:iValue] == NSOrderedAscending) {
                 maximalValue = iValue;
                 maximalValueIndex = iidx;
             }
@@ -299,10 +300,10 @@
     while (firstIndex < uptoIndex) {
         NSUInteger mid = (firstIndex + uptoIndex) / 2;
 
-        if ([object integerValue] < [[self objectAtIndex:mid] integerValue]) {
+        if ([object compare:[self objectAtIndex:mid]] == NSOrderedAscending) {
             uptoIndex = mid;
         }
-        else if ([object integerValue] > [[self objectAtIndex:mid] integerValue]) {
+        else if ([object compare:[self objectAtIndex:mid]] == NSOrderedDescending) {
             firstIndex = mid + 1;
         }
         else {

@@ -13,7 +13,7 @@
 /**
  Get the index of maximum element in array.
 
- @note Assumes array of NSInteger values
+ @note Assumes array of NSNumber values
 
  @return Index of maximum element in array
  */
@@ -25,7 +25,7 @@
 
  Original idea: http://tristan-interview.blogspot.com/2012/02/get-max-and-min-simultaneously.html
 
- @note Assumes array of NSInteger values
+ @note Assumes array of NSNumber values
 
  @return NSArray with two elements: indexes of elements with minimal/maximal values respectively or nil if receiver array is empty
  */

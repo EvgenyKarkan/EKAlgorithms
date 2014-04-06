@@ -173,15 +173,32 @@ describe(@"NSArray-based algorithms", ^{
 
         describe(@"indexesOfMinimumAndMaximumElements", ^{
             it(@"should return array with two elements: index of minimum element and index of maximum element", ^{
-                NSArray *array = @[ @(1), @(14), @(-30), @(1000), @(567) ];
+                NSUInteger N = arc4random_uniform(10) + 1;
 
-                NSArray *arrayWithIndexesOfMinimumAndMaximumElements = [array indexesOfMinimumAndMaximumElements];
+                NSMutableArray *originalArray = [NSMutableArray array];
+
+                for (int i = 0; i < N; i++) {
+                    [originalArray addObject:@(i + 1)];
+                }
+
+                NSArray *arrayWithIndexesOfMinimumAndMaximumElements = [originalArray indexesOfMinimumAndMaximumElements];
 
                 NSNumber *indexOfMinimumElement = arrayWithIndexesOfMinimumAndMaximumElements[0];
                 NSNumber *indexOfMaximumElement = arrayWithIndexesOfMinimumAndMaximumElements.lastObject;
 
-                [[indexOfMinimumElement should] equal:@(2)];
-                [[indexOfMaximumElement should] equal:@(3)];
+                [[indexOfMinimumElement should] equal:@(0)];
+                [[indexOfMaximumElement should] equal:@(N - 1)];
+
+                [originalArray reverse];
+
+                arrayWithIndexesOfMinimumAndMaximumElements = [originalArray indexesOfMinimumAndMaximumElements];
+
+                indexOfMinimumElement = arrayWithIndexesOfMinimumAndMaximumElements[0];
+                indexOfMaximumElement = arrayWithIndexesOfMinimumAndMaximumElements.lastObject;
+
+                [[indexOfMinimumElement should] equal:@(N - 1)];
+                [[indexOfMaximumElement should] equal:@(0)];
+
             });
         });
     });
