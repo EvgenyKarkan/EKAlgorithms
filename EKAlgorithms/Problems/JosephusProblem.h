@@ -1,6 +1,6 @@
 //
-//  EKA_JosephusProblem.h
-//  EKAlgorithmsApp
+//  JosephusProblem.h
+//  EKAlgorithms
 //
 //  Created by Stanislaw Pankevich on 04/04/14.
 //  Copyright (c) 2014 Evgeny Karkan. All rights reserved.

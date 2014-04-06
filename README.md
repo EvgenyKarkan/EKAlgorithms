@@ -105,6 +105,7 @@ Data Structures
 Problems
 --------
 1. Josephus Problem.
+2. Modulo bias.
 
 Geometry
 --------
