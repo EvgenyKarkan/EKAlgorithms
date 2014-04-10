@@ -13,6 +13,7 @@
 @property (nonatomic, strong) EKVertex *adjacentFrom;
 @property (nonatomic, strong) EKVertex *adjacentTo;
 @property (nonatomic, strong) NSObject *weight;
+@property (nonatomic, assign) BOOL used;
 
 - (instancetype)initWithAdjacentFrom:(EKVertex *)vertexFrom
                                   To:(EKVertex *)vertexTo

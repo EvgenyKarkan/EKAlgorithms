@@ -104,6 +104,106 @@
     return visited;
 }
 
+#pragma mark - Kruskal Algorithm
+- (void)kruskalMST
+{
+    NSMutableArray *vertices = self.vertices;
+    NSMutableArray *edges = [@[] mutableCopy];
+    
+    for (EKVertex *vertex in vertices) {
+        for (EKEdge *edge in vertex.adjacentEdges) {
+            [edges addObject:edge];
+        }
+    }
+    
+    NSUInteger forestCount = vertices.count;
+    
+    while (forestCount > 1) {
+        EKEdge *e = [EKGraph minimumWeightUnusedEdgeInEdges:edges];
+        if (e) {
+            if (![self hasPathBetweenVertices:@[e.adjacentFrom, e.adjacentTo]]) {
+                e.used = YES;
+                [EKGraph oppositeEdge:e InEdges:edges].used = YES;
+                forestCount--;
+            } else {
+                [edges removeObject:e];
+                [edges removeObject:[EKGraph oppositeEdge:e InEdges:edges]];
+            }
+        }
+    }
+    
+    for (EKEdge *edge in edges) {
+        if (edge.used) {
+            NSLog(@"%@ -- Weight:%@ --> %@", edge.adjacentFrom.label, edge.weight, edge.adjacentTo.label);
+        }
+    }
+}
+
++ (EKEdge *)minimumWeightUnusedEdgeInEdges:(NSArray *)edges
+{
+    EKEdge *minEdge;
+    for (EKEdge *edge in edges) {
+        if (!edge.used) {
+            if (minEdge) {
+                if ([minEdge.weight isGreaterThan:edge.weight]) {
+                    minEdge = edge;
+                }
+            } else {
+                minEdge = edge;
+            }
+        }
+    }
+    return minEdge;
+}
+
+- (BOOL)hasPathBetweenVertices:(NSArray *)vertices
+{
+    if (vertices.count == 2 && [vertices firstObject] != [vertices lastObject]) {
+        EKQueue *queue = [[EKQueue alloc] init];
+        [self clearVisitHistory];
+        
+        EKVertex *startVertex = [vertices firstObject];
+        startVertex.wasVisited = YES;
+        for (EKEdge *edge in startVertex.adjacentEdges) {
+            if (edge.used) {
+                [queue insertObject:edge.adjacentTo];
+            }
+        }
+        
+        while (![queue isEmpty]) {
+            EKVertex *peekVertex = [queue removeFirstObject];
+            peekVertex.wasVisited = YES;
+            if (peekVertex == [vertices lastObject]) {
+                return YES;
+            } else {
+                for (EKEdge *edge in peekVertex.adjacentEdges) {
+                    if (edge.used && !edge.adjacentTo.wasVisited) {
+                        [queue insertObject:edge.adjacentTo];
+                    }
+                }
+            }
+        }
+        
+    } else {
+        NSAssert(vertices.count == 2, @"Vertices Count must be two!");
+        NSAssert([vertices firstObject] != [vertices lastObject], @"Vertices msut be different!");
+    }
+    return NO;
+}
+
++ (EKEdge *)oppositeEdge:(EKEdge *)edge InEdges:(NSArray *)edges
+{
+    EKVertex *startVertex = edge.adjacentFrom;
+    EKVertex *endVertex = edge.adjacentTo;
+    
+    for (EKEdge *e in edges) {
+        if (e.adjacentFrom == endVertex && e.adjacentTo == startVertex && [e.weight isEqualTo:edge.weight]) {
+            return e;
+        }
+    }
+    return nil;
+}
+
 #pragma mark - Dijkstra Algorithm
 
 - (void)dijkstraSPTFrom:(id)source To:(id)target
@@ -178,6 +278,7 @@
     }
     NSAssert(![queue isEmpty], @"Graph has a cycle!");
     
+    //Self-decrease should be improved using NSNumber catalog
     while (![queue isEmpty]) {
         EKVertex *V = [queue removeFirstObject];
         [topNum addObject:V];

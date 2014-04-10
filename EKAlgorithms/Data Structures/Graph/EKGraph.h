@@ -18,6 +18,7 @@
 - (BOOL)isUndirectedGraph;
 
 - (void)primMST:(id)startVertex;
+- (void)kruskalMST;
 - (void)dijkstraSPTFrom:(id)sourceVertex To:(id)targetVertex;
 - (void)topSort;
 
