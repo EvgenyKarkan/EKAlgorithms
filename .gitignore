@@ -3,6 +3,7 @@
 #!! ERROR: C is undefined. Use list command to see defined gitignore types !!#
 
 ### Xcode ###
+.DS_Store
 build/
 *.pbxuser
 !default.pbxuser
@@ -19,7 +20,7 @@ profile
 DerivedData
 *.hmap
 *.ipa
-.DS_Store
+
 
 
 
