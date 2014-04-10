@@ -39,7 +39,7 @@
 {
     NSUInteger child, i;
     if ([self isEmpty]) {
-        NSAssert(self.heap.count <= 1, @"Binary heap is empty");
+        NSAssert(self.heap.count > 1, @"Binary heap is empty");
         return nil;
     } else {
         NSNumber *minNum = [[self.heap objectAtIndex:1] copy];

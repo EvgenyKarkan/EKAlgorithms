@@ -320,7 +320,7 @@ int main(int argc, const char *argv[])
                             [[EKEdge alloc] initWithAdjacentFrom:gV To:dV andWeight:@4],
                             [[EKEdge alloc] initWithAdjacentFrom:gV To:eV andWeight:@6], nil];
 
-        //Init graph (!!!should update EKGraphPicture.png!!!)
+        //Init graph (see EKGraphPicture.png)
         EKGraph *graph = [[EKGraph alloc] initWithStartVertex:aV];
         graph.vertices = [@[aV, bV, cV, dV, eV, fV, gV] mutableCopy];
 
@@ -337,13 +337,16 @@ int main(int argc, const char *argv[])
         //BFS
         [graph breadthFirstSearch];
 
-        // Prim
+        //Prim
         [graph primMST:aV];
+        
+        //Kruskal
+        [graph kruskalMST];
 
-        // Dijkstra
+        //Dijkstra
         [graph dijkstraSPTFrom:aV To:nil];
 
-        // Topsort
+        //Topsort (see EKTopsort.png)
         EKVertex *c101V = [[EKVertex alloc] init];         //We simulate courses in university
         c101V.label = @"C101";
 
@@ -377,6 +380,7 @@ int main(int argc, const char *argv[])
         EKGraph *topGraph = [[EKGraph alloc] init];
         topGraph.vertices = [@[c101V, c102V, c103V, d211V, e107V, f110V, g201V] mutableCopy];
 
+        //Result may vary due to random order in Objective-C fast enumeration
         [topGraph topSort];
 
         //Linked list stuff

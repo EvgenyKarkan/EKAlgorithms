@@ -152,6 +152,7 @@
 		8602EA0C18EDFB130044E1AB /* JosephusProblem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JosephusProblem.h; sourceTree = "<group>"; };
 		8602EA0D18EDFB4D0044E1AB /* ProblemsSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemsSpecs.m; sourceTree = "<group>"; };
 		8618AF3018F1592E00CC097D /* ModuloBias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuloBias.h; sourceTree = "<group>"; };
+		8FBCA9FB18F6BAEA000387E1 /* EKTopsort.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EKTopsort.png; sourceTree = "<group>"; };
 		CBAD4AE067C745129D5443B9 /* Pods-EKAlgorithmsSpecs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EKAlgorithmsSpecs.xcconfig"; path = "Pods/Pods-EKAlgorithmsSpecs.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -331,6 +332,7 @@
 				8602E9AD18EC44AC0044E1AB /* EKGraph.h */,
 				8602E9AE18EC44AC0044E1AB /* EKGraph.m */,
 				8602E9AF18EC44AC0044E1AB /* EKGraphPicture.png */,
+				8FBCA9FB18F6BAEA000387E1 /* EKTopsort.png */,
 				8602E9B018EC44AC0044E1AB /* EKVertex.h */,
 				8602E9B118EC44AC0044E1AB /* EKVertex.m */,
 			);

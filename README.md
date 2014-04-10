@@ -91,6 +91,7 @@ Data Structures
     - DFS (depth-first search);
     - BFS (breadth-first search);
     - MST (minimum spanning tree - Prim's algorithm);
+    - MST (minimum spanning tree - Kruskal's algorithm);
     - Shortest path (Dijkstra's algorithm);
     - Topsort.
 6. Tree.  
