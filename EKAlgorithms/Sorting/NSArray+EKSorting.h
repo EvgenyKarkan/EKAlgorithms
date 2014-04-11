@@ -27,6 +27,7 @@
 
 - (NSMutableArray *)reverse;
 
+
 /**
  Array Shuffle (Fisher–Yates)
 
@@ -34,12 +35,24 @@
  */
 - (NSMutableArray *)shuffle;
 
+
+/**
+ Bubble Sort (naive N * N version)
+ */
+- (NSMutableArray *)naiveBubbleSort;
+
+/**
+ Bubble Sort (better (N * N) / 2 version)
+ */
 - (NSMutableArray *)bubbleSort;
+
+
 - (NSMutableArray *)shellSort;
 - (NSMutableArray *)mergeSort;
 - (NSMutableArray *)quickSortWithLeftIndex:(NSInteger)left withRightIndex:(NSInteger)right;
 - (NSMutableArray *)insertionSort;
 - (NSMutableArray *)selectionSort;
+
 
 /**
  Partial selection sort
