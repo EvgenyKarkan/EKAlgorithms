@@ -64,13 +64,27 @@
 
 #pragma mark - Bubble sort
 
-- (NSMutableArray *)bubbleSort
+- (NSMutableArray *)naiveBubbleSort
 {
+    NSUInteger count = [self count];
+
+    for (int i = 0; i < count; i++) {
+        for (int j = 0; j < (count - 1); j++) {
+            if ([self[j] compare:self[j + 1]] == NSOrderedDescending) {
+                [self exchangeObjectAtIndex:j withObjectAtIndex:(j + 1)];
+            }
+        }
+    }
+
+    return self;
+}
+
+- (NSMutableArray *)bubbleSort {
     NSUInteger count = [self count];
 
     for (int i = ((int)count - 2); i >= 0; i--) {
         for (int j = 0; j <= i; j++) {
-            if ([self[j] integerValue] > [self[j + 1] integerValue]) {
+            if ([self[j] compare:self[j + 1]] == NSOrderedDescending) {
                 [self exchangeObjectAtIndex:j withObjectAtIndex:(j + 1)];
             }
         }
