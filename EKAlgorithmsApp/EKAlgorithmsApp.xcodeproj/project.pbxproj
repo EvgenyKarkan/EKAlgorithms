@@ -13,65 +13,42 @@
 		86C5148E18F80E8000B5E9AE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C5148D18F80E8000B5E9AE /* XCTest.framework */; };
 		86C5149418F80E8000B5E9AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86C5149218F80E8000B5E9AE /* InfoPlist.strings */; };
 		86C514DF18F80F3A00B5E9AE /* EKAVLTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C5149F18F80F3A00B5E9AE /* EKAVLTree.m */; };
-		86C514E018F80F3A00B5E9AE /* EKAVLTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C5149F18F80F3A00B5E9AE /* EKAVLTree.m */; };
 		86C514E118F80F3A00B5E9AE /* EKAVLTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514A118F80F3A00B5E9AE /* EKAVLTreeNode.m */; };
-		86C514E218F80F3A00B5E9AE /* EKAVLTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514A118F80F3A00B5E9AE /* EKAVLTreeNode.m */; };
 		86C514E318F80F3A00B5E9AE /* EKBSTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514A418F80F3A00B5E9AE /* EKBSTree.m */; };
-		86C514E418F80F3A00B5E9AE /* EKBSTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514A418F80F3A00B5E9AE /* EKBSTree.m */; };
-		86C514E518F80F3A00B5E9AE /* EKBSTree.png in Resources */ = {isa = PBXBuildFile; fileRef = 86C514A518F80F3A00B5E9AE /* EKBSTree.png */; };
 		86C514E618F80F3A00B5E9AE /* EKBTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514A718F80F3A00B5E9AE /* EKBTreeNode.m */; };
-		86C514E718F80F3A00B5E9AE /* EKBTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514A718F80F3A00B5E9AE /* EKBTreeNode.m */; };
 		86C514E818F80F3A00B5E9AE /* EKBTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514AA18F80F3A00B5E9AE /* EKBTree.m */; };
-		86C514E918F80F3A00B5E9AE /* EKBTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514AA18F80F3A00B5E9AE /* EKBTree.m */; };
 		86C514EA18F80F3A00B5E9AE /* EKBHeap.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514AC18F80F3A00B5E9AE /* EKBHeap.m */; };
-		86C514EB18F80F3A00B5E9AE /* EKBHeap.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514AC18F80F3A00B5E9AE /* EKBHeap.m */; };
 		86C514EC18F80F3A00B5E9AE /* EKDeque.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514AE18F80F3A00B5E9AE /* EKDeque.m */; };
-		86C514ED18F80F3A00B5E9AE /* EKDeque.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514AE18F80F3A00B5E9AE /* EKDeque.m */; };
 		86C514EE18F80F3A00B5E9AE /* EKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514B018F80F3A00B5E9AE /* EKQueue.m */; };
-		86C514EF18F80F3A00B5E9AE /* EKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514B018F80F3A00B5E9AE /* EKQueue.m */; };
 		86C514F018F80F3A00B5E9AE /* EKStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514B218F80F3A00B5E9AE /* EKStack.m */; };
-		86C514F118F80F3A00B5E9AE /* EKStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514B218F80F3A00B5E9AE /* EKStack.m */; };
 		86C514F218F80F3A00B5E9AE /* EKEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514B518F80F3A00B5E9AE /* EKEdge.m */; };
-		86C514F318F80F3A00B5E9AE /* EKEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514B518F80F3A00B5E9AE /* EKEdge.m */; };
 		86C514F418F80F3A00B5E9AE /* EKGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514B718F80F3A00B5E9AE /* EKGraph.m */; };
-		86C514F518F80F3A00B5E9AE /* EKGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514B718F80F3A00B5E9AE /* EKGraph.m */; };
-		86C514F618F80F3A00B5E9AE /* EKGraphPicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 86C514B818F80F3A00B5E9AE /* EKGraphPicture.png */; };
-		86C514F718F80F3A00B5E9AE /* EKTopsort.png in Resources */ = {isa = PBXBuildFile; fileRef = 86C514B918F80F3A00B5E9AE /* EKTopsort.png */; };
 		86C514F818F80F3A00B5E9AE /* EKVertex.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514BB18F80F3A00B5E9AE /* EKVertex.m */; };
-		86C514F918F80F3A00B5E9AE /* EKVertex.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514BB18F80F3A00B5E9AE /* EKVertex.m */; };
 		86C514FA18F80F3A00B5E9AE /* EKLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514BE18F80F3A00B5E9AE /* EKLinkedList.m */; };
-		86C514FB18F80F3A00B5E9AE /* EKLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514BE18F80F3A00B5E9AE /* EKLinkedList.m */; };
 		86C514FC18F80F3A00B5E9AE /* EKNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514C018F80F3A00B5E9AE /* EKNode.m */; };
-		86C514FD18F80F3A00B5E9AE /* EKNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514C018F80F3A00B5E9AE /* EKNode.m */; };
 		86C514FE18F80F3A00B5E9AE /* EKTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514C318F80F3A00B5E9AE /* EKTree.m */; };
-		86C514FF18F80F3A00B5E9AE /* EKTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514C318F80F3A00B5E9AE /* EKTree.m */; };
 		86C5150018F80F3A00B5E9AE /* EKTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514C518F80F3A00B5E9AE /* EKTreeNode.m */; };
-		86C5150118F80F3A00B5E9AE /* EKTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514C518F80F3A00B5E9AE /* EKTreeNode.m */; };
 		86C5150218F80F3A00B5E9AE /* EKRecursionStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514C718F80F3A00B5E9AE /* EKRecursionStuff.m */; };
-		86C5150318F80F3A00B5E9AE /* EKRecursionStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514C718F80F3A00B5E9AE /* EKRecursionStuff.m */; };
 		86C5150418F80F3A00B5E9AE /* EKALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514CA18F80F3A00B5E9AE /* EKALocation.m */; };
-		86C5150518F80F3A00B5E9AE /* EKALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514CA18F80F3A00B5E9AE /* EKALocation.m */; };
 		86C5150618F80F3A00B5E9AE /* NSArray+EKGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514CD18F80F3A00B5E9AE /* NSArray+EKGeometry.m */; };
-		86C5150718F80F3A00B5E9AE /* NSArray+EKGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514CD18F80F3A00B5E9AE /* NSArray+EKGeometry.m */; };
 		86C5150818F80F3A00B5E9AE /* NSArray+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514CF18F80F3A00B5E9AE /* NSArray+EKStuff.m */; };
-		86C5150918F80F3A00B5E9AE /* NSArray+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514CF18F80F3A00B5E9AE /* NSArray+EKStuff.m */; };
 		86C5150A18F80F3A00B5E9AE /* NSDictionary+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514D118F80F3A00B5E9AE /* NSDictionary+EKStuff.m */; };
-		86C5150B18F80F3A00B5E9AE /* NSDictionary+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514D118F80F3A00B5E9AE /* NSDictionary+EKStuff.m */; };
 		86C5150C18F80F3A00B5E9AE /* NSNumber+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514D318F80F3A00B5E9AE /* NSNumber+EKStuff.m */; };
-		86C5150D18F80F3A00B5E9AE /* NSNumber+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514D318F80F3A00B5E9AE /* NSNumber+EKStuff.m */; };
 		86C5150E18F80F3A00B5E9AE /* NSString+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514D518F80F3A00B5E9AE /* NSString+EKStuff.m */; };
-		86C5150F18F80F3A00B5E9AE /* NSString+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514D518F80F3A00B5E9AE /* NSString+EKStuff.m */; };
 		86C5151018F80F3A00B5E9AE /* NSArray+Selection.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514DB18F80F3A00B5E9AE /* NSArray+Selection.m */; };
-		86C5151118F80F3A00B5E9AE /* NSArray+Selection.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514DB18F80F3A00B5E9AE /* NSArray+Selection.m */; };
 		86C5151218F80F3A00B5E9AE /* NSArray+EKSorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514DE18F80F3A00B5E9AE /* NSArray+EKSorting.m */; };
-		86C5151318F80F3A00B5E9AE /* NSArray+EKSorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C514DE18F80F3A00B5E9AE /* NSArray+EKSorting.m */; };
-		86C5151A18F80F4F00B5E9AE /* EKGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C5151418F80F4F00B5E9AE /* EKGeometry.m */; };
-		86C5151B18F80F4F00B5E9AE /* NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C5151518F80F4F00B5E9AE /* NSArray.m */; };
-		86C5151C18F80F4F00B5E9AE /* NSNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C5151618F80F4F00B5E9AE /* NSNumber.m */; };
-		86C5151D18F80F4F00B5E9AE /* ProblemsSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C5151718F80F4F00B5E9AE /* ProblemsSpecs.m */; };
-		86C5151E18F80F4F00B5E9AE /* SortingSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C5151818F80F4F00B5E9AE /* SortingSpecs.m */; };
 		C22C87D3FD1E427AA38427B2 /* libPods-EKAlgorithmsSpecs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 666CA5D0F3A84DDFB57C1434 /* libPods-EKAlgorithmsSpecs.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		86C5151F18F8141600B5E9AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86C5146F18F80E5A00B5E9AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86C5147618F80E5A00B5E9AE;
+			remoteInfo = EKAlgorithmsExamples;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		86C5147518F80E5A00B5E9AE /* CopyFiles */ = {
@@ -443,6 +420,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				86C5152018F8141600B5E9AE /* PBXTargetDependency */,
 			);
 			name = EKAlgorithmsSpecs;
 			productName = EKAlgorithmsSpecs;
@@ -481,10 +459,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86C514F618F80F3A00B5E9AE /* EKGraphPicture.png in Resources */,
-				86C514E518F80F3A00B5E9AE /* EKBSTree.png in Resources */,
 				86C5149418F80E8000B5E9AE /* InfoPlist.strings in Resources */,
-				86C514F718F80F3A00B5E9AE /* EKTopsort.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,40 +536,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86C514ED18F80F3A00B5E9AE /* EKDeque.m in Sources */,
-				86C514EF18F80F3A00B5E9AE /* EKQueue.m in Sources */,
-				86C5150718F80F3A00B5E9AE /* NSArray+EKGeometry.m in Sources */,
-				86C514EB18F80F3A00B5E9AE /* EKBHeap.m in Sources */,
-				86C514FF18F80F3A00B5E9AE /* EKTree.m in Sources */,
-				86C5151B18F80F4F00B5E9AE /* NSArray.m in Sources */,
-				86C514FD18F80F3A00B5E9AE /* EKNode.m in Sources */,
-				86C514F118F80F3A00B5E9AE /* EKStack.m in Sources */,
-				86C5150F18F80F3A00B5E9AE /* NSString+EKStuff.m in Sources */,
-				86C5150518F80F3A00B5E9AE /* EKALocation.m in Sources */,
-				86C514E018F80F3A00B5E9AE /* EKAVLTree.m in Sources */,
-				86C514E418F80F3A00B5E9AE /* EKBSTree.m in Sources */,
-				86C5150B18F80F3A00B5E9AE /* NSDictionary+EKStuff.m in Sources */,
-				86C514E718F80F3A00B5E9AE /* EKBTreeNode.m in Sources */,
-				86C5151A18F80F4F00B5E9AE /* EKGeometry.m in Sources */,
-				86C514E918F80F3A00B5E9AE /* EKBTree.m in Sources */,
-				86C514F318F80F3A00B5E9AE /* EKEdge.m in Sources */,
-				86C5151E18F80F4F00B5E9AE /* SortingSpecs.m in Sources */,
-				86C514F518F80F3A00B5E9AE /* EKGraph.m in Sources */,
-				86C5151318F80F3A00B5E9AE /* NSArray+EKSorting.m in Sources */,
-				86C5150318F80F3A00B5E9AE /* EKRecursionStuff.m in Sources */,
-				86C5150918F80F3A00B5E9AE /* NSArray+EKStuff.m in Sources */,
-				86C514F918F80F3A00B5E9AE /* EKVertex.m in Sources */,
-				86C5150D18F80F3A00B5E9AE /* NSNumber+EKStuff.m in Sources */,
-				86C5151118F80F3A00B5E9AE /* NSArray+Selection.m in Sources */,
-				86C514FB18F80F3A00B5E9AE /* EKLinkedList.m in Sources */,
-				86C514E218F80F3A00B5E9AE /* EKAVLTreeNode.m in Sources */,
-				86C5150118F80F3A00B5E9AE /* EKTreeNode.m in Sources */,
-				86C5151D18F80F4F00B5E9AE /* ProblemsSpecs.m in Sources */,
-				86C5151C18F80F4F00B5E9AE /* NSNumber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		86C5152018F8141600B5E9AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86C5147618F80E5A00B5E9AE /* EKAlgorithmsExamples */;
+			targetProxy = 86C5151F18F8141600B5E9AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		86C5149218F80E8000B5E9AE /* InfoPlist.strings */ = {
