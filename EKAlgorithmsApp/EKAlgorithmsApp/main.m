@@ -339,7 +339,7 @@ int main(int argc, const char *argv[])
 
         //Prim
         [graph primMST:aV];
-        
+
         //Kruskal
         [graph kruskalMST];
 
@@ -409,7 +409,7 @@ int main(int argc, const char *argv[])
 
         NSLog(@"Find number 3 in list, count: %lu", (unsigned long)[list findObject:@3].count);
         NSLog(@"Find number 11 in list, count: %lu", (unsigned long)[list findObject:@11].count);
-        
+
 
         //BST stuff
         EKBSTree *tree = [[EKBSTree alloc] initWithObject:@4 compareSelector:@selector(compare:)];
@@ -476,23 +476,23 @@ int main(int argc, const char *argv[])
         [forest1 insertNode:nodeB leftSibling:nil parent:forest1.root];
         [forest1 insertNode:nodeC leftSibling:nodeB parent:forest1.root];
         [forest1 insertNode:nodeK leftSibling:nil parent:nodeC];
-
+        
         [forest2 insertNode:nodeE leftSibling:nil parent:forest2.root];
         [forest2 insertNode:nodeH leftSibling:nil parent:nodeE];
         [forest2 insertNode:nodeF leftSibling:nodeE parent:forest2.root];
         [forest2 insertNode:nodeJ leftSibling:nil parent:nodeF];
         [forest2 insertNode:nodeG leftSibling:nodeF parent:forest2.root];
-
+        
         [forest1 printDescription];
         [forest2 printDescription];
-
+        
         [[EKTree forestToBinaryTree:@[forest1, forest2]] levelOrderTraversal];
-
+        
         //RECURSION---------------------------------------------------------------------------------
-
+        
         //Tower of Hanoi
         [EKRecursionStuff solveTowerOfHanoiWithDisksNumber:3 from:@"A" to:@"C" withExtraPin:@"B"];
     }
-
+    
 	return 0;
 }

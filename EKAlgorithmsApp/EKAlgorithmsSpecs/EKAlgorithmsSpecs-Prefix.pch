@@ -5,7 +5,5 @@
 //
 
 #ifdef __OBJC__
-    #import <Foundation/Foundation.h>
-    #import <Kiwi/Kiwi.h>
     #import <Cocoa/Cocoa.h>
 #endif
