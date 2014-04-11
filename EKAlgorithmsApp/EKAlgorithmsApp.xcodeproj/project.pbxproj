@@ -66,6 +66,7 @@
 		8602EA0718EC44C30044E1AB /* NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602EA0318EC44C30044E1AB /* NSArray.m */; };
 		8602EA0818EC44C30044E1AB /* NSNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602EA0418EC44C30044E1AB /* NSNumber.m */; };
 		8602EA0E18EDFB4D0044E1AB /* ProblemsSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8602EA0D18EDFB4D0044E1AB /* ProblemsSpecs.m */; };
+		86C5146218F7FBE200B5E9AE /* SortingSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C5146118F7FBE200B5E9AE /* SortingSpecs.m */; };
 		8FEA195E18F78FA500EA89A8 /* NSDictionary+EKStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEA195D18F78FA500EA89A8 /* NSDictionary+EKStuff.m */; };
 		CDCEE45E05A84404BCD40EEE /* libPods-EKAlgorithmsSpecs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 673AE02A7F2E4462ADC410F8 /* libPods-EKAlgorithmsSpecs.a */; };
 /* End PBXBuildFile section */
@@ -153,6 +154,7 @@
 		8602EA0C18EDFB130044E1AB /* JosephusProblem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JosephusProblem.h; sourceTree = "<group>"; };
 		8602EA0D18EDFB4D0044E1AB /* ProblemsSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemsSpecs.m; sourceTree = "<group>"; };
 		8618AF3018F1592E00CC097D /* ModuloBias.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuloBias.h; sourceTree = "<group>"; };
+		86C5146118F7FBE200B5E9AE /* SortingSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SortingSpecs.m; path = ../../../../../../stanislaw/Work/Pods/EKAlgorithms/EKAlgorithmsApp/EKAlgorithmsSpecs/SortingSpecs.m; sourceTree = "<group>"; };
 		8FBCA9FB18F6BAEA000387E1 /* EKTopsort.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EKTopsort.png; sourceTree = "<group>"; };
 		8FEA195C18F78FA500EA89A8 /* NSDictionary+EKStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+EKStuff.h"; sourceTree = "<group>"; };
 		8FEA195D18F78FA500EA89A8 /* NSDictionary+EKStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+EKStuff.m"; sourceTree = "<group>"; };
@@ -233,12 +235,13 @@
 		8602E98618EC44920044E1AB /* EKAlgorithmsSpecs */ = {
 			isa = PBXGroup;
 			children = (
+				8602E98718EC44920044E1AB /* Supporting Files */,
 				8602EA0218EC44C30044E1AB /* EKGeometry.m */,
 				8602EA0318EC44C30044E1AB /* NSArray.m */,
 				8602EA0418EC44C30044E1AB /* NSNumber.m */,
 				8602EA0518EC44C30044E1AB /* SpecHelpers.h */,
-				8602E98718EC44920044E1AB /* Supporting Files */,
 				8602EA0D18EDFB4D0044E1AB /* ProblemsSpecs.m */,
+				86C5146118F7FBE200B5E9AE /* SortingSpecs.m */,
 			);
 			path = EKAlgorithmsSpecs;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86C5146218F7FBE200B5E9AE /* SortingSpecs.m in Sources */,
 				8602E9DE18EC44AC0044E1AB /* EKDeque.m in Sources */,
 				8602E9E018EC44AC0044E1AB /* EKQueue.m in Sources */,
 				8602E9F718EC44AC0044E1AB /* NSArray+EKGeometry.m in Sources */,
