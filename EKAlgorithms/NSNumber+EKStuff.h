@@ -32,5 +32,7 @@
 - (CGFloat)squareRoot;
 - (id)convertedNumberWithBase:(int)base;
 - (CGFloat)fastInverseSquareRoot;
+- (CFNumberType)numberType;
++ (NSNumber *)sumOfNumbers:(NSArray *)numbers;
 
 @end

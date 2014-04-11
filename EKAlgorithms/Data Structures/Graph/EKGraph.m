@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 EvgenyKarkan. All rights reserved.
 //
 
+#import "NSDictionary+EKStuff.h"
+#import "NSNumber+EKStuff.h"
 #import "EKGraph.h"
 #import "EKVertex.h"
 #import "EKEdge.h"
@@ -227,7 +229,7 @@
         }
         for (EKEdge *edge in u.adjacentEdges) {
             EKVertex *v = edge.adjacentTo;
-            NSNumber *alt = [NSNumber numberWithInteger:[[dist valueForKey:u.label] integerValue] + ((NSNumber *)edge.weight).integerValue];
+            NSNumber *alt = [NSNumber sumOfNumbers:@[[dist valueForKey:u.label], edge.weight]];
             if ([alt isLessThan:[dist valueForKey:v.label]]) {
                 [dist setValue:alt forKey:v.label];
                 [previous setValue:u forKey:v.label];
@@ -278,13 +280,12 @@
     }
     NSAssert(![queue isEmpty], @"Graph has a cycle!");
     
-    //Self-decrease should be improved using NSNumber catalog
     while (![queue isEmpty]) {
         EKVertex *V = [queue removeFirstObject];
         [topNum addObject:V];
         
         for (EKEdge *edge in V.adjacentEdges) {
-            [_indegree setValue:[NSNumber numberWithInteger:([[_indegree valueForKey:edge.adjacentTo.label] integerValue])-1] forKey:edge.adjacentTo.label];
+            [_indegree selfDecreaseValueForKey:edge.adjacentTo.label];
             if ([[_indegree valueForKey:edge.adjacentTo.label] isEqualToNumber:@0]) {
                 [queue insertObject:edge.adjacentTo];
             }

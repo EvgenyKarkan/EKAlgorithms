@@ -436,4 +436,48 @@
     return result;
 }
 
+#pragma mark - Number Type
+
+- (CFNumberType)numberType
+{
+    return CFNumberGetType((CFNumberRef)self);
+}
+
+#pragma mark - Quick Sum
+
++ (NSNumber *)sumOfNumbers:(NSArray *)numbers
+{
+    // Be careful about number types, we will
+    // return the same type as first object in array
+    NSNumber *sum;
+    NSUInteger count = numbers.count;
+    switch ([[numbers firstObject] numberType]) {
+        case kCFNumberSInt32Type:
+            sum = [NSNumber numberWithInt:[[numbers firstObject] intValue]];
+            for (NSUInteger i = 1; i < count; i++) {
+                sum = [NSNumber numberWithInt:([sum intValue] + [[numbers objectAtIndex:i] intValue])];
+            }
+            break;
+        case kCFNumberSInt64Type:
+            sum = [NSNumber numberWithInteger:[[numbers firstObject] integerValue]];
+            for (NSUInteger i = 1; i < count; i++) {
+                sum = [NSNumber numberWithInteger:([sum integerValue] + [[numbers objectAtIndex:i] integerValue])];
+            }
+            break;
+            
+        case kCFNumberFloat32Type:
+        case kCFNumberFloat64Type:
+            sum = [NSNumber numberWithFloat:[[numbers firstObject] floatValue]];
+            for (NSUInteger i = 1; i < count; i++) {
+                sum = [NSNumber numberWithFloat:([sum floatValue] + [[numbers objectAtIndex:i] floatValue])];
+            }
+            break;
+            
+        default:
+            NSAssert(0, @"Not recognized type, check CFNumberType!");
+            break;
+    }
+    return sum;
+}
+
 @end
