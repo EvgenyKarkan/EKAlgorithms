@@ -1,4 +1,7 @@
+
 #import "SpecHelpers.h"
+
+#import "EKALocation.h"
 
 #import "NSArray+EKStuff.h"
 #import "NSArray+EKGeometry.h"

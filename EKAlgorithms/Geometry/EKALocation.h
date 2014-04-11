@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Stanislaw Pankevich. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 
 @interface EKALocation : NSObject {
     @public
@@ -23,3 +24,4 @@
 static inline double EKALocationDistanceToLocation(EKALocation *location1, EKALocation *location2) {
     return sqrt(pow(location1.latitude - location2.latitude, 2) + pow(location1.longitude - location2.longitude, 2));
 }
+
