@@ -1,4 +1,5 @@
 
+#import "SpecHelpers.h"
 #import "JosephusProblem.h"
 #import "ModuloBias.h"
 

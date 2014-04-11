@@ -1,16 +1,6 @@
 
+#import "SpecHelpers.h"
 #import "NSNumber+EKStuff.h"
-
-
-FOUNDATION_EXPORT uint64_t dispatch_benchmark(size_t count, void (^block)(void));
-
-
-#define Benchmark(n, block) \
-do { \
-float time = (float)dispatch_benchmark(n, block); \
-printf("The block have been run %d times. Average time is: %f milliseconds\n", n, (time / 1000000)); \
-} while (0);
-
 
 SPEC_BEGIN(NSNumber_Specs)
 

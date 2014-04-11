@@ -1,4 +1,5 @@
 
+#import "SpecHelpers.h"
 #import "NSArray+EKSorting.h"
 
 SPEC_BEGIN(Sorting_Specs)
