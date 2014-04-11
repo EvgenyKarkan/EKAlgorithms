@@ -278,7 +278,7 @@
 				86C515C618F8162F00B5E9AE /* Sorting */,
 			);
 			name = EKAlgorithms;
-			path = ../../../../../stanislaw/Work/Pods/EKAlgorithms/EKAlgorithms;
+			path = ../EKAlgorithms;
 			sourceTree = "<group>";
 		};
 		86C5158618F8162F00B5E9AE /* Data Structures */ = {
