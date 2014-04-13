@@ -160,36 +160,34 @@
 
 - (BOOL)hasPathBetweenVertices:(NSArray *)vertices
 {
-    if (vertices.count == 2 && [vertices firstObject] != [vertices lastObject]) {
-        EKQueue *queue = [[EKQueue alloc] init];
-        [self clearVisitHistory];
-        
-        EKVertex *startVertex = [vertices firstObject];
-        startVertex.wasVisited = YES;
-        for (EKEdge *edge in startVertex.adjacentEdges) {
-            if (edge.used) {
-                [queue insertObject:edge.adjacentTo];
-            }
+    NSAssert(vertices.count == 2, @"Vertices Count must be two!");
+    NSAssert([vertices firstObject] != [vertices lastObject], @"Vertices must be different!");
+    
+    EKQueue *queue = [[EKQueue alloc] init];
+    [self clearVisitHistory];
+    
+    EKVertex *startVertex = [vertices firstObject];
+    startVertex.wasVisited = YES;
+    for (EKEdge *edge in startVertex.adjacentEdges) {
+        if (edge.used) {
+            [queue insertObject:edge.adjacentTo];
         }
-        
-        while (![queue isEmpty]) {
-            EKVertex *peekVertex = [queue removeFirstObject];
-            peekVertex.wasVisited = YES;
-            if (peekVertex == [vertices lastObject]) {
-                return YES;
-            } else {
-                for (EKEdge *edge in peekVertex.adjacentEdges) {
-                    if (edge.used && !edge.adjacentTo.wasVisited) {
-                        [queue insertObject:edge.adjacentTo];
-                    }
+    }
+    
+    while (![queue isEmpty]) {
+        EKVertex *peekVertex = [queue removeFirstObject];
+        peekVertex.wasVisited = YES;
+        if (peekVertex == [vertices lastObject]) {
+            return YES;
+        } else {
+            for (EKEdge *edge in peekVertex.adjacentEdges) {
+                if (edge.used && !edge.adjacentTo.wasVisited) {
+                    [queue insertObject:edge.adjacentTo];
                 }
             }
         }
-        
-    } else {
-        NSAssert(vertices.count == 2, @"Vertices Count must be two!");
-        NSAssert([vertices firstObject] != [vertices lastObject], @"Vertices msut be different!");
     }
+    
     return NO;
 }
 
@@ -213,13 +211,15 @@
     EKVertex *sourceVertex = source, *targetVertex = target;
     NSMutableDictionary *dist = [@{} mutableCopy];
     NSMutableDictionary *previous = [@{} mutableCopy];
-    for (EKVertex *vertex in self.vertices) {
+    NSMutableArray *Q = self.vertices;
+    
+    for (EKVertex *vertex in Q) {
         [dist setValue:@INT_MAX forKey:vertex.label];
         [previous setValue:[NSNull null] forKey:vertex.label];
     }
     [dist setValue:@0 forKey:sourceVertex.label];
-    NSMutableArray *Q = [self.vertices mutableCopy];
-    while ([Q count] > 0) {
+    
+    while (Q.count > [self visitedVertices].count) {
         EKVertex *u = [EKGraph hasMinimumDistance:dist InVertices:Q];
         if (u == targetVertex) {
             break;
@@ -235,7 +235,7 @@
                 [previous setValue:u forKey:v.label];
             }
         }
-        [Q removeObject:u];
+        u.wasVisited = YES;
     }
     for (NSString *label in previous) {
         if (![[previous valueForKey:label] isMemberOfClass:[NSNull class]]) {
@@ -251,14 +251,16 @@
     NSNumber *minDist;
     NSUInteger index = 0;
     for (EKVertex *vertex in Q) {
-        NSString *label = vertex.label;
-        if (!minDist) {
-            minDist = [dist valueForKey:label];
-            index = [Q indexOfObject:vertex];
-        } else {
-            if ([minDist isGreaterThan:[dist valueForKey:label]]) {
+        if (!vertex.wasVisited) {
+            NSString *label = vertex.label;
+            if (!minDist) {
                 minDist = [dist valueForKey:label];
                 index = [Q indexOfObject:vertex];
+            } else {
+                if ([minDist isGreaterThan:[dist valueForKey:label]]) {
+                    minDist = [dist valueForKey:label];
+                    index = [Q indexOfObject:vertex];
+                }
             }
         }
     }
@@ -271,9 +273,10 @@
 {
     NSMutableArray *topNum = [@[] mutableCopy];
     EKQueue *queue = [[EKQueue alloc] init];
+    NSMutableArray *vertices = self.vertices;
     
-    for (NSUInteger i = 0; i < self.vertices.count; i++) {
-        EKVertex *vertex = [self findNewVertexOfIndegreeZero:self.vertices];
+    for (NSUInteger i = 0; i < vertices.count; i++) {
+        EKVertex *vertex = [self findNewVertexOfIndegreeZero:vertices];
         if (vertex) {
             [queue insertObject:vertex];
         }
@@ -393,6 +396,9 @@
 - (void)clearVisitHistory
 {
     for (EKVertex *vertex in self.vertices) {
+        for (EKEdge *edge in vertex.adjacentEdges) {
+            edge.used = NO;
+        }
         vertex.wasVisited = NO;
     }
 }
