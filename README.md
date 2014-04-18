@@ -37,8 +37,9 @@ Sorting Algorithms
 4. Quick sort.  
 5. Insertion sort.
 6. Selection sort.
-7. Partial selection sort.
-8. Heap sort.
+7. Radix Sort.
+8. Partial selection sort.
+9. Heap sort.
 
 Selection Algorithms
 --------------------
