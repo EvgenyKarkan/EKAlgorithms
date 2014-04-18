@@ -70,6 +70,8 @@
 		86EBBC1018F82B3A00F888C3 /* NSNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EBBC0518F82B2F00F888C3 /* NSNumber.m */; };
 		86EBBC1118F82B3A00F888C3 /* ProblemsSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EBBC0618F82B2F00F888C3 /* ProblemsSpecs.m */; };
 		86EBBC1218F82B3A00F888C3 /* SortingSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EBBC0718F82B2F00F888C3 /* SortingSpecs.m */; };
+		8F0E298619015E3A00CC3934 /* RadixNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0E298519015E3A00CC3934 /* RadixNode.m */; };
+		8F0E298719015E3A00CC3934 /* RadixNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0E298519015E3A00CC3934 /* RadixNode.m */; };
 		C22C87D3FD1E427AA38427B2 /* libPods-EKAlgorithmsSpecs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 666CA5D0F3A84DDFB57C1434 /* libPods-EKAlgorithmsSpecs.a */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +162,8 @@
 		86EBBC0618F82B2F00F888C3 /* ProblemsSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemsSpecs.m; sourceTree = "<group>"; };
 		86EBBC0718F82B2F00F888C3 /* SortingSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortingSpecs.m; sourceTree = "<group>"; };
 		86EBBC0818F82B2F00F888C3 /* SpecHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecHelpers.h; sourceTree = "<group>"; };
+		8F0E298419015E3A00CC3934 /* RadixNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadixNode.h; sourceTree = "<group>"; };
+		8F0E298519015E3A00CC3934 /* RadixNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadixNode.m; sourceTree = "<group>"; };
 		CF81BD80824A41FB97720C8E /* Pods-EKAlgorithmsSpecs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EKAlgorithmsSpecs.xcconfig"; path = "Pods/Pods-EKAlgorithmsSpecs.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -401,6 +405,8 @@
 			children = (
 				86C515C718F8162F00B5E9AE /* NSArray+EKSorting.h */,
 				86C515C818F8162F00B5E9AE /* NSArray+EKSorting.m */,
+				8F0E298419015E3A00CC3934 /* RadixNode.h */,
+				8F0E298519015E3A00CC3934 /* RadixNode.m */,
 			);
 			path = Sorting;
 			sourceTree = "<group>";
@@ -539,6 +545,7 @@
 			files = (
 				86C515D618F8162F00B5E9AE /* EKDeque.m in Sources */,
 				86C515D818F8162F00B5E9AE /* EKQueue.m in Sources */,
+				8F0E298619015E3A00CC3934 /* RadixNode.m in Sources */,
 				86C515F018F8162F00B5E9AE /* NSArray+EKGeometry.m in Sources */,
 				86C515D418F8162F00B5E9AE /* EKBHeap.m in Sources */,
 				86C515E818F8162F00B5E9AE /* EKTree.m in Sources */,
@@ -571,6 +578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86C515D118F8162F00B5E9AE /* EKBTreeNode.m in Sources */,
+				8F0E298719015E3A00CC3934 /* RadixNode.m in Sources */,
 				86C515CE18F8162F00B5E9AE /* EKBSTree.m in Sources */,
 				86EBBC0E18F82B3A00F888C3 /* GeometrySpecs.m in Sources */,
 				86C515D718F8162F00B5E9AE /* EKDeque.m in Sources */,

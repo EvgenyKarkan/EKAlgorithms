@@ -52,7 +52,13 @@
 - (NSMutableArray *)quickSortWithLeftIndex:(NSInteger)left withRightIndex:(NSInteger)right;
 - (NSMutableArray *)insertionSort;
 - (NSMutableArray *)selectionSort;
-
+/**
+ Radix Sort
+ 
+ Thanks to https://github.com/PlenipotentSS/RadixSort this project
+ 
+ */
+- (NSMutableArray *)radixSortForBase:(NSInteger)base;
 
 /**
  Partial selection sort

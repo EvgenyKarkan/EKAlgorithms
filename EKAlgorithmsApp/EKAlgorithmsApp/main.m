@@ -109,6 +109,9 @@ int main(int argc, const char *argv[])
         //Selection sort
         NSLog(@"Selection sorted array  %@", [[@[@160, @0.097, @NO, @89, @ - 61.001256, @7.5, @YES] mutableCopy] selectionSort]);
 
+        //Radix sort
+        NSLog(@"Radix sorted array (BASE 10) %@", [[@[@160, @210, @997, @1222, @1334, @3411, @1] mutableCopy] radixSortForBase:10]);
+        
         //Heap sort
         NSLog(@"Heap sorted array --> %@", [[@[@9871523, @0.0987516, @NO, @89, @ - 61.001256, @712.5, @YES, @384756] mutableCopy] heapSort]);
 
