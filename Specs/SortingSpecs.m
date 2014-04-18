@@ -236,6 +236,34 @@ describe(@"Sorting algorithms", ^{
             }
         });
     });
+    
+    describe(@"Radix Sort Base 10", ^{
+        it(@"", ^{
+            NSMutableArray *array = [NSMutableArray array];
+            
+            NSUInteger N = 100;
+            
+            for (int i = 0; i < N; i++) {
+                [array addObject:@(i + 1)];
+            }
+            
+            array = [NSMutableArray arrayWithArray:[array shuffle]];
+            
+            [array radixSortForBase:10];
+            
+            NSArray *sortedArray = [array copy];
+            
+            [[theValue([sortedArray isSorted]) should] beYes];
+            
+            for (NSUInteger i = 0; i < N - 1; i++) {
+                float ithElementValue = [[sortedArray objectAtIndex:i] floatValue];
+                float iplus1thElementValue = [[sortedArray objectAtIndex:i + 1] floatValue];
+                
+                [[theValue(ithElementValue < iplus1thElementValue) should] beTrue];
+            }
+        });
+    });
+    
 });
 
 SPEC_END
