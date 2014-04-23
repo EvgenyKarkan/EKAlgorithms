@@ -80,9 +80,10 @@
     return self;
 }
 
-- (NSMutableArray *)bubbleSort {
+- (NSMutableArray *)bubbleSort
+{
     NSUInteger count = [self count];
-
+    
     for (int i = ((int)count - 2); i >= 0; i--) {
         for (int j = 0; j <= i; j++) {
             if ([self[j] compare:self[j + 1]] == NSOrderedDescending) {
@@ -90,7 +91,7 @@
             }
         }
     }
-
+    
     return self;
 }
 
@@ -121,9 +122,9 @@
 - (NSMutableArray *)mergeSort
 {
     NSUInteger count = [self count];
-
+    
     [self partitionArrayWithMinimalIndex:0 withMaximumIndex:(count - 1)];
-
+    
     return self;
 }
 
@@ -133,11 +134,11 @@
 {
     NSInteger i = left;
     NSInteger j = right;
-
+    
     id pivotalElement = nil;
-
+    
     pivotalElement = self[(left + right) / 2];
-
+    
     do {
         while (([self[i] floatValue] < [pivotalElement floatValue]) && (i < right)) {
             i++;
@@ -145,22 +146,23 @@
         while (([pivotalElement floatValue] < [self[j] floatValue]) && (j > left)) {
             j--;
         }
-
+        
         if (i <= j) {
             [self exchangeObjectAtIndex:i withObjectAtIndex:j];
-
+            
             i++;
             j--;
         }
-    } while (i <= j);
-
+    }
+    while (i <= j);
+    
     if (left < j) {
         [self quickSortWithLeftIndex:left withRightIndex:j];
     }
     if (i < right) {
         [self quickSortWithLeftIndex:i withRightIndex:right];
     }
-
+    
     return self;
 }
 
@@ -263,32 +265,32 @@
     return (number / divisor) % base;
 }
 
-
 #pragma mark - Partial Selection Sort
 
-- (NSMutableArray *)partialSelectionSort:(NSUInteger)K {
+- (NSMutableArray *)partialSelectionSort:(NSUInteger)K
+{
     NSUInteger count = self.count;
     NSParameterAssert(K <= count);
-
+    
     NSUInteger minIndex;
     NSUInteger minValue;
-
+    
     for (NSUInteger i = 0; i < K; i++) {
         minIndex = i;
         minValue = [[self objectAtIndex:i] unsignedIntegerValue];
-
+        
         for (NSUInteger j = i + 1; j < count; j++) {
             NSUInteger el = [[self objectAtIndex:j] unsignedIntegerValue];
-
+            
             if (el < minValue) {
                 minIndex = j;
                 minValue = el;
             }
         }
-
+        
         [self exchangeObjectAtIndex:i withObjectAtIndex:minIndex];
     }
-
+    
     return self;
 }
 
@@ -322,7 +324,7 @@
 - (void)partitionArrayWithMinimalIndex:(NSInteger)min withMaximumIndex:(NSInteger)max
 {
     NSInteger mid = 0;
-
+    
     if (min < max) {
         mid = (min + max) / 2;
         [self partitionArrayWithMinimalIndex:min withMaximumIndex:mid];
@@ -398,7 +400,7 @@
 - (void)heapifyArrayWithSize:(NSInteger)size
 {
     NSInteger start = (size - 2) / 2;
-
+    
     while (start >= 0) {
         [self siftDownArrayWithStart:start end:size - 1];
         start--;

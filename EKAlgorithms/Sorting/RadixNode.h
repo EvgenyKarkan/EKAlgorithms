@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Steven Stevenson. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 
 @interface RadixNode : NSObject
 

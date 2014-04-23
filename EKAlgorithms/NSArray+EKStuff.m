@@ -225,20 +225,20 @@
 - (NSDictionary *)occurencesOfEachElementInArray_naive
 {
     NSUInteger count = [self count];
-
+    
     NSMutableDictionary *registry = [NSMutableDictionary dictionaryWithCapacity:count];
-
+    
     for (NSUInteger i = 0; i < count; i++) {
         NSUInteger counter = 0;
-
+        
         for (NSUInteger j = 0; j < count; j++) {
             if ([self[i] isEqual:self[j]]) {
                 counter++;
             }
         }
-
+        
         [registry setObject:@(counter)
-                   forKey:self[i]];
+                     forKey:self[i]];
     }
     
     return registry;
@@ -247,12 +247,12 @@
 - (NSDictionary *)occurencesOfEachElementInArray
 {
     NSUInteger count = [self count];
-
+    
     NSMutableDictionary *registry = [NSMutableDictionary dictionaryWithCapacity:count];
-
+    
     for (NSUInteger i = 0; i < count; i++) {
         id currentElement = self[i];
-
+        
         NSNumber *existingElementCounter = registry[currentElement];
         
         NSUInteger currentCount = existingElementCounter ? existingElementCounter.unsignedIntegerValue : 0;
@@ -317,6 +317,5 @@
     
     return NSNotFound;
 }
-
 
 @end
