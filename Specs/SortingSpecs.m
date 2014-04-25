@@ -238,9 +238,9 @@ describe(@"Sorting algorithms", ^{
     });
     
     describe(@"Radix Sort Base 10", ^{
-        pending(@"", ^{
+        it(@"", ^{
             NSMutableArray *array = [NSMutableArray array];
-            
+
             NSUInteger N = 100;
             
             for (int i = 0; i < N; i++) {
