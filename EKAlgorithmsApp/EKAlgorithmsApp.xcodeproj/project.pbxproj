@@ -90,7 +90,7 @@
 
 /* Begin PBXFileReference section */
 		666CA5D0F3A84DDFB57C1434 /* libPods-EKAlgorithmsSpecs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EKAlgorithmsSpecs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		86C5147718F80E5A00B5E9AE /* EKAlgorithmsApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = EKAlgorithmsApp; path = EKAlgorithmsExamples; sourceTree = BUILT_PRODUCTS_DIR; };
+		86C5147718F80E5A00B5E9AE /* EKAlgorithmsExamples */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EKAlgorithmsExamples; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C5147A18F80E5A00B5E9AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86C5147D18F80E5A00B5E9AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		86C5148018F80E5A00B5E9AE /* EKAlgorithmsApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EKAlgorithmsApp-Prefix.pch"; sourceTree = "<group>"; };
@@ -204,7 +204,7 @@
 		86C5147818F80E5A00B5E9AE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				86C5147718F80E5A00B5E9AE /* EKAlgorithmsApp */,
+				86C5147718F80E5A00B5E9AE /* EKAlgorithmsExamples */,
 				86C5148C18F80E8000B5E9AE /* EKAlgorithmsSpecs.xctest */,
 			);
 			name = Products;
@@ -442,7 +442,7 @@
 			);
 			name = EKAlgorithmsExamples;
 			productName = EKAlgorithmsApp;
-			productReference = 86C5147718F80E5A00B5E9AE /* EKAlgorithmsApp */;
+			productReference = 86C5147718F80E5A00B5E9AE /* EKAlgorithmsExamples */;
 			productType = "com.apple.product-type.tool";
 		};
 		86C5148B18F80E8000B5E9AE /* EKAlgorithmsSpecs */ = {
