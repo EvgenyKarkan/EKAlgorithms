@@ -206,14 +206,17 @@
 
 - (NSMutableArray *)radixSortForBase:(NSInteger)base;
 {
-    NSMutableArray *theArray = [self copy];
-    int max = [[theArray valueForKeyPath:@"@max.intValue"] intValue];
+    int max = [[self valueForKeyPath:@"@max.intValue"] intValue];
+
     int numberOfSteps = (log(max) / log(base)) + 1;
+
     for (int i = 0; i < numberOfSteps; i++) {
-        NSMutableArray *radixTable = [NSMutableArray makeRadixTableForArray:theArray forBase:base forDigit:i];
-        theArray = [NSMutableArray makeArrayFromRadixTable:radixTable];
+        NSMutableArray *radixTable = [NSMutableArray makeRadixTableForArray:self forBase:base forDigit:i];
+
+        [self setArray:[NSMutableArray makeArrayFromRadixTable:radixTable]];
     }
-    return theArray;
+
+    return self;
 }
 
 + (NSMutableArray *)makeArrayFromRadixTable:(NSMutableArray *)radixTable
