@@ -59,19 +59,6 @@ int main(int argc, const char *argv[])
         //Union of two arrays
         NSLog(@"Union is %@", [@[@"Honda", @"Toyota"] unionWithoutDuplicatesWithArray: @[@"Toyota", @"Alfa Romeo"]]);
 
-        // Union of two arrays for key
-        NSString *someKey = @"someKey";
-        NSMutableArray *oneArray = [NSMutableArray arrayWithCapacity:100];
-        NSMutableArray *twoArray = [NSMutableArray arrayWithCapacity:100];
-        for (int i = 0; i < 100; i ++) {
-            NSMutableDictionary *currentDic = [[NSMutableDictionary alloc] init];
-            [currentDic setValue:[NSString stringWithFormat:@"EKAlgorithms%d", i] forKeyPath:someKey];
-            [oneArray addObject:currentDic];
-            [twoArray addObject:currentDic];
-        }
-        [oneArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"EKAlgorithms100", nil]];
-        NSLog(@"Union some key is %@", [oneArray unionWithoutDuplicatesWithArray:twoArray forKey:someKey]);
-        
         //Find duplicates
         NSLog(@"Result of finding duplicates is %@", [@[@"foo", @"bar", @"buzz", @"foo"] hasDuplicates] ? @"YES" : @"NO");
 

@@ -36,7 +36,6 @@
 
 - (NSArray *)intersectionWithArray:(NSArray *)secondArray;
 - (NSArray *)unionWithoutDuplicatesWithArray:(NSArray *)secondArray;
-- (NSArray *)unionWithoutDuplicatesWithArray:(NSArray *)secondArray forKey:(NSString *)currentKey;
 - (BOOL)hasDuplicates;
 + (NSArray *)randomObjectsWithArraySize:(NSUInteger)arraySize maxRandomValue:(NSUInteger)maxValue uniqueObjects:(BOOL)unique;
 
