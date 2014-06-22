@@ -69,7 +69,7 @@ int main(int argc, const char *argv[])
             [oneArray addObject:currentDic];
             [twoArray addObject:currentDic];
         }
-        [oneArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"EKAlgorithms100", nil]];
+        [oneArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"EKAlgorithms100", someKey, nil]];
         NSLog(@"Union some key is %@", [oneArray unionWithoutDuplicatesWithArray:twoArray forKey:someKey]);
         
         //Find duplicates
