@@ -168,6 +168,10 @@ int main(int argc, const char *argv[])
 
         //Levenshtein Distance
         NSLog(@"Levenshtein Distance of levenshtein and meilenstein is --> %ld", (long)[@"levenshtein" LD_WithString: @"meilenstein"]);
+        
+        // KMP
+        NSLog(@"Index of KMP string match is --> %ld", [@"bacbababaabcbab" KMPIndexOfSubstringWithPattern:@"bab"]);
+        
 
         //NUMERIC PROBLEMS--------------------------------------------------------------------------
 

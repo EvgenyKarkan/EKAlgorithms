@@ -107,6 +107,7 @@
 }
 
 #pragma mark - Kruskal Algorithm
+
 - (void)kruskalMST
 {
     NSMutableArray *vertices = self.vertices;

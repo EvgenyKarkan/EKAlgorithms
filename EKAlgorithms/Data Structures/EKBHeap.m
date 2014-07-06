@@ -15,7 +15,7 @@
 @end
 
 
-@implementation EKBHeap
+@implementation EKBHeap;
 
 - (instancetype)init
 {
@@ -64,4 +64,5 @@
 {
     return self.heap.count <= 1 ? YES : NO;
 }
+
 @end
