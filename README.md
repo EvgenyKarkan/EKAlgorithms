@@ -60,6 +60,7 @@ Strings
 10. Last occurrence of "needle" in a "haystack".
 11. Longest common subsequence.
 12. Levenshtein distance.
+13. KMP (Knuth–Morris–Pratt).
 
 Numeric Algorithms
 ------------------
