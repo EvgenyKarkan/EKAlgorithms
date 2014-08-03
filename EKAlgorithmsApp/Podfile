@@ -1,6 +1,6 @@
 platform :osx, '10.9'
 
 target :EKAlgorithmsSpecs, :exclusive => true do
-  pod 'Kiwi/XCTest'
+  pod 'Kiwi'
 end
 
