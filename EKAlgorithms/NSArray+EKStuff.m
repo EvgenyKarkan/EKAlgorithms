@@ -246,7 +246,6 @@
 - (NSDictionary *)occurencesOfEachElementInArray_naive
 {
     NSUInteger count = [self count];
-    
     NSMutableDictionary *registry = [NSMutableDictionary dictionaryWithCapacity:count];
     
     for (NSUInteger i = 0; i < count; i++) {
@@ -320,7 +319,7 @@
 - (NSInteger)indexOfObjectViaBinarySearch:(id)object
 {
     NSUInteger firstIndex = 0;
-    NSUInteger uptoIndex = [self count];
+    NSUInteger uptoIndex  = [self count];
 
     while (firstIndex < uptoIndex) {
         NSUInteger mid = (firstIndex + uptoIndex) / 2;
