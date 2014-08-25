@@ -7,6 +7,9 @@
 //
 
 #import "EKBHeap.h"
+#if TARGET_OS_IPHONE
+#import "NSNumber+EKComparisonForIOS.h"
+#endif
 
 @interface EKBHeap ()
 
