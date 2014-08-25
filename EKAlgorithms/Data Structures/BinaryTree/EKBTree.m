@@ -8,6 +8,9 @@
 
 #import "EKBTree.h"
 #import "EKQueue.h"
+#if TARGET_OS_IPHONE
+#import "NSObject+EKComparisonForIOS.h"
+#endif
 
 @implementation EKBTree
 
