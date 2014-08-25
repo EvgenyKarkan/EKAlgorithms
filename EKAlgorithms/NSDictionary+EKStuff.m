@@ -49,9 +49,11 @@
 - (void)increaseObjectForKey:(id)aKey By:(NSNumber *)num
 {
     id object = [self objectForKey:aKey];
+    
     if ([object isMemberOfClass:[NSNumber class]]) {
         NSNumber *value = object;
         NSNumber *result;
+        
         switch ([value numberType]) {
             case kCFNumberSInt32Type:
                 result = [NSNumber numberWithInt:([num intValue] + [value intValue])];
