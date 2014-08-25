@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/EvgenyKarkan/EKAlgorithms.git", :tag => s.version.to_s }
   s.frameworks   = 'Foundation', 'CoreGraphics', 'UIKit'
   s.platform     = :ios, '5.0'
-  s.source_files = 'EKAlgorithms/**.{h,m}'
+  s.source_files = 'EKAlgorithms/**/*.{h,m}'
   s.requires_arc = true
 end
