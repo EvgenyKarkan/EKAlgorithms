@@ -13,6 +13,10 @@
 #import "EKEdge.h"
 #import "EKStack.h"
 #import "EKQueue.h"
+#if TARGET_OS_IPHONE
+#import "NSNumber+EKComparisonForIOS.h"
+#import "NSObject+EKComparisonForIOS.h"
+#endif
 
 @interface EKGraph ()
 

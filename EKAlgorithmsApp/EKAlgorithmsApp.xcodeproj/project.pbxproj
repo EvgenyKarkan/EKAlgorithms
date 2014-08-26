@@ -164,6 +164,10 @@
 		86EBBC0818F82B2F00F888C3 /* SpecHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecHelpers.h; sourceTree = "<group>"; };
 		8F0E298419015E3A00CC3934 /* RadixNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadixNode.h; sourceTree = "<group>"; };
 		8F0E298519015E3A00CC3934 /* RadixNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadixNode.m; sourceTree = "<group>"; };
+		BE2136521249107F069344C7 /* NSNumber+EKComparisonForIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+EKComparisonForIOS.m"; sourceTree = "<group>"; };
+		BE213B2FD66EC9DAD9868924 /* NSNumber+EKComparisonForIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+EKComparisonForIOS.h"; sourceTree = "<group>"; };
+		BE213D0FE76038744D6D6602 /* NSObject+EKComparisonForIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EKComparisonForIOS.h"; sourceTree = "<group>"; };
+		BE213EAE66F455F35DC5C744 /* NSObject+EKComparisonForIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EKComparisonForIOS.m"; sourceTree = "<group>"; };
 		CF81BD80824A41FB97720C8E /* Pods-EKAlgorithmsSpecs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EKAlgorithmsSpecs.xcconfig"; path = "Pods/Pods-EKAlgorithmsSpecs.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -275,6 +279,7 @@
 				86C515C018F8162F00B5E9AE /* Problems */,
 				86C515C318F8162F00B5E9AE /* Selection */,
 				86C515C618F8162F00B5E9AE /* Sorting */,
+				BE2135C7675C9E828AB04827 /* iOS */,
 			);
 			name = EKAlgorithms;
 			path = ../EKAlgorithms;
@@ -423,6 +428,17 @@
 			);
 			name = Specs;
 			path = ../Specs;
+			sourceTree = "<group>";
+		};
+		BE2135C7675C9E828AB04827 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				BE213EAE66F455F35DC5C744 /* NSObject+EKComparisonForIOS.m */,
+				BE213B2FD66EC9DAD9868924 /* NSNumber+EKComparisonForIOS.h */,
+				BE213D0FE76038744D6D6602 /* NSObject+EKComparisonForIOS.h */,
+				BE2136521249107F069344C7 /* NSNumber+EKComparisonForIOS.m */,
+			);
+			path = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
