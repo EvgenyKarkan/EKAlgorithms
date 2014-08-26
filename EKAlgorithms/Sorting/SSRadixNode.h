@@ -7,9 +7,9 @@
 //
 
 
-@interface RadixNode : NSObject
+@interface SSRadixNode : NSObject
 
 @property (nonatomic) int data;
-@property (nonatomic) RadixNode *next;
+@property (nonatomic) SSRadixNode *next;
 
 @end

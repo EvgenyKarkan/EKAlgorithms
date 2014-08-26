@@ -7,7 +7,7 @@
 //
 
 #import "NSArray+EKSorting.h"
-#import "RadixNode.h"
+#import "SSRadixNode.h"
 
 @implementation NSArray (EKSorting)
 
@@ -222,8 +222,8 @@
 + (NSMutableArray *)makeArrayFromRadixTable:(NSMutableArray *)radixTable
 {
     NSMutableArray *theArray = [NSMutableArray new];
-    for (RadixNode *bucketNode in radixTable) {
-        RadixNode *bucket = bucketNode.next;
+    for (SSRadixNode *bucketNode in radixTable) {
+        SSRadixNode *bucket = bucketNode.next;
         while (bucket) {
             [theArray addObject:@(bucket.data)];
             bucket = bucket.next;
@@ -238,13 +238,13 @@
     for (int i = 0; i < theArray.count; i++) {
         NSInteger value = [[theArray objectAtIndex:i] integerValue];
         NSInteger radixIndex = [self getExaminedNumber:value withBase:base atDigit:digit];
-        RadixNode *current = (RadixNode *)[radixTable objectAtIndex:radixIndex];
+        SSRadixNode *current = (SSRadixNode *)[radixTable objectAtIndex:radixIndex];
         if (current.next) {
             while (current.next) {
                 current = [current next];
             }
         }
-        RadixNode *newEntry = [RadixNode new];
+        SSRadixNode *newEntry = [SSRadixNode new];
         newEntry.data = [[theArray objectAtIndex:i] intValue];
         current.next = newEntry;
     }
@@ -256,7 +256,7 @@
 {
     NSMutableArray *empty = [NSMutableArray new];
     for (NSInteger i = 0; i < size; i++) {
-        [empty addObject:[RadixNode new]];
+        [empty addObject:[SSRadixNode new]];
     }
     
     return empty;

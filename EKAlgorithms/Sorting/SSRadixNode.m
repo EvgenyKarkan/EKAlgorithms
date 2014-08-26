@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Steven Stevenson. All rights reserved.
 //
 
-#import "RadixNode.h"
+#import "SSRadixNode.h"
 
-@implementation RadixNode
+@implementation SSRadixNode
 
 @end
