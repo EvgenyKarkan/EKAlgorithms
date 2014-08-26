@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "EKAlgorithms"
-  s.version      = "0.1"
+  s.version      = "0.2"
   s.summary      = "EKAlgorithms contains some well known CS algorithms and other stuff."
   s.homepage     = "https://github.com/EvgenyKarkan/EKAlgorithms"
   s.license      = "MIT"
