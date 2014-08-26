@@ -13,10 +13,12 @@
 #import "EKEdge.h"
 #import "EKStack.h"
 #import "EKQueue.h"
+
 #if TARGET_OS_IPHONE
 #import "NSNumber+EKComparisonForIOS.h"
 #import "NSObject+EKComparisonForIOS.h"
 #endif
+
 
 @interface EKGraph ()
 
@@ -149,6 +151,7 @@
 + (EKEdge *)minimumWeightUnusedEdgeInEdges:(NSArray *)edges
 {
     EKEdge *minEdge;
+    
     for (EKEdge *edge in edges) {
         if (!edge.used) {
             if (minEdge) {

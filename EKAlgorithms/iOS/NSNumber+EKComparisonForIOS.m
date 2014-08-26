@@ -6,19 +6,20 @@
 
 #import "NSNumber+EKComparisonForIOS.h"
 
-@implementation NSNumber (EKComparisonForIOS)
+@implementation NSNumber (EKComparisonForIOS);
 
-- (BOOL) isGreaterThan:(NSNumber *)obj
+- (BOOL)isGreaterThan:(NSNumber *)obj
 {
-	NSParameterAssert([obj isKindOfClass:[NSNumber class]]);
-	return [self compare:obj] == NSOrderedDescending;
+    NSParameterAssert([obj isKindOfClass:[NSNumber class]]);
+    return [self compare:obj] == NSOrderedDescending;
 }
 
-- (BOOL) isLessThan:(NSNumber *)obj
+- (BOOL)isLessThan:(NSNumber *)obj
 {
-	NSParameterAssert([obj isKindOfClass:[NSNumber class]]);
-	return [self compare:obj] == NSOrderedAscending;
+    NSParameterAssert([obj isKindOfClass:[NSNumber class]]);
+    return [self compare:obj] == NSOrderedAscending;
 }
+
 @end
 
 #endif

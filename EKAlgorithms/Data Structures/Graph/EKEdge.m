@@ -12,7 +12,7 @@
 
 - (instancetype)initWithAdjacentFrom:(EKVertex *)vertexFrom
                                   To:(EKVertex *)vertexTo
-                           andWeight:(NSObject *)weight
+                           andWeight:(NSNumber *)weight
 {
     self = [super init];
     if (self) {

@@ -3,10 +3,11 @@
 //
 
 #if TARGET_OS_IPHONE
-#import <Foundation/Foundation.h>
 
 @interface NSObject (EKComparisonForIOS)
-- (BOOL) isEqualTo:(id)obj;
+
+- (BOOL)isEqualTo:(id)obj;
+
 @end
 
 #endif

@@ -7,9 +7,11 @@
 //
 
 #import "EKBHeap.h"
+
 #if TARGET_OS_IPHONE
 #import "NSNumber+EKComparisonForIOS.h"
 #endif
+
 
 @interface EKBHeap ()
 
@@ -47,6 +49,7 @@
     } else {
         NSNumber *minNum = [[self.heap objectAtIndex:1] copy];
         NSNumber *lastNum = [self.heap lastObject];
+        
         for (i = 1; i * 2 <= self.heap.count-1; i = child) {
             child = i * 2;
             if (child != self.heap.count-1 && [[self.heap objectAtIndex:child+1] isLessThan:[self.heap objectAtIndex:child]]) {
