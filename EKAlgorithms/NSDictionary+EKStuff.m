@@ -9,6 +9,7 @@
 #import "NSDictionary+EKStuff.h"
 #import "NSNumber+EKStuff.h"
 
+
 @implementation NSDictionary (EKStuff)
 
 @end
@@ -19,6 +20,7 @@
 - (void)increaseValueForKey:(NSString *)key By:(NSNumber *)num
 {
     id object = [self valueForKey:key];
+    
     if ([object isKindOfClass:[NSNumber class]]) {
         NSNumber *value = object;
         NSNumber *result;
@@ -26,6 +28,7 @@
             case kCFNumberSInt32Type:
                 result = [NSNumber numberWithInt:([num intValue] + [value intValue])];
                 break;
+                
             case kCFNumberSInt64Type:
                 result = [NSNumber numberWithInteger:([num integerValue] + [value integerValue])];
                 break;
@@ -41,7 +44,8 @@
                 break;
         }
         [self setValue:result forKey:key];
-    } else {
+    }
+    else {
         NSAssert(0, @"Object is not a instance of NSNumber!");
     }
 }
@@ -58,6 +62,7 @@
             case kCFNumberSInt32Type:
                 result = [NSNumber numberWithInt:([num intValue] + [value intValue])];
                 break;
+                
             case kCFNumberSInt64Type:
                 result = [NSNumber numberWithInteger:([num integerValue] + [value integerValue])];
                 break;
@@ -73,7 +78,8 @@
                 break;
         }
         [self setObject:result forKey:aKey];
-    } else {
+    }
+    else {
         NSAssert(0, @"Object is not a instance of NSNumber!");
     }
 }

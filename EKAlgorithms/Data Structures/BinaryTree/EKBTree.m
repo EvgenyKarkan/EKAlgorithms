@@ -13,8 +13,8 @@
 #import "NSObject+EKComparisonForIOS.h"
 #endif
 
-@implementation EKBTree
 
+@implementation EKBTree;
 
 - (instancetype)initWithObject:(NSObject *)object
 {

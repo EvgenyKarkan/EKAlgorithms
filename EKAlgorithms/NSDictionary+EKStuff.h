@@ -9,8 +9,8 @@
 
 @interface NSDictionary (EKStuff)
 
-
 @end
+
 
 @interface NSMutableDictionary (EKStuff)
 

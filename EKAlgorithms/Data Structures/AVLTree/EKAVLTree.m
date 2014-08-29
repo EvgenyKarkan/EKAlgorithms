@@ -119,6 +119,7 @@
             while (temp.leftChild != nil) {
                 temp = temp.leftChild;
             }
+            
             T.object = [temp.object copy];
             T.rightChild = [self deleteObject:temp.object AtNode:T.rightChild];
             T.height = MAX([EKAVLTree heightOfNode:T.leftChild], [EKAVLTree heightOfNode:T.rightChild])+1;
@@ -129,7 +130,9 @@
     } else {
         T.rightChild = [self deleteObject:object AtNode:T.rightChild];
     }
+    
     T.height = MAX([EKAVLTree heightOfNode:T.leftChild], [EKAVLTree heightOfNode:T.rightChild])+1;
+    
     if (T.leftChild != nil) {
         T.leftChild = [EKAVLTree rotateSingleNode:T.leftChild];
     }
@@ -142,10 +145,12 @@
 
 + (NSInteger)heightOfNode:(EKAVLTreeNode *)node
 {
-    if (!node)
+    if (!node) {
         return -1;
-    else
-        return node.height;
+    }
+    else {
+       return node.height;
+    }
 }
 
 #pragma mark - AVL Rotation

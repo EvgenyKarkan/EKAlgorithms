@@ -9,7 +9,8 @@
 #import "NSString+EKStuff.h"
 #import <objc/runtime.h>
 
-@implementation NSString (EKStuff)
+
+@implementation NSString (EKStuff);
 
 #pragma mark - Is string palindrome
 
@@ -336,6 +337,7 @@ enum decreaseDir {kInit = 0, kLeftUp, kUp, kLeft};
     }
     
     NSMutableArray *d = [NSMutableArray arrayWithCapacity:m + 1];
+    
     for (int i = 0; i <= m; i++) {
         d[i] = [NSMutableArray arrayWithCapacity:n + 1];
         d[i][0] = @(i);
@@ -362,7 +364,7 @@ enum decreaseDir {kInit = 0, kLeftUp, kUp, kLeft};
 
 #pragma mark - KMP (Knuth-Morris-Prat)
 
-- (NSInteger)KMPIndexOfSubstringWithPattern:(NSString *)pattern
+- (NSInteger)KMPindexOfSubstringWithPattern:(NSString *)pattern
 {
     NSParameterAssert(pattern != nil);
     

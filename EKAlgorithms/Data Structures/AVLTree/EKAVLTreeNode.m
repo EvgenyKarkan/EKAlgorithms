@@ -8,7 +8,8 @@
 
 #import "EKAVLTreeNode.h"
 
-@implementation EKAVLTreeNode
+
+@implementation EKAVLTreeNode;
 
 - (void)printDescription
 {

@@ -8,11 +8,13 @@
 
 #import "EKLinkedList.h"
 #import "EKNode.h"
+
 #if TARGET_OS_IPHONE
 #import "NSObject+EKComparisonForIOS.h"
 #endif
 
-@implementation EKLinkedList
+
+@implementation EKLinkedList;
 
 - (instancetype)initWithHead:(NSObject *)value
 {

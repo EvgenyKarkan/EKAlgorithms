@@ -23,6 +23,7 @@
 - (id)init
 {
     self = [super init];
+    
     if (self) {
         self.stackArray = [@[] mutableCopy];
     }
@@ -34,6 +35,7 @@
 - (id)initWithSize:(NSUInteger)size
 {
     self = [super init];
+    
     if (self) {
         if (size > 0) {
             self.stackArray = [@[] mutableCopy];

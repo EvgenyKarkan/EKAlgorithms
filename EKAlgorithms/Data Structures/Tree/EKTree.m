@@ -9,11 +9,13 @@
 #import "EKTree.h"
 #import "EKBTree.h"
 #import "EKQueue.h"
+
 #if TARGET_OS_IPHONE
 #import "NSObject+EKComparisonForIOS.h"
 #endif
 
-@implementation EKTree
+
+@implementation EKTree;
 
 - (instancetype)initWithObject:(NSObject *)object
 {
@@ -29,9 +31,11 @@
 - (void)insertNode:(EKTreeNode *)node leftSibling:(EKTreeNode *)leftSibling parent:(EKTreeNode *)parent
 {
     node.parent = parent;
+    
     if (leftSibling == nil) {
         parent.child = node;
-    } else {
+    }
+    else {
         leftSibling.sibling = node;
     }
 }
@@ -44,7 +48,7 @@
 + (EKBTree *)forestToBinaryTree:(NSArray *)trees
 {
     if ([trees count] > 0) {
-        // Union trees
+            // Union trees
         EKTree *previous = trees[0];
         for (EKTree *tree in trees) {
             if (tree != previous) {
@@ -56,7 +60,7 @@
         [queue insertObject:((EKTree *)trees[0]).root];
         EKBTree *result = [[EKBTree alloc] initWithObject:((EKTreeNode *)[queue peek]).object];
         
-        // Create binary tree
+            // Create binary tree
         while (![queue isEmpty]) {
             EKTreeNode *node = [queue removeFirstObject];
             EKBTreeNode *root = [result find:node.object];
@@ -74,7 +78,8 @@
             }
         }
         return result;
-    } else {
+    }
+    else {
         NSAssert([trees count] > 0, @"There is no tree in array!");
         return nil;
     }

@@ -9,6 +9,7 @@
 #import "NSArray+EKSorting.h"
 #import "SSRadixNode.h"
 
+
 @implementation NSArray (EKSorting)
 
 #pragma mark - Check if array is sorted
@@ -159,6 +160,7 @@
     if (left < j) {
         [self quickSortWithLeftIndex:left withRightIndex:j];
     }
+    
     if (i < right) {
         [self quickSortWithLeftIndex:i withRightIndex:right];
     }
@@ -222,6 +224,7 @@
 + (NSMutableArray *)makeArrayFromRadixTable:(NSMutableArray *)radixTable
 {
     NSMutableArray *theArray = [NSMutableArray new];
+    
     for (SSRadixNode *bucketNode in radixTable) {
         SSRadixNode *bucket = bucketNode.next;
         while (bucket) {
@@ -235,6 +238,7 @@
 + (NSMutableArray *)makeRadixTableForArray:(NSMutableArray *)theArray forBase:(NSInteger)base forDigit:(NSInteger)digit
 {
     NSMutableArray *radixTable = [self getTableOfEmptyBucketsForSize:base];
+    
     for (int i = 0; i < theArray.count; i++) {
         NSInteger value = [[theArray objectAtIndex:i] integerValue];
         NSInteger radixIndex = [self getExaminedNumber:value withBase:base atDigit:digit];
@@ -255,6 +259,7 @@
 + (NSMutableArray *)getTableOfEmptyBucketsForSize:(NSInteger)size
 {
     NSMutableArray *empty = [NSMutableArray new];
+    
     for (NSInteger i = 0; i < size; i++) {
         [empty addObject:[SSRadixNode new]];
     }

@@ -27,6 +27,7 @@
 
 @end
 
+
 @implementation EKGraph;
 
 @synthesize indegree = _indegree;
@@ -34,6 +35,7 @@
 - (instancetype)initWithStartVertex:(id)startVertex
 {
     self = [super init];
+    
     if (self) {
         self.firstVertex = startVertex;
     }
@@ -65,6 +67,7 @@
 }
 
 #pragma mark - Prim Algorithm
+
 - (void)primMST:(id)start
 {
     EKVertex *startVertex = start;
@@ -72,6 +75,7 @@
     [self clearVisitHistory];
     
     startVertex.wasVisited = YES;
+    
     while ([self visitedVertices].count != self.vertices.count) {
         EKEdge *minimumEdge = [EKGraph minimumWeightEdgeInVertices:[self visitedVertices]];
         if (minimumEdge) {
@@ -79,6 +83,7 @@
         }
         minimumEdge.adjacentTo.wasVisited = YES;
     }
+    
     for (EKEdge *edge in parent) {
         NSLog(@"From %@, To %@, Weight %@", edge.adjacentFrom.label, edge.adjacentTo.label, edge.weight);
     }
@@ -87,11 +92,13 @@
 + (EKEdge *)minimumWeightEdgeInVertices:(NSArray *)vertices
 {
     EKEdge *minimumEdge = nil;
+    
     for (EKVertex *vertex in vertices) {
         for (EKEdge *edge in vertex.adjacentEdges) {
             if (!minimumEdge && !edge.adjacentTo.wasVisited) {
                 minimumEdge = edge;
-            } else {
+            }
+            else {
                 if ([minimumEdge.weight isGreaterThan:edge.weight] && !edge.adjacentTo.wasVisited) {
                     minimumEdge = edge;
                 }
@@ -104,11 +111,13 @@
 - (NSArray *)visitedVertices
 {
     NSMutableArray *visited = [@[] mutableCopy];
+    
     for (EKVertex *vertex in self.vertices) {
         if (vertex.wasVisited) {
             [visited addObject:vertex];
         }
     }
+    
     return visited;
 }
 
@@ -134,7 +143,8 @@
                 e.used = YES;
                 [EKGraph oppositeEdge:e InEdges:edges].used = YES;
                 forestCount--;
-            } else {
+            }
+            else {
                 [edges removeObject:e];
                 [edges removeObject:[EKGraph oppositeEdge:e InEdges:edges]];
             }
@@ -158,11 +168,13 @@
                 if ([minEdge.weight isGreaterThan:edge.weight]) {
                     minEdge = edge;
                 }
-            } else {
+            }
+            else {
                 minEdge = edge;
             }
         }
     }
+    
     return minEdge;
 }
 
@@ -176,6 +188,7 @@
     
     EKVertex *startVertex = [vertices firstObject];
     startVertex.wasVisited = YES;
+    
     for (EKEdge *edge in startVertex.adjacentEdges) {
         if (edge.used) {
             [queue insertObject:edge.adjacentTo];
@@ -185,9 +198,11 @@
     while (![queue isEmpty]) {
         EKVertex *peekVertex = [queue removeFirstObject];
         peekVertex.wasVisited = YES;
+        
         if (peekVertex == [vertices lastObject]) {
             return YES;
-        } else {
+        }
+        else {
             for (EKEdge *edge in peekVertex.adjacentEdges) {
                 if (edge.used && !edge.adjacentTo.wasVisited) {
                     [queue insertObject:edge.adjacentTo];
@@ -217,6 +232,7 @@
 - (void)dijkstraSPTFrom:(id)source To:(id)target
 {
     EKVertex *sourceVertex = source, *targetVertex = target;
+    
     NSMutableDictionary *dist = [@{} mutableCopy];
     NSMutableDictionary *previous = [@{} mutableCopy];
     NSMutableArray *Q = self.vertices;
@@ -245,10 +261,12 @@
         }
         u.wasVisited = YES;
     }
+    
     for (NSString *label in previous) {
         if (![[previous valueForKey:label] isMemberOfClass:[NSNull class]]) {
             NSLog(@"%@ previous node --> %@", label, ((EKVertex *)[previous valueForKey:label]).label);
-        } else {
+        }
+        else {
             NSLog(@"%@ has no previous node", label);
         }
     }
@@ -256,15 +274,17 @@
 
 + (EKVertex *)hasMinimumDistance:(NSDictionary *)dist InVertices:(NSArray *)Q
 {
-    NSNumber *minDist;
+    NSNumber *minDist = nil;
     NSUInteger index = 0;
+    
     for (EKVertex *vertex in Q) {
         if (!vertex.wasVisited) {
             NSString *label = vertex.label;
             if (!minDist) {
                 minDist = [dist valueForKey:label];
                 index = [Q indexOfObject:vertex];
-            } else {
+            }
+            else {
                 if ([minDist isGreaterThan:[dist valueForKey:label]]) {
                     minDist = [dist valueForKey:label];
                     index = [Q indexOfObject:vertex];
@@ -272,6 +292,7 @@
             }
         }
     }
+    
     return [Q objectAtIndex:index];
 }
 
@@ -314,9 +335,11 @@
         // Graph should not change at runtime
         _indegree = [@{} mutableCopy];
         [self clearVisitHistory];
+        
         for (EKVertex *vertex in vertices) {
             [_indegree setValue:@0 forKey:vertex.label];
         }
+        
         for (EKVertex *vertex in vertices) {
             for (EKEdge *edge in vertex.adjacentEdges) {
                 EKVertex *adjTo = edge.adjacentTo;
@@ -324,6 +347,7 @@
             }
         }
     }
+    
     for (EKVertex *vertex in vertices) {
         if ([[_indegree valueForKey:vertex.label] isEqualToNumber:@0] && !vertex.wasVisited) {
             vertex.wasVisited = YES;

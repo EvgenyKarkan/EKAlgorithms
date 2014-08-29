@@ -8,6 +8,7 @@
 
 #import "NSArray+EKStuff.h"
 
+
 @implementation NSArray (EKStuff);
 
 #pragma mark - ARRAY STUFF
@@ -59,18 +60,19 @@
     for (NSNumber *number in self) {
         if (((idx++) & 1) == 0) {
             values[0] = number;
-
+            
             continue;
-        } else {
+        }
+        else {
             values[1] = number;
         }
-
+        
         NSNumber *iValue   = values[0];
         NSNumber *ip1Value = values[1];
-
+        
         NSUInteger iidx = idx - 2;
         NSUInteger ip1idx = idx - 1;
-
+        
         if ([iValue compare:ip1Value] == NSOrderedAscending) {
             if ([minimalValue compare:iValue] == NSOrderedDescending) {
                 minimalValue = iValue;
@@ -191,12 +193,13 @@
 
     for (id element in self) {
         NSNumber *elementHash = @([element hash]);
-
+        
         if (registry[elementHash] == nil) {
             registry[elementHash] = element;
-        } else {
+        }
+        else {
             NSLog(@"-[NSArray hasDuplicates] found duplicate elements: %@ and %@", registry[elementHash], element);
-
+            
             return YES;
         }
     }
@@ -290,7 +293,9 @@
     NSCountedSet *countedSet = [[NSCountedSet alloc] initWithArray:self];
     NSMutableDictionary *dictionary = [@{} mutableCopy];
     
-    for (id object in [countedSet allObjects]) {
+    NSArray* setAllObjects = [countedSet allObjects];
+    
+    for (id object in setAllObjects) {
         [dictionary setObject:@([countedSet countForObject:object])
                        forKey:object];
     }

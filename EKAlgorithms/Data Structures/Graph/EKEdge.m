@@ -15,6 +15,7 @@
                            andWeight:(NSNumber *)weight
 {
     self = [super init];
+    
     if (self) {
         self.adjacentFrom = vertexFrom;
         self.adjacentTo = vertexTo;

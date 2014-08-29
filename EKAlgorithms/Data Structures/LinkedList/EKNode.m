@@ -8,7 +8,8 @@
 
 #import "EKNode.h"
 
-@implementation EKNode
+
+@implementation EKNode;
 
 - (instancetype)initWithObject:(NSObject *)object
 {

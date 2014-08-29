@@ -8,8 +8,8 @@
 
 #import "NSNumber+EKStuff.h"
 
-@implementation NSNumber (EKStuff);
 
+@implementation NSNumber (EKStuff);
 
 #pragma mark - Sieve of Eratosthenes
 
@@ -121,6 +121,7 @@
     }
     
     unsigned long long beforeLast = 0, last = 1;
+    
     while (index > 0) {
         last += beforeLast;
         beforeLast = last - beforeLast;
@@ -451,6 +452,7 @@
     // return the same type as first object in array
     NSNumber *sum;
     NSUInteger count = numbers.count;
+    
     switch ([[numbers firstObject] numberType]) {
         case kCFNumberSInt32Type:
             sum = [NSNumber numberWithInt:[[numbers firstObject] intValue]];
@@ -458,6 +460,7 @@
                 sum = [NSNumber numberWithInt:([sum intValue] + [[numbers objectAtIndex:i] intValue])];
             }
             break;
+            
         case kCFNumberSInt64Type:
             sum = [NSNumber numberWithInteger:[[numbers firstObject] integerValue]];
             for (NSUInteger i = 1; i < count; i++) {
@@ -477,6 +480,7 @@
             NSAssert(0, @"Not recognized type, check CFNumberType!");
             break;
     }
+    
     return sum;
 }
 

@@ -170,7 +170,7 @@ int main(int argc, const char *argv[])
         NSLog(@"Levenshtein Distance of levenshtein and meilenstein is --> %ld", (long)[@"levenshtein" LD_WithString: @"meilenstein"]);
         
         // KMP
-        NSLog(@"Index of KMP string match is --> %ld", [@"bacbababaabcbab" KMPIndexOfSubstringWithPattern:@"bab"]);
+        NSLog(@"Index of KMP string match is --> %ld", [@"bacbababaabcbab" KMPindexOfSubstringWithPattern:@"bab"]);
         
 
         //NUMERIC PROBLEMS--------------------------------------------------------------------------

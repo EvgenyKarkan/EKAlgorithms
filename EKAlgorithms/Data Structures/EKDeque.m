@@ -22,6 +22,7 @@
 - (id)init
 {
     self = [super init];
+    
     if (self) {
         self.dequeArray = [@[] mutableCopy];
     }
@@ -55,6 +56,7 @@
     if ([self.dequeArray count] > 0) {
         id object = [self peekFirstObject];
         [self.dequeArray removeObjectAtIndex:0];
+        
         return object;
     }
     

@@ -8,7 +8,8 @@
 
 #import "EKBTreeNode.h"
 
-@implementation EKBTreeNode
+
+@implementation EKBTreeNode;
 
 - (void)printDescription
 {

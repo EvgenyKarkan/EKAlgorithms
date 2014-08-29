@@ -69,9 +69,10 @@
 - (EKBTreeNode *)deleteObject:(NSObject *)obj
 {
     EKBTreeNode *node = [self find:obj];
+    
     if (node) {
         if (node.leftChild && node.rightChild) {
-            // Use in-order successor node
+                // Use in-order successor node
             EKBTreeNode *tmpCell = node.rightChild;
             while (tmpCell.leftChild) {
                 tmpCell = tmpCell.leftChild;
@@ -88,25 +89,30 @@
             node.object = [tmpCell.object copy];
             tmpCell.object = temp;
             node.rightChild = [self deleteObject:temp];
-        } else {
+        }
+        else {
             if (node.leftChild != nil) {
                 node = node.leftChild;
-            } else if (node.rightChild != nil) {
+            }
+            else if (node.rightChild != nil) {
                 node = node.rightChild;
             }
             if ([node isLeftChildOfParent]) {
                 node.parent.leftChild = nil;
-            } else {
+            }
+            else {
                 node.parent.rightChild = nil;
             }
         }
     }
+    
     return node;
 }
 
 - (EKBTreeNode *)find:(NSObject *)obj
 {
     EKBTreeNode *currentNode = self.root;
+    
     while (YES) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
@@ -115,17 +121,22 @@
         if (result > 0) {
             if (currentNode.rightChild) {
                 currentNode = currentNode.rightChild;
-            } else
+            }
+            else
                 return nil;
-        } else if (result < 0) {
+        }
+        else if (result < 0) {
             if (currentNode.leftChild) {
                 currentNode = currentNode.leftChild;
-            } else
+            }
+            else
                 return nil;
-        } else {
+        }
+        else {
             break;
         }
     }
+    
     return currentNode;
 }
 
