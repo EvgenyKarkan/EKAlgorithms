@@ -42,8 +42,8 @@
 
 - (NSUInteger)numberOfWordsInString
 {
-    const char *str = [self UTF8String];
-    BOOL state = NO;
+    const char *str        = [self UTF8String];
+    BOOL state             = NO;
     NSUInteger wordCounter = 0;
     
     while (*str) {
@@ -66,7 +66,7 @@
 + (void)swapValuesOfPointer:(char *)xPointer toPointer:(char *)yPointer
 {
     char temp;
-    temp = *xPointer;
+    temp      = *xPointer;
     *xPointer = *yPointer;
     *yPointer = temp;
 }
@@ -200,7 +200,7 @@
 
 - (NSInteger)indexOfLastOccurrenceOfNeedle:(NSString *)needle
 {
-    NSString *reversedNeedle = [needle reversedString];
+    NSString *reversedNeedle   = [needle reversedString];
     NSString *reversedHaystack = [self reversedString];
     
     NSInteger firstOccurrenceInReversedString = [reversedHaystack indexOfFirstOccurrenceOfNeedle:reversedNeedle];
@@ -368,19 +368,19 @@ enum decreaseDir {kInit = 0, kLeftUp, kUp, kLeft};
 {
     NSParameterAssert(pattern != nil);
     
-    NSUInteger selfLenght = [self length];
+    NSUInteger selfLenght    = [self length];
     NSUInteger patternLenght = [pattern length];
     
     NSInteger *prefix = [self computePrefixFunctionForPattern:pattern];
     NSParameterAssert(prefix != NULL);
     
-    const char *utf8Self = [self UTF8String];
+    const char *utf8Self        = [self UTF8String];
     size_t self_C_string_lenght = strlen(utf8Self) + 1;
     
     char haystack_C_array[self_C_string_lenght];
     memcpy(haystack_C_array, utf8Self, self_C_string_lenght);
     
-    const char *utf8Pattern = [pattern UTF8String];
+    const char *utf8Pattern        = [pattern UTF8String];
     size_t pattern_C_string_lenght = strlen(utf8Pattern) + 1;
     
     char needle_C_array[pattern_C_string_lenght];
@@ -409,13 +409,13 @@ enum decreaseDir {kInit = 0, kLeftUp, kUp, kLeft};
 {
     NSUInteger pattern_ObjC_string_lenght = [pattern length];
     
-    const char *utf8Pattern = [pattern UTF8String];
+    const char *utf8Pattern        = [pattern UTF8String];
     size_t pattern_C_string_lenght = strlen(utf8Pattern) + 1;
     
     char pattern_C_Array[pattern_C_string_lenght];
     memcpy(pattern_C_Array, utf8Pattern, pattern_C_string_lenght);
     
-    NSInteger *prefix = malloc(sizeof(int) * pattern_ObjC_string_lenght);
+    NSInteger *prefix = malloc(sizeof(NSInteger) * pattern_ObjC_string_lenght);
     NSParameterAssert(prefix != NULL);
     
     NSInteger k = -1;
