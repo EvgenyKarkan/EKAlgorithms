@@ -22,8 +22,9 @@
     id object = [self valueForKey:key];
     
     if ([object isKindOfClass:[NSNumber class]]) {
-        NSNumber *value = object;
-        NSNumber *result;
+        NSNumber *value  = object;
+        NSNumber *result = nil;
+        
         switch ([value numberType]) {
             case kCFNumberSInt32Type:
                 result = [NSNumber numberWithInt:([num intValue] + [value intValue])];
@@ -55,8 +56,8 @@
     id object = [self objectForKey:aKey];
     
     if ([object isMemberOfClass:[NSNumber class]]) {
-        NSNumber *value = object;
-        NSNumber *result;
+        NSNumber *value  = object;
+        NSNumber *result = nil;
         
         switch ([value numberType]) {
             case kCFNumberSInt32Type:

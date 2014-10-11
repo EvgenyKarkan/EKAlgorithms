@@ -26,7 +26,7 @@
         id value = [self objectAtIndex:i];
         
         if ([value compare:maximumValue] == NSOrderedDescending) {
-            maximumValue = value;
+            maximumValue        = value;
             indexOfMaximumValue = i;
         }
     }
@@ -50,7 +50,7 @@
     BOOL oddnessFlag = count & 1;
     
     if (oddnessFlag) {
-        minimalValue = maximalValue = self.lastObject;
+        minimalValue      = maximalValue      = self.lastObject;
         minimalValueIndex = maximalValueIndex = count - 1;
     }
 
@@ -70,39 +70,39 @@
         NSNumber *iValue   = values[0];
         NSNumber *ip1Value = values[1];
         
-        NSUInteger iidx = idx - 2;
+        NSUInteger iidx   = idx - 2;
         NSUInteger ip1idx = idx - 1;
         
         if ([iValue compare:ip1Value] == NSOrderedAscending) {
             if ([minimalValue compare:iValue] == NSOrderedDescending) {
-                minimalValue = iValue;
+                minimalValue      = iValue;
                 minimalValueIndex = iidx;
             }
             
             if ([maximalValue compare:ip1Value] == NSOrderedAscending) {
-                maximalValue = ip1Value;
+                maximalValue      = ip1Value;
                 maximalValueIndex = ip1idx;
             }
         }
         else if ([iValue compare:ip1Value] == NSOrderedDescending) {
             if ([minimalValue compare:ip1Value] == NSOrderedDescending) {
-                minimalValue = ip1Value;
+                minimalValue      = ip1Value;
                 minimalValueIndex = ip1idx;
             }
             
             if ([maximalValue compare:iValue] == NSOrderedAscending) {
-                maximalValue = iValue;
+                maximalValue      = iValue;
                 maximalValueIndex = iidx;
             }
         }
         else {
             if ([minimalValue compare:iValue] == NSOrderedDescending) {
-                minimalValue = iValue;
+                minimalValue      = iValue;
                 minimalValueIndex = iidx;
             }
             
             if ([maximalValue compare:iValue] == NSOrderedAscending) {
-                maximalValue = iValue;
+                maximalValue      = iValue;
                 maximalValueIndex = iidx;
             }
         }
@@ -155,7 +155,7 @@
 
 - (NSArray *)unionWithoutDuplicatesWithArray:(NSArray *)secondArray
 {
-    NSSet *firstSet = [NSSet setWithArray:self];
+    NSSet *firstSet  = [NSSet setWithArray:self];
     NSSet *secondSet = [NSSet setWithArray:secondArray];
     
     NSMutableSet *resultSet = [NSMutableSet setWithSet:firstSet];
@@ -171,6 +171,7 @@
     
     NSArray *copy = [mutableArray copy];
     NSInteger index = [copy count] - 1;
+    
     for (id object in [copy reverseObjectEnumerator]) {
         
         for (NSUInteger i = 0; i < index; i++) {
@@ -269,16 +270,14 @@
 
 - (NSDictionary *)occurencesOfEachElementInArray
 {
-    NSUInteger count = [self count];
-    
+    NSUInteger count              = [self count];
     NSMutableDictionary *registry = [NSMutableDictionary dictionaryWithCapacity:count];
     
     for (NSUInteger i = 0; i < count; i++) {
-        id currentElement = self[i];
         
+        id currentElement                = self[i];
         NSNumber *existingElementCounter = registry[currentElement];
-        
-        NSUInteger currentCount = existingElementCounter ? existingElementCounter.unsignedIntegerValue : 0;
+        NSUInteger currentCount          = existingElementCounter ? existingElementCounter.unsignedIntegerValue : 0;
         
         currentCount++;
         
@@ -290,7 +289,7 @@
 
 - (NSDictionary *)CocoaImplementationOfOccurencesOfEachElementInArray
 {
-    NSCountedSet *countedSet = [[NSCountedSet alloc] initWithArray:self];
+    NSCountedSet *countedSet        = [[NSCountedSet alloc] initWithArray:self];
     NSMutableDictionary *dictionary = [@{} mutableCopy];
     
     NSArray* setAllObjects = [countedSet allObjects];

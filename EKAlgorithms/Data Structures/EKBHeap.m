@@ -50,7 +50,7 @@
         return nil;
     }
     else {
-        NSNumber *minNum = [[self.heap objectAtIndex:1] copy];
+        NSNumber *minNum  = [[self.heap objectAtIndex:1] copy];
         NSNumber *lastNum = [self.heap lastObject];
         
         for (i = 1; i * 2 <= self.heap.count - 1; i = child) {

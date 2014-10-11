@@ -14,8 +14,8 @@
 - (instancetype)initWithObject:(NSObject *)obj compareSelector:(SEL)selector
 {
     if (self = [super init]) {
-        self.root = [[EKBTreeNode alloc] init];
-        self.root.object = obj;
+        self.root                 = [[EKBTreeNode alloc] init];
+        self.root.object          = obj;
         self.root.compareSelector = selector;
     }
     
@@ -24,12 +24,12 @@
 
 - (void)insertObject:(NSObject *)newObj
 {
-    EKBTreeNode *treeNode = [[EKBTreeNode alloc] init];
-    treeNode.object = newObj;
+    EKBTreeNode *treeNode    = [[EKBTreeNode alloc] init];
+    treeNode.object          = newObj;
     treeNode.compareSelector = self.root.compareSelector;
     
     EKBTreeNode *currentNode = self.root;
-    EKBTreeNode *parentNode = self.root;
+    EKBTreeNode *parentNode  = self.root;
     
     while (YES) {
 #pragma clang diagnostic push
@@ -39,7 +39,7 @@
         if (result >= 0) {
             if (!currentNode.rightChild) {
                 currentNode.rightChild = treeNode;
-                treeNode.parent = parentNode;
+                treeNode.parent        = parentNode;
                 break;
             }
             else {
@@ -50,12 +50,12 @@
         else {
             if (!currentNode.leftChild) {
                 currentNode.leftChild = treeNode;
-                treeNode.parent = parentNode;
+                treeNode.parent       = parentNode;
                 break;
             }
             else {
                 currentNode = currentNode.leftChild;
-                parentNode = currentNode;
+                parentNode  = currentNode;
             }
         }
     }
@@ -85,9 +85,9 @@
              }
              */
             NSObject *temp;
-            temp = [node.object copy];
-            node.object = [tmpCell.object copy];
-            tmpCell.object = temp;
+            temp            = [node.object copy];
+            node.object     = [tmpCell.object copy];
+            tmpCell.object  = temp;
             node.rightChild = [self deleteObject:temp];
         }
         else {

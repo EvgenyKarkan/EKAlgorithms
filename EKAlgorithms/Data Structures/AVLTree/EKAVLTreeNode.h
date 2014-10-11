@@ -9,11 +9,11 @@
 
 @interface EKAVLTreeNode : NSObject
 
-@property (nonatomic, assign) NSInteger height;
-@property (nonatomic, strong) NSObject *object;
+@property (nonatomic, assign) NSInteger     height;
+@property (nonatomic, strong) NSObject      *object;
 @property (nonatomic, strong) EKAVLTreeNode *leftChild;
 @property (nonatomic, strong) EKAVLTreeNode *rightChild;
-@property (nonatomic, assign) SEL compareSelector;
+@property (nonatomic, assign) SEL           compareSelector;
 
 - (void)printDescription;
 

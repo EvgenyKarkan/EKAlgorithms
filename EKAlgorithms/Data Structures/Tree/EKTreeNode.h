@@ -9,7 +9,7 @@
 
 @interface EKTreeNode : NSObject
 
-@property (nonatomic, strong) NSObject *object;
+@property (nonatomic, strong) NSObject   *object;
 @property (nonatomic, strong) EKTreeNode *child;
 @property (nonatomic, strong) EKTreeNode *sibling;
 @property (nonatomic, strong) EKTreeNode *parent;

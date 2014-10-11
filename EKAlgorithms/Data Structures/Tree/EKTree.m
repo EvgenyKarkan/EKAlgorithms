@@ -20,7 +20,7 @@
 - (instancetype)initWithObject:(NSObject *)object
 {
     if (self = [super init]) {
-        self.root = [[EKTreeNode alloc] init];
+        self.root        = [[EKTreeNode alloc] init];
         self.root.object = object;
         self.root.parent = nil;
     }
@@ -53,7 +53,7 @@
         for (EKTree *tree in trees) {
             if (tree != previous) {
                 previous.root.sibling = tree.root;
-                previous = tree;
+                previous              = tree;
             }
         }
         EKQueue *queue = [[EKQueue alloc] init];
@@ -62,17 +62,18 @@
         
             // Create binary tree
         while (![queue isEmpty]) {
-            EKTreeNode *node = [queue removeFirstObject];
+            EKTreeNode *node  = [queue removeFirstObject];
             EKBTreeNode *root = [result find:node.object];
+            
             if (node.child) {
                 [queue insertObject:node.child];
-                root.leftChild = [[EKBTreeNode alloc] init];
+                root.leftChild        = [[EKBTreeNode alloc] init];
                 root.leftChild.object = node.child.object;
                 root.leftChild.parent = root;
             }
             if (node.sibling) {
                 [queue insertObject:node.sibling];
-                root.rightChild = [[EKBTreeNode alloc] init];
+                root.rightChild        = [[EKBTreeNode alloc] init];
                 root.rightChild.object = node.sibling.object;
                 root.rightChild.parent = root;
             }

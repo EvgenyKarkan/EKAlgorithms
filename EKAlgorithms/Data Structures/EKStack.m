@@ -11,7 +11,7 @@
 @interface EKStack ()
 
 @property (nonatomic, strong) NSMutableArray *stackArray;
-@property (nonatomic, assign) NSUInteger maxStackSize;
+@property (nonatomic, assign) NSUInteger     maxStackSize;
 
 @end
 
@@ -38,7 +38,7 @@
     
     if (self) {
         if (size > 0) {
-            self.stackArray = [@[] mutableCopy];
+            self.stackArray   = [@[] mutableCopy];
             self.maxStackSize = size;
         }
         else {

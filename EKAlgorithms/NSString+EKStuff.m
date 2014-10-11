@@ -18,7 +18,7 @@
 {
     BOOL result = NO;
     NSString *nonWhitespacedBufferString = [[self stringByReplacingOccurrencesOfString:@" " withString:@""] lowercaseString];
-    NSString *reverseString = [self reversedString];
+    NSString *reverseString              = [self reversedString];
     
     result = [reverseString isEqualToString:nonWhitespacedBufferString] ? YES : NO;
     

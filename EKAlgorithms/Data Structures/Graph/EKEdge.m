@@ -18,9 +18,9 @@
     
     if (self) {
         self.adjacentFrom = vertexFrom;
-        self.adjacentTo = vertexTo;
-        self.weight = weight;
-        self.used = NO;
+        self.adjacentTo   = vertexTo;
+        self.weight       = weight;
+        self.used         = NO;
     }
     return self;
 }

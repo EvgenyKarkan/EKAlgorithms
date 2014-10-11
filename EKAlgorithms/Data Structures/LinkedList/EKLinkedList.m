@@ -37,9 +37,9 @@
         }
         self.tail = lastNode;
     }
-    node.next = self.head;
+    node.next          = self.head;
     self.head.previous = node;
-    self.head = node;
+    self.head          = node;
 }
 
 - (void)addToBack:(NSObject *)value
@@ -53,16 +53,16 @@
         }
         self.tail = lastNode;
     }
-    node.previous = self.tail;
+    node.previous  = self.tail;
     self.tail.next = node;
-    self.tail = node;
+    self.tail      = node;
 }
 
 - (void)insertObject:(NSObject *)object atIndex:(NSUInteger)index
 {
-    EKNode *currentNode = self.head;
+    EKNode *currentNode  = self.head;
     EKNode *previousNode = nil;
-    EKNode *nextNode = nil;
+    EKNode *nextNode     = nil;
     
     for (NSUInteger i = 1; i <= index; i++) {
         currentNode = currentNode.next;
@@ -81,10 +81,10 @@
     }
     else {
         previousNode.next = newNode;
-        newNode.previous = previousNode;
+        newNode.previous  = previousNode;
         
         nextNode.previous = newNode;
-        newNode.next = nextNode;
+        newNode.next      = nextNode;
     }
 }
 
@@ -119,7 +119,7 @@
     }
     
     EKNode *currentNode = self.head;
-    NSUInteger i = 1;
+    NSUInteger i        = 1;
     
     while (currentNode.next) {
         currentNode = currentNode.next;
@@ -143,7 +143,8 @@
 {
     if (object) {
         NSMutableArray *result = [@[] mutableCopy];
-        EKNode *currentNode = self.head;
+        EKNode *currentNode    = self.head;
+        
         while (currentNode.next != nil) {
             if ([currentNode.value isEqualTo:object]) {
                 [result addObject:currentNode];
@@ -208,13 +209,14 @@
     self.current = self.head;
     
     EKNode *previousNode = nil;
-    EKNode *nextNode = nil;
+    EKNode *nextNode     = nil;
     
     while (self.current) {
-        nextNode = self.current.next;
+        nextNode          = self.current.next;
         self.current.next = previousNode;
-        previousNode = self.current;
-        self.current  = nextNode;
+        
+        previousNode      = self.current;
+        self.current      = nextNode;
     }
     
     self.head = previousNode;

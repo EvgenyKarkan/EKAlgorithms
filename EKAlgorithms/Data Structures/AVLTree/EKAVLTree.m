@@ -14,9 +14,9 @@
 - (instancetype)initWithObject:(NSObject *)obj compareSelector:(SEL)selector
 {
     if (self = [super init]) {
-        self.root = [[EKAVLTreeNode alloc] init];
-        self.root.object = obj;
-        self.root.height = 0;
+        self.root                 = [[EKAVLTreeNode alloc] init];
+        self.root.object          = obj;
+        self.root.height          = 0;
         self.root.compareSelector = selector;
     }
     
@@ -33,11 +33,11 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     if (!T) {
-        T = [[EKAVLTreeNode alloc] init];
-        T.object = newObject;
-        T.leftChild = T.rightChild = nil;
+        T                 = [[EKAVLTreeNode alloc] init];
+        T.object          = newObject;
+        T.leftChild       = T.rightChild = nil;
         T.compareSelector = self.root.compareSelector;
-        T.height = 0;
+        T.height          = 0;
     } else {
         NSComparisonResult result = (NSComparisonResult)[newObject performSelector : T.compareSelector withObject : T.object];
         if (result < 0) {
@@ -120,9 +120,9 @@
                 temp = temp.leftChild;
             }
             
-            T.object = [temp.object copy];
+            T.object     = [temp.object copy];
             T.rightChild = [self deleteObject:temp.object AtNode:T.rightChild];
-            T.height = MAX([EKAVLTree heightOfNode:T.leftChild], [EKAVLTree heightOfNode:T.rightChild])+1;
+            T.height     = MAX([EKAVLTree heightOfNode:T.leftChild], [EKAVLTree heightOfNode:T.rightChild])+1;
         }
         return T;
     } else if (result < 0) {
@@ -159,8 +159,8 @@
 {
     EKAVLTreeNode *K1;
     
-    K1 = K2.leftChild;
-    K2.leftChild = K1.rightChild;
+    K1            = K2.leftChild;
+    K2.leftChild  = K1.rightChild;
     K1.rightChild = K2;
     
     K2.height = MAX([EKAVLTree heightOfNode:K2.leftChild], [EKAVLTree heightOfNode:K2.rightChild])+1;
@@ -173,9 +173,9 @@
 {
     EKAVLTreeNode *K1;
     
-    K1 = K2.rightChild;
+    K1            = K2.rightChild;
     K2.rightChild = K1.leftChild;
-    K1.leftChild = K2;
+    K1.leftChild  = K2;
     
     K2.height = MAX([EKAVLTree heightOfNode:K2.leftChild], [EKAVLTree heightOfNode:K2.rightChild])+1;
     K1.height = MAX([EKAVLTree heightOfNode:K1.leftChild], [EKAVLTree heightOfNode:K1.rightChild])+1;

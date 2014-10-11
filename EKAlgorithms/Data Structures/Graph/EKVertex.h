@@ -9,8 +9,8 @@
 
 @interface EKVertex : NSObject
 
-@property (nonatomic, copy) NSString *label;
-@property (nonatomic, assign) BOOL wasVisited;
+@property (nonatomic, copy  ) NSString     *label;
+@property (nonatomic, assign) BOOL         wasVisited;
 @property (nonatomic, strong) NSMutableSet *adjacentEdges;
 
 @end

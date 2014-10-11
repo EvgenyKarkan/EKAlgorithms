@@ -9,11 +9,11 @@
 
 @interface EKBTreeNode : NSObject
 
-@property (nonatomic, strong) NSObject *object;
+@property (nonatomic, strong) NSObject    *object;
 @property (nonatomic, strong) EKBTreeNode *leftChild;
 @property (nonatomic, strong) EKBTreeNode *rightChild;
 @property (nonatomic, strong) EKBTreeNode *parent;
-@property (nonatomic, assign) SEL compareSelector;
+@property (nonatomic, assign) SEL         compareSelector;
 
 - (void)printDescription;
 - (BOOL)isLeftChildOfParent;

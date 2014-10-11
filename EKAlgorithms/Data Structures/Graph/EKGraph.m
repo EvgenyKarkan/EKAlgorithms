@@ -22,7 +22,7 @@
 
 @interface EKGraph ()
 
-@property (nonatomic, strong) EKVertex *firstVertex;
+@property (nonatomic, strong) EKVertex            *firstVertex;
 @property (nonatomic, strong) NSMutableDictionary *indegree;
 
 @end
@@ -70,8 +70,9 @@
 
 - (void)primMST:(id)start
 {
-    EKVertex *startVertex = start;
+    EKVertex *startVertex  = start;
     NSMutableArray *parent = [@[] mutableCopy];
+    
     [self clearVisitHistory];
     
     startVertex.wasVisited = YES;
@@ -126,7 +127,7 @@
 - (void)kruskalMST
 {
     NSMutableArray *vertices = self.vertices;
-    NSMutableArray *edges = [@[] mutableCopy];
+    NSMutableArray *edges    = [@[] mutableCopy];
     
     for (EKVertex *vertex in vertices) {
         for (EKEdge *edge in vertex.adjacentEdges) {
@@ -186,7 +187,7 @@
     EKQueue *queue = [[EKQueue alloc] init];
     [self clearVisitHistory];
     
-    EKVertex *startVertex = [vertices firstObject];
+    EKVertex *startVertex  = [vertices firstObject];
     startVertex.wasVisited = YES;
     
     for (EKEdge *edge in startVertex.adjacentEdges) {
@@ -196,7 +197,7 @@
     }
     
     while (![queue isEmpty]) {
-        EKVertex *peekVertex = [queue removeFirstObject];
+        EKVertex *peekVertex  = [queue removeFirstObject];
         peekVertex.wasVisited = YES;
         
         if (peekVertex == [vertices lastObject]) {
@@ -217,7 +218,7 @@
 + (EKEdge *)oppositeEdge:(EKEdge *)edge InEdges:(NSArray *)edges
 {
     EKVertex *startVertex = edge.adjacentFrom;
-    EKVertex *endVertex = edge.adjacentTo;
+    EKVertex *endVertex   = edge.adjacentTo;
     
     for (EKEdge *e in edges) {
         if (e.adjacentFrom == endVertex && e.adjacentTo == startVertex && [e.weight isEqualTo:edge.weight]) {
@@ -233,9 +234,9 @@
 {
     EKVertex *sourceVertex = source, *targetVertex = target;
     
-    NSMutableDictionary *dist = [@{} mutableCopy];
+    NSMutableDictionary *dist     = [@{} mutableCopy];
     NSMutableDictionary *previous = [@{} mutableCopy];
-    NSMutableArray *Q = self.vertices;
+    NSMutableArray *Q             = self.vertices;
     
     for (EKVertex *vertex in Q) {
         [dist setValue:@INT_MAX forKey:vertex.label];
@@ -252,8 +253,9 @@
             break;
         }
         for (EKEdge *edge in u.adjacentEdges) {
-            EKVertex *v = edge.adjacentTo;
+            EKVertex *v   = edge.adjacentTo;
             NSNumber *alt = [NSNumber sumOfNumbers:@[[dist valueForKey:u.label], edge.weight]];
+            
             if ([alt isLessThan:[dist valueForKey:v.label]]) {
                 [dist setValue:alt forKey:v.label];
                 [previous setValue:u forKey:v.label];
@@ -275,19 +277,19 @@
 + (EKVertex *)hasMinimumDistance:(NSDictionary *)dist InVertices:(NSArray *)Q
 {
     NSNumber *minDist = nil;
-    NSUInteger index = 0;
+    NSUInteger index  = 0;
     
     for (EKVertex *vertex in Q) {
         if (!vertex.wasVisited) {
             NSString *label = vertex.label;
             if (!minDist) {
                 minDist = [dist valueForKey:label];
-                index = [Q indexOfObject:vertex];
+                index   = [Q indexOfObject:vertex];
             }
             else {
                 if ([minDist isGreaterThan:[dist valueForKey:label]]) {
                     minDist = [dist valueForKey:label];
-                    index = [Q indexOfObject:vertex];
+                    index   = [Q indexOfObject:vertex];
                 }
             }
         }
@@ -300,8 +302,8 @@
 
 - (void)topSort
 {
-    NSMutableArray *topNum = [@[] mutableCopy];
-    EKQueue *queue = [[EKQueue alloc] init];
+    NSMutableArray *topNum   = [@[] mutableCopy];
+    EKQueue *queue           = [[EKQueue alloc] init];
     NSMutableArray *vertices = self.vertices;
     
     for (NSUInteger i = 0; i < vertices.count; i++) {
@@ -363,7 +365,7 @@
 {
     NSAssert([self.vertices count] > 0, @"No any vertex in graph");
     
-    self.firstVertex.label = @"Start vertex";
+    self.firstVertex.label      = @"Start vertex";
     self.firstVertex.wasVisited = YES;
     [self displayVisitedVertex:self.firstVertex];
     
@@ -372,7 +374,7 @@
     
     while (![stack isEmpty]) {
         EKVertex *lastVertex = [stack peek];
-        BOOL isAddNewVertex = NO;
+        BOOL isAddNewVertex  = NO;
         
         for (EKEdge *adjacentEdge in lastVertex.adjacentEdges) {
             if (!adjacentEdge.adjacentTo.wasVisited) {
@@ -402,7 +404,7 @@
 {
     NSAssert([self.vertices count] > 0, @"No any vertex in graph");
     
-    self.firstVertex.label = @"Start vertex";
+    self.firstVertex.label      = @"Start vertex";
     self.firstVertex.wasVisited = YES;
     [self displayVisitedVertex:self.firstVertex];
     
