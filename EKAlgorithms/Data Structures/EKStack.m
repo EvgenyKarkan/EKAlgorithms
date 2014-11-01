@@ -20,6 +20,8 @@
 
 #pragma mark - Default init
 
+#pragma clang diagnostic ignored "-Wobjc-designated-initializers"
+
 - (instancetype)init
 {
     self = [super init];
