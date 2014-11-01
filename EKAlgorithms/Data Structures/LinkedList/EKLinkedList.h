@@ -15,7 +15,7 @@
 @property (nonatomic, strong) EKNode *tail;
 @property (nonatomic, strong) EKNode *current;
 
-- (instancetype)initWithHead:(NSObject *)value;
+- (instancetype)initWithHead:(NSObject *)value NS_DESIGNATED_INITIALIZER;
 
 - (void)addToFront:(NSObject *)value;
 - (void)addToBack:(NSObject *)value;

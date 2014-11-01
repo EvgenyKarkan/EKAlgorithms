@@ -19,7 +19,7 @@
 
 #pragma mark - init
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     
@@ -74,7 +74,7 @@
 - (id)peekFirstObject
 {
     if ([self.dequeArray count] > 0) {
-        return [self.dequeArray objectAtIndex:0];
+        return (self.dequeArray)[0];
     }
     
     return nil;

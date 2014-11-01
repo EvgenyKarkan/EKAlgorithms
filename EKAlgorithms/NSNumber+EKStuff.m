@@ -21,16 +21,16 @@
         resultArray[i] = [NSNumber numberWithInteger:i];
     }
     
-    resultArray[1] = [NSNumber numberWithInteger:0];
+    resultArray[1] = @0;
     
     for (NSUInteger s = 2; s < maxNumber; s++) {
-        if (resultArray[s] != [NSNumber numberWithInteger:0]) {
+        if (![resultArray[s]  isEqual: @0]) {
             for (NSUInteger j = s * 2; j < maxNumber; j += s) {
-                resultArray[j] = [NSNumber numberWithInteger:0];
+                resultArray[j] = @0;
             }
         }
     }
-    [resultArray removeObjectIdenticalTo:[NSNumber numberWithInteger:0]];
+    [resultArray removeObjectIdenticalTo:@0];
     
     return [resultArray copy];
 }
@@ -81,11 +81,11 @@
 {
     NSMutableArray *resultArray = [@[] mutableCopy];
     
-    resultArray[0] = [NSNumber numberWithInteger:0];
-    resultArray[1] = [NSNumber numberWithInteger:1];
+    resultArray[0] = @0;
+    resultArray[1] = @1;
     
     for (NSUInteger i = 2; i < number; i++) {
-        NSNumber *foo  = [NSNumber numberWithInteger:[resultArray[i - 2] integerValue] + [resultArray[i - 1] integerValue]];
+        NSNumber *foo  = @([resultArray[i - 2] integerValue] + [resultArray[i - 1] integerValue]);
         resultArray[i] = foo;
     }
     
@@ -160,7 +160,7 @@
 + (NSNumber *)fibonacciAtIndex:(NSUInteger)index
 {
     NSArray *array = [NSNumber fibonacciNumbersUpToNumber:index + 1];
-    return [array objectAtIndex:index];
+    return array[index];
 }
 
 #pragma mark - Sum of digits of a number
@@ -455,24 +455,24 @@
     
     switch ([[numbers firstObject] numberType]) {
         case kCFNumberSInt32Type:
-            sum = [NSNumber numberWithInt:[[numbers firstObject] intValue]];
+            sum = @([[numbers firstObject] intValue]);
             for (NSUInteger i = 1; i < count; i++) {
-                sum = [NSNumber numberWithInt:([sum intValue] + [[numbers objectAtIndex:i] intValue])];
+                sum = @([sum intValue] + [numbers[i] intValue]);
             }
             break;
             
         case kCFNumberSInt64Type:
-            sum = [NSNumber numberWithInteger:[[numbers firstObject] integerValue]];
+            sum = @([[numbers firstObject] integerValue]);
             for (NSUInteger i = 1; i < count; i++) {
-                sum = [NSNumber numberWithInteger:([sum integerValue] + [[numbers objectAtIndex:i] integerValue])];
+                sum = @([sum integerValue] + [numbers[i] integerValue]);
             }
             break;
             
         case kCFNumberFloat32Type:
         case kCFNumberFloat64Type:
-            sum = [NSNumber numberWithFloat:[[numbers firstObject] floatValue]];
+            sum = @([[numbers firstObject] floatValue]);
             for (NSUInteger i = 1; i < count; i++) {
-                sum = [NSNumber numberWithFloat:([sum floatValue] + [[numbers objectAtIndex:i] floatValue])];
+                sum = @([sum floatValue] + [numbers[i] floatValue]);
             }
             break;
             

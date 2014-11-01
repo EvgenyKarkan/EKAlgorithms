@@ -23,7 +23,7 @@
     NSUInteger count = [self count];
 
     for (NSUInteger i = 1; i < count; i++) {
-        id value = [self objectAtIndex:i];
+        id value = self[i];
         
         if ([value compare:maximumValue] == NSOrderedDescending) {
             maximumValue        = value;
@@ -219,11 +219,11 @@
     
     while ([objects count] < arraySize) {
         randomObject = arc4random() % maxValue;
-        if (unique && ![objects containsObject:[NSNumber numberWithUnsignedInteger:randomObject]]) {
-            [objects addObject:[NSNumber numberWithUnsignedInteger:randomObject]];
+        if (unique && ![objects containsObject:@(randomObject)]) {
+            [objects addObject:@(randomObject)];
         }
         if (!unique) {
-            [objects addObject:[NSNumber numberWithUnsignedInteger:randomObject]];
+            [objects addObject:@(randomObject)];
         }
     }
     
@@ -261,8 +261,7 @@
             }
         }
         
-        [registry setObject:@(counter)
-                     forKey:self[i]];
+        registry[self[i]] = @(counter);
     }
     
     return registry;
@@ -295,8 +294,7 @@
     NSArray* setAllObjects = [countedSet allObjects];
     
     for (id object in setAllObjects) {
-        [dictionary setObject:@([countedSet countForObject:object])
-                       forKey:object];
+        dictionary[object] = @([countedSet countForObject:object]);
     }
     
     return dictionary;
@@ -310,7 +308,7 @@
     NSUInteger count = [self count];
 
     for (int i = 0; i < count; i++) {
-        if ([object isEqual:[self objectAtIndex:i]]) {
+        if ([object isEqual:self[i]]) {
             return i;
         }
     }
@@ -328,10 +326,10 @@
     while (firstIndex < uptoIndex) {
         NSUInteger mid = (firstIndex + uptoIndex) / 2;
 
-        if ([object compare:[self objectAtIndex:mid]] == NSOrderedAscending) {
+        if ([object compare:self[mid]] == NSOrderedAscending) {
             uptoIndex = mid;
         }
-        else if ([object compare:[self objectAtIndex:mid]] == NSOrderedDescending) {
+        else if ([object compare:self[mid]] == NSOrderedDescending) {
             firstIndex = mid + 1;
         }
         else {

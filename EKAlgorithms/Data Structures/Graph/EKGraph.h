@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSMutableArray *vertices;
 
-- (instancetype)initWithStartVertex:(id)startVertex;
+- (instancetype)initWithStartVertex:(id)startVertex NS_DESIGNATED_INITIALIZER;
 - (void)depthFirstSearch;
 - (void)breadthFirstSearch;
 - (BOOL)isUndirectedGraph;

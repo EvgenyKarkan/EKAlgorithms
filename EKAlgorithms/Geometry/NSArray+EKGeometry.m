@@ -14,7 +14,7 @@
 + (NSArray *)sortArrayOfLocations:(NSArray *)array byDistanceToLocation:(EKALocation *)location
 {
     for (EKALocation *_location in array) {
-        _location->precalculatedDistanceToLocation = [NSNumber numberWithDouble:EKALocationDistanceToLocation(_location, location)];
+        _location->precalculatedDistanceToLocation = @(EKALocationDistanceToLocation(_location, location));
     }
 
     return [array sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"precalculatedDistanceToLocation"

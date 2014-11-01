@@ -27,16 +27,16 @@
         
         switch ([value numberType]) {
             case kCFNumberSInt32Type:
-                result = [NSNumber numberWithInt:([num intValue] + [value intValue])];
+                result = @([num intValue] + [value intValue]);
                 break;
                 
             case kCFNumberSInt64Type:
-                result = [NSNumber numberWithInteger:([num integerValue] + [value integerValue])];
+                result = @([num integerValue] + [value integerValue]);
                 break;
                 
             case kCFNumberFloat32Type:
             case kCFNumberFloat64Type:
-                result = [NSNumber numberWithFloat:([num floatValue] + [value floatValue])];
+                result = @([num floatValue] + [value floatValue]);
                 break;
                 
             default:
@@ -53,7 +53,7 @@
 
 - (void)increaseObjectForKey:(id)aKey By:(NSNumber *)num
 {
-    id object = [self objectForKey:aKey];
+    id object = self[aKey];
     
     if ([object isMemberOfClass:[NSNumber class]]) {
         NSNumber *value  = object;
@@ -61,16 +61,16 @@
         
         switch ([value numberType]) {
             case kCFNumberSInt32Type:
-                result = [NSNumber numberWithInt:([num intValue] + [value intValue])];
+                result = @([num intValue] + [value intValue]);
                 break;
                 
             case kCFNumberSInt64Type:
-                result = [NSNumber numberWithInteger:([num integerValue] + [value integerValue])];
+                result = @([num integerValue] + [value integerValue]);
                 break;
                 
             case kCFNumberFloat32Type:
             case kCFNumberFloat64Type:
-                result = [NSNumber numberWithFloat:([num floatValue] + [value floatValue])];
+                result = @([num floatValue] + [value floatValue]);
                 break;
                 
             default:
@@ -78,7 +78,7 @@
                 result = value;
                 break;
         }
-        [self setObject:result forKey:aKey];
+        self[aKey] = result;
     }
     else {
         NSAssert(0, @"Object is not a instance of NSNumber!");

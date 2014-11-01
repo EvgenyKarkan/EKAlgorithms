@@ -37,7 +37,7 @@
 {
     [self.heap addObject:num];
     
-    for (NSUInteger i = [self.heap count] - 1; [num isLessThan:[self.heap objectAtIndex:i / 2]]; i /= 2) {
+    for (NSUInteger i = [self.heap count] - 1; [num isLessThan:(self.heap)[i / 2]]; i /= 2) {
         [self.heap exchangeObjectAtIndex:i withObjectAtIndex:i / 2];
     }
 }
@@ -50,21 +50,21 @@
         return nil;
     }
     else {
-        NSNumber *minNum  = [[self.heap objectAtIndex:1] copy];
+        NSNumber *minNum  = [(self.heap)[1] copy];
         NSNumber *lastNum = [self.heap lastObject];
         
         for (i = 1; i * 2 <= self.heap.count - 1; i = child) {
             child = i * 2;
-            if (child != self.heap.count - 1 && [[self.heap objectAtIndex:child + 1] isLessThan:[self.heap objectAtIndex:child]]) {
+            if (child != self.heap.count - 1 && [(self.heap)[child + 1] isLessThan:(self.heap)[child]]) {
                 child++;
             }
-            if ([lastNum isGreaterThan:[self.heap objectAtIndex:child]]) {
+            if ([lastNum isGreaterThan:(self.heap)[child]]) {
                 [self.heap exchangeObjectAtIndex:i withObjectAtIndex:child];
             }
             else
                 break;
         }
-        [self.heap replaceObjectAtIndex:i withObject:lastNum];
+        (self.heap)[i] = lastNum;
         [self.heap removeLastObject];
         
         return minNum;

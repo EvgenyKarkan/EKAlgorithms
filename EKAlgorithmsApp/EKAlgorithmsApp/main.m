@@ -36,12 +36,12 @@ int main(int argc, const char *argv[])
 
         //Max element of array
         NSLog(@"Max element of created array %@ equals to %@ and stored at index %li", [array debugDescription],
-              [array objectAtIndex:(long)[array indexOfMaximumElement]],
+              array[(long)[array indexOfMaximumElement]],
               (long)[array indexOfMaximumElement]);
 
         //Get the Max and Min Simultaneously.
         NSArray *indexes = [array indexesOfMinimumAndMaximumElements];
-        NSLog(@"Min and max elements of created array %@ equal to %@ and %@ and stored at indexes: %@ %@", [array debugDescription], [array objectAtIndex:[[indexes firstObject] unsignedIntegerValue]], [array objectAtIndex:[[indexes lastObject] unsignedIntegerValue]],
+        NSLog(@"Min and max elements of created array %@ equal to %@ and %@ and stored at indexes: %@ %@", [array debugDescription], array[[[indexes firstObject] unsignedIntegerValue]], array[[[indexes lastObject] unsignedIntegerValue]],
               [indexes firstObject], [indexes lastObject]);
 
         //Longest string from array
@@ -69,7 +69,7 @@ int main(int argc, const char *argv[])
             [oneArray addObject:currentDic];
             [twoArray addObject:currentDic];
         }
-        [oneArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"EKAlgorithms100", someKey, nil]];
+        [oneArray addObject:@{someKey: @"EKAlgorithms100"}];
         NSLog(@"Union some key is %@", [oneArray unionWithoutDuplicatesWithArray:twoArray forKey:someKey]);
         
         //Find duplicates

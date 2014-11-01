@@ -295,7 +295,7 @@
         }
     }
     
-    return [Q objectAtIndex:index];
+    return Q[index];
 }
 
 #pragma mark - Topsort
@@ -345,7 +345,7 @@
         for (EKVertex *vertex in vertices) {
             for (EKEdge *edge in vertex.adjacentEdges) {
                 EKVertex *adjTo = edge.adjacentTo;
-                [_indegree setValue:[NSNumber numberWithInteger:([[_indegree valueForKey:adjTo.label] integerValue])+1] forKey:adjTo.label];
+                [_indegree setValue:@(([[_indegree valueForKey:adjTo.label] integerValue])+1) forKey:adjTo.label];
             }
         }
     }

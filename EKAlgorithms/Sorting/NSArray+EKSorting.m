@@ -105,7 +105,7 @@
     for (NSInteger i = count / 2; i > 0; i = i / 2) {
         for (NSInteger j = i; j < count; j++) {
             for (NSInteger k = j - i; k >= 0; k = k - i) {
-                if ([[self objectAtIndex:k + 1] floatValue] >= [[self objectAtIndex:k] floatValue]) {
+                if ([self[k + 1] floatValue] >= [self[k] floatValue]) {
                     break;
                 }
                 else {
@@ -240,16 +240,16 @@
     NSMutableArray *radixTable = [self getTableOfEmptyBucketsForSize:base];
     
     for (int i = 0; i < theArray.count; i++) {
-        NSInteger value = [[theArray objectAtIndex:i] integerValue];
+        NSInteger value = [theArray[i] integerValue];
         NSInteger radixIndex = [self getExaminedNumber:value withBase:base atDigit:digit];
-        SSRadixNode *current = (SSRadixNode *)[radixTable objectAtIndex:radixIndex];
+        SSRadixNode *current = (SSRadixNode *)radixTable[radixIndex];
         if (current.next) {
             while (current.next) {
                 current = [current next];
             }
         }
         SSRadixNode *newEntry = [SSRadixNode new];
-        newEntry.data = [[theArray objectAtIndex:i] intValue];
+        newEntry.data = [theArray[i] intValue];
         current.next = newEntry;
     }
     
@@ -285,10 +285,10 @@
     
     for (NSUInteger i = 0; i < K; i++) {
         minIndex = i;
-        minValue = [[self objectAtIndex:i] unsignedIntegerValue];
+        minValue = [self[i] unsignedIntegerValue];
         
         for (NSUInteger j = i + 1; j < count; j++) {
-            NSUInteger el = [[self objectAtIndex:j] unsignedIntegerValue];
+            NSUInteger el = [self[j] unsignedIntegerValue];
             
             if (el < minValue) {
                 minIndex = j;

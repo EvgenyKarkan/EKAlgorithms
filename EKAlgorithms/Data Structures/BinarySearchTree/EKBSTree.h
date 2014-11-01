@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) EKBTreeNode *root;
 
-- (instancetype)initWithObject:(NSObject *)object compareSelector:(SEL)selector;
+- (instancetype)initWithObject:(NSObject *)object compareSelector:(SEL)selector NS_DESIGNATED_INITIALIZER;
 - (void)insertObject:(NSObject *)newObject;
 - (void)printDescription;
 - (EKBTreeNode *)find:(NSObject *)object;

@@ -20,7 +20,7 @@
 
 #pragma mark - Default init
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     
@@ -32,7 +32,7 @@
 
 #pragma mark - Init with limited size of stack
 
-- (id)initWithSize:(NSUInteger)size
+- (instancetype)initWithSize:(NSUInteger)size
 {
     self = [super init];
     
