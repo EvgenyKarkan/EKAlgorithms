@@ -31,8 +31,8 @@
 {
     NSMutableString *result = [[NSMutableString alloc] init];
     
-    for (NSInteger i = [self length] - 1; i >= 0; i--) {
-        [result appendString:[NSString stringWithFormat:@"%C", [self characterAtIndex:i]]];
+    for (NSInteger i = (NSInteger)[self length] - 1; i >= 0; i--) {
+        [result appendString:[NSString stringWithFormat:@"%C", [self characterAtIndex: (NSUInteger)i]]];
     }
     
     return [result copy];

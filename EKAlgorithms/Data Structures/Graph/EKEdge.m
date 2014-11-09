@@ -17,10 +17,10 @@
     self = [super init];
     
     if (self) {
-        self.adjacentFrom = vertexFrom;
-        self.adjacentTo   = vertexTo;
-        self.weight       = weight;
-        self.used         = NO;
+        _adjacentFrom = vertexFrom;
+        _adjacentTo   = vertexTo;
+        _weight       = weight;
+        _used         = NO;
     }
     return self;
 }

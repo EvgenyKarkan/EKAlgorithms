@@ -18,7 +18,7 @@
     NSMutableArray *resultArray = [@[] mutableCopy];
     
     for (NSUInteger i = 0; i < maxNumber; i++) {
-        resultArray[i] = [NSNumber numberWithInteger:i];
+        resultArray[i] = @((NSInteger)i);
     }
     
     resultArray[1] = @0;
@@ -430,7 +430,7 @@
     i         = 0x5f3759df - (i >> 1);  // gives initial guess
     result    = *(Float32 *)&i;         // convert bits back to float
     
-    for (NSUInteger i = 0; i < 4; i++) {
+    for (NSUInteger idx = 0; idx < 4; idx++) {
         result = result * (1.5f - halfOfResult * result * result);  // Newton step, repeating increases accuracy
     }
     

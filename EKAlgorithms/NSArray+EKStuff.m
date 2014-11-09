@@ -170,7 +170,7 @@
     [mutableArray addObjectsFromArray:secondArray];
     
     NSArray *copy = [mutableArray copy];
-    NSInteger index = [copy count] - 1;
+    NSUInteger index = [copy count] - 1;
     
     for (id object in [copy reverseObjectEnumerator]) {
         
@@ -307,7 +307,7 @@
 {
     NSUInteger count = [self count];
 
-    for (int i = 0; i < count; i++) {
+    for (NSUInteger i = 0; i < count; i++) {
         if ([object isEqual:self[i]]) {
             return i;
         }

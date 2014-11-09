@@ -24,7 +24,7 @@
     self = [super init];
     
     if (self) {
-        self.queueArray = [@[] mutableCopy];
+        _queueArray = [@[] mutableCopy];
     }
     return self;
 }

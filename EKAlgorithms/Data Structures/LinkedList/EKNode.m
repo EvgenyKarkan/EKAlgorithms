@@ -14,7 +14,7 @@
 - (instancetype)initWithObject:(NSObject *)object
 {
     if (self = [super init]) {
-        self.value = object;
+        _value = object;
     }
     return self;
 }

@@ -31,7 +31,7 @@ int main(int argc, const char *argv[])
         //Init array with 5 random elements
         NSMutableArray *array = [NSMutableArray array];
         for (int i = 0; i < 5; i++) {
-            [array addObject:[NSNumber numberWithInt:arc4random() % 20]];
+            [array addObject:@(arc4random() % 20)];
         }
 
         //Max element of array

@@ -14,7 +14,7 @@
 - (instancetype)initWithObject:(NSObject *)obj compareSelector:(SEL)selector
 {
     if (self = [super init]) {
-        self.root                 = [[EKBTreeNode alloc] init];
+        _root                     = [[EKBTreeNode alloc] init];
         self.root.object          = obj;
         self.root.compareSelector = selector;
     }

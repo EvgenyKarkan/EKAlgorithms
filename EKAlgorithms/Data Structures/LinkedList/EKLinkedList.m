@@ -21,7 +21,7 @@
     self = [super init];
     
     if (self) {
-        self.head = [[EKNode alloc] initWithObject:value];
+        _head = [[EKNode alloc] initWithObject:value];
     }
     return self;
 }

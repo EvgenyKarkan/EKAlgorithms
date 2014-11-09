@@ -27,7 +27,7 @@
     self = [super init];
     
     if (self) {
-        self.stackArray = [@[] mutableCopy];
+        _stackArray = [@[] mutableCopy];
     }
     return self;
 }
@@ -40,8 +40,8 @@
     
     if (self) {
         if (size > 0) {
-            self.stackArray   = [@[] mutableCopy];
-            self.maxStackSize = size;
+            _stackArray   = [@[] mutableCopy];
+            _maxStackSize = size;
         }
         else {
             NSAssert(size != 0, @"Stack size must be > 0");
@@ -86,7 +86,7 @@
 
 - (NSInteger)sizeOfStack
 {
-    return [self.stackArray count];
+    return (NSInteger)[self.stackArray count];
 }
 
 - (BOOL)isEmpty
@@ -96,7 +96,7 @@
 
 - (BOOL)isFull
 {
-    return ([self sizeOfStack] == self.maxStackSize) ? YES : NO;
+    return ([self sizeOfStack] == (NSInteger)self.maxStackSize) ? YES : NO;
 }
 
 - (void)clear

@@ -27,7 +27,7 @@
     self = [super init];
     
     if (self) {
-        self.heap = [@[] mutableCopy];
+        _heap = [@[] mutableCopy];
         [self.heap insertObject:@-1 atIndex:0];
     }
     return self;

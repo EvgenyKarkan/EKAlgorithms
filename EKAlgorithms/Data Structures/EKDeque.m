@@ -24,7 +24,7 @@
     self = [super init];
     
     if (self) {
-        self.dequeArray = [@[] mutableCopy];
+        _dequeArray = [@[] mutableCopy];
     }
     return self;
 }

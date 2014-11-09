@@ -14,8 +14,8 @@
 {
     self = [super init];
     
-    self.latitude  = latitude;
-    self.longitude = longitude;
+    _latitude  = latitude;
+    _longitude = longitude;
     
     return self;
 }

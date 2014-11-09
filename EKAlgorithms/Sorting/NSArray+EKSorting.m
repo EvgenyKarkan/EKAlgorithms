@@ -206,7 +206,7 @@
 
 #pragma mark - Radix Sort
 
-- (NSMutableArray *)radixSortForBase:(NSInteger)base;
+- (NSMutableArray *)radixSortForBase:(NSInteger)base
 {
     int max = [[self valueForKeyPath:@"@max.intValue"] intValue];
 
@@ -356,29 +356,29 @@
     m = mid + 1;
 
     for (i = min; j <= mid && m <= max; i++) {
-        if ([[self objectAtIndex:j] floatValue] <= [[self objectAtIndex:m] floatValue]) {
-            [temporaryArray replaceObjectAtIndex:i withObject:[self objectAtIndex:j]];
+        if ([self[j] floatValue] <= [self[m] floatValue]) {
+            temporaryArray[i] = self[j];
             j++;
         }
         else {
-            [temporaryArray replaceObjectAtIndex:i withObject:[self objectAtIndex:m]];
+            temporaryArray[i] = self[m];
             m++;
         }
     }
     if (j > mid) {
         for (k = m; k <= max; k++) {
-            [temporaryArray replaceObjectAtIndex:i withObject:[self objectAtIndex:k]];
+            temporaryArray[i] = self[k];
             i++;
         }
     }
     else {
         for (k = j; k <= mid; k++) {
-            [temporaryArray replaceObjectAtIndex:i withObject:[self objectAtIndex:k]];
+            temporaryArray[i] = self[k];
             i++;
         }
     }
     for (k = min; k <= max; k++) {
-        [self replaceObjectAtIndex:k withObject:[temporaryArray objectAtIndex:k]];
+        self[k] = temporaryArray[k];
     }
 }
 

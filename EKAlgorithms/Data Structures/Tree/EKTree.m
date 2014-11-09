@@ -20,7 +20,7 @@
 - (instancetype)initWithObject:(NSObject *)object
 {
     if (self = [super init]) {
-        self.root        = [[EKTreeNode alloc] init];
+        _root            = [[EKTreeNode alloc] init];
         self.root.object = object;
         self.root.parent = nil;
     }

@@ -37,7 +37,7 @@
     self = [super init];
     
     if (self) {
-        self.firstVertex = startVertex;
+        _firstVertex = startVertex;
     }
     return self;
 }
