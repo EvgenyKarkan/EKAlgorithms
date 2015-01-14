@@ -134,6 +134,14 @@ So lets get our hands dirty and try to implement cool CS stuff with minimal use 
 
 Thanks!
 
+Similar repositories
+--------------------
+
+* [algorithms](https://github.com/sagivo/algorithms)
+
+> algorithms playground for common questions (Ruby language)
+
+
 Contributors
 ------------
 Special thanks to these guys for their contributions to the project's development:
