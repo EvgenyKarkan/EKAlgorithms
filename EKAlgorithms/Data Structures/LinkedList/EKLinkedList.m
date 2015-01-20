@@ -13,6 +13,12 @@
 #import "NSObject+EKComparisonForIOS.h"
 #endif
 
+@interface EKLinkedList ()
+{
+    NSUInteger _count;
+}
+
+@end
 
 @implementation EKLinkedList;
 
@@ -22,6 +28,7 @@
     
     if (self) {
         _head = [[EKNode alloc] initWithObject:value];
+        _count = 1;
     }
     return self;
 }
@@ -32,14 +39,17 @@
     
     if (self.tail == nil) {
         EKNode *lastNode = self.head;
-        for (NSUInteger i = 1; i < self.count; i++) {
+        for (NSUInteger i = 1; i < _count; i++) {
             lastNode = lastNode.next;
         }
         self.tail = lastNode;
+        
     }
     node.next          = self.head;
     self.head.previous = node;
     self.head          = node;
+    
+    _count++;
 }
 
 - (void)addToBack:(NSObject *)value
@@ -48,7 +58,7 @@
     
     if (self.tail == nil) {
         EKNode *lastNode = self.head;
-        for (NSUInteger i = 1; i < self.count; i++) {
+        for (NSUInteger i = 1; i < _count; i++) {
             lastNode = lastNode.next;
         }
         self.tail = lastNode;
@@ -56,6 +66,8 @@
     node.previous  = self.tail;
     self.tail.next = node;
     self.tail      = node;
+    
+    _count++;
 }
 
 - (void)insertObject:(NSObject *)object atIndex:(NSUInteger)index
@@ -86,6 +98,7 @@
         nextNode.previous = newNode;
         newNode.next      = nextNode;
     }
+    _count++;
 }
 
 - (NSObject *)first
@@ -114,18 +127,7 @@
 
 - (NSUInteger)count
 {
-    if (!self.head) {
-        return 0;
-    }
-    
-    EKNode *currentNode = self.head;
-    NSUInteger i        = 1;
-    
-    while (currentNode.next) {
-        currentNode = currentNode.next;
-        i++;
-    }
-    return i;
+    return _count;
 }
 
 - (NSObject *)objectAtIndex:(NSUInteger)index
@@ -158,13 +160,14 @@
 
 - (BOOL)removeCurrent
 {
-        //FIXME: improve code below
+    //FIXME: improve code below
     NSLog(@"<#   #> %@", [self currentValue]);
     
     BOOL removed = NO;
     if (self.current != nil) {
         self.current.previous.next = self.current.next;
         removed = YES;
+        _count--;
     }
     else {
         removed = NO;
@@ -190,6 +193,7 @@
     }
     
     current.next = current.next.next;
+    _count--;
     
     return YES;
 }
