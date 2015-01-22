@@ -312,7 +312,7 @@
     
     for (int i = 2; i <= (int)sqrt(givenNumber); i++) {
         if (givenNumber % i == 0) {
-            return YES;
+            return NO;
         }
     }
     
