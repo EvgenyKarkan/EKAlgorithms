@@ -306,7 +306,7 @@
 {
     NSUInteger givenNumber = [self unsignedIntegerValue];
     
-    if (givenNumber == 1) {
+    if (givenNumber == 1 || givenNumber == 0) {
         return NO;
     }
     
