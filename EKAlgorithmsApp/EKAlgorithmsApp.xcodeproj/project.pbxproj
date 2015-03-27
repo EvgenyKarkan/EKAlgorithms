@@ -682,7 +682,6 @@
 /* Begin XCBuildConfiguration section */
 		86C5148318F80E5A00B5E9AE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE479F911A053CED00A441A0 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
