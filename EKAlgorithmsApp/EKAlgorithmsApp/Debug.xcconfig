@@ -34,7 +34,7 @@ CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES
     //CLANG_WARN_IMPLICIT_SIGN_CONVERSION        = YES
 CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION  = YES
 
-OTHER_CFLAGS = -Wextra -Wno-unused-parameter -Wunreachable-code -Wall -Wfloat-equal -Wundef -Wimplicit-retain-self -fconstant-cfstrings -Wfloat-equal
+OTHER_CFLAGS = -Wextra -Wno-unused-parameter -Wunreachable-code -Wall -Wfloat-equal -Wundef -Wimplicit-retain-self -fconstant-cfstrings -Wfloat-equal -Wdeprecated-implementations -Wnewline-eof -Wshadow -Wsign-compare -Werror
 
 GCC_OPTIMIZATION_LEVEL                     = 0
 GCC_PREPROCESSOR_DEFINITIONS               = $(INHERITED) DEBUG=1

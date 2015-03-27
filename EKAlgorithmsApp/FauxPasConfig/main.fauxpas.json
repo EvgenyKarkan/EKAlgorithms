@@ -3,7 +3,7 @@
     // Xcode target to check (String)
     "target": "EKAlgorithmsExamples",
     // Xcode build configuration to check (String)
-    "buildConfig": "Release",
+    "buildConfig": "Debug",
     // Rules to apply (Array of strings)
     //"rules": [],
     // Rules to apply only (Array of strings)
@@ -37,6 +37,8 @@
     //"cacheBuildLog": true,
     // Use our own modules cache (Boolean)
     //"useOwnModulesCache": true,
+    // Process only target precompiled headers (Boolean)
+    //"processOnlyTargetPCHs": true,
     // Verbose output (Boolean)
     //"verbose": false,
     // Output format ("human" / "json" / "plist" / "xcode")
@@ -62,6 +64,14 @@
             //"allowSystemPaths": false,
             // Regexes for allowed paths (Array of regular expression strings)
             "allowedPathRegexes": null,
+            // Regexes for ignored file paths (Array of regular expression
+            // strings)
+            "ignoredFileRegexes": null
+        },
+        // Options for rule: Assigning delegate property
+        "AssigningDelegate": {
+            // Allow unsafe_unretained delegates (Boolean)
+            //"allowUnsafeUnretained": false,
             // Regexes for ignored file paths (Array of regular expression
             // strings)
             "ignoredFileRegexes": null
@@ -160,8 +170,7 @@
             //"onlyForProperties": true,
             // Square bracket syntax method whitelist (Array of strings)
             "allowedMethods": ["alloc","autorelease","becomeFirstResponder","new","release","retain","runModal","setNeedsDisplay:"],
-            // Allow factory methods like <objcmethod>+[NSArray
-            // array]</objcmethod> (Boolean)
+            // Allow factory methods like +[NSArray array] (Boolean)
             //"allowConstructors": true,
             // Regexes for ignored file paths (Array of regular expression
             // strings)
@@ -343,6 +352,8 @@
         },
         // Options for rule: Missing image resolution variant
         "MissingImageResolutionVariant": {
+            // Expected resolution scales (Array of numbers)
+            //"expectedScales": [null,null,null],
             // Regexes for ignored file paths (Array of regular expression
             // strings)
             "ignoredFileRegexes": null
@@ -558,6 +569,12 @@
             // strings)
             "ignoredFileRegexes": null
         },
+        // Options for rule: Retain cycle in block API usage
+        "BlockAPIRetainCycle": {
+            // Regexes for ignored file paths (Array of regular expression
+            // strings)
+            "ignoredFileRegexes": null
+        },
         // Options for rule: Retaining or copying delegate
         "StrongDelegate": {
             // Regexes for ignored file paths (Array of regular expression
@@ -723,7 +740,7 @@
         // target
         "APIAvailability": {
             // Avoid false positives (Boolean)
-            //"avoidFalsePositives": false,
+            //"avoidFalsePositives": true,
             // Regexes for ignored file paths (Array of regular expression
             // strings)
             "ignoredFileRegexes": null
@@ -731,6 +748,12 @@
         // Options for rule: Using -[UIViewController initWithNibName:bundle:]
         // outside the UIViewController implementation
         "ViewControllerInitWithNibName": {
+            // Regexes for ignored file paths (Array of regular expression
+            // strings)
+            "ignoredFileRegexes": null
+        },
+        // Options for rule: Using a variable marked unused
+        "UsedVariableMarkedUnused": {
             // Regexes for ignored file paths (Array of regular expression
             // strings)
             "ignoredFileRegexes": null

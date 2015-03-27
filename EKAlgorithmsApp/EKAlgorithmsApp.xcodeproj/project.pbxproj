@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		DE35FFAB1AC610D100054E83 /* OCLintStaticAnalysis */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DE35FFAE1AC610D100054E83 /* Build configuration list for PBXAggregateTarget "OCLintStaticAnalysis" */;
+			buildPhases = (
+				DE35FFAF1AC610D900054E83 /* OCLint script */,
+			);
+			dependencies = (
+			);
+			name = OCLintStaticAnalysis;
+			productName = OCLintStaticAnalysis;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		86C5147B18F80E5A00B5E9AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C5147A18F80E5A00B5E9AE /* Foundation.framework */; };
 		86C5147E18F80E5A00B5E9AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C5147D18F80E5A00B5E9AE /* main.m */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -493,6 +507,11 @@
 				CLASSPREFIX = EK;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Evgeny Karkan";
+				TargetAttributes = {
+					DE35FFAB1AC610D100054E83 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
 			};
 			buildConfigurationList = 86C5147218F80E5A00B5E9AE /* Build configuration list for PBXProject "EKAlgorithmsApp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -508,6 +527,7 @@
 			targets = (
 				86C5147618F80E5A00B5E9AE /* EKAlgorithmsExamples */,
 				86C5148B18F80E8000B5E9AE /* EKAlgorithmsSpecs */,
+				DE35FFAB1AC610D100054E83 /* OCLintStaticAnalysis */,
 			);
 		};
 /* End PBXProject section */
@@ -556,6 +576,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		DE35FFAF1AC610D900054E83 /* OCLint script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "OCLint script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "source ~/.bash_profile\n\nhash oclint &> /dev/null\nif [ $? -eq 1 ]; then\necho >&2 \"oclint not found, analyzing stopped\"\nexit 1\nfi\n\ncd ${TARGET_TEMP_DIR}\n\nif [ ! -f compile_commands.json ]; then\necho \"[*] compile_commands.json not found, possibly clean was performed\"\necho \"[*] starting xcodebuild to rebuild the project..\"\n# clean previous output\nif [ -f xcodebuild.log ]; then\nrm xcodebuild.log\nfi\n\ncd ${SRCROOT}\n\nxcodebuild clean\n\n#build xcodebuild.log\nxcodebuild | tee ${TARGET_TEMP_DIR}/xcodebuild.log\n#xcodebuild <options>| tee ${TARGET_TEMP_DIR}/xcodebuild.log\n\necho \"[*] transforming xcodebuild.log into compile_commands.json...\"\ncd ${TARGET_TEMP_DIR}\n#transform it into compile_commands.json\noclint-xcodebuild\n\necho \"[*] copy compile_commands.json to the project root...\"\ncp ${TARGET_TEMP_DIR}/compile_commands.json ${SRCROOT}/compile_commands.json\n\nfi\n\necho \"[*] starting analyzing\"\ncd ${TARGET_TEMP_DIR}\noclint-json-compilation-database | sed 's/\\(.*\\.\\m\\{1,2\\}:[0-9]*:[0-9]*:\\)/\\1 warning:/'";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -648,6 +682,7 @@
 /* Begin XCBuildConfiguration section */
 		86C5148318F80E5A00B5E9AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE479F911A053CED00A441A0 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -777,6 +812,20 @@
 			};
 			name = Release;
 		};
+		DE35FFAC1AC610D100054E83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DE35FFAD1AC610D100054E83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -806,6 +855,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		DE35FFAE1AC610D100054E83 /* Build configuration list for PBXAggregateTarget "OCLintStaticAnalysis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE35FFAC1AC610D100054E83 /* Debug */,
+				DE35FFAD1AC610D100054E83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
