@@ -141,6 +141,9 @@ Similar repositories
 
 > algorithms playground for common questions (Ruby language)
 
+* [SwiftStructures](https://github.com/waynewbishop/SwiftStructures)
+
+> Examples of commonly used data structures and algorithms in Swift. (Swift)
 
 Contributors
 ------------
