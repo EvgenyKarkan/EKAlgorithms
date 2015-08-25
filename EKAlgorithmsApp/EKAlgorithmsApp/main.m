@@ -28,6 +28,8 @@
 int main(int argc, const char *argv[])
 {
 	@autoreleasepool {
+#pragma mark - Array
+        
         //Init array with 5 random elements
         NSMutableArray *array = [NSMutableArray array];
         for (int i = 0; i < 5; i++) {
@@ -94,6 +96,7 @@ int main(int argc, const char *argv[])
         //NSLog(@"Occurences by using dictionary is --> %@", [@[@[], @{}, @"four", @"five", @"four", @"one", @"three", @"eight", @"one", @"four"] occurencesOfEachElementInArrayByUsingDictionary]);
         NSLog(@"Occurences via Cocoa APIs is --> %@", [@[@3, @3, @4, @5, @4, @1, @3, @8, @1] CocoaImplementationOfOccurencesOfEachElementInArray]);
 
+#pragma mark - Search
         //SEARCH------------------------------------------------------------------------------------
 
         //Linear search
@@ -102,6 +105,7 @@ int main(int argc, const char *argv[])
         //Binary search
         NSLog(@"Binary search result: %li", (long)[@[@6, @9, @12, @13, @14, @29, @42] indexOfObjectViaBinarySearch: @42]);
 
+#pragma mark - Search
         //SORTING-----------------------------------------------------------------------------------
 
         //Bubble sort
@@ -128,6 +132,7 @@ int main(int argc, const char *argv[])
         //Heap sort
         NSLog(@"Heap sorted array --> %@", [[@[@9871523, @0.0987516, @NO, @89, @ - 61.001256, @712.5, @YES, @384756] mutableCopy] heapSort]);
 
+#pragma mark - Strings
         //STRINGS-----------------------------------------------------------------------------------
 
         //Palindrome string
@@ -172,7 +177,7 @@ int main(int argc, const char *argv[])
         // KMP
         NSLog(@"Index of KMP string match is --> %ld", [@"bacbababaabcbab" KMPindexOfSubstringWithPattern:@"bab"]);
         
-
+#pragma mark - Numeric problems
         //NUMERIC PROBLEMS--------------------------------------------------------------------------
 
         //Sieve of Eratosf
@@ -241,6 +246,7 @@ int main(int argc, const char *argv[])
         //Fast inverse square root
         NSLog(@"FISR is --> %@", @([@5 fastInverseSquareRoot]));
 
+#pragma mark - Data structures
         //DATA STRUCTURES---------------------------------------------------------------------------
 
         //Stack
@@ -508,6 +514,7 @@ int main(int argc, const char *argv[])
         
         [[EKTree forestToBinaryTree:@[forest1, forest2]] levelOrderTraversal];
         
+#pragma mark - Recursion
         //RECURSION---------------------------------------------------------------------------------
         
         //Tower of Hanoi
