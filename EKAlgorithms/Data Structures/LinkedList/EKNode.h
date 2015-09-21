@@ -13,6 +13,6 @@
 @property (nonatomic, strong) EKNode   *previous;
 @property (nonatomic, strong) EKNode   *next;
 
-- (instancetype)initWithObject:(NSObject *)object NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithObject:(NSObject *)object;
 
 @end

@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) EKTreeNode *root;
 
-- (instancetype)initWithObject:(NSObject *)object NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithObject:(NSObject *)object;
 - (void)insertNode:(EKTreeNode *)node leftSibling:(EKTreeNode *)leftSibling parent:(EKTreeNode *)parent;
 - (void)printDescription;
 

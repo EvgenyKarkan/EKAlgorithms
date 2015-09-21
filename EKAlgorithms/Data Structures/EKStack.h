@@ -9,7 +9,7 @@
 
 @interface EKStack : NSObject
 
-- (instancetype)initWithSize:(NSUInteger)size NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithSize:(NSUInteger)size;
 
 - (id)popLastObject;
 - (void)push:(id)object;

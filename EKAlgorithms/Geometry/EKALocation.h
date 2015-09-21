@@ -16,7 +16,7 @@
 @property double latitude;
 @property double longitude;
 
-- (instancetype)initWithLatitude:(double)latitude longitude:(double)longitude NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithLatitude:(double)latitude longitude:(double)longitude;
 
 @end
 

@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) EKBTreeNode *root;
 
-- (instancetype)initWithObject:(NSObject *)object NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithObject:(NSObject *)object;
 - (BOOL)insertNode:(EKBTreeNode *)node parent:(EKBTreeNode *)parent isLeftChild:(BOOL)value;
 - (EKBTreeNode *)find:(NSObject *)object;
 

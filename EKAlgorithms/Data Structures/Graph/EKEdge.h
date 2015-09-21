@@ -17,6 +17,6 @@
 
 - (instancetype)initWithAdjacentFrom:(EKVertex *)vertexFrom
                                   To:(EKVertex *)vertexTo
-                           andWeight:(NSNumber *)weight NS_DESIGNATED_INITIALIZER;
+                           andWeight:(NSNumber *)weight;
 
 @end

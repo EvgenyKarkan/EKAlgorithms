@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) EKAVLTreeNode *root;
 
-- (instancetype)initWithObject:(NSObject *)object compareSelector:(SEL)selector NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithObject:(NSObject *)object compareSelector:(SEL)selector;
 - (void)insertObject:(NSObject *)newObject;
 - (void)printDescription;
 - (EKAVLTreeNode *)find:(NSObject *)object;

@@ -505,7 +505,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = EK;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Evgeny Karkan";
 				TargetAttributes = {
 					DE35FFAB1AC610D100054E83 = {
@@ -699,6 +699,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -789,6 +790,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "EKAlgorithmsSpecs/EKAlgorithmsSpecs-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -806,6 +808,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EKAlgorithmsSpecs/EKAlgorithmsSpecs-Prefix.pch";
 				INFOPLIST_FILE = "EKAlgorithmsSpecs/EKAlgorithmsSpecs-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -862,6 +865,7 @@
 				DE35FFAD1AC610D100054E83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
