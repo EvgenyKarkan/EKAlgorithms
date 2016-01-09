@@ -14,9 +14,10 @@
 
 - (instancetype)initWithStartVertex:(id)startVertex;
 - (void)depthFirstSearch;
+- (void)depthFirstSearchRecursive:(EKVertex *)vertex;
 - (void)breadthFirstSearch;
 - (BOOL)isUndirectedGraph;
-
+- (void)clearVisitHistory;
 - (void)primMST:(id)startVertex;
 - (void)kruskalMST;
 - (void)dijkstraSPTFrom:(id)sourceVertex To:(id)targetVertex;
