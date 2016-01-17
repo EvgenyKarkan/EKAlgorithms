@@ -396,8 +396,10 @@
 - (void)depthFirstSearchRecursive:(EKVertex *)vertex
 {
   NSAssert([self.vertices count] > 0, @"No vertices in graph");
+    
   vertex.wasVisited = YES;
   [self displayVisitedVertex:vertex];
+    
   for (EKEdge *edge in vertex.adjacentEdges) {
     if (!edge.adjacentTo.wasVisited) {
       [self depthFirstSearchRecursive: edge.adjacentTo];
