@@ -359,6 +359,8 @@ int main(int argc, const char *argv[])
         }
 
         [graph depthFirstSearch];
+        [graph depthFirstSearchRecursive: aV];
+        [graph clearVisitHistory];
 
         //BFS
         [graph breadthFirstSearch];
