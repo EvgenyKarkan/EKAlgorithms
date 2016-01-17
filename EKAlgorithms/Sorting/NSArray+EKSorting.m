@@ -377,6 +377,7 @@
             i++;
         }
     }
+    
     for (k = min; k <= max; k++) {
         self[k] = temporaryArray[k];
     }
