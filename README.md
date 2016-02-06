@@ -145,6 +145,10 @@ Similar repositories
 
 > Examples of commonly used data structures and algorithms in Swift. (Swift)
 
+* [swift-algorithm-club](https://github.com/hollance/swift-algorithm-club)
+
+> Algorithms and data structures in Swift, with explanations!
+
 Contributors
 ------------
 Special thanks to these guys for their contributions to the project's development:
