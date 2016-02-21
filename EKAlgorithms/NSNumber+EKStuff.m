@@ -31,6 +31,7 @@
         }
     }
     [resultArray removeObjectIdenticalTo:@0];
+    [resultArray removeObjectIdenticalTo:@((NSInteger)0)];
     
     return [resultArray copy];
 }
