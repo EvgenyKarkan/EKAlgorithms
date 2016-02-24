@@ -11,13 +11,12 @@
 
 @implementation EKAVLTree
 
-- (instancetype)initWithObject:(NSObject *)obj compareSelector:(SEL)selector
+- (instancetype)initWithObject:(NSObject *)obj
 {
     if (self = [super init]) {
         _root                     = [[EKAVLTreeNode alloc] init];
         self.root.object          = obj;
         self.root.height          = 0;
-        self.root.compareSelector = selector;
     }
     
     return self;
@@ -30,29 +29,25 @@
 
 - (EKAVLTreeNode *)insertObject:(NSObject *)newObject AtNode:(EKAVLTreeNode *)T
 {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     if (!T) {
         T                 = [[EKAVLTreeNode alloc] init];
         T.object          = newObject;
         T.leftChild       = T.rightChild = nil;
-        T.compareSelector = self.root.compareSelector;
         T.height          = 0;
     } else {
-        NSComparisonResult result = (NSComparisonResult)[newObject performSelector : T.compareSelector withObject : T.object];
-        if (result < 0) {
+        if ([newObject isLessThan:T.object]) {
             T.leftChild = [self insertObject:newObject AtNode:T.leftChild];
             if ([EKAVLTree heightOfNode:T.leftChild] - [EKAVLTree heightOfNode:T.rightChild] == 2) {
-                if ((NSComparisonResult)[newObject performSelector : T.leftChild.compareSelector withObject : T.leftChild.object]) {
+                if ([newObject isGreaterThan:T.leftChild.object]) {
                     T = [EKAVLTree singleRotateWithLeft:T];
                 } else {
                     T = [EKAVLTree doubleRotateWithLeft:T];
                 }
             }
-        } else if (result > 0) {
+        } else if ([newObject isGreaterThan:T.object]) {
             T.rightChild = [self insertObject:newObject AtNode:T.rightChild];
             if ([EKAVLTree heightOfNode:T.rightChild] - [EKAVLTree heightOfNode:T.leftChild] == 2) {
-                if ((NSComparisonResult)[newObject performSelector : T.rightChild.compareSelector withObject : T.rightChild.object]) {
+                if ([newObject isGreaterThan:T.rightChild.object]) {
                     T = [EKAVLTree singleRotateWithRight:T];
                 } else {
                     T = [EKAVLTree doubleRotateWithRight:T];
@@ -61,7 +56,6 @@
         }
         T.height = MAX([EKAVLTree heightOfNode:T.leftChild], [EKAVLTree heightOfNode:T.rightChild])+1;
     }
-#pragma clang diagnostic pop
     return T;
 }
 
@@ -74,16 +68,12 @@
 {
     EKAVLTreeNode *currentNode = self.root;
     while (YES) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        NSComparisonResult result = (NSComparisonResult)[obj performSelector : currentNode.compareSelector withObject : currentNode.object];
-#pragma clang diagnostic pop
-        if (result > 0) {
+        if ([obj isGreaterThan:currentNode.object]) {
             if (currentNode.rightChild) {
                 currentNode = currentNode.rightChild;
             } else
                 return nil;
-        } else if (result < 0) {
+        } else if ([obj isLessThan:currentNode.object]) {
             if (currentNode.leftChild) {
                 currentNode = currentNode.leftChild;
             } else
@@ -105,11 +95,8 @@
     if (!T) {
         return nil;
     }
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-    NSComparisonResult result = (NSComparisonResult)[object performSelector : T.compareSelector withObject : T.object];
-#pragma clang diagnostic pop
-    if (result == 0) {
+
+    if ([object isEqualTo:T.object]) {
         if (T.rightChild == nil) {
             EKAVLTreeNode *temp = T;
             T = T.leftChild;
@@ -125,7 +112,7 @@
             T.height     = MAX([EKAVLTree heightOfNode:T.leftChild], [EKAVLTree heightOfNode:T.rightChild])+1;
         }
         return T;
-    } else if (result < 0) {
+    } else if ([object isLessThan:T.object]) {
         T.leftChild = [self deleteObject:object AtNode:T.leftChild];
     } else {
         T.rightChild = [self deleteObject:object AtNode:T.rightChild];

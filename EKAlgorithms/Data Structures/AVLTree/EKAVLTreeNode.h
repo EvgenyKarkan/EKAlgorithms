@@ -13,7 +13,6 @@
 @property (nonatomic, strong) NSObject      *object;
 @property (nonatomic, strong) EKAVLTreeNode *leftChild;
 @property (nonatomic, strong) EKAVLTreeNode *rightChild;
-@property (nonatomic, assign) SEL           compareSelector;
 
 - (void)printDescription;
 
