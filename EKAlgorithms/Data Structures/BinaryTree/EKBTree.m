@@ -44,6 +44,7 @@
     EKQueue *queue = [[EKQueue alloc] init];
     [queue insertObject:self.root];
     EKBTreeNode *node;
+    
     while (![queue isEmpty]) {
         node = [queue removeFirstObject];
         if ([node.object isEqualTo:object]) {
@@ -85,6 +86,7 @@
     if (self.root) {
         EKQueue *queue = [[EKQueue alloc] init];
         [queue insertObject:self.root];
+        
         while (![queue isEmpty]) {
             EKBTreeNode *currentNode = [queue removeFirstObject];
             if (currentNode.leftChild) {

@@ -14,9 +14,9 @@
 - (instancetype)initWithObject:(NSObject *)obj
 {
     if (self = [super init]) {
-        _root                     = [[EKAVLTreeNode alloc] init];
-        self.root.object          = obj;
-        self.root.height          = 0;
+        _root            = [[EKAVLTreeNode alloc] init];
+        self.root.object = obj;
+        self.root.height = 0;
     }
     
     return self;
@@ -30,10 +30,10 @@
 - (EKAVLTreeNode *)insertObject:(NSObject *)newObject AtNode:(EKAVLTreeNode *)T
 {
     if (!T) {
-        T                 = [[EKAVLTreeNode alloc] init];
-        T.object          = newObject;
-        T.leftChild       = T.rightChild = nil;
-        T.height          = 0;
+        T           = [[EKAVLTreeNode alloc] init];
+        T.object    = newObject;
+        T.leftChild = T.rightChild = nil;
+        T.height    = 0;
     } else {
         if ([newObject isLessThan:T.object]) {
             T.leftChild = [self insertObject:newObject AtNode:T.leftChild];
