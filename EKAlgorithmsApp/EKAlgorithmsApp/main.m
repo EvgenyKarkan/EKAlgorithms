@@ -461,7 +461,7 @@ int main(int argc, const char *argv[])
 
         // AVL Tree stuff.
 
-        EKAVLTree *avlt = [[EKAVLTree alloc] initWithObject:@4 compareSelector:@selector(compare:)];
+        EKAVLTree *avlt = [[EKAVLTree alloc] initWithObject:@4];
         [avlt insertObject:@9];
         [avlt insertObject:@2];
         [avlt insertObject:@10];
