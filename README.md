@@ -1,6 +1,5 @@
 EKAlgorithms
 ============
-[![Build Status](https://travis-ci.org/EvgenyKarkan/EKAlgorithms.svg)](https://travis-ci.org/EvgenyKarkan/EKAlgorithms)
 
 EKAlgorithms is a set of computer exercises implemented in Objective-C. 
 Data structures, well known algorithms, CS curiosities, you name it!
@@ -156,3 +155,5 @@ Special thanks to these guys for their contributions to the project's developmen
 - [@vittoriom ](https://github.com/vittoriom)
 - [@AustinChou](https://github.com/AustinChou)
 
+
+[![Build Status](https://travis-ci.org/EvgenyKarkan/EKAlgorithms.svg)](https://travis-ci.org/EvgenyKarkan/EKAlgorithms)
