@@ -105,7 +105,7 @@ int main(int argc, const char *argv[])
         //Binary search
         NSLog(@"Binary search result: %li", (long)[@[@6, @9, @12, @13, @14, @29, @42] indexOfObjectViaBinarySearch: @42]);
 
-#pragma mark - Search
+#pragma mark - Sorting
         //SORTING-----------------------------------------------------------------------------------
 
         //Bubble sort
