@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/EvgenyKarkan/EKAlgorithms.svg)](https://travis-ci.org/EvgenyKarkan/EKAlgorithms)
+
 EKAlgorithms
 ============
 
@@ -155,5 +157,3 @@ Special thanks to these guys for their contributions to the project's developmen
 - [@vittoriom ](https://github.com/vittoriom)
 - [@AustinChou](https://github.com/AustinChou)
 
-
-[![Build Status](https://travis-ci.org/EvgenyKarkan/EKAlgorithms.svg)](https://travis-ci.org/EvgenyKarkan/EKAlgorithms)
