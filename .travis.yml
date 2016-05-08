@@ -2,6 +2,7 @@ language: objective-c
 
 before_install:
 - sw_vers
+- \curl -sSL https://get.rvm.io | bash -s stable --ruby
 - cd EKAlgorithmsApp
 
 install: make install
