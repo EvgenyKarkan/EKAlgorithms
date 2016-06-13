@@ -166,24 +166,34 @@
 
 - (NSArray *)unionWithoutDuplicatesWithArray:(NSArray *)secondArray forKey:(NSString *)currentKey
 {
-    NSMutableArray *mutableArray = [NSMutableArray arrayWithArray:self];
-    [mutableArray addObjectsFromArray:secondArray];
+    NSArray *arrayA; // the array count smaller than other array
+    NSArray *arrayB;
     
-    NSArray *copy = [mutableArray copy];
-    NSUInteger index = [copy count] - 1;
+    if ([self count] > [secondArray count]) {
+        arrayA = self;
+        arrayB = secondArray;
+    } else {
+        arrayA = secondArray;
+        arrayB = self;
+    }
     
-    for (id object in [copy reverseObjectEnumerator]) {
-        
-        for (NSUInteger i = 0; i < index; i++) {
-            if ([[mutableArray[i] valueForKey:currentKey] isEqualToString:[object valueForKey:currentKey]]){
-                [mutableArray removeObjectAtIndex:index];
+    NSMutableArray *result = [NSMutableArray arrayWithArray:arrayA];
+    
+    for (id object in arrayB) {
+        BOOL hasEqualString = NO;
+        for (id obj in arrayA) {
+            if ([[object valueForKey:currentKey] isEqualToString:[obj valueForKey:currentKey]]) {
+                hasEqualString = YES;
                 break;
             }
         }
-        index --;
+        if (!hasEqualString) {
+            [result addObject:object];
+        }
+        count++;
     }
     
-    return mutableArray;
+    return result;
 }
 
 #pragma mark - Find duplicates
