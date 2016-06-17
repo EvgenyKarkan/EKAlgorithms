@@ -2,7 +2,7 @@ platform :osx, '10.9'
 
 xcodeproj 'EKAlgorithmsApp'
 
-target 'EKAlgorithmsSpec' do
+target 'EKAlgorithmsSpecs' do
   inherit! :search_paths
   pod 'Kiwi'
 end
