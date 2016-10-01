@@ -190,7 +190,6 @@
         if (!hasEqualString) {
             [result addObject:object];
         }
-        count++;
     }
     
     return result;
