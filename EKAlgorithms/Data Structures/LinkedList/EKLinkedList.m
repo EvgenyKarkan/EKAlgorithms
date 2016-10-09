@@ -89,7 +89,7 @@
     EKNode *newNode = [[EKNode alloc] initWithObject:object];
     
     if (!previousNode) {
-        self.head = newNode;
+       [self addToFront:object];
     }
     else {
         previousNode.next = newNode;
