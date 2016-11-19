@@ -29,8 +29,10 @@
 - (BOOL)insertNode:(EKBTreeNode *)node parent:(EKBTreeNode *)parent isLeftChild:(BOOL)value
 {
     if (value == true && parent.leftChild == nil) {
+        node.parent = parent;
         parent.leftChild = node;
     } else if (parent.rightChild == nil) {
+        node.parent = parent;
         parent.rightChild = node;
     } else {
         NSAssert(parent.leftChild != nil || parent.rightChild != nil, @"Can't insert into parent node!");
