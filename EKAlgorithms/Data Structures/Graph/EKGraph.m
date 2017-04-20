@@ -185,8 +185,10 @@
     NSAssert([vertices firstObject] != [vertices lastObject], @"Vertices must be different!");
     
     EKQueue *queue = [[EKQueue alloc] init];
-    [self clearVisitHistory];
-    
+    for (EKVertex *vertex in self.vertices) {
+        vertex.wasVisited = NO;
+    }
+
     EKVertex *startVertex  = [vertices firstObject];
     startVertex.wasVisited = YES;
     
