@@ -37,4 +37,6 @@
 
 - (NSInteger)KMPindexOfSubstringWithPattern:(NSString *)pattern;
 
+- (NSRange)BMindexOfSubstringWithPattern:(NSString *)pattern index:(NSUInteger)index;
+
 @end

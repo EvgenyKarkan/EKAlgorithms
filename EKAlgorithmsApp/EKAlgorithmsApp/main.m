@@ -176,6 +176,24 @@ int main(int argc, const char *argv[])
         
         // KMP
         NSLog(@"Index of KMP string match is --> %ld", [@"bacbababaabcbab" KMPindexOfSubstringWithPattern:@"bab"]);
+
+        // Boyer Moore
+        NSLog(@"Index of BM string match is --> %ld", [@"bacbababaabcbab" BMindexOfSubstringWithPattern:@"baab" index:0].location);
+
+        // Boyer Moore Match count.
+        size_t numberOfPatternMatches = 0;
+        NSRange range = {.location = 0, .length = 0};
+        NSString *searchString = @"bacbababaabcbabbaab";
+
+        while (range.location != NSNotFound) {
+            range = [searchString BMindexOfSubstringWithPattern:@"baab" index:0];
+            if (range.location != NSNotFound) {
+                searchString = [searchString substringWithRange:NSMakeRange(range.location+range.length, searchString.length - range.location - range.length)];
+                numberOfPatternMatches++;
+            }
+        }
+
+        NSLog(@"Number of matches using Boyers Moore Search is --> %ld", numberOfPatternMatches);
         
 #pragma mark - Numeric problems
         //NUMERIC PROBLEMS--------------------------------------------------------------------------
