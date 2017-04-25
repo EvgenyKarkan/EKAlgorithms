@@ -62,6 +62,7 @@ Strings
 11. Longest common subsequence.
 12. Levenshtein distance.
 13. KMP (Knuth–Morris–Pratt).
+14. Boyer–Moore string search algorithm.
 
 Numeric Algorithms
 ------------------
