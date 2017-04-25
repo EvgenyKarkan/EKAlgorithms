@@ -433,4 +433,155 @@ enum decreaseDir {kInit = 0, kLeftUp, kUp, kLeft};
     return prefix;
 }
 
+#pragma mark - Boyer Moore
+
+#define ALPHABET_LEN 256
+
+/**
+    https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string_search_algorithm
+    In computer science, the Boyer–Moore string search algorithm is an efficient string searching algorithm that is the standard benchmark for practical string search literature.
+    Chances are very good that at some point you have done a search in a web document or file on your hard drive, and that search was implemented using Boyer-Moore.
+    Of note, in general, the algorithm runs faster as the pattern length increases.
+*/
+
+- (NSRange)BMindexOfSubstringWithPattern:(NSString *)pattern index:(NSUInteger)index {
+    const char *utf8Pattern = pattern.UTF8String;
+    const char *utf8String = [self substringFromIndex:index].UTF8String;
+
+    size_t length = strlen(utf8Pattern);
+    size_t stringLength = strlen(utf8String);
+
+    char pat[length];
+    char string[stringLength];
+
+    memcopy(pat, utf8Pattern, length);
+    memcopy(string, utf8String, stringLength);
+
+    pat[length] = '\0';
+    string[stringLength] = '\0';
+
+    size_t patternMap1[ALPHABET_LEN];
+    size_t *patternMap2 = malloc(length * sizeof(size_t));
+
+    patMap(patternMap1, pat, &length);
+    prefixSuffixMap(patternMap2, pat, &length);
+
+    size_t i = length - 1;
+
+    while (i < stringLength) {
+        signed long j = length - 1;
+
+        while (j >= 0 && string[i] == pat[j]) {
+            --i;
+            --j;
+        }
+
+        if (j < 0) {
+            free(patternMap2);
+            return NSMakeRange(i+1, length);
+        }
+
+        i += MAX(patternMap1[string[i]], patternMap2[j]);
+    }
+
+    free(patternMap2);
+    return NSMakeRange(NSNotFound, NSNotFound);
+}
+
+//For bad character rule
+//The distance each char is from the end. (patternLength - index of char).
+void patMap(size_t *map, char *pattern, size_t *patternLength) {
+    size_t i;
+    uint8_t alphabetSize = ~(char)0; //Flip the bits on a 8 bit int value 0 and you get 255.
+
+    for (i = 0; i < alphabetSize; i++) {
+        map[i] = *patternLength;
+    }
+
+    for (i = 0; i < *patternLength;i++) {
+        map[pattern[i]] = *patternLength - 1 - i; //The ascii char value is the key.
+    }
+}
+
+bool isPrefix (char *pattern, size_t *patternLength, int position) {
+    int i;
+    int suffixLength = (int)*patternLength - position;
+
+    for (i = 0; i < suffixLength; i++) {
+        if (pattern[i] != pattern[position+i]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int suffixLength (char *pattern, size_t *patternLength, int position) {
+    int suffixLength = 0;
+
+    //TODO: Make this more readable.
+    bool (^notMismatched)(int) = ^bool(int loc){
+        return (pattern[position - loc] == pattern[*patternLength - 1 - loc]) && loc < position;
+    };
+
+    while (notMismatched(suffixLength)) {
+        suffixLength++;
+    }
+
+    return suffixLength;
+}
+
+//For the good character rules
+void prefixSuffixMap(size_t *map2, char *pattern, size_t *patternLength) {
+    int i = 0;
+
+    int lastPrefixIndex = 1;
+
+    for (i = (int)*patternLength - 1; i >= 0; i--) {
+        if (isPrefix(pattern, patternLength, i+1)) {
+            lastPrefixIndex = i+1;
+        }
+        map2[i] = (*patternLength - 1 - i) + lastPrefixIndex;
+    }
+
+    for (i = 0; i < *patternLength; i++) {
+        int suffLength = suffixLength(pattern, patternLength, i);
+
+        if (pattern[i - suffLength] != pattern [*patternLength - 1 - suffLength]) {
+            map2[*patternLength - 1 - suffLength] = *patternLength - 1 - i + suffLength;
+        }
+    }
+}
+
+//Boundary aligned memcopy for 64 bit.
+void memcopy(void *dest, const void *src, size_t size) {
+#define NBITS 64
+
+    char *d = (char *)dest;
+    char *s = (char *)src;
+    int n = 0;
+
+    while ((((uintptr_t) d & (NBITS - 1)) != 0x0) && n < size) {
+        *d++ = *s++;
+        n++;
+    }
+
+    long * dest2 = (long *)d;
+    long * src2 = (long *)s;
+
+    //Copy 64 bit words at a time. 8 * faster.
+    uint64 max = size > sizeof(long) ? size - sizeof(long) : 0;
+    while (n < max) {
+        *dest2++ = *src2++;
+        n += sizeof(long);
+    }
+
+    s = (char *)src2;
+    d = (char *)dest2;
+    while (n < size) {
+        *d++ = *s++;
+        n++;
+    }
+}
+
 @end
