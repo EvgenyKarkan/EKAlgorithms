@@ -86,7 +86,7 @@
 		86EBBC1218F82B3A00F888C3 /* SortingSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EBBC0718F82B2F00F888C3 /* SortingSpecs.m */; };
 		8F0E298619015E3A00CC3934 /* SSRadixNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0E298519015E3A00CC3934 /* SSRadixNode.m */; };
 		8F0E298719015E3A00CC3934 /* SSRadixNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0E298519015E3A00CC3934 /* SSRadixNode.m */; };
-		C22C87D3FD1E427AA38427B2 /* libPods-EKAlgorithmsSpecs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 666CA5D0F3A84DDFB57C1434 /* libPods-EKAlgorithmsSpecs.a */; };
+		D34C3F5C22A7B06C191149F1 /* libPods-EKAlgorithmsSpecs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12A117E6E611D46BD283AB79 /* libPods-EKAlgorithmsSpecs.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -103,7 +103,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		666CA5D0F3A84DDFB57C1434 /* libPods-EKAlgorithmsSpecs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EKAlgorithmsSpecs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		12A117E6E611D46BD283AB79 /* libPods-EKAlgorithmsSpecs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EKAlgorithmsSpecs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14AF02BD0F40F4861F801B16 /* Pods-EKAlgorithmsSpecs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EKAlgorithmsSpecs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EKAlgorithmsSpecs/Pods-EKAlgorithmsSpecs.debug.xcconfig"; sourceTree = "<group>"; };
+		2F37A30069C1175931413A3F /* Pods-EKAlgorithmsSpecs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EKAlgorithmsSpecs.release.xcconfig"; path = "Pods/Target Support Files/Pods-EKAlgorithmsSpecs/Pods-EKAlgorithmsSpecs.release.xcconfig"; sourceTree = "<group>"; };
 		86C5147718F80E5A00B5E9AE /* EKAlgorithmsExamples */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EKAlgorithmsExamples; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C5147A18F80E5A00B5E9AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86C5147D18F80E5A00B5E9AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -182,7 +184,6 @@
 		BE213B2FD66EC9DAD9868924 /* NSNumber+EKComparisonForIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+EKComparisonForIOS.h"; sourceTree = "<group>"; };
 		BE213D0FE76038744D6D6602 /* NSObject+EKComparisonForIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EKComparisonForIOS.h"; sourceTree = "<group>"; };
 		BE213EAE66F455F35DC5C744 /* NSObject+EKComparisonForIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EKComparisonForIOS.m"; sourceTree = "<group>"; };
-		CF81BD80824A41FB97720C8E /* Pods-EKAlgorithmsSpecs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EKAlgorithmsSpecs.xcconfig"; path = "Pods/Pods-EKAlgorithmsSpecs.xcconfig"; sourceTree = "<group>"; };
 		DE479F911A053CED00A441A0 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		DE479F921A053D5000A441A0 /* Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,7 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86C5148E18F80E8000B5E9AE /* XCTest.framework in Frameworks */,
-				C22C87D3FD1E427AA38427B2 /* libPods-EKAlgorithmsSpecs.a in Frameworks */,
+				D34C3F5C22A7B06C191149F1 /* libPods-EKAlgorithmsSpecs.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +218,7 @@
 				86C5148F18F80E8000B5E9AE /* EKAlgorithmsSpecs */,
 				86C5147918F80E5A00B5E9AE /* Frameworks */,
 				86C5147818F80E5A00B5E9AE /* Products */,
-				CF81BD80824A41FB97720C8E /* Pods-EKAlgorithmsSpecs.xcconfig */,
+				BDD67881A7549B916658F3A4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,7 +236,7 @@
 			children = (
 				86C5147A18F80E5A00B5E9AE /* Foundation.framework */,
 				86C5148D18F80E8000B5E9AE /* XCTest.framework */,
-				666CA5D0F3A84DDFB57C1434 /* libPods-EKAlgorithmsSpecs.a */,
+				12A117E6E611D46BD283AB79 /* libPods-EKAlgorithmsSpecs.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -448,6 +449,15 @@
 			path = ../Specs;
 			sourceTree = "<group>";
 		};
+		BDD67881A7549B916658F3A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				14AF02BD0F40F4861F801B16 /* Pods-EKAlgorithmsSpecs.debug.xcconfig */,
+				2F37A30069C1175931413A3F /* Pods-EKAlgorithmsSpecs.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BE2135C7675C9E828AB04827 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,11 +493,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86C5149818F80E8000B5E9AE /* Build configuration list for PBXNativeTarget "EKAlgorithmsSpecs" */;
 			buildPhases = (
-				CD07AE7D54A544F49B2B0BE6 /* Check Pods Manifest.lock */,
+				6AD86EADE0EF4E9954EB121B /* [CP] Check Pods Manifest.lock */,
 				86C5148818F80E8000B5E9AE /* Sources */,
 				86C5148918F80E8000B5E9AE /* Frameworks */,
 				86C5148A18F80E8000B5E9AE /* Resources */,
-				049C522FE2A846DEA6978B29 /* Copy Pods Resources */,
+				BC5996D5F680AA44E3AD9F3B /* [CP] Embed Pods Frameworks */,
+				739EAE04FA90E9DEE33FC637 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -505,7 +516,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = EK;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Evgeny Karkan";
 				TargetAttributes = {
 					DE35FFAB1AC610D100054E83 = {
@@ -547,34 +558,52 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		049C522FE2A846DEA6978B29 /* Copy Pods Resources */ = {
+		6AD86EADE0EF4E9954EB121B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EKAlgorithmsSpecs-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-EKAlgorithmsSpecs-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CD07AE7D54A544F49B2B0BE6 /* Check Pods Manifest.lock */ = {
+		739EAE04FA90E9DEE33FC637 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EKAlgorithmsSpecs/Pods-EKAlgorithmsSpecs-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC5996D5F680AA44E3AD9F3B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EKAlgorithmsSpecs/Pods-EKAlgorithmsSpecs-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DE35FFAF1AC610D900054E83 /* OCLint script */ = {
@@ -688,14 +717,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -732,14 +767,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -782,7 +823,7 @@
 		};
 		86C5149918F80E8000B5E9AE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF81BD80824A41FB97720C8E /* Pods-EKAlgorithmsSpecs.xcconfig */;
+			baseConfigurationReference = 14AF02BD0F40F4861F801B16 /* Pods-EKAlgorithmsSpecs.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -804,7 +845,7 @@
 		};
 		86C5149A18F80E8000B5E9AE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF81BD80824A41FB97720C8E /* Pods-EKAlgorithmsSpecs.xcconfig */;
+			baseConfigurationReference = 2F37A30069C1175931413A3F /* Pods-EKAlgorithmsSpecs.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
