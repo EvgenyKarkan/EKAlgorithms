@@ -524,11 +524,11 @@
 			};
 			buildConfigurationList = 86C5147218F80E5A00B5E9AE /* Build configuration list for PBXProject "EKAlgorithmsApp" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = 86C5146E18F80E5A00B5E9AE;
 			productRefGroup = 86C5147818F80E5A00B5E9AE /* Products */;
